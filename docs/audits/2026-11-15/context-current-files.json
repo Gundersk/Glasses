@@ -1,0 +1,35 @@
+{
+  "closes": "LG-2026-11-15-02",
+  "created": "2026-11-15T21:20:55.408427+05:00",
+  "model_calls": 0,
+  "manifest": "experiments\\context_preservation\\artifacts\\context\\7ffe465dcf5a436abd06153ff7cb637b.json",
+  "files": [
+    {
+      "path": "docs/agent-context.md",
+      "sha256": "10647516ab249607bedc3b7633d97a27595e6061952c5254e4e69ed97a77f63d",
+      "source_characters": 11361,
+      "included_characters": 11361,
+      "omitted_characters": 0,
+      "required": true,
+      "status": "included",
+      "selection_mode": "prefix",
+      "omitted_history": false
+    },
+    {
+      "path": "STATUS.md",
+      "sha256": "675091d70cb2036f9db8df8ed50ed959ca807da0e10a52f4c3c5ea4a70c4870d",
+      "source_characters": 55697,
+      "included_characters": 1058,
+      "omitted_characters": 54639,
+      "required": true,
+      "status": "included",
+      "selection_mode": "status_current",
+      "omitted_history": true
+    }
+  ],
+  "context_bytes": 20524,
+  "external_config_changed": false,
+  "limitations": [
+    "Read-only source selection; no model compaction quality measurement."
+  ]
+}

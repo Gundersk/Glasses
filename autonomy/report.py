@@ -177,6 +177,12 @@ def _request_outcome(facts):
         text += "Общие часы сохраняются между попытками; ожидание квоты не рабочее время.\n"
     if facts.get("request_limits_error"):
         text += "\nОшибка учёта лимитов: " + facts["request_limits_error"] + ".\n"
+    if facts.get("retrieval_usage") is not None:
+        usage = facts["retrieval_usage"]
+        text += (f"\nValyu reader: попыток {usage['counts']}; консервативно зарезервировано "
+                 f"${usage['reserved_usd']:.4f}; сообщено провайдером ${usage['reported_cost_usd']:.4f}; "
+                 f"стоимость неизвестна для {usage['unknown_cost_attempts']} попыток. "
+                 "Резерв не равен счёту провайдера; отсутствие cost не означает бесплатно.\n")
     return text
 
 

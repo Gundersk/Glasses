@@ -3,6 +3,7 @@
 Формат: claim / source_url / quote / accessed / verdict. Нет цитаты — нет факта."""
 import hashlib
 import json
+import math
 import re
 import time
 from pathlib import Path
@@ -211,7 +212,8 @@ def _slug(text, limit=40):
     return out.strip("-")[:limit] or "query"
 
 
-def refresh(query, purpose, max_pages=2, dry_run=False, out=None, fresh=False, allow_unavailable=False):
+def refresh(query, purpose, max_pages=2, dry_run=False, out=None, fresh=False, allow_unavailable=False,
+            reuse_archive=False, reader_budget_usd=0, reader_max_calls=0, reader_scope=None):
     """Найти внешние ориентиры и сложить их в заметку.
 
     Система НЕ извлекает числа сама: она сохраняет ссылки и фрагменты, чтобы
@@ -220,6 +222,13 @@ def refresh(query, purpose, max_pages=2, dry_run=False, out=None, fresh=False, a
     """
     if type(max_pages) is not int or not 1 <= max_pages <= 5:
         raise ValueError("max_pages must be an integer in 1..5")
+    if (type(reuse_archive) is not bool or isinstance(reader_budget_usd, bool)
+            or not isinstance(reader_budget_usd, (int, float)) or not math.isfinite(reader_budget_usd)
+            or not 0 <= reader_budget_usd <= .5 or type(reader_max_calls) is not int
+            or not 0 <= reader_max_calls <= 12 or (reader_budget_usd > 0) != (reader_max_calls > 0)
+            or reader_budget_usd > 0 and (reader_budget_usd < .01 or not isinstance(reader_scope, str)
+                or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,119}', reader_scope))):
+        raise ValueError('invalid retrieval options')
     note_dir = paths.resolve("docs/research/notes")
     stamp = time.strftime("%Y-%m-%d")
     out_path = paths.resolve(out) if out else note_dir / f"{stamp}-{_slug(query)}.md"
@@ -235,22 +244,27 @@ def refresh(query, purpose, max_pages=2, dry_run=False, out=None, fresh=False, a
         # subprocess не наследует переназначенные Python globals родителя.
         cfg["research"]["cache_dir"] = str(out_path.parent / "run/cache/web")
     tf = TinyFish(cfg, _PrintLog())
-    found = tf.search(query, purpose=purpose, max_age_days=0 if fresh else None)
-    if not isinstance(found, dict):
-        raise RuntimeError('tinyfish search: invalid results schema')
-    items = found.get('results', found.get('items'))
-    if not isinstance(items, list):
-        raise RuntimeError('tinyfish search: invalid results schema')
-    manifest = select_sources(query, items, max_pages)
+    from .retrieval import acquire
+    scope = reader_scope or (out_path.parent.name if out_path.parent.name.startswith('MT-') else None)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    trace_path = Path(str(out_path) + '.retrieval.jsonl')
+    def event_sink(event):
+        with trace_path.open('a', encoding='utf-8') as stream:
+            stream.write(json.dumps({'accessed': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                                     'scope_id': scope, **event}, ensure_ascii=False) + '\n')
+    items, manifest, pages, retrieval_log = acquire(tf, query, purpose, max_pages=max_pages,
+        fresh=fresh, reuse_archive=reuse_archive, scope_id=scope,
+        reader_budget_usd=reader_budget_usd, reader_max_calls=reader_max_calls, strict=allow_unavailable,
+        event_sink=event_sink)
     urls = manifest['selected']
-    pages = tf.fetch(urls, purpose=purpose, fresh=fresh) if urls else {"results": []}
     if not isinstance(pages, dict) or not isinstance(pages.get('results'), list) or not isinstance(pages.get('errors', []), list):
         raise RuntimeError('tinyfish fetch_content: invalid results/errors schema')
     if allow_unavailable and (pages.get('invalid_results', 0) != 0
                              or any(not _valid_page(p, set(urls)) for p in pages['results'])):
         raise RuntimeError('tinyfish fetch_content: invalid page or challenge')
     pages['results'] = [p for p in pages.get('results', []) if _valid_page(p, set(urls))]
-    sources = [{"url": p["url"], "content": _page_text(p)[:30000]}
+    sources = [{"url": p["url"], "content": _page_text(p)[:30000],
+                "retrieval": p.get("retrieval", {"provider": "tinyfish", "method": "fetch"})}
                for p in pages.get("results", [])]
     missing = [url for url in urls if url not in {p['url'] for p in sources}]
     codes = _safe_errors(pages.get('errors', []))
@@ -289,7 +303,7 @@ def refresh(query, purpose, max_pages=2, dry_run=False, out=None, fresh=False, a
         lines += ["", f"### {url}", "", text or "(пусто)"]
     document = {"query": query,
         "accessed": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "fresh_requested": fresh,
-        "sources": sources, "selection_manifest": manifest,
+        "sources": sources, "selection_manifest": manifest, "retrieval_log": retrieval_log,
         "limitation": "Fetched content, not a verified scientific conclusion; primary-source hints are unverified heuristics"}
     if allow_unavailable:
         document.update(schema_version=2, collection_status='available' if sources else 'unavailable',
@@ -315,9 +329,15 @@ def main(argv=None):
     ap.add_argument("--out")
     ap.add_argument("--fresh", action="store_true")
     ap.add_argument("--allow-unavailable", action="store_true")
+    ap.add_argument("--reuse-archive", action="store_true")
+    ap.add_argument("--reader-budget-usd", type=float, default=0)
+    ap.add_argument("--reader-max-calls", type=int, default=0)
+    ap.add_argument("--reader-scope")
     a = ap.parse_args(argv)
     refresh(a.query, a.purpose, max_pages=a.max_pages, dry_run=a.dry_run, out=a.out, fresh=a.fresh,
-            allow_unavailable=a.allow_unavailable)
+            allow_unavailable=a.allow_unavailable, reuse_archive=a.reuse_archive,
+            reader_budget_usd=a.reader_budget_usd, reader_max_calls=a.reader_max_calls,
+            reader_scope=a.reader_scope)
     return 0
 
 

@@ -11,7 +11,8 @@ from urllib.parse import urlsplit
 from . import paths
 
 FIELDS = {"topics", "max_queries", "pages_per_query", "max_plan_revisions",
-          "max_followup_rounds", "answer_attempts", "min_sources", "min_domains"}
+          "max_followup_rounds", "answer_attempts", "min_sources", "min_domains",
+          "reuse_sources", "retrieval_budget_usd", "max_reader_calls"}
 
 
 def query_list(queries, cap):
@@ -52,6 +53,15 @@ def validate_policy(value, seed_queries):
             or p["min_sources"] > p["max_queries"] * p["pages_per_query"]):
         raise ValueError("research coverage thresholds exceed authorized search budget")
     query_list(seed_queries, p["max_queries"])
+    # Optional fields stay absent in legacy cards: do not mutate their hashed context.
+    if "reuse_sources" in p and type(p["reuse_sources"]) is not bool:
+        raise ValueError("invalid research_policy.reuse_sources")
+    budget = p.get("retrieval_budget_usd", 0)
+    calls = p.get("max_reader_calls", 0)
+    if (isinstance(budget, bool) or not isinstance(budget, (int, float))
+            or not 0 <= budget <= .5 or type(calls) is not int or not 0 <= calls <= 12
+            or (budget > 0) != (calls > 0) or budget > 0 and budget < .01):
+        raise ValueError("invalid retrieval budget/reader call limit")
     return p
 
 

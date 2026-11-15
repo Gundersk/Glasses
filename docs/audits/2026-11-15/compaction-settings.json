@@ -1,0 +1,93 @@
+{
+  "closes": "roadmap:????1-???2",
+  "created": "2026-11-15T21:11:18.786381+05:00",
+  "method": "read-only file layers; config API lists layers, not resolved effective settings",
+  "global": {
+    "compaction": {
+      "auto": true,
+      "keep": {
+        "tokens": 20000
+      },
+      "buffer": "75%"
+    },
+    "compaction_agent_model": "openrouter/deepseek/deepseek-v4.1-flash-1017#compact",
+    "tool_output": {
+      "max_lines": 1200,
+      "max_bytes": 48000
+    },
+    "background_compaction": true
+  },
+  "project": {
+    "compaction": {
+      "auto": true,
+      "keep": {
+        "tokens": 24000
+      },
+      "buffer": "20%"
+    },
+    "warming": false,
+    "background_compaction": false,
+    "openai_compaction": {
+      "type": "summary"
+    }
+  },
+  "predicted_effective": {
+    "compaction": {
+      "auto": true,
+      "keep": {
+        "tokens": 24000
+      },
+      "buffer": "20%"
+    },
+    "compaction_agent_model": "openrouter/deepseek/deepseek-v4.1-flash-1017#compact",
+    "tool_output": {
+      "max_lines": 1200,
+      "max_bytes": 48000
+    }
+  },
+  "files": [
+    {
+      "path": "STATUS.md",
+      "characters": 53701,
+      "planner_char_limit": 4000,
+      "omitted_characters": 49701
+    },
+    {
+      "path": "docs/agent-context.md",
+      "characters": 11361,
+      "planner_char_limit": 12000,
+      "omitted_characters": 0
+    },
+    {
+      "path": "PROJECT.md",
+      "characters": 6440,
+      "planner_char_limit": 2000,
+      "omitted_characters": 4440
+    },
+    {
+      "path": "docs/benchmarks.md",
+      "characters": 8496,
+      "planner_char_limit": 1800,
+      "omitted_characters": 6696
+    }
+  ],
+  "model_calls": 0,
+  "runtime_compaction_quality_measured": false,
+  "v5_review_outputs": [
+    {
+      "file": "response.md",
+      "characters": 15322,
+      "review_char_limit": 24000
+    },
+    {
+      "file": "claims.json",
+      "characters": 4232,
+      "review_char_limit": 24000
+    },
+    {
+      "file": "decision.json",
+      "characters": 3340,
+      "review_char_limit": 24000
+    }
+  ]
+}

@@ -44,7 +44,8 @@ def snapshot(cfg):
                 # Account quota bookkeeping is orchestration, not executor output.
                 if (Path(dirpath) == paths.AUTONOMY_DIR / "workspace"
                         and fn in {"subscription.sqlite3", "subscription.sqlite3-journal",
-                                   "subscription.sqlite3-wal", "subscription.sqlite3-shm"}):
+                                    "subscription.sqlite3-wal", "subscription.sqlite3-shm",
+                                    "valyu.sqlite3", "valyu.sqlite3-journal", "valyu.sqlite3-wal", "valyu.sqlite3-shm"}):
                     continue
                 if Path(fn).suffix.lower() in SKIP_EXT:
                     continue

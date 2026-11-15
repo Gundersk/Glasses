@@ -1,0 +1,79 @@
+{
+  "closes": "LG-2026-11-15-01",
+  "created": "2026-11-15T21:00:33.862295+05:00",
+  "scope": "offline fixtures, no provider inference or research run",
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "autonomy/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "log": "retrieval-tests-0.log",
+      "sha256": "0732c382265432633f20060e4a17568a4c4172e922a510d61206445ee25ab031"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_critic_search.py"
+      ],
+      "returncode": 0,
+      "log": "retrieval-tests-1.log",
+      "sha256": "55b41b96b89a8a54c6a86ee89e7496b1db3777cee1b783f948cb149b58fb7fe4"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_noise_manifest_merge.py"
+      ],
+      "returncode": 0,
+      "log": "retrieval-tests-2.log",
+      "sha256": "5039278e368bde630b710206f6ede3675be078c96f7a10a407fa630cc7d70b7f"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_plan_approval.py"
+      ],
+      "returncode": 0,
+      "log": "retrieval-tests-3.log",
+      "sha256": "f848689e54605f7b571f2f54b2463e3cf9001cd64a480e44d9eec3c5d9759557"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_tick_budget.py"
+      ],
+      "returncode": 0,
+      "log": "retrieval-tests-4.log",
+      "sha256": "8ced8ddb8ba536f1941f1763498eef1cbda02171d86558c967459ff685f90a3d"
+    }
+  ],
+  "source_sha256": {
+    "autonomy/retrieval.py": "e5d6a0189216372c36fe7f6e990b5f7a7dd2ca81f1777c219b9225fe444d47c0",
+    "autonomy/valyu_reader.py": "e7640187faa5f0ac7605da5c9ef9e07bd248729f8e73aceef72a6cc6a61e030f",
+    "autonomy/source_archive.py": "7eaf18edf7c476297e3f1d2faab2286166749ed1f19da4dde86714ad36e1a8f2",
+    "autonomy/source_selection.py": "d2c76082a97d49b9bf70cd1eaf6a80341a9094567ce14827c334595036a9e671",
+    "autonomy/publication_identity.py": "3a3791b90d298a2bac2e88b4150684182e0448d4286b203db8bffcbe73cfa8fc",
+    "autonomy/research.py": "3ac05ab736c8fb792aa66974629c9d8c41c186c276a5f72823a22058f4c90a57",
+    "autonomy/source_outcomes.py": "952b0c88dc1ae9a99fc5f6aa100ef6a20d659ff0976fd4071ba20dc53a915480",
+    "autonomy/author_evidence.py": "b3e42115ea081745214977bd1c0489cfc7158b397ac267d70a5cacd09a19debb",
+    "autonomy/request_research.py": "fa77955a5bd1575887657576751af2a5c65ec66859eac5fc5dbc1e46773e7849",
+    "autonomy/intake.py": "6969f82476f76b9e1d98bb825accc98e776244480fedc8c0603cb4409b0311f7",
+    "autonomy/runner.py": "ac4bc5efb689be7a292b523969506e0c505072395fcea81251f1df738582d49c",
+    "autonomy/router.py": "a41575cd23845264fd5b5bb2d398450d2f0ed32976b9324f124d1ed8e03b6ba1",
+    "autonomy/report.py": "baf44d19dac5de3580563ebfa9227e90af6bc8d36f7a0f34f0651438e5ba2438",
+    "autonomy/manifest.py": "141fd19bfd8c767091974f17d8ba201ed9932052ebcfe2ec63efd61fb9c0b0be",
+    "autonomy/tests/test_retrieval_integration.py": "408536a44f2d3bff3472473a850418f37b2af2ceae52fa8b17c8d4e3a1104820",
+    "autonomy/tests/test_valyu_reader.py": "e4ce7eaafdadadde09f2fcfcf741c904eabaced42860bfb6cd86882b49b25de6",
+    "autonomy/tests/test_source_archive.py": "5aab6826a560a1a91412c56397abfa091d97929302475c5180dc0c5e66937510",
+    "autonomy/tests/test_source_selection.py": "52f816a708c047ffae0cdd1b318e1397955569f73c556c3718f7c16cef08d855"
+  }
+}

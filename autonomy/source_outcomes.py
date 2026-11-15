@@ -5,7 +5,7 @@ from pathlib import Path
 from .source_selection import canonical_url
 
 RESOURCE_ERRORS = frozenset({'bot_blocked', 'robots_denied', 'access_denied',
-                             'not_found', 'http_403', 'http_404', 'http_410', 'gone'})
+                             'not_found', 'http_403', 'http_404', 'http_410', 'gone', 'resource_unavailable'})
 
 
 def inspect_document(doc):

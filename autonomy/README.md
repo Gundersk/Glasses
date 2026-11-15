@@ -10,6 +10,13 @@
 
 ## Задание от ментора (новый ограниченный маршрут)
 
+15.11, ADR-0013: audited PLAN/EXECUTE/REVIEW формируют STATE-handoff и pre-call
+manifests в WORKSPACE/context. Required input целиком либо blocked, optional
+omissions явные, общий cap220k символов (не tokenizer). Ошибка manifest не
+списывает author attempt. Инструкция `docs/context-preservation.md`, протокол
+`docs/audits/2026-11-15/context-preservation-tests.json`. Внешняя `/checkpoint`
+ручная; compaction-параметры прежние. Новый run этим не разрешается.
+
 Исправление 13.11: TinyFish `fetch_content` теперь принимает документированное
 поле `text` и сохраняет его в canonical `sources[].content`; ошибки MCP/schema и
 безопасные коды отказов не подменяются пустым успехом. Сбор команд поручения
@@ -241,6 +248,15 @@ Terra medium — автор/планировщик; короткие служе�
   Windows + ACL (следующий этап, см. STATUS.md).
 
 ## Единые лимиты research-поручения
+
+ADR-0012: optional reuse_sources/retrieval_budget_usd/max_reader_calls включает
+проверенный архив/Valyu Contents для exact выбранных URL. `retrieval.py` не
+добавляет скрытых web-запросов: при отказе discovery — только локальные кандидаты,
+если reuse разрешён. Отдельные caps reader и reserve вычитаются из model-budget;
+при ошибке учёта paid_work_blocked. Валюта actual cost отдельно от оценки.
+`sources-N.md.retrieval.jsonl` хранит историю попыток, source JSON — provenance.
+Рабочие секреты только env, `VALYU_API_KEY`; runtime SQLite исключён из git.
+См. `docs/search-routing.md`, протокол `docs/audits/2026-11-15/retrieval-tests.json`.
 
 ADR-0011: policy-сбор использует --allow-unavailable и typed research_collection.
 Известная недоступность URL пишет schema-v2 manifest и продолжает оставшиеся

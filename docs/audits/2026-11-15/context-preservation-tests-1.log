@@ -1,0 +1,10 @@
+ok: поиск -> повторный вердикт — case_search_then_verdict
+ok: больше MAX_SEARCHES — разделить план, не пропускать непроверенные вопросы — case_limit_three
+ok: сбой запрошенного поиска блокирует выполнение — case_search_fails
+ok: запрошенный, но не подключённый поиск не даёт одобрения — case_no_search_fn
+ok: второй раунд поиска не даётся — case_second_search_refused
+ok: мусор после поиска не превращается в одобрение — case_invalid_after_search_keeps_first
+ok: невалидный JSON -> один строгий повтор — case_bad_json_retry_no_search
+итог: 7 проверок пройдено
+
+STDERR

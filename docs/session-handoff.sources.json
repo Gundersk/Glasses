@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "closes": "LG-2026-11-15-02",
+  "algorithm": "sha256",
+  "sources": {
+    "STATUS.md": "227b8157f782fb57399613367cb64b7a11495b92f4789948bf0748e35ad46e1f",
+    "docs/agent-context.md": "28c829ef4d6e85d7b463aaf29f995d6ff7542a207c2666b791aba92905c0f0e8",
+    "docs/session-handoff.md": "d2f8644d9a005b4ee2db3473864ed3d3b662fe5de09f1dd893d939782db7274f"
+  },
+  "verification": "compare raw file byte SHA256; mismatch requires rereading primary files"
+}

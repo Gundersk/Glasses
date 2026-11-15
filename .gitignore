@@ -68,6 +68,8 @@ desktop.ini
 
 # Runtime cache of the night system and plan approval sidecar
 autonomy/workspace/cache/
+autonomy/workspace/requests/**/run/cache/
 autonomy/workspace/subscription.sqlite3*
 autonomy/workspace/browser_gateway.sqlite3*
+autonomy/workspace/valyu.sqlite3*
 autonomy/workspace/night_plan.approval.json

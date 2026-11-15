@@ -69,7 +69,9 @@ class Router:
 
     def _budget_left(self, st):
         cap = self.cfg["night"].get("budget_usd_per_night", 1.0)
-        return cap - st.get("budget_used_usd", 0.0)
+        pending_readers = max(0, self.cfg["night"].get("retrieval_budget_usd", 0)
+                              - st.get("retrieval_charge_usd", 0))
+        return cap - st.get("budget_used_usd", 0.0) - pending_readers
 
     def _disable(self, st, name, reason):
         st.setdefault("disabled_providers", {})[name] = reason[:160]
@@ -120,6 +122,8 @@ class Router:
         return set()
 
     def call(self, role, st, messages, max_tokens=4096, temperature=0.3, _waited=False):
+        if st.get("paid_work_blocked"):
+            raise providers.ProviderError("paid work blocked by accounting; operator review required", "budget")
         ladder = self.cfg["roles"].get(role, [])
         if not ladder:
             raise providers.ProviderError(f"нет провайдеров для роли {role}", "config")
