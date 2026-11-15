@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"smart glasses live captions speaker identification research prototype commercial product accessibility\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-5.md\" --fresh",
+  "command_sha256": "73d523d570edd9c6a93aac482c1b4ad70c3bf44eacc330f6d5ee856e47460517",
+  "returncode": 1,
+  "status": "completed",
+  "started_ns": 1794592119723935000,
+  "finished_ns": 1794592127694827400,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-005.stdout.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794592127694827400
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-005.stderr.txt",
+    "status": "file",
+    "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+    "size": 997,
+    "mtime_ns": 1794592127710631600
+  }
+}

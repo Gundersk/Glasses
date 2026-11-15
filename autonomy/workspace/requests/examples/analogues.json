@@ -1,0 +1,27 @@
+{
+  "id": "MT-2026-11-13-analogues-v1",
+  "instruction": "ПРИМЕР ДЛЯ СОГЛАСОВАНИЯ, НЕ ДОСЛОВНОЕ ЗАДАНИЕ МЕНТОРА. Подготовить в контексте OpenCodeGlasses краткий отчёт об аналогах: что сделано до нас, с чем можно корректно сравнивать русский CPU-прототип субтитров с атрибуцией говорящего и какие уточнения нужны в отчёте или дорожной карте. Не переписывать готовый обзор с нуля: проверить ключевые выводы и явно указать остаток поиска.",
+  "kind": "research",
+  "closes": "roadmap:этап1-шаг2",
+  "requirements": [
+    "Краткий ответ ментору и таблица классов аналогов: MMCSG/SA-ASR, модульная диаризация, коммерческие субтитры; URL, дата и статус проверки для используемых фактов.",
+    "Отдельно русский язык, CPU i7-11700KF, 64 ГБ DDR4, Windows/RX 7700 XT без CUDA; какие свойства не подтверждены на нашем оборудовании.",
+    "Не сравнивать наш FLEURS speaker-agnostic WER с DER или multitalker WER; объяснить протокол корректного сравнения и границы старых измерений.",
+    "Уточнить лицензии кода/весов/данных только там, где есть первичный источник; не утверждать отсутствие всех аналогов или доказанную новизну.",
+    "Рекомендации: достаточно ли корректировки отчёта, нужен ли RC или изменений карты не требуется; причины, вариант no_change и конкретные действия владельца.",
+    "Перечислить непроверенные вопросы и ограничения объёма поиска; Markdown — черновик, не отправленный PDF и не автоматическое закрытие этапа."
+  ],
+  "research_queries": [
+    "CHiME 8 MMCSG official evaluation speaker attributed streaming latency SELF OTHER",
+    "Russian streaming ASR T-one official model license CPU diarization evaluation",
+    "XRAI AirCaps official Russian offline speaker identification selected speaker captions glasses"
+  ],
+  "budget_usd": 0.5,
+  "time_limit_minutes": 15,
+  "context_files": [
+    "docs/literature-review-2026-11.md",
+    "docs/sources.md",
+    "experiments/engine_choice.md",
+    "reports/analytics-note-2026-11.md"
+  ]
+}

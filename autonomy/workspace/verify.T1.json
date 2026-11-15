@@ -1,0 +1,242 @@
+{
+  "task_id": "T1",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/file_stream_eval.py"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/stage2_resources/sherpa_resources.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/stage2_resources/vosk_resources.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/stage2_resources/sherpa_result.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/stage2_resources/vosk_result.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/outbox/T1_result.md"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_resources/sherpa_resources.json",
+          "engine",
+          "sherpa"
+        ]
+      },
+      "ok": true,
+      "detail": "got='sherpa' expected='sherpa'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_resources/vosk_resources.json",
+          "engine",
+          "vosk"
+        ]
+      },
+      "ok": true,
+      "detail": "got='vosk' expected='vosk'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_resources/sherpa_result.json",
+          "simulated",
+          false
+        ]
+      },
+      "ok": true,
+      "detail": "got=False expected=False"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_resources/vosk_result.json",
+          "simulated",
+          false
+        ]
+      },
+      "ok": true,
+      "detail": "got=False expected=False"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_resources/sherpa_result.json",
+          "asr_ok",
+          true
+        ]
+      },
+      "ok": true,
+      "detail": "got=True expected=True"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_resources/vosk_result.json",
+          "asr_ok",
+          true
+        ]
+      },
+      "ok": true,
+      "detail": "got=True expected=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/sherpa_resources.json",
+          "cpu_percent_avg",
+          0,
+          1600
+        ]
+      },
+      "ok": true,
+      "detail": "got=29.87 range=[0,1600]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/sherpa_resources.json",
+          "cpu_percent_max",
+          0,
+          1600
+        ]
+      },
+      "ok": true,
+      "detail": "got=199.5 range=[0,1600]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/sherpa_resources.json",
+          "rss_mb_max",
+          1,
+          65536
+        ]
+      },
+      "ok": true,
+      "detail": "got=133.051 range=[1,65536]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/sherpa_resources.json",
+          "wall_s",
+          0.001,
+          3600
+        ]
+      },
+      "ok": true,
+      "detail": "got=12.5206 range=[0.001,3600]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/sherpa_resources.json",
+          "n_frames",
+          1,
+          100000000
+        ]
+      },
+      "ok": true,
+      "detail": "got=200320 range=[1,100000000]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/vosk_resources.json",
+          "cpu_percent_avg",
+          0,
+          1600
+        ]
+      },
+      "ok": true,
+      "detail": "got=8.318 range=[0,1600]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/vosk_resources.json",
+          "cpu_percent_max",
+          0,
+          1600
+        ]
+      },
+      "ok": true,
+      "detail": "got=58.7 range=[0,1600]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/vosk_resources.json",
+          "rss_mb_max",
+          1,
+          65536
+        ]
+      },
+      "ok": true,
+      "detail": "got=246.176 range=[1,65536]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/vosk_resources.json",
+          "wall_s",
+          0.001,
+          3600
+        ]
+      },
+      "ok": true,
+      "detail": "got=12.5535 range=[0.001,3600]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_resources/vosk_resources.json",
+          "n_frames",
+          1,
+          100000000
+        ]
+      },
+      "ok": true,
+      "detail": "got=200320 range=[1,100000000]"
+    },
+    {
+      "check": {
+        "command": "python -c \"import json,math; from pathlib import Path; p=Path('experiments/stage2_resources'); ms=[json.loads((p/f'{e}_resources.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; rs=[json.loads((p/f'{e}_result.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; keys=('cpu_percent_avg','cpu_percent_max','rss_mb_max','wall_s','n_frames'); assert all(all(k in m for k in keys) for m in ms); assert all(math.isfinite(float(m[k])) for m in ms for k in keys); assert all(m['cpu_percent_max'] >= m['cpu_percent_avg'] and m['n_frames'] == m['sample_count'] for m in ms); assert all(r['partials'] and r['finals'] and all(x['text'].strip() for x in r['finals']) for r in rs)\""
+      },
+      "ok": true,
+      "detail": "rc=0 err="
+    }
+  ],
+  "ts": "2026-11-11 02:43:36"
+}

@@ -1,0 +1,73 @@
+# Ночь B: анализ 20-клипового замера и подготовка демонстрации.
+# Не читается раннером автоматически: чтобы запустить, замени night_plan.yaml этим файлом
+# или скопируй задачи. Разделено 12.11.2026 по замечанию критика: 45 + 10 + 15 не влезает в тик 50 мин.
+
+- id: E23-errors
+  title: "Примеры ошибок и сводка E2.3"
+  closes: roadmap:этап2-шаг3
+  goal_id: E2.3
+  priority: P0
+  goal: "Выписать из 20-клиповых результатов примеры замен, вставок и пропусков и собрать сводку медианы/p95 и WER с ограничениями."
+  rationale: "Критерий этапа требует не только числа, но и примеры ошибок; без них статистика не объясняет, где именно ошибается ASR."
+  inputs:
+    - experiments/stage2_conditions_20/sherpa_conditions.json
+    - experiments/stage2_conditions_20/vosk_conditions.json
+  steps:
+    - "Читать только JSON из stage2_conditions_20. Если файлов нет — задача не выполнена, заглушки не создавать, старые 5-клиповые данные не подмешивать."
+    - "Для каждого движка и условия взять до трёх примеров с расхождением ref/hyp; сохранить ref, hyp, S, D, I, clip."
+    - "Собрать experiments/stage2_conditions_20/error_examples.json с полями engine, condition, examples."
+    - "Записать autonomy/workspace/outbox/E23_result.md: таблица WER и задержек по условиям, n=20, примеры ошибок и ограничения выборки."
+    - "Не утверждать, что один движок быстрее другого, если семантика задержек разная; писать только то, что есть в JSON."
+  commands:
+    - "python -c \"import json; from pathlib import Path; p=Path('experiments/stage2_conditions_20'); out={'source':[str(p/f'{e}_conditions.json') for e in ('sherpa','vosk')],'examples':[]}; [out['examples'].append({'engine':d['engine'],'condition':c['name'],'examples':[r for r in c['results'] if r.get('s') or r.get('d') or r.get('i')][:3]}) for d in [json.loads((p/f'{e}_conditions.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')] for c in d['conditions']]; (p/'error_examples.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')\""
+  acceptance:
+    - file_exists: experiments/stage2_conditions_20/error_examples.json
+    - file_exists: autonomy/workspace/outbox/E23_result.md
+    - regex_in_file: [autonomy/workspace/outbox/E23_result.md, '20 клип']
+    - regex_in_file: [autonomy/workspace/outbox/E23_result.md, 'p95']
+    - command: >-
+        python -c "import json; from pathlib import Path; p=Path('experiments/stage2_conditions_20'); d=json.loads((p/'error_examples.json').read_text(encoding='utf-8')); assert d['examples'] and any(e['examples'] for e in d['examples']); assert all({'engine','condition','examples'} <= set(e) for e in d['examples']); assert all(any(k in r for k in ('s','d','i')) for e in d['examples'] for r in e['examples'])"
+  failure:
+    - "Примеры ошибок выдуманы или взяты не из 20-клиповых JSON."
+    - "В сводке нет n, p95 или ограничений; числа не совпадают с JSON."
+    - "20-клиповых файлов нет, а задача создала заглушки вместо честного «не выполнено»."
+  time_limit_minutes: 10
+  max_iter: 1
+  hint: "Если для условия нет ошибок, это тоже факт: записать пустой список и не выдумывать пример."
+  morning_rules:
+    - "Сверить каждый пример с ref/hyp в JSON и каждое число сводки с полями условий."
+
+- id: E24-demo-prep
+  title: "Пакет демонстрации без записи живого голоса"
+  closes: roadmap:этап2-шаг3
+  goal_id: E2.4
+  priority: P1
+  goal: "Подготовить воспроизводимый сценарий демонстрации браузерных субтитров и чеклист, не заявляя запись живого голоса или видеодемонстрацию выполненными."
+  rationale: "E2.4 требует демонстрацию к 24.11. Ночью можно подготовить запуск и чеклист; запись с микрофона и показ остаются за владельцем."
+  inputs:
+    - experiments/web_demo/asr_page.html
+    - experiments/web_demo/results/metrics.json
+    - experiments/e2e_audio/stream_browser.py
+    - experiments/e2e_audio/runs/stream_sherpa_clip001_r3/metrics.json
+  steps:
+    - "Проверить, что существующий браузерный демо-путь запускается командой из репозитория, и записать точную команду."
+    - "Создать experiments/demo/run_demo.ps1, который запускает experiments/e2e_audio/stream_browser.py и сохраняет лог в experiments/demo/logs/."
+    - "Создать experiments/demo/checklist.md: что показать, какие артефакты приложить, что требует владельца (живой голос, видео, отправка отчёта)."
+    - "Если демо-путь не запускается, честно записать причину в checklist.md и не выдавать чеклист за работающую демонстрацию."
+  commands:
+    - "python -c \"from pathlib import Path; Path('experiments/demo/logs').mkdir(parents=True, exist_ok=True)\""
+  acceptance:
+    - file_exists: experiments/demo/run_demo.ps1
+    - file_exists: experiments/demo/checklist.md
+    - regex_in_file: [experiments/demo/checklist.md, 'владел']
+    - regex_in_file: [experiments/demo/checklist.md, 'не запис']
+    - command: >-
+        python -c "from pathlib import Path; s=Path('experiments/demo/run_demo.ps1').read_text(encoding='utf-8'); assert 'stream_browser.py' in s; assert Path('experiments/e2e_audio/stream_browser.py').is_file(); assert 'logs' in s; c=Path('experiments/demo/checklist.md').read_text(encoding='utf-8'); assert 'владел' in c and 'не запис' in c"
+  failure:
+    - "Заявлено, что живая запись или видео сделаны, хотя их не было."
+    - "Скрипт демонстрации не ссылается на существующий путь stream_browser.py и не сохраняет лог."
+  time_limit_minutes: 15
+  max_iter: 1
+  hint: "E2.4 ночью не закрывается: демонстрация и отправка отчёта требуют владельца."
+  morning_rules:
+    - "Проверить run_demo.ps1 вручную и убедиться, что чеклист не обещает несделанное."

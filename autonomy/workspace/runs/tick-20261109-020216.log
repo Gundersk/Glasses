@@ -1,0 +1,24 @@
+02:02:16 [+   0.0s] STEP  PLAN
+02:02:31 [+  15.5s] INFO  planner: gemini_free ok in=3428 out=481 cost=$0.0000 lat=15.5s
+02:02:31 [+  15.5s] OK    план построен: 3 задач: build-asr-benchmark-script, run-asr-baseline-experiment, prototype-browser-streaming-ui
+02:02:31 [+  15.5s] STEP  EXECUTE задача=build-asr-benchmark-script
+02:07:35 [+ 318.7s] INFO  executor: local ok in=3558 out=8000 cost=$0.0000 lat=303.2s
+02:12:15 [+ 599.1s] INFO  executor: local ok in=3596 out=8000 cost=$0.0000 lat=280.4s
+02:12:15 [+ 599.1s] WARN  build-asr-benchmark-script: исчерпаны итерации (2)
+02:12:15 [+ 599.1s] STEP  EXECUTE задача=run-asr-baseline-experiment
+02:16:00 [+ 824.4s] INFO  executor: local ok in=2117 out=5788 cost=$0.0000 lat=225.3s
+02:16:04 [+ 827.9s] WARN  executor: local -> local: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+02:16:04 [+ 827.9s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+02:16:06 [+ 830.0s] WARN  executor: local -> local: HTTPConnectionPool(host='127.0.0.1', port=18500): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=18500): Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение"))
+02:16:06 [+ 830.0s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTPConnectionPool(host='127.0.0.1', port=18500): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=18500): Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение"))
+02:16:08 [+ 832.1s] WARN  executor: local -> local: HTTPConnectionPool(host='127.0.0.1', port=18500): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=18500): Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение"))
+02:16:08 [+ 832.1s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTPConnectionPool(host='127.0.0.1', port=18500): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=18500): Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение"))
+02:16:10 [+ 834.1s] WARN  executor: local -> local: HTTPConnectionPool(host='127.0.0.1', port=18500): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=18500): Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение"))
+02:16:10 [+ 834.1s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTPConnectionPool(host='127.0.0.1', port=18500): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=18500): Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение"))
+02:16:10 [+ 834.1s] STEP  REPAIR задача=run-asr-baseline-experiment
+02:16:42 [+ 865.8s] INFO  mentor: kimi_pro ok in=958 out=1138 cost=$0.0000 lat=31.7s
+02:16:42 [+ 865.8s] INFO  ментор: action=halt notes=Основной блокер — не формулировка задачи, а недоступность единственного провайдера local: 127.0.0.1:18500 отвечает Connection refused/reset после первого malformed JSON. Дальнейшие попытки продолжать 
+02:16:42 [+ 865.8s] STEP  REPORT
+02:16:57 [+ 880.9s] INFO  reporter: gemini_free ok in=4470 out=973 cost=$0.0000 lat=15.1s
+02:16:57 [+ 880.9s] OK    отчёт: autonomy\workspace\outbox\report.md
+02:16:57 [+ 880.9s] OK    ночь завершена: бюджет $0.000, задачи: build-asr-benchmark-script=failed, run-asr-baseline-experiment=failed, prototype-browser-streaming-ui=pending

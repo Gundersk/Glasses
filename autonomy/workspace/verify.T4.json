@@ -1,0 +1,104 @@
+{
+  "task_id": "T4",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "reports/monthly/2026-11-draft.md"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "stream_sherpa_clip001_r3"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "stream_vosk_clip001_r3"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "e2e_duplex_sherpa_3clips_r3"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "739 мс"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "n=1"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "298\\.1 мс"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "-54\\.7 ppm"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "независимые такты ADC и DAC"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "reports/monthly/2026-11-draft.md",
+          "e2e_duplex_sherpa_1clip_r1"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    }
+  ],
+  "ts": "2026-11-11 02:43:36"
+}

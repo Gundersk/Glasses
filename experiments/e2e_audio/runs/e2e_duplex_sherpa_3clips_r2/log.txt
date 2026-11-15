@@ -1,0 +1,12 @@
+19:45:37.223 run_id=e2e_duplex_sherpa_3clips_r2 команда: experiments\e2e_audio\duplex_e2e.py --clips 3 --engine sherpa --target-dbfs -20 --run-dir experiments/e2e_audio/runs/e2e_duplex_sherpa_3clips_r2 --gap-s 0.7 --port 0 --post-checks
+19:45:38.247 источник: 3 клипов, 38.48 с, RMS -21.73 dBFS, peak -1.00 dBFS, gain +16.10 дБ
+19:45:38.247   клип 0: clip_000.wav 16.92 с, речь 200..16360 мс (клип 0..16920)
+19:45:38.247   клип 1: clip_001.wav 11.52 с, речь 17820..28620 мс (клип 17620..29140)
+19:45:38.247   клип 2: clip_002.wav 8.64 с, речь 30040..37880 мс (клип 29840..38480)
+19:45:38.247 ВНИМАНИЕ: RMS -20.0 dBFS дал бы клиппинг; усиление ограничено пиком -1.0 dBFS, фактический RMS -21.73 dBFS
+19:45:38.268 через 2 с начнётся ТИХОЕ воспроизведение (~38 с, -20 dBFS)
+19:45:40.331 устройства: in=[1] Microphone (fifine Microphone) (MME), out=[4] Динамики (Realtek(R) Audio) (MME); stream.latency in=42.7 ms out=213.3 ms
+19:45:40.331 ВОСПРОИЗВЕДЕНИЕ НАЧАЛОСЬ: 38.5 с + хвост 2.5 с, RMS -21.7 dBFS
+19:46:21.614 запись завершена: 1921 callback-ов, status-флагов: 0
+19:46:21.992 запись: 40.98 с, peak -14.1 dBFS, RMS -35.5 dBFS; corr_peak=0.4708 lag=14586 сэмплов = 303.9 мс (PortAudio dac-adc медиана: 67990148.9 мс)
+19:46:22.000 СТАТУС blocked_low_correlation: corr_peak 0.471 < 0.5

@@ -1,0 +1,23 @@
+21:05:44 [+   0.0s] STEP  PLAN
+21:05:44 [+   0.2s] INFO  план с диска: перегенерация не нужна, проверяю критиком
+21:07:10 [+  86.1s] INFO  critic: kimi_pro ok in=15562 out=2869 reasoning=1924 cost=$0.0000 lat=85.9s
+21:07:23 [+  99.3s] INFO  planner: chatgpt ok in=14255 out=178 reasoning=41 cost=$0.0000 lat=13.0s
+21:08:50 [+ 185.8s] INFO  critic: kimi_pro ok in=15632 out=3086 reasoning=2080 cost=$0.0000 lat=86.5s
+21:08:50 [+ 185.8s] INFO  критика записана: autonomy\workspace\requests\MT-2026-11-14-literature-review-v6\run\outbox\critique.md
+21:08:50 [+ 185.8s] INFO  критик: approve (раундов 2, замечаний 3)
+21:08:50 [+ 185.8s] OK    план построен: 2 задач: collect-sources->MT-2026-11-14-literature-review-v6, answer-mentor->MT-2026-11-14-literature-review-v6
+21:08:52 [+ 188.0s] STEP  EXECUTE задача=collect-sources
+21:08:52 [+ 188.1s] INFO  summary: утверждённый протокол без LLM
+21:08:52 [+ 188.1s] INFO  $ python -m autonomy.research "smart glasses live captions deaf hard of hearing product accessibility research speaker identification XRAI Google" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md" --fresh
+21:09:16 [+ 211.6s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-14-literature-review-v6\sources-0.md (ссылок: 2)
+
+21:09:16 [+ 211.6s] INFO  $ python -m autonomy.research "audio visual active speaker detection AVA ActiveSpeaker benchmark original paper smart glasses subtitles" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md" --fresh
+21:09:27 [+ 222.8s] ERROR rc=1: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\Op
+21:09:27 [+ 222.8s] WARN  сбор поручения остановлен на первой ошибке; остальные запросы не расходуются
+21:09:27 [+ 222.8s] WARN  collect-sources: исчерпаны итерации (1)
+21:09:27 [+ 222.9s] STEP  REPORT
+21:09:27 [+ 222.9s] OK    отчёт: autonomy\workspace\requests\MT-2026-11-14-literature-review-v6\run\outbox\reports\20261114.md (и report.md)
+21:09:27 [+ 222.9s] OK    ночь завершена: бюджет $0.000, задачи: collect-sources=failed, answer-mentor=pending

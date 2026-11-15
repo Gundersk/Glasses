@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"speaker-attributed ASR cpWER ORC-WER AS-WER evaluation protocol SA-ASR paper AMI CALLHOME\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md\" --fresh",
+  "command_sha256": "4d8b26a3afc65074fa4ce4ee518bc77e3bf2099d1fb00c2d9b81c82b57aca9fe",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794667629528686000,
+  "finished_ns": 1794667644961866400,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194709-67884ccc2e46\\command-000.stdout.txt",
+    "status": "file",
+    "sha256": "348c06ca5022546fdd0258fb6b0a425335e3fcf43f07e38ba0f2c1d31b2458e3",
+    "size": 194,
+    "mtime_ns": 1794667644961866400
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194709-67884ccc2e46\\command-000.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794667644970897100
+  }
+}

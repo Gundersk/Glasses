@@ -1,0 +1,199 @@
+01:19:05 [+   0.0s] STEP  PLAN
+01:19:05 [+   0.0s] OK    план загружен из night_plan.yaml: 4 задач
+01:19:06 [+   0.7s] STEP  EXECUTE задача=T1
+01:19:09 [+   3.9s] WARN  executor: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:19:11 [+   6.2s] WARN  executor: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:19:13 [+   8.5s] WARN  executor: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:19:16 [+  11.1s] WARN  executor: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:20:01 [+  56.4s] INFO  executor: deepseek1017 ok in=10472 out=12000 cost=$0.0041 lat=45.3s
+01:20:01 [+  56.4s] WARN  T1: исчерпаны итерации (1)
+01:20:01 [+  56.5s] STEP  EXECUTE задача=T2
+01:20:05 [+  59.8s] WARN  executor: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:20:07 [+  61.9s] WARN  executor: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:20:09 [+  64.3s] WARN  executor: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:20:11 [+  66.5s] WARN  executor: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:21:37 [+ 152.4s] INFO  executor: deepseek1017 ok in=11007 out=12000 cost=$0.0042 lat=85.9s
+01:21:37 [+ 152.4s] WARN  T2: исчерпаны итерации (1)
+01:21:37 [+ 152.5s] STEP  EXECUTE задача=T3
+01:21:40 [+ 154.9s] WARN  executor: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:21:42 [+ 157.3s] WARN  executor: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:21:45 [+ 159.7s] WARN  executor: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:21:47 [+ 161.9s] WARN  executor: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:36 [+ 211.6s] INFO  executor: deepseek1017 ok in=4871 out=8505 cost=$0.0028 lat=49.6s
+01:22:36 [+ 211.6s] INFO  записан experiments/engine_choice.md (3281 симв.)
+01:22:36 [+ 211.6s] INFO  записан autonomy/workspace/outbox/T3_result.md (2692 симв.)
+01:22:36 [+ 211.6s] INFO  записан autonomy/workspace/check_t3.py (2160 симв.)
+01:22:36 [+ 211.6s] INFO  summary: Документная задача T3: сверяю experiments/engine_choice.md с sherpa_metrics.json (wer=0.113529 → 11.35%) и vosk_metrics.json (wer=0.1892148 → 18.92%), num_clips=50 в обоих. Новых прогонов нет. Оставляю обязательные разделы (вопрос, варианты, измерения, ограничения, решение, что пересмотреть при 150 
+01:22:36 [+ 211.6s] INFO  $ python -c "from pathlib import Path; p=Path('experiments/engine_choice.md'); assert p.is_file() and p.stat().st_size > 0"
+01:22:37 [+ 211.7s] OK    rc=0: 
+01:22:37 [+ 211.7s] INFO  $ python autonomy/workspace/check_t3.py
+01:22:37 [+ 211.8s] OK    rc=0: ограничение: самописный WER
+OK   раздел про 150 клипов
+OK   ограничение: разная семантика задержек
+OK   нет утверждения о превосходстве по задержке
+sherpa WER = 11.35%, vosk WER = 18.92%, клипов = 50
+
+01:22:37 [+ 211.8s] INFO  $ python -c "from pathlib import Path; p=Path('autonomy/workspace/outbox/T3_result.md'); assert p.is_file() and p.stat().st_size > 0; print('outbox ok')"
+01:22:37 [+ 211.9s] OK    rc=0: outbox ok
+
+01:22:37 [+ 211.9s] STEP  VERIFY задача=T3
+01:22:37 [+ 212.0s] WARN  stub-маркеры: ['autonomy/workspace/STATE.json: «не запуска»', 'autonomy/workspace/STATE.json: «не измер»']
+01:22:37 [+ 212.0s] INFO  verify: pass=False (verify.T3.json)
+01:22:37 [+ 212.0s] STEP  REVIEW задача=T3
+01:22:38 [+ 213.4s] WARN  verifier: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:40 [+ 214.9s] WARN  verifier: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:41 [+ 216.4s] WARN  verifier: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:43 [+ 217.9s] WARN  verifier: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:46 [+ 221.4s] INFO  verifier: deepseek1017 ok in=667 out=212 cost=$0.0001 lat=3.5s
+01:22:46 [+ 221.4s] INFO  вердикт контролёра: ESCALATE — Формальные проверки прошли, но stub_markers показал «не запуска»/«не измер» в STATE.json — числа 11.35%/18.92% в артефакте, похоже, не получены реальными замерами, а вписаны вручную (выдуманный резуль
+01:22:46 [+ 221.4s] STEP  REPAIR задача=T3
+01:23:16 [+ 251.3s] INFO  mentor: kimi_pro ok in=1000 out=1291 cost=$0.0000 lat=29.9s
+01:23:16 [+ 251.3s] INFO  ментор: action=halt notes=ментор вернул не JSON
+01:23:16 [+ 251.3s] STEP  REPORT
+01:23:18 [+ 252.9s] WARN  reporter: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:23:19 [+ 254.5s] WARN  reporter: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:23:21 [+ 256.2s] WARN  reporter: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:23:23 [+ 257.8s] WARN  reporter: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:23:41 [+ 275.9s] INFO  reporter: glm53_flash ok in=1165 out=2193 cost=$0.0002 lat=18.0s
+01:23:41 [+ 275.9s] OK    отчёт: autonomy\workspace\outbox\report.md
+01:23:41 [+ 275.9s] OK    ночь завершена: бюджет $0.011, задачи: T1=failed, T2=failed, T3=failed, T4=pending

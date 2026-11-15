@@ -1,0 +1,15 @@
+{
+  "request_sha256": "867f84d0e9c53f8ed90e2780075cb58686ca0eb0362584e08236490436bc6293",
+  "previous_sha256": null,
+  "queries": [
+    "streaming captions smart glasses hearing impaired speaker attribution diarization research",
+    "Russian streaming speech recognition speaker diarization WER DER latency",
+    "streaming speaker attributed ASR end to end online diarization latency",
+    "audio visual active speaker detection speaker attribution subtitles benchmark research paper",
+    "sherpa-onnx Vosk official documentation license code model weights CPU hardware requirements"
+  ],
+  "reason": "Запросы охватывают системы субтитров, русское потоковое ASR, альтернативы атрибуции говорящих и аудиовизуальное определение активного говорящего; отдельный запрос направлен на первичные сведения о лицензиях и оборудовании. При недостатке источников пробелы необходимо отметить; полнота обзора не предполагается.",
+  "kind": "plan",
+  "author_model": "gpt-6.1-terra",
+  "sha256": "0a11d516e7ca3b8a108a049d48c0b49a8139535a26ba7b070b09bd84c70f2718"
+}

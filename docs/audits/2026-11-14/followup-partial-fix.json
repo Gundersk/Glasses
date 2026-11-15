@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-14",
+  "closes": "roadmap:этап1-шаг2",
+  "defect": "MT-2026-11-13-literature-review-v4: SEARCH после исчерпания max_followup_rounds оставлял проверенную collection pending и блокировал ответ",
+  "fix": [
+    "При исчерпанном followup действующая проверенная collection завершается done без нового plan/поиска; существующий answer получает отдельное состояние request_force_partial.",
+    "Контекст автора требует ЧАСТИЧНЫЙ РЕЗУЛЬТАТ, completion_status=partial, limitations и gap; утверждённый task hint/plan не меняется.",
+    "SEARCH на ответе сверх cap возвращает автора на EXECUTE только при оставшихся попытках и времени.",
+    "Forced partial не может стать complete/done при REVIEW=PASS; нужен согласованный PARTIAL и успешный VERIFY."
+  ],
+  "files": {
+    "autonomy/runner.py": "9cffc252a0b97a00bc2e89575a97ef3cd5fbbc6c5bafac5092071182e6e66431",
+    "autonomy/tests/test_request_research.py": "8c2a2c1bc2b777a99c2a0925eed8510220012a925b6834e71ac9a15f88697a29",
+    "docs/audits/2026-11-14/followup-partial-tests.log": "238dbc0d310fb1e71eb85e99fd76e277ab69062855bc465889636730cb8cd4c9"
+  },
+  "test_command": ".venv\\Scripts\\python.exe -m unittest autonomy.tests.test_request_research autonomy.tests.test_request_partial autonomy.tests.test_request_review_safety autonomy.tests.test_safety_gates autonomy.tests.test_intake -v",
+  "result": {
+    "tests": 92,
+    "status": "OK",
+    "seconds": 8.881
+  },
+  "coverage": [
+    "Два SEARCH подряд: один followup, затем проверенный partial-ответ без третьего поиска.",
+    "SEARCH на ответе сверх cap: повтор автора и partial вместо полного принятия.",
+    "Forced partial с complete+PASS отклоняется.",
+    "Collection с pass=False, повреждённые receipts, violations, неподходящий task, исчерпанные попытки/итерации/время остаются fail-closed.",
+    "Прежний single SEARCH → complete сохранён."
+  ],
+  "reviewer": {
+    "session": "ses_e25838c8affe72af2pCHthh7N2",
+    "verdict": "PASS",
+    "scope": "статическая проверка production-изменения до добавления двух negative-тестов; замечания учтены без изменения production-кода"
+  },
+  "limitations": [
+    "Старый STATE и вердикты v4 не изменены; run не повторялся.",
+    "Сеть, живые модели, tick, preflight и супервизор не запускались.",
+    "Оффлайн-тесты подтверждают маршрут, не качество будущего литературного обзора."
+  ]
+}

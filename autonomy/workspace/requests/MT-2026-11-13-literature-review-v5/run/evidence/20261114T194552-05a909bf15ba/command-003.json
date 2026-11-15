@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"audio visual active speaker detection speech transcription captions speaker attribution research paper TalkNet\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md\" --fresh",
+  "command_sha256": "d0e0afdb382c665238e14a5e14f05fe72f0860df084ab43ff1fa39b2b4b46e9a",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794667574935944300,
+  "finished_ns": 1794667581505316200,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-003.stdout.txt",
+    "status": "file",
+    "sha256": "f2f45d33855add52bc3665137d62ab517d40651656e5fb32aed8f3e006fe69dc",
+    "size": 194,
+    "mtime_ns": 1794667581505316200
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-003.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794667581512904600
+  }
+}

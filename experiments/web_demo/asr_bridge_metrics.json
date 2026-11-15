@@ -1,0 +1,22 @@
+{
+  "audio": "experiments/data/speech_ru.wav",
+  "model": "models/vosk-model-small-ru-0.22",
+  "seed": 0,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "time": "2026-11-09T04:50:54+0500",
+  "asr_final_segments": 6,
+  "rendered_subtitles": 6,
+  "rendered_cyrillic_subtitles": 6,
+  "sample_subtitle": "сегодня мы проверяем систему субтитров",
+  "server_url": "http://127.0.0.1:52105/",
+  "screenshot_ok": true,
+  "screenshot_cmd": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe -m autonomy.screenshot http://127.0.0.1:52105/ experiments/web_demo\\asr_ui.png",
+  "asr_hyp": "сегодня мы проверяем систему субтитров для умных очков собеседник говорит про погоду и про встречу в университете задержка распознавания должна быть небольшой чтобы человек успевал читать текст",
+  "asr_meta": {
+    "sample_rate": 16000,
+    "model": "models/vosk-model-small-ru-0.22",
+    "total_time": 1.1731214999999793,
+    "vosk": "unknown"
+  },
+  "latency_count": 68
+}

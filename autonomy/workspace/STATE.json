@@ -1,0 +1,44 @@
+{
+  "night_id": "20261112",
+  "phase": "IDLE",
+  "task": null,
+  "tasks": [],
+  "iter": 0,
+  "budget_used_usd": 0.0,
+  "calls_by_provider": {},
+  "history": [],
+  "violations": [],
+  "last_error": null,
+  "manager_context": null,
+  "goal_bump_night": null,
+  "needs_human": null,
+  "lessons_admitted": [],
+  "updated": 1794490264.4027557,
+  "provider_probe": {
+    "at": "2026-11-12 18:31:04",
+    "results": {
+      "deepseek1017": {
+        "ok": true,
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "latency_s": 0.6
+      },
+      "qwen38_flash": {
+        "ok": true,
+        "model": "qwen/qwen3.8-flash",
+        "latency_s": 1.3
+      },
+      "glm53_flash": {
+        "ok": true,
+        "model": "z-ai/glm-5.3-flash",
+        "latency_s": 1.5
+      },
+      "kimi_pro": {
+        "ok": true,
+        "model": "kimi-for-coding",
+        "latency_s": 3.5
+      }
+    }
+  },
+  "disabled_providers": {},
+  "provider_fails": {}
+}

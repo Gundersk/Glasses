@@ -1,0 +1,75 @@
+{
+  "task_id": "run-asr-streaming-benchmark",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/benchmarks/metrics.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "experiments/benchmarks/metrics.json",
+          "\"hyp\": \"[^\"]+"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/benchmarks/metrics.json",
+          "latency_p50",
+          0.0002,
+          60.0
+        ]
+      },
+      "ok": true,
+      "detail": "got=0.013310199999978067 range=[0.0002,60.0]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/benchmarks/metrics.json",
+          "latency_count",
+          2,
+          100000
+        ]
+      },
+      "ok": true,
+      "detail": "got=68 range=[2,100000]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/benchmarks/metrics.json",
+          "wer",
+          0.0,
+          1.0
+        ]
+      },
+      "ok": true,
+      "detail": "got=0.0 range=[0.0,1.0]"
+    }
+  ],
+  "ts": "2026-11-09 04:28:43",
+  "diff": {
+    "added": [
+      "docs/decisions/ADR-0003-night-robustness.md",
+      "experiments/benchmarks/metrics.json"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

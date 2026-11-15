@@ -1,0 +1,8 @@
+ok: без файла одобрения план не выполняется — case_no_approval
+ok: одобренный план принимается — case_approved
+ok: revise не даёт выполнять план — case_revise_not_ok
+ok: правка задачи руками снимает одобрение — case_edit_invalidates
+ok: смена статуса одобрение не снимает — case_status_change_keeps
+ok: битый файл одобрения не считается одобрением — case_broken_approval_file
+итог: 6 проверок пройдено
+

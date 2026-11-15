@@ -1,0 +1,59 @@
+{
+  "task_id": "build-browser-subtitle-demo",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/web_subtitles_demo.py"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/web_demo_metrics.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/web_demo_metrics.json",
+          "demo_ready",
+          true
+        ]
+      },
+      "ok": true,
+      "detail": "got=True expected=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/web_demo_metrics.json",
+          "subtitles_rendered",
+          1,
+          1000
+        ]
+      },
+      "ok": true,
+      "detail": "got=3 range=[1,1000]"
+    }
+  ],
+  "ts": "2026-11-09 03:39:40",
+  "diff": {
+    "added": [
+      "experiments/web_demo_metrics.json",
+      "experiments/web_subtitles_demo.py"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

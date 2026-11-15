@@ -1,0 +1,297 @@
+{
+  "version": 2,
+  "run_id": "20261114T194552-05a909bf15ba",
+  "task_id": "collect-sources",
+  "plan_sha256": "7ad3db0c7a0892735e5befb230b4afc32a9b0609e09422b108f63786bc49de96",
+  "execution": "approved_commands",
+  "mock": false,
+  "started_ns": 1794667552260376300,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "seed": null,
+  "protocol": null,
+  "inputs": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/request.json",
+      "status": "file",
+      "sha256": "6adcb43371c32fdcb16c3fac33f44234a597839d37596b0a936e4f9044ce2ed8",
+      "size": 10695,
+      "mtime_ns": 1794667334745730500
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/context.md",
+      "status": "file",
+      "sha256": "7becee7a45837f4b66b4f8f5aff38b1c596396069d5b9c3a5622277e82b6dd9b",
+      "size": 11201,
+      "mtime_ns": 1794667334745730500
+    },
+    {
+      "path": "docs/agent-context.md",
+      "status": "file",
+      "sha256": "58c0261064bb704b48bdb656127bebcbb2d77af0378c3d5a0962ca34f07acf3b",
+      "size": 15123,
+      "mtime_ns": 1794652824134266900
+    },
+    {
+      "path": "docs/scope.md",
+      "status": "file",
+      "sha256": "59cbac7b085d460bdddc380e99d4b590b11266ef62269aeebba6ddb2eaaa946b",
+      "size": 19825,
+      "mtime_ns": 1794498249201621100
+    },
+    {
+      "path": "docs/benchmarks.md",
+      "status": "file",
+      "sha256": "5f30b943d0675df7c6f2102ff16f8fe9cf62980306bdfc8e913e827c244340f8",
+      "size": 11268,
+      "mtime_ns": 1794652876841874700
+    },
+    {
+      "path": "docs/roadmap-changes.md",
+      "status": "file",
+      "sha256": "7680005c559882050a8b188e8958842efcb698602592528af5cdcb62141e3190",
+      "size": 11459,
+      "mtime_ns": 1793956454705395900
+    },
+    {
+      "path": "docs/environment.md",
+      "status": "file",
+      "sha256": "feb6c4e0091177c1c931b2da13c295f585085238460953dcdf6d92a47f6a58c7",
+      "size": 10370,
+      "mtime_ns": 1794568589096297600
+    },
+    {
+      "path": "STATUS.md",
+      "status": "file",
+      "sha256": "6039de1431b54b86831618f7c2bef8641cfba679cc1cb280f70a5a335662deb8",
+      "size": 71841,
+      "mtime_ns": 1794667305387369900
+    },
+    {
+      "path": "docs/local-goals.md",
+      "status": "file",
+      "sha256": "5918853d80bd3a54c3528f9769c4dc811247f9c2acc6b469336a739a59f0358b",
+      "size": 33785,
+      "mtime_ns": 1794652824135683800
+    },
+    {
+      "path": "docs/literature-review-2026-11.md",
+      "status": "file",
+      "sha256": "c18c61aebf21eb7bdf204f6e253591b0649e4ee1c0824b53aedae4cf92b84022",
+      "size": 29544,
+      "mtime_ns": 1794568380777391100
+    },
+    {
+      "path": "docs/sources.md",
+      "status": "file",
+      "sha256": "c62a30d0b83e26a440bd5f509476c02742cdf3a776af74239a2414cf2da5e341",
+      "size": 33254,
+      "mtime_ns": 1794652876840875100
+    },
+    {
+      "path": "experiments/engine_choice.md",
+      "status": "file",
+      "sha256": "f29186fdfaf92e970838b76c0d4630b295298a6af19ed927d39aa941c3e6d755",
+      "size": 5256,
+      "mtime_ns": 1794342607536728400
+    },
+    {
+      "path": "reports/analytics-note-2026-11.md",
+      "status": "file",
+      "sha256": "28ff44a27ff975ef923c58d95dce37b0f3b233c84e93e3605512dee7b92641b5",
+      "size": 16101,
+      "mtime_ns": 1794227546667681100
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/research-plan-01.json",
+      "status": "file",
+      "sha256": "fb9f1123f870407d7f7e3d0a219e8af16a8f27d3ce9a676f0f198328efc8dd6b",
+      "size": 1237,
+      "mtime_ns": 1794667498844912000
+    }
+  ],
+  "outputs_before": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md.json",
+      "status": "missing_or_not_file"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python -m autonomy.research \"streaming captions smart glasses hearing impaired speaker attribution diarization research\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md\" --fresh",
+      "command_sha256": "c38a23e23205afba8cf74508cbff8f78151ddb3f1722d7412c72017fbc4b7110",
+      "returncode": 0,
+      "status": "completed",
+      "started_ns": 1794667552339287900,
+      "finished_ns": 1794667559274753100,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-000.stdout.txt",
+        "status": "file",
+        "sha256": "3e0418daa4d70402461be6f2c6085d66eee9f1cf1fcd62620f60a734157d253b",
+        "size": 194,
+        "mtime_ns": 1794667559275753200
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-000.stderr.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794667559282761800
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"Russian streaming ASR speaker attributed WER cpWER DER latency evaluation protocol datasets\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md\" --fresh",
+      "command_sha256": "c25d52f4dd22eb366de8073b915adb54302d4631c689dd5d87133291d8a29811",
+      "returncode": 0,
+      "status": "completed",
+      "started_ns": 1794667559285762000,
+      "finished_ns": 1794667569500212200,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-001.stdout.txt",
+        "status": "file",
+        "sha256": "3fd6f62e43ff1175e10038618d6c580cb1c51d30e2b9962fbcba59639e545961",
+        "size": 194,
+        "mtime_ns": 1794667569500730100
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-001.stderr.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794667569506208700
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"streaming speaker attributed ASR end to end online diarization latency\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md\" --fresh",
+      "command_sha256": "bc461db68682330e202fa8119e520a571dda0d8b5de71e9846d0dffc449230ac",
+      "returncode": 0,
+      "status": "completed",
+      "started_ns": 1794667569510210400,
+      "finished_ns": 1794667574923428000,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-002.stdout.txt",
+        "status": "file",
+        "sha256": "895c959c9c1487a31367e1177526017b10c4c4009fd59e185d59cb6e4f941169",
+        "size": 194,
+        "mtime_ns": 1794667574924430400
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-002.stderr.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794667574932371200
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"audio visual active speaker detection speech transcription captions speaker attribution research paper TalkNet\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md\" --fresh",
+      "command_sha256": "d0e0afdb382c665238e14a5e14f05fe72f0860df084ab43ff1fa39b2b4b46e9a",
+      "returncode": 0,
+      "status": "completed",
+      "started_ns": 1794667574935944300,
+      "finished_ns": 1794667581505316200,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-003.stdout.txt",
+        "status": "file",
+        "sha256": "f2f45d33855add52bc3665137d62ab517d40651656e5fb32aed8f3e006fe69dc",
+        "size": 194,
+        "mtime_ns": 1794667581505316200
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194552-05a909bf15ba\\command-003.stderr.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794667581512904600
+      }
+    }
+  ],
+  "finished_ns": 1794667581515869300,
+  "outputs_after": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md",
+      "status": "file",
+      "sha256": "a7cd24b02cc4a235636e33b6a635bce2ebf0c50ef6286de7ab5c900240f93a03",
+      "size": 6955,
+      "mtime_ns": 1794667559254916500
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md.json",
+      "status": "file",
+      "sha256": "49936f373e11eec4023a9b191154f7d9dbdff2e48f46f597a4843d72acf49505",
+      "size": 14059,
+      "mtime_ns": 1794667559255493200
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md",
+      "status": "file",
+      "sha256": "e60022fbff492e0458673266429242ab620995ebb52ca8a31bf47697dd4006e3",
+      "size": 6729,
+      "mtime_ns": 1794667569477843600
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md.json",
+      "status": "file",
+      "sha256": "6e354d3af12501e7f95dfdf635bad41954900973bb26474565c30f09636fac8d",
+      "size": 48011,
+      "mtime_ns": 1794667569478848200
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md",
+      "status": "file",
+      "sha256": "a5583b011bcfd7eef2f2e132a6b4ed68014bc7ea5f9e5f09526d049c15f31835",
+      "size": 7197,
+      "mtime_ns": 1794667574902779900
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md.json",
+      "status": "file",
+      "sha256": "fe6368f81f5f85c0cc06d76bfd5e03861655fac519f6c454f57c2ce80644d062",
+      "size": 62505,
+      "mtime_ns": 1794667574902779900
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md",
+      "status": "file",
+      "sha256": "e3ec523f0dfb6a9ae62f2ccbe294d154c501070d2c9d4ce507cfc65f017dbfbd",
+      "size": 7083,
+      "mtime_ns": 1794667581485478900
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md.json",
+      "status": "file",
+      "sha256": "0868a6d8fefcd678f656608fc54885710f3a0e4d46ded8c00ff7551340523835",
+      "size": 38928,
+      "mtime_ns": 1794667581486570200
+    }
+  ]
+}

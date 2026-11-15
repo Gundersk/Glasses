@@ -1,0 +1,1 @@
+FAIL: layer1_validate: ['screenshot_not_blank'] | layer2_screenshot: ['bottom_third_nonempty']

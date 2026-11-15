@@ -1,0 +1,434 @@
+﻿22:00:01 [+   0.0s] STEP  PLAN
+22:15:02 [+   0.0s] STEP  PLAN
+22:15:55 [+  52.9s] INFO  planner: gemini_free ok in=3307 out=733 cost=$0.0000 lat=52.9s
+22:15:55 [+  52.9s] OK    яырэ яюёЄЁюхэ: 3 чрфрў: duplex_sherpa_5clips_latency, ui_screenshot_check, update_monthly_report_draft
+22:15:55 [+  53.0s] STEP  EXECUTE чрфрўр=duplex_sherpa_5clips_latency
+22:30:02 [+   0.1s] STEP  EXECUTE чрфрўр=duplex_sherpa_5clips_latency
+22:42:20 [+ 737.8s] INFO  executor: local ok in=2149 out=12000 cost=$0.0000 lat=735.8s
+22:53:35 [+1412.9s] INFO  executor: local ok in=2220 out=11382 cost=$0.0000 lat=673.0s
+22:53:35 [+1412.9s] INFO  чряшёрэ experiments/e2e_audio/run_duplex.py (6117 ёшьт.)
+22:53:35 [+1412.9s] INFO  summary: ╤ючфр■ experiments/e2e_audio/run_duplex.py фы  фєяыхъёэюую E2E-яЁюуюэр sherpa-onnx эр 5 ъышярї ё gap 1.2: ухэхЁшЁєхЄ 5 ёшэЄхЄшўхёъшї ъышяют, шуЁрхЄ шї ўхЁхч т√їюф ш чряшё√трхЄ тїюф, ёўшЄрхЄ normalized cross-correlation peak, ыруш/чрфхЁцъш, drift_ppm, ёюїЁрэ хЄ recording.wav ш metrics.json. ─ы  ASR э
+22:53:35 [+1413.0s] INFO  $ uv pip install --python .venv\Scripts\python.exe numpy scipy sounddevice soundfile sherpa-onnx huggingface_hub
+22:53:35 [+1413.5s] OK    rc=0: 
+22:53:35 [+1413.5s] INFO  $ hf download csukuangfj/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20 --local-dir models/sherpa_streaming_zipformer_bilingual
+22:54:10 [+1448.6s] ERROR Їрчр EXECUTE: 'charmap' codec can't encode characters in position 97-105: character maps to <undefined>
+22:54:10 [+1448.6s] WARN  duplex_sherpa_5clips_latency: шёўхЁярэ√ шЄхЁрЎшш (2)
+22:54:11 [+1448.7s] STEP  EXECUTE чрфрўр=ui_screenshot_check
+22:57:03 [+1621.0s] INFO  executor: local ok in=1952 out=2392 cost=$0.0000 lat=170.1s
+22:57:03 [+1621.1s] INFO  чряшёрэ experiments/ui_screenshot_check/metrics.json (318 ёшьт.)
+22:57:03 [+1621.1s] INFO  summary: ╤ючфрЄ№ metrics.json фы  чрфрўш ui_screenshot_check ш чрЇшъёшЁютрЄ№ ёъЁшэ°юЄ UI сЁрєчхЁэюую т√тюфр ёєсЄшЄЁют ўхЁхч python -m autonomy.screenshot http://localhost:8000. ┬шчєры№эр  яЁютхЁър шэЄхЁЇхщёр сєфхЄ юЄьхўхэр ъръ pending, яюър ёъЁшэ°юЄ эх сєфхЄ яюыєўхэ ш яЁютхЁхэ.
+22:57:03 [+1621.1s] INFO  $ python -c "import os; os.makedirs('experiments/ui_screenshot_check/results/screenshots', exist_ok=True)"
+22:57:03 [+1621.1s] OK    rc=0: 
+22:57:03 [+1621.1s] INFO  $ python -m autonomy.screenshot http://localhost:8000 experiments/ui_screenshot_check/results/screenshots/ui.png
+22:57:07 [+1624.8s] ERROR Їрчр EXECUTE: 'charmap' codec can't encode characters in position 214-222: character maps to <undefined>
+23:03:07 [+1985.4s] INFO  executor: local ok in=2005 out=6254 cost=$0.0000 lat=358.6s
+23:03:07 [+1985.4s] INFO  чряшёрэ experiments/ui_screenshot_check/run_check.py (2053 ёшьт.)
+23:03:07 [+1985.4s] INFO  summary: Create a non-interactive script to capture the browser UI screenshot at http://localhost:8000 and write flat metrics.json. Run the script to produce experiments/ui_screenshot_check/results/screenshots/ui.png and experiments/ui_screenshot_check/metrics.json. No results are claimed before execution.
+23:03:07 [+1985.4s] INFO  $ python experiments/ui_screenshot_check/run_check.py
+23:03:10 [+1987.8s] ERROR rc=1: Exception in thread Thread-2 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\threading.py", line 1075, in _
+23:03:10 [+1987.8s] WARN  ui_screenshot_check: шёўхЁярэ√ шЄхЁрЎшш (2)
+23:03:10 [+1988.0s] STEP  EXECUTE чрфрўр=update_monthly_report_draft
+[2026-11-11T01:19:05] supervisor start pid=31152
+01:19:05 [+   0.0s] STEP  PLAN
+01:19:05 [+   0.0s] OK    ╨┐╨╗╨░╨╜ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜ ╨╕╨╖ night_plan.yaml: 4 ╨╖╨░╨┤╨░╤З
+01:19:06 [+   0.7s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T1
+01:19:09 [+   3.9s] WARN  executor: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:19:11 [+   6.2s] WARN  executor: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:19:13 [+   8.5s] WARN  executor: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:19:16 [+  11.1s] WARN  executor: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:20:01 [+  56.4s] INFO  executor: deepseek1017 ok in=10472 out=12000 cost=$0.0041 lat=45.3s
+01:20:01 [+  56.4s] WARN  T1: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+01:20:01 [+  56.5s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T2
+01:20:05 [+  59.8s] WARN  executor: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:20:07 [+  61.9s] WARN  executor: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:20:09 [+  64.3s] WARN  executor: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:20:11 [+  66.5s] WARN  executor: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:21:37 [+ 152.4s] INFO  executor: deepseek1017 ok in=11007 out=12000 cost=$0.0042 lat=85.9s
+01:21:37 [+ 152.4s] WARN  T2: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+01:21:37 [+ 152.5s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T3
+01:21:40 [+ 154.9s] WARN  executor: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:21:42 [+ 157.3s] WARN  executor: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:21:45 [+ 159.7s] WARN  executor: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:21:47 [+ 161.9s] WARN  executor: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:36 [+ 211.6s] INFO  executor: deepseek1017 ok in=4871 out=8505 cost=$0.0028 lat=49.6s
+01:22:36 [+ 211.6s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ experiments/engine_choice.md (3281 ╤Б╨╕╨╝╨▓.)
+01:22:36 [+ 211.6s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ autonomy/workspace/outbox/T3_result.md (2692 ╤Б╨╕╨╝╨▓.)
+01:22:36 [+ 211.6s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ autonomy/workspace/check_t3.py (2160 ╤Б╨╕╨╝╨▓.)
+01:22:36 [+ 211.6s] INFO  summary: ╨Ф╨╛╨║╤Г╨╝╨╡╨╜╤В╨╜╨░╤П ╨╖╨░╨┤╨░╤З╨░ T3: ╤Б╨▓╨╡╤А╤П╤О experiments/engine_choice.md ╤Б sherpa_metrics.json (wer=0.113529 тЖТ 11.35%) ╨╕ vosk_metrics.json (wer=0.1892148 тЖТ 18.92%), num_clips=50 ╨▓ ╨╛╨▒╨╛╨╕╤Е. ╨Э╨╛╨▓╤Л╤Е ╨┐╤А╨╛╨│╨╛╨╜╨╛╨▓ ╨╜╨╡╤В. ╨Ю╤Б╤В╨░╨▓╨╗╤П╤О ╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╤Л╨╡ ╤А╨░╨╖╨┤╨╡╨╗╤Л (╨▓╨╛╨┐╤А╨╛╤Б, ╨▓╨░╤А╨╕╨░╨╜╤В╤Л, ╨╕╨╖╨╝╨╡╤А╨╡╨╜╨╕╤П, ╨╛╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╕╤П, ╤А╨╡╤И╨╡╨╜╨╕╨╡, ╤З╤В╨╛ ╨┐╨╡╤А╨╡╤Б╨╝╨╛╤В╤А╨╡╤В╤М ╨┐╤А╨╕ 150 
+01:22:36 [+ 211.6s] INFO  $ python -c "from pathlib import Path; p=Path('experiments/engine_choice.md'); assert p.is_file() and p.stat().st_size > 0"
+01:22:37 [+ 211.7s] OK    rc=0: 
+01:22:37 [+ 211.7s] INFO  $ python autonomy/workspace/check_t3.py
+01:22:37 [+ 211.8s] OK    rc=0: ╨╛╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╕╨╡: ╤Б╨░╨╝╨╛╨┐╨╕╤Б╨╜╤Л╨╣ WER
+OK   ╤А╨░╨╖╨┤╨╡╨╗ ╨┐╤А╨╛ 150 ╨║╨╗╨╕╨┐╨╛╨▓
+OK   ╨╛╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╕╨╡: ╤А╨░╨╖╨╜╨░╤П ╤Б╨╡╨╝╨░╨╜╤В╨╕╨║╨░ ╨╖╨░╨┤╨╡╤А╨╢╨╡╨║
+OK   ╨╜╨╡╤В ╤Г╤В╨▓╨╡╤А╨╢╨┤╨╡╨╜╨╕╤П ╨╛ ╨┐╤А╨╡╨▓╨╛╤Б╤Е╨╛╨┤╤Б╤В╨▓╨╡ ╨┐╨╛ ╨╖╨░╨┤╨╡╤А╨╢╨║╨╡
+sherpa WER = 11.35%, vosk WER = 18.92%, ╨║╨╗╨╕╨┐╨╛╨▓ = 50
+
+01:22:37 [+ 211.8s] INFO  $ python -c "from pathlib import Path; p=Path('autonomy/workspace/outbox/T3_result.md'); assert p.is_file() and p.stat().st_size > 0; print('outbox ok')"
+01:22:37 [+ 211.9s] OK    rc=0: outbox ok
+
+01:22:37 [+ 211.9s] STEP  VERIFY ╨╖╨░╨┤╨░╤З╨░=T3
+01:22:37 [+ 212.0s] WARN  stub-╨╝╨░╤А╨║╨╡╤А╤Л: ['autonomy/workspace/STATE.json: ┬л╨╜╨╡ ╨╖╨░╨┐╤Г╤Б╨║╨░┬╗', 'autonomy/workspace/STATE.json: ┬л╨╜╨╡ ╨╕╨╖╨╝╨╡╤А┬╗']
+01:22:37 [+ 212.0s] INFO  verify: pass=False (verify.T3.json)
+01:22:37 [+ 212.0s] STEP  REVIEW ╨╖╨░╨┤╨░╤З╨░=T3
+01:22:38 [+ 213.4s] WARN  verifier: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:40 [+ 214.9s] WARN  verifier: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:41 [+ 216.4s] WARN  verifier: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:43 [+ 217.9s] WARN  verifier: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:22:46 [+ 221.4s] INFO  verifier: deepseek1017 ok in=667 out=212 cost=$0.0001 lat=3.5s
+01:22:46 [+ 221.4s] INFO  ╨▓╨╡╤А╨┤╨╕╨║╤В ╨║╨╛╨╜╤В╤А╨╛╨╗╤С╤А╨░: ESCALATE тАФ ╨д╨╛╤А╨╝╨░╨╗╤М╨╜╤Л╨╡ ╨┐╤А╨╛╨▓╨╡╤А╨║╨╕ ╨┐╤А╨╛╤И╨╗╨╕, ╨╜╨╛ stub_markers ╨┐╨╛╨║╨░╨╖╨░╨╗ ┬л╨╜╨╡ ╨╖╨░╨┐╤Г╤Б╨║╨░┬╗/┬л╨╜╨╡ ╨╕╨╖╨╝╨╡╤А┬╗ ╨▓ STATE.json тАФ ╤З╨╕╤Б╨╗╨░ 11.35%/18.92% ╨▓ ╨░╤А╤В╨╡╤Д╨░╨║╤В╨╡, ╨┐╨╛╤Е╨╛╨╢╨╡, ╨╜╨╡ ╨┐╨╛╨╗╤Г╤З╨╡╨╜╤Л ╤А╨╡╨░╨╗╤М╨╜╤Л╨╝╨╕ ╨╖╨░╨╝╨╡╤А╨░╨╝╨╕, ╨░ ╨▓╨┐╨╕╤Б╨░╨╜╤Л ╨▓╤А╤Г╤З╨╜╤Г╤О (╨▓╤Л╨┤╤Г╨╝╨░╨╜╨╜╤Л╨╣ ╤А╨╡╨╖╤Г╨╗╤М
+01:22:46 [+ 221.4s] STEP  REPAIR ╨╖╨░╨┤╨░╤З╨░=T3
+01:23:16 [+ 251.3s] INFO  mentor: kimi_pro ok in=1000 out=1291 cost=$0.0000 lat=29.9s
+01:23:16 [+ 251.3s] INFO  ╨╝╨╡╨╜╤В╨╛╤А: action=halt notes=╨╝╨╡╨╜╤В╨╛╤А ╨▓╨╡╤А╨╜╤Г╨╗ ╨╜╨╡ JSON
+01:23:16 [+ 251.3s] STEP  REPORT
+01:23:18 [+ 252.9s] WARN  reporter: gemini_free -> gemini_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:23:19 [+ 254.5s] WARN  reporter: gemini_lite_free -> gemini_lite_free: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:23:21 [+ 256.2s] WARN  reporter: gemini_alt -> gemini_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:23:23 [+ 257.8s] WARN  reporter: gemini_lite_alt -> gemini_lite_alt: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "User location is not supported for the API use.",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+]
+01:23:41 [+ 275.9s] INFO  reporter: glm53_flash ok in=1165 out=2193 cost=$0.0002 lat=18.0s
+01:23:41 [+ 275.9s] OK    ╨╛╤В╤З╤С╤В: autonomy\workspace\outbox\report.md
+01:23:41 [+ 275.9s] OK    ╨╜╨╛╤З╤М ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░: ╨▒╤О╨┤╨╢╨╡╤В $0.011, ╨╖╨░╨┤╨░╤З╨╕: T1=failed, T2=failed, T3=failed, T4=pending
+[2026-11-11T01:23:41] tick 1 exit=0
+[2026-11-11T01:23:41] phase DONE
+[2026-11-11T01:23:41] supervisor exit
+[2026-11-11T01:27:44] supervisor start pid=28756
+01:27:44 [+   0.0s] OK    ╨╜╨╛╤З╤М ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░: ╨▒╤О╨┤╨╢╨╡╤В $0.011, ╨╖╨░╨┤╨░╤З╨╕: T1=failed, T2=failed, T3=failed, T4=pending
+[2026-11-11T01:27:44] tick 1 exit=0
+[2026-11-11T01:27:44] phase DONE
+[2026-11-11T01:27:44] supervisor exit
+[2026-11-11T01:28:08] supervisor start pid=37356
+01:28:09 [+   0.0s] STEP  PLAN
+01:28:09 [+   0.0s] OK    ╨┐╨╗╨░╨╜ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜ ╨╕╨╖ night_plan.yaml: 4 ╨╖╨░╨┤╨░╤З
+01:28:09 [+   0.1s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T1
+01:28:20 [+  11.7s] INFO  executor: gemini_free ok in=10804 out=0 cost=$0.0000 lat=11.6s
+01:28:20 [+  11.7s] WARN  T1: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+01:28:20 [+  11.8s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T2
+01:29:44 [+  95.9s] INFO  executor: gemini_free ok in=11920 out=478 cost=$0.0000 lat=69.0s
+01:29:44 [+  95.9s] WARN  T2: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+01:29:45 [+  96.0s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T3
+01:30:07 [+ 118.5s] INFO  executor: gemini_free ok in=5089 out=1862 cost=$0.0000 lat=16.0s
+01:30:07 [+ 118.5s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ experiments/engine_choice.md (3281 ╤Б╨╕╨╝╨▓.)
+01:30:07 [+ 118.5s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ autonomy/workspace/outbox/T3_result.md (1248 ╤Б╨╕╨╝╨▓.)
+01:30:07 [+ 118.5s] INFO  summary: ╨Я╤А╨╛╨▓╨╡╤А╨╡╨╜ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В experiments/engine_choice.md ╨╕ ╨┐╨╛╨┤╨│╨╛╤В╨╛╨▓╨╗╨╡╨╜ ╨╕╤В╨╛╨│╨╛╨▓╤Л╨╣ ╨╛╤В╤З╨╡╤В autonomy/workspace/outbox/T3_result.md, ╤Д╨╕╨║╤Б╨╕╤А╤Г╤О╤Й╨╕╨╣ sherpa-onnx ╨▓ ╨║╨░╤З╨╡╤Б╤В╨▓╨╡ ╨╛╤Б╨╜╨╛╨▓╨╜╨╛╨│╨╛ ASR-╨┤╨▓╨╕╨╢╨║╨░.
+01:30:07 [+ 118.5s] INFO  $ python -c "from pathlib import Path; p=Path('experiments/engine_choice.md'); assert p.is_file() and p.stat().st_size > 0"
+01:30:07 [+ 118.5s] OK    rc=0: 
+01:30:07 [+ 118.5s] STEP  VERIFY ╨╖╨░╨┤╨░╤З╨░=T3
+01:30:07 [+ 118.6s] WARN  stub-╨╝╨░╤А╨║╨╡╤А╤Л: ['autonomy/workspace/STATE.json: ┬л╨╜╨╡ ╨╖╨░╨┐╤Г╤Б╨║╨░┬╗', 'autonomy/workspace/STATE.json: ┬л╨╜╨╡ ╨╕╨╖╨╝╨╡╤А┬╗']
+01:30:07 [+ 118.6s] INFO  verify: pass=False (verify.T3.json)
+01:30:07 [+ 118.6s] STEP  REVIEW ╨╖╨░╨┤╨░╤З╨░=T3
+01:30:13 [+ 124.1s] INFO  verifier: gemini_free ok in=637 out=60 cost=$0.0000 lat=5.4s
+01:30:13 [+ 124.1s] INFO  ╨▓╨╡╤А╨┤╨╕╨║╤В ╨║╨╛╨╜╤В╤А╨╛╨╗╤С╤А╨░: FAIL тАФ ╨Я╤А╨╛╨▓╨╡╤А╨║╨░ verify_pass ╨╜╨╡ ╨┐╤А╨╛╨╣╨┤╨╡╨╜╨░: ╨▓ ╤Д╨░╨╣╨╗╨╡ STATE.json ╨╛╨▒╨╜╨░╤А╤Г╨╢╨╡╨╜╤Л ╨╝╨░╤А╨║╨╡╤А╤Л ╨╜╨╡╨╖╨░╨▓╨╡╤А╤И╤С╨╜╨╜╨╛╤Б╤В╨╕ ╤А╨░╨▒╨╛╤В╤Л (┬л╨╜╨╡ ╨╖╨░╨┐╤Г╤Б╨║╨░┬╗, ┬л╨╜╨╡ ╨╕╨╖╨╝╨╡╤А┬╗).
+01:30:13 [+ 124.1s] WARN  T3: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+01:30:13 [+ 124.2s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T4
+01:30:22 [+ 133.5s] INFO  executor: gemini_free ok in=9035 out=173 cost=$0.0000 lat=9.3s
+01:30:22 [+ 133.5s] INFO  summary: ╨Ш╨╜╤Б╨┐╨╡╨║╤Ж╨╕╤П ╤Б╨╛╨┤╨╡╤А╨╢╨╕╨╝╨╛╨│╨╛ 2026-11-draft.md ╨╕ ╨┐╤А╨╛╨▓╨╡╤А╨║╨░ ╨╜╨░╨╗╨╕╤З╨╕╤П ╤Д╨░╨╣╨╗╨╛╨▓ T1/T2
+01:30:22 [+ 133.5s] INFO  $ python -c "from pathlib import Path; print('Draft exists:', Path('reports/monthly/2026-11-draft.md').exists()); print('Sherpa res:', Path('experiments/stage2_resources/sherpa_resources.json').exists())"
+01:30:22 [+ 133.5s] OK    rc=0: Draft exists: True
+Sherpa res: False
+
+01:30:22 [+ 133.5s] INFO  $ python -c "from pathlib import Path; print(Path('reports/monthly/2026-11-draft.md').read_text(encoding='utf-8'))"
+01:30:22 [+ 133.6s] OK    rc=0: e2e_latency}.json`
+- `experiments/web_demo/{asr_bridge_metrics.json,asr_ui.png}`
+- `experiments/diarization/diar_baseline_metrics.json`
+- `experiments/2026-11-06-smoke/` - smoke ╤В╤А╤С╤Е ╨┤╨▓╨╕╨╢╨║╨╛╨▓ (06.11)
+
+
+01:30:22 [+ 133.6s] STEP  VERIFY ╨╖╨░╨┤╨░╤З╨░=T4
+01:30:22 [+ 133.7s] WARN  stub-╨╝╨░╤А╨║╨╡╤А╤Л: ['autonomy/workspace/STATE.json: ┬л╨╜╨╡ ╨╖╨░╨┐╤Г╤Б╨║╨░┬╗', 'autonomy/workspace/STATE.json: ┬л╨╜╨╡ ╨╕╨╖╨╝╨╡╤А┬╗']
+01:30:22 [+ 133.7s] INFO  verify: pass=False (verify.T4.json)
+01:30:22 [+ 133.7s] STEP  REVIEW ╨╖╨░╨┤╨░╤З╨░=T4
+01:30:26 [+ 137.9s] INFO  verifier: gemini_free ok in=1421 out=69 cost=$0.0000 lat=4.2s
+01:30:26 [+ 137.9s] INFO  ╨▓╨╡╤А╨┤╨╕╨║╤В ╨║╨╛╨╜╤В╤А╨╛╨╗╤С╤А╨░: FAIL тАФ ╨д╨░╨╣╨╗ `reports/monthly/2026-11-draft.md` ╨╜╨╡ ╤Б╨╛╨┤╨╡╤А╨╢╨╕╤В ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╤Е ╨║╨╗╤О╤З╨╡╨▓╤Л╤Е ╨╝╨╡╤В╤А╨╕╨║ ╨╕ ╤Б╤В╤А╨╛╨║ (regex_in_file ok=False), ╨░ ╤В╨░╨║╨╢╨╡ ╨╛╨▒╨╜╨░╤А╤Г╨╢╨╡╨╜╤Л ╨╝╨░╤А╨║╨╡╤А╤Л ╨╜╨╡╨╖╨░╨▓╨╡╤А╤И╤С╨╜╨╜╨╛╤Б╤В╨╕ ╤А╨░╨▒╨╛╤В╤Л.
+01:30:26 [+ 137.9s] WARN  T4: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+01:30:26 [+ 137.9s] STEP  REPORT
+01:31:05 [+ 176.4s] INFO  reporter: gemini_free ok in=1776 out=1139 cost=$0.0000 lat=20.7s
+01:31:05 [+ 176.4s] OK    ╨╛╤В╤З╤С╤В: autonomy\workspace\outbox\report.md
+01:31:05 [+ 176.4s] OK    ╨╜╨╛╤З╤М ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░: ╨▒╤О╨┤╨╢╨╡╤В $0.000, ╨╖╨░╨┤╨░╤З╨╕: T1=failed, T2=failed, T3=failed, T4=failed
+[2026-11-11T01:31:05] tick 1 exit=0
+[2026-11-11T01:31:05] phase DONE
+[2026-11-11T01:31:05] supervisor exit
+[2026-11-11T02:15:20] supervisor start pid=24112
+02:15:21 [+   0.0s] STEP  PLAN
+02:15:21 [+   0.0s] OK    ╨┐╨╗╨░╨╜ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜ ╨╕╨╖ night_plan.yaml: 4 ╨╖╨░╨┤╨░╤З
+02:15:21 [+   0.4s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T1
+02:15:40 [+  18.9s] INFO  executor: deepseek1017 ok in=10447 out=3121 cost=$0.0013 lat=18.5s
+02:15:40 [+  18.9s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ experiments/file_stream_eval.py (7296 ╤Б╨╕╨╝╨▓.)
+02:15:40 [+  18.9s] INFO  summary: ╨б╨╛╨╖╨┤╨░╤О experiments/file_stream_eval.py ╤Б ╤А╨╡╨╢╨╕╨╝╨╛╨╝ resources: ╨╡╨┤╨╕╨╜╤Л╨╣ ╨┐╨╛╤В╨╛╨║╨╛╨▓╤Л╨╣ ╤Ж╨╕╨║╨╗ (╤З╨░╨╜╨║╨╕ 100 ╨╝╤Б, speed=1.0, tail 1.0 ╤Б ╤В╨╕╤И╨╕╨╜╤Л) ╨┤╨╗╤П sherpa ╨╕ vosk ╤З╨╡╤А╨╡╨╖ streaming_asr.create_asr, ╨╖╨░╨╝╨╡╤А ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨░ ╤З╨╡╤А╨╡╨╖ psutil (cpu_percent_avg/max, rss_mb_max, wall_s, n_frames). ╨Ч╨░╨┐╤Г╤Б╨║╨░╤О ╨╛╨▒╨░ ╨┤╨▓╨╕╨╢╨║╨░ ╨╜╨░ data/fleurs_ru_test
+02:15:40 [+  18.9s] INFO  $ python experiments\file_stream_eval.py resources --engine sherpa --wav data\fleurs_ru_test\clip_001.wav --metrics experiments\stage2_resources\sherpa_resources.json --result experiments\stage2_resources\sherpa_result.json
+02:15:40 [+  19.0s] ERROR rc=2: C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Yurgirus\\Desktop\\urfu\\╨Я╨╛╨┤╨┤╨╡╤А╨╢╨║╨░ ╤В╨░╨╗╨░╨╜╤В╨╛╨▓\\OpenCodeGlasses\\experimentsfile_strea
+02:15:40 [+  19.0s] INFO  $ python experiments\file_stream_eval.py resources --engine vosk --wav data\fleurs_ru_test\clip_001.wav --metrics experiments\stage2_resources\vosk_resources.json --result experiments\stage2_resources\vosk_result.json
+02:15:40 [+  19.0s] ERROR rc=2: C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Yurgirus\\Desktop\\urfu\\╨Я╨╛╨┤╨┤╨╡╤А╨╢╨║╨░ ╤В╨░╨╗╨░╨╜╤В╨╛╨▓\\OpenCodeGlasses\\experimentsfile_strea
+02:15:40 [+  19.0s] INFO  $ python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_resources'); ms=[json.loads((p/f'{e}_resources.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; rs=[json.loads((p/f'{e}_result.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; keys=('cpu_percent_avg','cpu_percent_max','rss_mb_max','wall_s','n_frames'); assert all(all(k in m for k in keys) for m in ms); assert all(math.isfinite(float(m[k])) for m in ms for k in keys); assert all(m['cpu_percent_max'] >= m['cpu_percent_avg'] and m['n_frames'] == m['sample_count'] for m in ms); assert all(r['partials'] and r['finals'] and all(x['text'].strip() for x in r['finals']) for r in rs)"
+02:15:40 [+  19.1s] ERROR rc=1: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1027, in read_text
+
+02:15:40 [+  19.1s] WARN  T1: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+02:15:40 [+  19.2s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T2
+02:16:02 [+  41.7s] INFO  executor: deepseek1017 ok in=12543 out=7741 cost=$0.0029 lat=22.5s
+02:16:02 [+  41.7s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ experiments/file_stream_eval.py (20801 ╤Б╨╕╨╝╨▓.)
+02:16:02 [+  41.7s] INFO  summary: ╨б╨╛╨╖╨┤╨░╨╝ streaming file-eval ╤Г╤В╨╕╨╗╨╕╤В╤Г ╤Б ╤А╨╡╨╢╨╕╨╝╨╛╨╝ conditions: 5 ╨║╨╗╨╕╨┐╨╛╨▓ (clip_000..clip_004), seed 20261109, ╤З╨░╨╜╨║╨╕ 100 ╨╝╤Б, speed=1.0, tail_s=1.0; ╤Г╤Б╨╗╨╛╨▓╨╕╤П clean/snr20/snr10/snr5 ╤Б ╤Ж╨╕╤Д╤А╨╛╨▓╤Л╨╝ ╨▒╨╡╨╗╤Л╨╝ ╨│╨░╤Г╤Б╤Б╨╛╨▓╤Л╨╝ ╤И╤Г╨╝╨╛╨╝ ╨┐╨╛ SNR, ╨╛╨┤╨╕╨╜╨░╨║╨╛╨▓╤Л╨╡ WAV ╨┤╨╗╤П sherpa ╨╕ vosk; ╨║╨╛╤А╨┐╤Г╤Б╨╜╨╛╨╣ WER (S/D/I) ╨┐╨╛ ╨╝╨░╨╜╨╕╤Д╨╡╤Б╤В╤Г ╨╕ latency ╤Б╨╛╨▒╤Л╤В╨╕╨╣ (
+02:16:02 [+  41.7s] INFO  $ python experiments\file_stream_eval.py conditions --engine sherpa --manifest data\fleurs_ru_test\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004 --snr 20,10,5 --seed 20261109 --noise-dir experiments\stage2_conditions\audio --out experiments\stage2_conditions\sherpa_conditions.json
+02:16:02 [+  41.8s] ERROR rc=2: C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Yurgirus\\Desktop\\urfu\\╨Я╨╛╨┤╨┤╨╡╤А╨╢╨║╨░ ╤В╨░╨╗╨░╨╜╤В╨╛╨▓\\OpenCodeGlasses\\experimentsfile_strea
+02:16:02 [+  41.8s] INFO  $ python experiments\file_stream_eval.py conditions --engine vosk --manifest data\fleurs_ru_test\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004 --snr 20,10,5 --seed 20261109 --noise-dir experiments\stage2_conditions\audio --out experiments\stage2_conditions\vosk_conditions.json
+02:16:02 [+  41.8s] ERROR rc=2: C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Yurgirus\\Desktop\\urfu\\╨Я╨╛╨┤╨┤╨╡╤А╨╢╨║╨░ ╤В╨░╨╗╨░╨╜╤В╨╛╨▓\\OpenCodeGlasses\\experimentsfile_strea
+02:16:02 [+  41.8s] INFO  $ python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_conditions'); ds=[json.loads((p/f'{e}_conditions.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; names=['clean','snr20','snr10','snr5']; snrs=[None,20,10,5]; keys=('wer','final_latency_p50_ms','final_latency_p95_ms','final_latency_n','partial_latency_p50_ms','partial_latency_p95_ms','partial_latency_n'); assert all([c['name'] for c in d['conditions']]==names and [c['snr_db'] for c in d['conditions']]==snrs for d in ds); assert all(all(k in c for k in keys) for d in ds for c in d['conditions']); assert all(0<=c['wer']<=1 and c['final_latency_n']>=1 and c['partial_latency_n']>=1 and len(c['results'])==5 for d in ds for c in d['conditions']); assert all(math.isfinite(float(c[k])) for d in ds for c in d['conditions'] for k in keys if not k.endswith('_n')); nm=json.loads((p/'noise_manifest.json').read_text(encoding='utf-8')); assert nm['seed']==20261109 and len(nm['files'])==15; assert all(Path(f['path']).is_file() and abs(f['measured_snr_db']-f['target_snr_db'])<=0.1 for f in nm['files'])"
+02:16:03 [+  41.9s] ERROR rc=1: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1027, in read_text
+
+02:16:03 [+  41.9s] WARN  T2: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+02:16:03 [+  42.0s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T3
+02:16:10 [+  49.1s] INFO  executor: deepseek1017 ok in=4995 out=1320 cost=$0.0006 lat=7.0s
+02:16:10 [+  49.1s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ autonomy/workspace/outbox/T3_result.md (1773 ╤Б╨╕╨╝╨▓.)
+02:16:10 [+  49.1s] INFO  summary: ╨Ф╨╛╨║╤Г╨╝╨╡╨╜╤В╨╜╨░╤П ╨╖╨░╨┤╨░╤З╨░ T3: ╤Б╨▓╨╡╤А╤П╤О experiments/engine_choice.md ╤Б sherpa_metrics.json (WER 0.113529 тЖТ 11.35%) ╨╕ vosk_metrics.json (WER 0.1892148 тЖТ 18.92%), ╨╛╨▒╨░ num_clips=50, total_ref_words=1057. ╨Ф╨╛╨║╤Г╨╝╨╡╨╜╤В ╤Г╨╢╨╡ ╤Б╨╛╨┤╨╡╤А╨╢╨╕╤В ╨▓╤Б╨╡ ╤В╤А╨╡╨▒╤Г╨╡╨╝╤Л╨╡ ╤А╨░╨╖╨┤╨╡╨╗╤Л ╨╕ ╨╛╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╕╤П (╤Б╨░╨╝╨╛╨┐╨╕╤Б╨╜╤Л╨╣ WER, 50 ╨║╨╗╨╕╨┐╨╛╨▓, ╤З╤В╨╡╨╜╨╕╨╡ ╨▒╨╡╨╖ ╤И╤Г╨╝╨░, ╤А╨░╨╖╨╜╨░╤П
+02:16:10 [+  49.1s] INFO  $ python -c "from pathlib import Path; p=Path('experiments/engine_choice.md'); assert p.is_file() and p.stat().st_size > 0"
+02:16:10 [+  49.1s] OK    rc=0: 
+02:16:10 [+  49.1s] INFO  $ python -c "import json,re; s=json.load(open('experiments/fleurs_benchmark/sherpa_metrics.json',encoding='utf-8')); v=json.load(open('experiments/fleurs_benchmark/vosk_metrics.json',encoding='utf-8')); d=open('experiments/engine_choice.md',encoding='utf-8').read(); assert s['num_clips']==50 and v['num_clips']==50; assert s['total_ref_words']==1057 and v['total_ref_words']==1057; assert abs(s['wer']-0.113529)<1e-9 and abs(v['wer']-0.1892148)<1e-9; assert '11.35%' in d and '18.92%' in d; assert '╤Б╨░╨╝╨╛╨┐╨╕╤Б╨╜' in d and '150 ╨║╨╗╨╕╨┐' in d and re.search(r'╤А╨░╨╖╨╜\w* ╤Б╨╡╨╝╨░╨╜╤В╨╕╨║', d); print('OK: numbers and constraints verified')"
+02:16:10 [+  49.2s] ERROR rc=1: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+
+02:16:10 [+  49.2s] INFO  $ python -c "from pathlib import Path; p=Path('autonomy/workspace/outbox/T3_result.md'); assert p.is_file() and p.stat().st_size > 0; print('OK: outbox written', p.stat().st_size, 'bytes')"
+02:16:10 [+  49.3s] OK    rc=0: OK: outbox written 2769 bytes
+
+02:16:10 [+  49.3s] WARN  T3: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+02:16:10 [+  49.4s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T4
+02:16:26 [+  65.0s] INFO  executor: deepseek1017 ok in=8009 out=3616 cost=$0.0014 lat=15.6s
+02:16:26 [+  65.0s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ reports/monthly/2026-11-draft.md (7332 ╤Б╨╕╨╝╨▓.)
+02:16:26 [+  65.0s] INFO  summary: ╨Ю╨▒╨╜╨╛╨▓╨╗╤П╤О ╤В╨╛╨╗╤М╨║╨╛ reports/monthly/2026-11-draft.md: ╨┤╨╛╨▒╨░╨▓╨╗╤П╤О ╨┐╨╛╨┤╤В╨▓╨╡╤А╨╢╨┤╤С╨╜╨╜╤Л╨╡ ╤З╨╕╤Б╨╗╨░ ╨┐╨╛╤В╨╛╨║╨╛╨▓╨╛╨│╨╛ ╨▓╤Л╨▓╨╛╨┤╨░ ╨▓ ╨▒╤А╨░╤Г╨╖╨╡╤А╨╡ (stream_sherpa_clip001_r3: 11 partial/1 final; stream_vosk_clip001_r3: 17 partial/1 final; gate PASS, ╤Б╨║╤А╨╕╨╜╤И╨╛╤В╤Л ╨▓ ╤В╨╡╤Е ╨╢╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░╤Е), ╨▓╨░╨╗╨╕╨┤╨╜╤Л╨╣ ╨┤╤Г╨┐╨╗╨╡╨║╤Б╨╜╤Л╨╣ E2E e2e_duplex_sherpa_3clips_r3 (40 pa
+02:16:26 [+  65.0s] INFO  $ python -c "from pathlib import Path; p=Path('reports/monthly/2026-11-draft.md'); assert p.is_file() and p.stat().st_size > 0; t=p.read_text(encoding='utf-8'); [t.index(s) for s in ['stream_sherpa_clip001_r3','stream_vosk_clip001_r3','e2e_duplex_sherpa_3clips_r3','739 ╨╝╤Б','n=1','298.1 ╨╝╤Б','-54.7 ppm','╨╜╨╡╨╖╨░╨▓╨╕╤Б╨╕╨╝╤Л╨╡ ╤В╨░╨║╤В╤Л ADC ╨╕ DAC','e2e_duplex_sherpa_1clip_r1']]; print('OK')"
+02:16:26 [+  65.1s] OK    rc=0: OK
+
+02:16:26 [+  65.1s] STEP  VERIFY ╨╖╨░╨┤╨░╤З╨░=T4
+02:16:26 [+  65.2s] INFO  verify: pass=True (verify.T4.json)
+02:16:26 [+  65.2s] STEP  REVIEW ╨╖╨░╨┤╨░╤З╨░=T4
+02:16:28 [+  67.2s] INFO  verifier: deepseek1017 ok in=776 out=99 cost=$0.0001 lat=2.0s
+02:16:28 [+  67.2s] INFO  ╨▓╨╡╤А╨┤╨╕╨║╤В ╨║╨╛╨╜╤В╤А╨╛╨╗╤С╤А╨░: PASS тАФ ╨Т╤Б╨╡ 10 acceptance-╨┐╤А╨╛╨▓╨╡╤А╨╛╨║ ╨┐╤А╨╛╤И╨╗╨╕ (verify_pass=true), ╤Д╨░╨╣╨╗ ╨╛╤В╤З╤С╤В╨░ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╨╡╤В ╨╕ ╤Б╨╛╨┤╨╡╤А╨╢╨╕╤В ╤В╤А╨╡╨▒╤Г╨╡╨╝╤Л╨╡ ╨╕╨┤╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤В╨╛╤А╤Л ╨┐╤А╨╛╨│╨╛╨╜╨╛╨▓ ╨╕ ╤З╨╕╤Б╨╗╨╛╨▓╤Л╨╡ ╨╝╨╡╤В╤А╨╕╨║╨╕ (739 ╨╝╤Б, 298.1 ╨╝╤Б, -54.7 ppm, n=1); ╨░╤А╤В╨╡╤Д╨░╨║╤В ╨╜╨░ ╨╝╨╡╤Б╤В╨╡, ╨╖╨░╤П╨▓
+02:16:28 [+  67.2s] STEP  REPORT
+02:16:52 [+  91.5s] INFO  reporter: glm53_flash ok in=1489 out=1295 cost=$0.0002 lat=24.2s
+02:16:52 [+  91.5s] OK    ╨╛╤В╤З╤С╤В: autonomy\workspace\outbox\report.md
+02:16:52 [+  91.5s] OK    ╨╜╨╛╤З╤М ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░: ╨▒╤О╨┤╨╢╨╡╤В $0.006, ╨╖╨░╨┤╨░╤З╨╕: T1=failed, T2=failed, T3=failed, T4=done
+[2026-11-11T02:16:52] tick 1 exit=0
+[2026-11-11T02:16:52] phase DONE
+[2026-11-11T02:16:52] supervisor exit
+[2026-11-11T02:17:34] supervisor start pid=18236
+02:17:35 [+   0.0s] STEP  PLAN
+02:17:35 [+   0.0s] OK    ╨┐╨╗╨░╨╜ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜ ╨╕╨╖ night_plan.yaml: 4 ╨╖╨░╨┤╨░╤З
+02:17:35 [+   0.1s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T1
+02:17:46 [+  10.9s] INFO  executor: deepseek1017 ok in=10447 out=2387 cost=$0.0011 lat=10.7s
+02:17:46 [+  10.9s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ experiments/file_stream_eval.py (6206 ╤Б╨╕╨╝╨▓.)
+02:17:46 [+  10.9s] INFO  summary: ╨б╨╛╨╖╨┤╨░╤О experiments/file_stream_eval.py ╤Б ╤А╨╡╨╢╨╕╨╝╨╛╨╝ resources: ╨╡╨┤╨╕╨╜╤Л╨╣ ╨┐╨╛╤В╨╛╨║╨╛╨▓╤Л╨╣ ╤Ж╨╕╨║╨╗ (╤З╨░╨╜╨║╨╕ 100 ╨╝╤Б, speed=1.0, tail 1.0 ╤Б ╤В╨╕╤И╨╕╨╜╤Л) ╨┤╨╗╤П sherpa ╨╕ vosk ╤З╨╡╤А╨╡╨╖ streaming_asr.create_asr, ╨╖╨░╨╝╨╡╤А CPU/RAM ╤З╨╡╤А╨╡╨╖ psutil ╨┐╨╛ ╤В╨╡╨║╤Г╤Й╨╡╨╝╤Г ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╤Г, ╨╖╨░╨┐╨╕╤Б╤М JSON ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨╕ JSON ╤А╨╡╨╖╤Г╨╗╤М╤В╨░╤В╨░. ╨Ч╨░╤В╨╡╨╝ ╨╖╨░╨┐╤Г╤Б╨║╨░╤О ╨╛╨▒╨░ ╨┤╨▓╨╕╨╢╨║╨░ ╨╜╨░ data/
+02:17:46 [+  10.9s] INFO  $ python experiments\file_stream_eval.py resources --engine sherpa --wav data\fleurs_ru_test\clip_001.wav --metrics experiments\stage2_resources\sherpa_resources.json --result experiments\stage2_resources\sherpa_result.json
+02:18:01 [+  26.2s] OK    rc=0: {"engine": "sherpa", "asr_ok": true, "cpu_avg": 26.154, "cpu_max": 216.1, "rss_mb_max": 132.453, "wall_s": 12.6017, "n_frames": 200320, "finals": 1}
+
+02:18:01 [+  26.2s] INFO  $ python experiments\file_stream_eval.py resources --engine vosk --wav data\fleurs_ru_test\clip_001.wav --metrics experiments\stage2_resources\vosk_resources.json --result experiments\stage2_resources\vosk_result.json
+02:18:15 [+  40.2s] OK    rc=0: {"engine": "vosk", "asr_ok": true, "cpu_avg": 9.261, "cpu_max": 97.7, "rss_mb_max": 245.418, "wall_s": 12.6307, "n_frames": 200320, "finals": 1}
+
+02:18:15 [+  40.2s] STEP  VERIFY ╨╖╨░╨┤╨░╤З╨░=T1
+02:18:15 [+  40.5s] INFO  verify: pass=False (verify.T1.json)
+02:18:15 [+  40.5s] STEP  REVIEW ╨╖╨░╨┤╨░╤З╨░=T1
+02:18:18 [+  43.7s] INFO  verifier: deepseek1017 ok in=1763 out=64 cost=$0.0001 lat=3.2s
+02:18:18 [+  43.7s] INFO  ╨▓╨╡╤А╨┤╨╕╨║╤В ╨║╨╛╨╜╤В╤А╨╛╨╗╤С╤А╨░: FAIL тАФ ╨Т╤Б╨╡ ╨┐╤А╨╛╨▓╨╡╤А╨║╨╕ ╨░╤А╤В╨╡╤Д╨░╨║╤В╨╛╨▓ ╨╕ ╤З╨╕╤Б╨╡╨╗ ╨┐╤А╨╛╤И╨╗╨╕, ╨╜╨╛ ╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╤Л╨╣ ╤Д╨░╨╣╨╗ autonomy/workspace/outbox/T1_result.md ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В (exists=False), ╨╕╨╖-╨╖╨░ ╤З╨╡╨│╨╛ verify_pass=false тАФ ╨╕╤Б╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М ╨╝╨╛╨╢╨╡╤В ╨┐╤А╨╛╤Б╤В╨╛ ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╛╤В╤З╤С╤В.
+02:18:18 [+  43.7s] WARN  T1: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+02:18:18 [+  43.8s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T2
+02:18:30 [+  55.7s] INFO  executor: deepseek1017 ok in=12500 out=3926 cost=$0.0017 lat=11.9s
+02:18:30 [+  55.7s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ experiments/file_stream_eval.py (21 ╤Б╨╕╨╝╨▓.)
+02:18:30 [+  55.7s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ autonomy/workspace/outbox/T2_result.md (18 ╤Б╨╕╨╝╨▓.)
+02:18:30 [+  55.7s] INFO  summary: ╨а╨╡╨░╨╗╨╕╨╖╤Г╤О ╤А╨╡╨╢╨╕╨╝ `conditions` ╨▓ experiments/file_stream_eval.py: 5 ╨║╨╗╨╕╨┐╨╛╨▓ (clip_000..004), seed 20261109, ╤З╨░╨╜╨║╨╕ 100 ╨╝╤Б, speed=1.0, tail 1.0 ╤Б; ╤Г╤Б╨╗╨╛╨▓╨╕╤П clean/snr20/snr10/snr5 ╤Б ╤Ж╨╕╤Д╤А╨╛╨▓╤Л╨╝ ╨▒╨╡╨╗╤Л╨╝ ╨│╨░╤Г╤Б╤Б╨╛╨▓╤Л╨╝ ╤И╤Г╨╝╨╛╨╝, ╨┐╨╛╨┤╨╝╨╡╤И╨░╨╜╨╜╤Л╨╝ ╨║ ╨╛╤В╤Б╤З╤С╤В╨░╨╝ WAV ╨┐╨╛ ╨╖╨░╨┤╨░╨╜╨╜╨╛╨╝╤Г SNR (╨▒╨╡╨╖ ╨┤╨╕╨╜╨░╨╝╨╕╨║╨░/╨╝╨╕╨║╤А╨╛╤Д╨╛╨╜╨░). ╨б╨╛╤Е╤А╨░╨╜╤П╤О ╤И╤Г╨╝╨╜╤Л╨╡ WAV ╨▓ ex
+02:18:30 [+  55.7s] INFO  $ python experiments\file_stream_eval.py conditions --engine sherpa --manifest data\fleurs_ru_test\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004 --snr 20,10,5 --seed 20261109 --noise-dir experiments\stage2_conditions\audio --out experiments\stage2_conditions\sherpa_conditions.json
+02:18:30 [+  55.8s] ERROR rc=1: Traceback (most recent call last):
+  File "C:\Users\Yurgirus\Desktop\urfu\╨Я╨╛╨┤╨┤╨╡╤А╨╢╨║╨░ ╤В╨░╨╗╨░╨╜╤В╨╛╨▓\OpenCodeGlasses\experiments\file_stream_eval.py", line 1, in <module>
+    PLACEHOLDER_FULL_FILE
+NameError: 
+02:18:30 [+  55.8s] INFO  $ python experiments\file_stream_eval.py conditions --engine vosk --manifest data\fleurs_ru_test\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004 --snr 20,10,5 --seed 20261109 --noise-dir experiments\stage2_conditions\audio --out experiments\stage2_conditions\vosk_conditions.json
+02:18:31 [+  55.8s] ERROR rc=1: Traceback (most recent call last):
+  File "C:\Users\Yurgirus\Desktop\urfu\╨Я╨╛╨┤╨┤╨╡╤А╨╢╨║╨░ ╤В╨░╨╗╨░╨╜╤В╨╛╨▓\OpenCodeGlasses\experiments\file_stream_eval.py", line 1, in <module>
+    PLACEHOLDER_FULL_FILE
+NameError: 
+02:18:31 [+  55.8s] INFO  $ python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_conditions'); ds=[json.loads((p/f'{e}_conditions.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; names=['clean','snr20','snr10','snr5']; snrs=[None,20,10,5]; keys=('wer','final_latency_p50_ms','final_latency_p95_ms','final_latency_n','partial_latency_p50_ms','partial_latency_p95_ms','partial_latency_n'); assert all([c['name'] for c in d['conditions']]==names and [c['snr_db'] for c in d['conditions']]==snrs for d in ds); assert all(all(k in c for k in keys) for d in ds for c in d['conditions']); assert all(0<=c['wer']<=1 and c['final_latency_n']>=1 and c['partial_latency_n']>=1 and len(c['results'])==5 for d in ds for c in d['conditions']); assert all(math.isfinite(float(c[k])) for d in ds for c in d['conditions'] for k in keys if not k.endswith('_n')); nm=json.loads((p/'noise_manifest.json').read_text(encoding='utf-8')); assert nm['seed']==20261109 and len(nm['files'])==15; assert all(Path(f['path']).is_file() and abs(f['measured_snr_db']-f['target_snr_db'])<=0.1 for f in nm['files'])"
+02:18:31 [+  55.9s] ERROR rc=1: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1027, in read_text
+
+02:18:31 [+  55.9s] WARN  T2: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+02:18:31 [+  56.0s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T3
+02:18:39 [+  64.5s] INFO  executor: deepseek1017 ok in=4995 out=1448 cost=$0.0006 lat=8.5s
+02:18:39 [+  64.5s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ autonomy/workspace/outbox/T3_result.md (1988 ╤Б╨╕╨╝╨▓.)
+02:18:39 [+  64.5s] INFO  summary: ╨Ф╨╛╨║╤Г╨╝╨╡╨╜╤В╨╜╨░╤П ╨╖╨░╨┤╨░╤З╨░ T3: ╤Б╨▓╨╡╤А╤П╤О experiments/engine_choice.md ╤Б sherpa_metrics.json (WER 0.113529 тЖТ 11.35%) ╨╕ vosk_metrics.json (WER 0.1892148 тЖТ 18.92%), ╨╛╨▒╨░ ╨╜╨░ 50 ╨║╨╗╨╕╨┐╨░╤Е FLEURS. ╨Ф╨╛╨║╤Г╨╝╨╡╨╜╤В ╤Г╨╢╨╡ ╤Б╨╛╨┤╨╡╤А╨╢╨╕╤В ╨▓╤Б╨╡ ╤В╤А╨╡╨▒╤Г╨╡╨╝╤Л╨╡ ╤А╨░╨╖╨┤╨╡╨╗╤Л ╨╕ ╨╛╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╕╤П (╤Б╨░╨╝╨╛╨┐╨╕╤Б╨╜╤Л╨╣ WER, 50 ╨║╨╗╨╕╨┐╨╛╨▓, ╤З╤В╨╡╨╜╨╕╨╡ ╨▒╨╡╨╖ ╤И╤Г╨╝╨░, ╤А╨░╨╖╨╜╨░╤П ╤Б╨╡╨╝╨░╨╜╤В╨╕╨║╨░ ╨╖╨░╨┤╨╡
+02:18:39 [+  64.5s] INFO  $ python -c "from pathlib import Path; p=Path('experiments/engine_choice.md'); assert p.is_file() and p.stat().st_size > 0; print('engine_choice.md OK', p.stat().st_size)"
+02:18:39 [+  64.6s] OK    rc=0: engine_choice.md OK 5256
+
+02:18:39 [+  64.6s] INFO  $ python -c "import json,re; from pathlib import Path; s=json.loads(Path('experiments/fleurs_benchmark/sherpa_metrics.json').read_text(encoding='utf-8')); v=json.loads(Path('experiments/fleurs_benchmark/vosk_metrics.json').read_text(encoding='utf-8')); d=Path('experiments/engine_choice.md').read_text(encoding='utf-8'); assert s['num_clips']==50 and v['num_clips']==50; assert abs(s['wer']-0.113529)<1e-9; assert abs(v['wer']-0.1892147587511826)<1e-9; assert '11.35%' in d and '18.92%' in d; assert '╤Б╨░╨╝╨╛╨┐╨╕╤Б╨╜' in d; assert '150 ╨║╨╗╨╕╨┐' in d; assert re.search(r'╤А╨░╨╖╨╜\w* ╤Б╨╡╨╝╨░╨╜╤В╨╕╨║', d); print('cross-check OK')"
+02:18:39 [+  64.7s] OK    rc=0: cross-check OK
+
+02:18:39 [+  64.7s] INFO  $ python -c "from pathlib import Path; p=Path('autonomy/workspace/outbox/T3_result.md'); assert p.is_file() and p.stat().st_size>0; print('T3_result.md OK', p.stat().st_size)"
+02:18:39 [+  64.8s] OK    rc=0: T3_result.md OK 3087
+
+02:18:39 [+  64.8s] STEP  VERIFY ╨╖╨░╨┤╨░╤З╨░=T3
+02:18:40 [+  64.9s] INFO  verify: pass=True (verify.T3.json)
+02:18:40 [+  64.9s] STEP  REVIEW ╨╖╨░╨┤╨░╤З╨░=T3
+02:18:42 [+  67.2s] INFO  verifier: deepseek1017 ok in=591 out=95 cost=$0.0001 lat=2.3s
+02:18:42 [+  67.2s] INFO  ╨▓╨╡╤А╨┤╨╕╨║╤В ╨║╨╛╨╜╤В╤А╨╛╨╗╤С╤А╨░: PASS тАФ ╨Т╤Б╨╡ acceptance-╨┐╤А╨╛╨▓╨╡╤А╨║╨╕ ╨┐╤А╨╛╤И╨╗╨╕ (verify_pass=true): ╤Д╨░╨╣╨╗ experiments/engine_choice.md ╨╕ T3_result.md ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤В, ╨▓ ╨╛╤В╤З╤С╤В╨╡ ╨┐╤А╨╕╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤В ╤В╤А╨╡╨▒╤Г╨╡╨╝╤Л╨╡ ╤З╨╕╤Б╨╗╨░ 11.35%, 18.92%, ╤Г╨┐╨╛╨╝╨╕╨╜╨░╨╜╨╕╤П ╤Б╨░╨╝╨╛╨┐╨╕╤Б╨╜╨╛╨│╨╛ ╨┤╨▓╨╕╨╢╨║╨░, 150
+02:18:42 [+  67.2s] STEP  EXECUTE ╨╖╨░╨┤╨░╤З╨░=T4
+02:19:01 [+  86.2s] INFO  executor: deepseek1017 ok in=8905 out=4522 cost=$0.0017 lat=19.0s
+02:19:01 [+  86.2s] INFO  ╨╖╨░╨┐╨╕╤Б╨░╨╜ reports/monthly/2026-11-draft.md (10122 ╤Б╨╕╨╝╨▓.)
+02:19:01 [+  86.2s] INFO  summary: ╨Ю╨▒╨╜╨╛╨▓╨╗╤П╤О ╤В╨╛╨╗╤М╨║╨╛ reports/monthly/2026-11-draft.md: ╤Б╨▓╨╡╤А╤П╤О ╨║╨░╨╢╨┤╨╛╨╡ ╤З╨╕╤Б╨╗╨╛ ╤Б ╨┐╨╡╤А╨▓╨╕╤З╨╜╤Л╨╝╨╕ metrics.json/run_verdict.json/summary_table.txt, ╨┤╨╛╨▒╨░╨▓╨╗╤П╤О ╨┐╨╛╤В╨╛╨║╨╛╨▓╤Л╨╡ ╤Б╤Г╨▒╤В╨╕╤В╤А╤Л (╨╛╨▒╨░ run_id + ╤Б╨║╤А╨╕╨╜╤И╨╛╤В╤Л), ╨▓╨░╨╗╨╕╨┤╨╜╤Л╨╣ ╨┤╤Г╨┐╨╗╨╡╨║╤Б╨╜╤Л╨╣ E2E r3 (40 partial/3 final, 739 ╨╝╤Б ╤В╨╛╨╗╤М╨║╨╛ ╨┐╤А╨╕ n=1, ╨╗╨░╨│ 298.1 ╨╝╤Б, ╨┤╤А╨╡╨╣╤Д -54.7 ppm), FAIL ╨╛╨┤╨╜╨╛┬н╨║
+02:19:01 [+  86.2s] INFO  $ python -c "from pathlib import Path; p=Path('reports/monthly/2026-11-draft.md'); assert p.is_file() and p.stat().st_size > 0; print('ok', p.stat().st_size)"
+02:19:01 [+  86.3s] OK    rc=0: ok 14875
+
+02:19:01 [+  86.3s] STEP  VERIFY ╨╖╨░╨┤╨░╤З╨░=T4
+02:19:01 [+  86.4s] INFO  verify: pass=False (verify.T4.json)
+02:19:01 [+  86.4s] STEP  REVIEW ╨╖╨░╨┤╨░╤З╨░=T4
+02:19:03 [+  88.4s] INFO  verifier: deepseek1017 ok in=779 out=79 cost=$0.0001 lat=1.9s
+02:19:03 [+  88.4s] INFO  ╨▓╨╡╤А╨┤╨╕╨║╤В ╨║╨╛╨╜╤В╤А╨╛╨╗╤С╤А╨░: FAIL тАФ ╨Ю╨┤╨╕╨╜ acceptance-╤З╨╡╨║ ╨╜╨╡ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜: ╨▓ reports/monthly/2026-11-draft.md ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В ╤Д╤А╨░╨╖╨░ ┬л╨╜╨╡╨╖╨░╨▓╨╕╤Б╨╕╨╝╤Л╨╡ ╤В╨░╨║╤В╤Л ADC ╨╕ DAC┬╗ (verify_pass=false), ╨╛╤Б╤В╨░╨╗╤М╨╜╤Л╨╡ ╨┐╤А╨╛╨▓╨╡╤А╨║╨╕ ╨╕ ╨░╤А╤В╨╡╤Д╨░╨║╤В╤Л ╨╜╨░ ╨╝╨╡╤Б╤В╨╡ тАФ ╨╕╤Б╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М ╨╝╨╛╨╢╨╡╤В ╨┤╨╛╨┐
+02:19:03 [+  88.4s] WARN  T4: ╨╕╤Б╤З╨╡╤А╨┐╨░╨╜╤Л ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╕ (1)
+02:19:03 [+  88.4s] STEP  REPORT
+02:19:44 [+ 129.1s] INFO  reporter: glm53_flash ok in=2176 out=4000 cost=$0.0004 lat=40.7s
+02:19:44 [+ 129.1s] OK    ╨╛╤В╤З╤С╤В: autonomy\workspace\outbox\report.md
+02:19:44 [+ 129.1s] OK    ╨╜╨╛╤З╤М ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░: ╨▒╤О╨┤╨╢╨╡╤В $0.006, ╨╖╨░╨┤╨░╤З╨╕: T1=failed, T2=failed, T3=done, T4=failed
+[2026-11-11T02:19:44] tick 1 exit=0
+[2026-11-11T02:19:44] phase DONE
+[2026-11-11T02:19:44] supervisor exit

@@ -1,0 +1,61 @@
+{
+  "closes": "LG-2026-11-13-06",
+  "created": "2026-11-14T14:57:04.841172+05:00",
+  "scope": "offline tests only; no live models/research/run/tick",
+  "independent_review": "not completed: subscription quota",
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "autonomy/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "tests": 194,
+      "log": "limits-unittest.log",
+      "sha256": "277c4ccb39e0175415f250d5c3608cbe30102942b29336c71b2a8daa33462550"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_critic_search.py"
+      ],
+      "returncode": 0,
+      "log": "limits-test_critic_search.log",
+      "sha256": "55b41b96b89a8a54c6a86ee89e7496b1db3777cee1b783f948cb149b58fb7fe4"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_noise_manifest_merge.py"
+      ],
+      "returncode": 0,
+      "log": "limits-test_noise_manifest_merge.log",
+      "sha256": "5039278e368bde630b710206f6ede3675be078c96f7a10a407fa630cc7d70b7f"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_plan_approval.py"
+      ],
+      "returncode": 0,
+      "log": "limits-test_plan_approval.log",
+      "sha256": "f848689e54605f7b571f2f54b2463e3cf9001cd64a480e44d9eec3c5d9759557"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_tick_budget.py"
+      ],
+      "returncode": 0,
+      "log": "limits-test_tick_budget.log",
+      "sha256": "8ced8ddb8ba536f1941f1763498eef1cbda02171d86558c967459ff685f90a3d"
+    }
+  ]
+}

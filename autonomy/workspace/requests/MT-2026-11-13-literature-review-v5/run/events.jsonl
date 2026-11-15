@@ -1,0 +1,37 @@
+{"ts": "2026-11-14 19:42:24", "t": 1794667344.308, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-14 19:44:51", "t": 1794667491.017, "type": "model_call", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 14742, "out_tok": 5344, "reasoning_tok": 4361, "cost_usd": 0.0, "latency": 146.7, "finish": "stop"}
+{"ts": "2026-11-14 19:44:58", "t": 1794667498.829, "type": "model_call", "role": "planner", "provider": "chatgpt", "model": "gpt-6.1-terra", "in_tok": 13704, "out_tok": 163, "reasoning_tok": 44, "cost_usd": 0, "latency": 7.8, "finish": "stop"}
+{"ts": "2026-11-14 19:45:52", "t": 1794667552.038, "type": "model_call", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 14997, "out_tok": 1696, "reasoning_tok": 932, "cost_usd": 0.0, "latency": 53.2, "finish": "stop"}
+{"ts": "2026-11-14 19:45:52", "t": 1794667552.067, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-14 19:45:52", "t": 1794667552.244, "type": "task_start", "task_id": "collect-sources", "goal": "Проверить актуальные внешние источники по заданию"}
+{"ts": "2026-11-14 19:46:21", "t": 1794667581.571, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-14 19:46:21", "t": 1794667581.826, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-14 19:46:47", "t": 1794667607.601, "type": "model_call", "role": "verifier", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 28070, "out_tok": 727, "reasoning_tok": 508, "cost_usd": 0.0, "latency": 25.7, "finish": "stop"}
+{"ts": "2026-11-14 19:46:47", "t": 1794667607.751, "type": "request_followup", "request_id": "MT-2026-11-13-literature-review-v5", "queries": 2, "author_model": "kimi-for-coding"}
+{"ts": "2026-11-14 19:46:47", "t": 1794667607.753, "type": "phase_change", "frm": "REVIEW", "to": "PLAN"}
+{"ts": "2026-11-14 19:46:47", "t": 1794667607.773, "type": "model_skip", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "reason": "independence"}
+{"ts": "2026-11-14 19:47:09", "t": 1794667629.23, "type": "model_call", "role": "critic", "provider": "chatgpt_critic", "model": "gpt-6.1-sol", "in_tok": 18066, "out_tok": 412, "reasoning_tok": 326, "cost_usd": 0, "latency": 21.4, "finish": "stop"}
+{"ts": "2026-11-14 19:47:09", "t": 1794667629.258, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-14 19:47:09", "t": 1794667629.493, "type": "task_start", "task_id": "collect-sources-r2", "goal": "Проверить актуальные внешние источники по заданию"}
+{"ts": "2026-11-14 19:47:32", "t": 1794667652.594, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-14 19:47:32", "t": 1794667652.844, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-14 19:47:52", "t": 1794667672.147, "type": "model_call", "role": "verifier", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 18018, "out_tok": 550, "reasoning_tok": 353, "cost_usd": 0.0, "latency": 19.2, "finish": "stop"}
+{"ts": "2026-11-14 19:47:52", "t": 1794667672.191, "type": "verdict", "task_id": "collect-sources-r2", "verdict": "PASS", "reason": "verify_pass=true: оба файла источников и их .json на месте, receipt.json связывает команды с артефактами; показанные источники (IBM SAA с таблицами WDER/WER, WhisperLive с диаризацией, лицензией MIT и", "verify_pass": true}
+{"ts": "2026-11-14 19:47:52", "t": 1794667672.191, "type": "task_end", "task_id": "collect-sources-r2", "status": "done", "iter": 1}
+{"ts": "2026-11-14 19:47:52", "t": 1794667672.207, "type": "phase_change", "frm": "REVIEW", "to": "MANAGER"}
+{"ts": "2026-11-14 19:47:52", "t": 1794667672.231, "type": "phase_change", "frm": "MANAGER", "to": "EXECUTE"}
+{"ts": "2026-11-14 19:47:52", "t": 1794667672.493, "type": "task_start", "task_id": "answer-mentor", "goal": "Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей теме до Вас.\n\nТогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть."}
+{"ts": "2026-11-14 19:47:52", "t": 1794667672.686, "type": "model_fail", "role": "executor", "provider": "chatgpt", "kind": "context", "error": "ChatGPT input exceeds conservative budget; split task", "cost_usd": 0.0, "in_tok": 0, "out_tok": 0, "attempt": 2}
+{"ts": "2026-11-14 19:48:41", "t": 1794667721.472, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 103923, "out_tok": 14011, "reasoning_tok": 0, "cost_usd": 0.04799, "latency": 48.8, "finish": "stop"}
+{"ts": "2026-11-14 19:48:41", "t": 1794667721.522, "type": "violation", "task_id": "answer-mentor", "detail": "документное задание не разрешает команды/установки от executor"}
+{"ts": "2026-11-14 19:48:41", "t": 1794667721.834, "type": "model_fail", "role": "executor", "provider": "chatgpt", "kind": "context", "error": "ChatGPT input exceeds conservative budget; split task", "cost_usd": 0.0, "in_tok": 0, "out_tok": 0, "attempt": 3}
+{"ts": "2026-11-14 19:48:41", "t": 1794667721.836, "type": "provider_disabled", "provider": "chatgpt", "reason": "ChatGPT input exceeds conservative budget; split task"}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.03, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 103973, "out_tok": 8644, "reasoning_tok": 0, "cost_usd": 0.04156, "latency": 44.2, "finish": "stop"}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.125, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.483, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.56, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.699, "type": "task_end", "task_id": "answer-mentor", "status": "failed", "reason": "итерации исчерпаны", "iter": 2}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.708, "type": "phase_change", "frm": "EXECUTE", "to": "MANAGER"}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.744, "type": "phase_change", "frm": "MANAGER", "to": "REPORT"}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.758, "type": "night_report", "budget_usd": 0.0896, "tasks": {"collect-sources": "done", "collect-sources-r2": "done", "answer-mentor": "failed"}, "needs_human": null}
+{"ts": "2026-11-14 19:49:26", "t": 1794667766.759, "type": "phase_change", "frm": "REPORT", "to": "DONE"}

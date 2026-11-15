@@ -1,0 +1,11 @@
+# Conservative local defaults, NOT remote subscription limits or billing.
+group_daily_cap: 30
+cooldown_s: 60
+models:
+  deepseek-flash: {upstream_model: deepseek-v4-flash, daily_cap: 12, max_input_chars: 24000, max_output_tokens: 4000}
+  qwen-max: {upstream_model: Qwen3.7-Max, daily_cap: 8, max_input_chars: 24000, max_output_tokens: 4000}
+  kimi: {upstream_model: Kimi-K2.6, daily_cap: 6, max_input_chars: 40000, max_output_tokens: 4000}
+  perplexity: {upstream_model: Auto, daily_cap: 6, max_input_chars: 12000, max_output_tokens: 2000}
+  GLM-5.1: {upstream_model: GLM-5.1, daily_cap: 4, max_input_chars: 24000, max_output_tokens: 4000}
+  deepseek-pro-think: {upstream_model: deepseek-v4-pro-think, daily_cap: 4, max_input_chars: 24000, max_output_tokens: 4000}
+  qwen-coder: {upstream_model: Qwen3-Coder, daily_cap: 4, max_input_chars: 24000, max_output_tokens: 4000}

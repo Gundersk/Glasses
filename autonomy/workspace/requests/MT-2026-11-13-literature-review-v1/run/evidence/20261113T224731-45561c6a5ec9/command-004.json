@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"streaming ASR diarization speaker attributed WER DER latency benchmark datasets reproducibility Russian dialogue\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-4.md\" --fresh",
+  "command_sha256": "296a60e5c6ffbf2bc3723c86db6bf100ad37e79935ba77c3b809cc6f943e4179",
+  "returncode": 1,
+  "status": "completed",
+  "started_ns": 1794592113310108300,
+  "finished_ns": 1794592119723935000,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-004.stdout.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794592119723935000
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-004.stderr.txt",
+    "status": "file",
+    "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+    "size": 997,
+    "mtime_ns": 1794592119723935000
+  }
+}

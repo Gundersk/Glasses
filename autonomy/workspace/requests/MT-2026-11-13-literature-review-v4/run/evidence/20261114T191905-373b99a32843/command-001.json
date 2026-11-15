@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"Russian streaming ASR speaker attributed WER cpWER DER latency evaluation protocol datasets\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-1.md\" --fresh",
+  "command_sha256": "08e5cf76c9bc1b5fdda1cfa83b60513fb725d7340d39841846fe1ea050026a52",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794665959926014600,
+  "finished_ns": 1794665964222589600,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T191905-373b99a32843\\command-001.stdout.txt",
+    "status": "file",
+    "sha256": "7e879ecdd050fd3482b1f7b3aad3660f71f45e20027749e7b936f15b8aaa56d3",
+    "size": 194,
+    "mtime_ns": 1794665964222589600
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T191905-373b99a32843\\command-001.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794665964232603500
+  }
+}

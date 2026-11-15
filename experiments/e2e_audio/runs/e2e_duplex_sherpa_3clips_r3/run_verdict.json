@@ -1,0 +1,33 @@
+{
+  "pass": true,
+  "run_id": "e2e_duplex_sherpa_3clips_r3",
+  "kind": "e2e",
+  "layers": {
+    "layer1_validate": {
+      "status": "pass",
+      "pass": true,
+      "required": true,
+      "failed_checks": []
+    },
+    "layer2_dom": {
+      "status": "missing",
+      "pass": null,
+      "required": false,
+      "reason": "dom_checks.json не передан"
+    },
+    "layer2_screenshot": {
+      "status": "missing",
+      "pass": null,
+      "required": false,
+      "reason": "скриншот не передан"
+    },
+    "layer3_vision": {
+      "status": "missing",
+      "pass": null,
+      "required": false,
+      "reason": "vision_review.json не передан"
+    }
+  },
+  "failed_layers": [],
+  "created": "2026-11-09T19:57:45.313448+05:00"
+}

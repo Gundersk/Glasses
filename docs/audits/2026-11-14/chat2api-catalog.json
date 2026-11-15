@@ -1,0 +1,9 @@
+{
+  "closes": "LG-2026-11-14-01",
+  "accessed": "2026-11-14",
+  "endpoint": "http://127.0.0.1:8080/v1/models",
+  "http_status": 200,
+  "inference_called": false,
+  "model_ids": ["Auto", "Turbo", "PPLX-Pro", "GPT-5", "Gemini-2.5-Pro", "Claude-Sonnet-4", "Claude-Opus-4", "Nemotron", "deepseek-v4-flash", "deepseek-v4-pro", "Qwen3.7-Max", "Qwen3.6-Plus", "Qwen3.6-35B-A3B", "Qwen3.6-27B", "Qwen3-Coder", "Kimi-K2.6", "GLM-5.1", "deepseek-v4-flash-think", "deepseek-v4-flash-search", "deepseek-v4-flash-think-search", "deepseek-v4-pro-think", "deepseek-v4-pro-search", "deepseek-v4-pro-think-search"],
+  "limitations": ["Metadata only; model identity, availability, tools, search, limits and quality are not verified.", "Credentials and raw response omitted."]
+}

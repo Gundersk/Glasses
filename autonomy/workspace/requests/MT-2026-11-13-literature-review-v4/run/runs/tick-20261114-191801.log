@@ -1,0 +1,45 @@
+19:18:01 [+   0.0s] STEP  PLAN
+19:18:01 [+   0.0s] INFO  план с диска: перегенерация не нужна, проверяю критиком
+19:19:05 [+  63.3s] INFO  critic: kimi_pro ok in=14734 out=2202 reasoning=1391 cost=$0.0000 lat=63.3s
+19:19:05 [+  63.3s] INFO  критика записана: autonomy\workspace\requests\MT-2026-11-13-literature-review-v4\run\outbox\critique.md
+19:19:05 [+  63.3s] INFO  критик: approve (раундов 1, замечаний 2)
+19:19:05 [+  63.3s] OK    план построен: 2 задач: collect-sources->MT-2026-11-13-literature-review-v4, answer-mentor->MT-2026-11-13-literature-review-v4
+19:19:05 [+  63.5s] STEP  EXECUTE задача=collect-sources
+19:19:05 [+  63.6s] INFO  summary: утверждённый протокол без LLM
+19:19:05 [+  63.6s] INFO  $ python -m autonomy.research "streaming captions smart glasses hearing impaired speaker attribution diarization research" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-0.md" --fresh
+19:19:19 [+  78.0s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v4\sources-0.md (ссылок: 2)
+
+19:19:19 [+  78.0s] INFO  $ python -m autonomy.research "Russian streaming ASR speaker attributed WER cpWER DER latency evaluation protocol datasets" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-1.md" --fresh
+19:19:24 [+  82.3s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v4\sources-1.md (ссылок: 2)
+
+19:19:24 [+  82.3s] INFO  $ python -m autonomy.research "streaming speaker attributed ASR end to end online diarization latency" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-2.md" --fresh
+19:19:30 [+  89.0s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v4\sources-2.md (ссылок: 2)
+
+19:19:31 [+  89.1s] STEP  VERIFY задача=collect-sources
+19:19:31 [+  89.3s] INFO  verify: pass=True (collect-sources-1794665971228040700-dfff8cf7.json)
+19:19:31 [+  89.4s] STEP  REVIEW задача=collect-sources
+19:19:51 [+ 110.0s] INFO  verifier: kimi_pro ok in=21726 out=821 reasoning=543 cost=$0.0000 lat=20.6s
+19:19:51 [+ 110.0s] INFO  вердикт контролёра: SEARCH — Темы очков/субтитров, потокового ASR (вкл. русский), EEND/онлайн-диаризации и метрик покрыты (5 доменов, содержательные страницы: asr_eval-гайд, VibeVoice-ASR-Streaming, awesome-diarization). Пробел: 
+19:19:52 [+ 110.1s] INFO  дополнительные запросы в пределах поручения; нужен новый независимый critic
+19:19:52 [+ 110.1s] STEP  PLAN
+19:19:52 [+ 110.1s] INFO  план с диска: перегенерация не нужна, проверяю критиком
+19:20:27 [+ 145.5s] INFO  critic: chatgpt_critic ok in=17755 out=405 reasoning=360 cost=$0.0000 lat=35.3s
+19:20:27 [+ 145.5s] INFO  критика записана: autonomy\workspace\requests\MT-2026-11-13-literature-review-v4\run\outbox\critique.md
+19:20:27 [+ 145.5s] INFO  критик: approve (раундов 1, замечаний 0)
+19:20:27 [+ 145.5s] OK    план построен: 3 задач: collect-sources->MT-2026-11-13-literature-review-v4, collect-sources-r1->MT-2026-11-13-literature-review-v4, answer-mentor->MT-2026-11-13-literature-review-v4
+19:20:27 [+ 145.7s] STEP  EXECUTE задача=collect-sources-r1
+19:20:27 [+ 145.7s] INFO  summary: утверждённый протокол без LLM
+19:20:27 [+ 145.7s] INFO  $ python -m autonomy.research "audio-visual speaker diarization active speaker detection face voice association benchmark AVSD" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-3.md" --fresh
+19:20:36 [+ 154.3s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v4\sources-3.md (ссылок: 2)
+
+19:20:36 [+ 154.3s] INFO  $ python -m autonomy.research "WhisperX pyannote.audio NeMo streaming speaker diarization license hardware requirements GPU" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-4.md" --fresh
+19:20:42 [+ 161.1s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v4\sources-4.md (ссылок: 2)
+
+19:20:43 [+ 161.1s] STEP  VERIFY задача=collect-sources-r1
+19:20:43 [+ 161.3s] INFO  verify: pass=True (collect-sources-r1-1794666043252794200-4e12824f.json)
+19:20:43 [+ 161.4s] STEP  REVIEW задача=collect-sources-r1
+19:21:17 [+ 195.6s] INFO  verifier: kimi_pro ok in=15465 out=1271 reasoning=1002 cost=$0.0000 lat=34.2s
+19:21:17 [+ 195.6s] INFO  вердикт контролёра: SEARCH — Пробел по лицензиям: запрос 5 был про лицензии/оборудование WhisperX/pyannote/NeMo, но выбранные страницы (issue о скорости pyannote #1652 и NeMo Show&Tell paper) не содержат лицензий — WhisperX READM
+19:21:17 [+ 195.7s] STEP  REPORT
+19:21:17 [+ 195.7s] OK    отчёт: autonomy\workspace\requests\MT-2026-11-13-literature-review-v4\run\outbox\reports\20261114.md (и report.md)
+19:21:17 [+ 195.8s] OK    ночь завершена: бюджет $0.000, задачи: collect-sources=done, collect-sources-r1=pending, answer-mentor=pending

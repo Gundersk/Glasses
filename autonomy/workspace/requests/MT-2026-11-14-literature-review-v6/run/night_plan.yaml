@@ -1,0 +1,110 @@
+- goal_id: MT-2026-11-14-literature-review-v6
+  closes: roadmap:этап1-шаг2
+  max_iter: 1
+  status: failed
+  request_sha256: 25ddc289b8acb58b41950972ea2a644e145a9bae6cc01a352785cf9797039357
+  id: collect-sources
+  goal: Проверить актуальные внешние источники по заданию
+  kind: research
+  execution: approved_commands
+  commands:
+  - python -m autonomy.research "smart glasses live captions deaf hard of hearing
+    product accessibility research speaker identification XRAI Google" --max-pages
+    2 --out "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md"
+    --fresh
+  - python -m autonomy.research "audio visual active speaker detection AVA ActiveSpeaker
+    benchmark original paper smart glasses subtitles" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md"
+    --fresh
+  - python -m autonomy.research "speaker attributed ASR streaming online offline diarization
+    cpWER DER WDER Russian Vosk GigaAM T-one model data license hardware" --max-pages
+    2 --out "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md"
+    --fresh
+  inputs:
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/request.json
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/context.md
+  - docs/agent-context.md
+  - docs/scope.md
+  - docs/benchmarks.md
+  - docs/roadmap-changes.md
+  - docs/environment.md
+  - STATUS.md
+  - docs/local-goals.md
+  - docs/literature-review-2026-11.md
+  - docs/sources.md
+  - experiments/engine_choice.md
+  - reports/analytics-note-2026-11.md
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/run/research-plan-01.json
+  time_limit_minutes: 10
+  acceptance:
+  - file_exists: autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md.json
+  - file_exists: autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md.json
+  - file_exists: autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md.json
+  time_budget:
+    lane: sources
+    scope: shared_request_lane
+    allowed_seconds: 600.0
+  hint: ''
+  receipt: autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/run/evidence/20261114T210852-3b888687ef35/receipt.json
+- goal_id: MT-2026-11-14-literature-review-v6
+  closes: roadmap:этап1-шаг2
+  max_iter: 2
+  status: pending
+  request_sha256: 25ddc289b8acb58b41950972ea2a644e145a9bae6cc01a352785cf9797039357
+  id: answer-mentor
+  kind: documentation
+  execution: document_only
+  goal: 'Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей
+    теме до Вас.
+
+
+    Тогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.'
+  inputs:
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/request.json
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/context.md
+  - docs/agent-context.md
+  - docs/scope.md
+  - docs/benchmarks.md
+  - docs/roadmap-changes.md
+  - docs/environment.md
+  - STATUS.md
+  - docs/local-goals.md
+  - docs/literature-review-2026-11.md
+  - docs/sources.md
+  - experiments/engine_choice.md
+  - reports/analytics-note-2026-11.md
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/run/research-plan-01.json
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md.json
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md.json
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md
+  - autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md.json
+  depends_on:
+  - collect-sources
+  time_limit_minutes: 15
+  hint: 'Писать только response.md, claims.json, decision.json в reports/mentor/MT-2026-11-14-literature-review-v6.
+    claims: список {id, claim, status:supported|unverified, source_url, quote, evidence_file}.
+    supported — точная цитата из sources-*.md.json, не из памяти. decision: {roadmap_change:boolean,
+    report_change:boolean, reason, trigger, options:[no_change,...], owner_actions:[...]}.
+    При roadmap_change нужен trigger и минимум один supported claim; не менять канонические
+    документы. В response.md ссылаться на claim id и URL, разделять источник/измерено/план;
+    дать ответ по каждому requirements карточки и ограничения поиска. Обязательная
+    матрица decision.coverage: [{topic: точная тема research_policy.topics, claim_ids:
+    [ID подтверждённых утверждений]}], по записи на каждую тему. Минимумы разных URL/доменов
+    берутся из research_policy; количество не доказывает полноту. Если источников
+    не хватает, не выдумывай цитаты: decision.completion_status=partial, limitations=[причины/что
+    не проверено], по каждой непокрытой теме claim_ids=[] и gap=причина. В response.md
+    явно напиши ЧАСТИЧНЫЙ РЕЗУЛЬТАТ и перечисли ограничения. Это сохранение материала,
+    не выполнение задания; полный исход completion_status=complete.'
+  acceptance:
+  - file_exists: reports/mentor/MT-2026-11-14-literature-review-v6/response.md
+  - file_exists: reports/mentor/MT-2026-11-14-literature-review-v6/claims.json
+  - file_exists: reports/mentor/MT-2026-11-14-literature-review-v6/decision.json
+  - mentor_response: MT-2026-11-14-literature-review-v6
+  time_budget:
+    lane: answer
+    scope: shared_request_lane
+    allowed_seconds: 900.0

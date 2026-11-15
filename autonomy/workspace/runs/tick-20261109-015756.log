@@ -1,0 +1,13 @@
+01:57:56 [+   0.0s] STEP  PLAN
+01:57:56 [+   0.0s] OK    план построен: 1 задач: mock-wer
+01:57:56 [+   0.2s] STEP  EXECUTE задача=mock-wer
+01:57:56 [+   0.2s] INFO  записан autonomy/workspace/outbox/mock_result.json (24 симв.)
+01:57:56 [+   0.2s] INFO  summary: mock: записываю результат
+01:57:56 [+   0.2s] ERROR фаза EXECUTE: bad escape \U at position 2
+01:57:56 [+   0.2s] INFO  записан autonomy/workspace/outbox/mock_result.json (24 симв.)
+01:57:56 [+   0.2s] INFO  summary: mock: записываю результат
+01:57:56 [+   0.2s] ERROR фаза EXECUTE: bad escape \U at position 2
+01:57:56 [+   0.2s] WARN  mock-wer: исчерпаны итерации (2)
+01:57:56 [+   0.2s] STEP  REPORT
+01:57:56 [+   0.2s] OK    отчёт: autonomy\workspace\outbox\report.md
+01:57:56 [+   0.2s] OK    ночь завершена: бюджет $0.000, задачи: mock-wer=failed

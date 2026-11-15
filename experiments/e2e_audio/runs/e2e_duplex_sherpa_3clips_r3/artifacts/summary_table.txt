@@ -1,0 +1,17 @@
+engine                             | sherpa
+n_clips                            | 3
+duration_s                         | 39.48
+snr_db (окна)                      | 33.99
+snr_db_recomputed (p90/p10)        | 63.79
+corr_peak (медиана окон)           | 0.6911
+corr_global (справочно)            | 0.4564
+drift_ppm                          | -54.688
+valid_window_fraction              | 0.889
+lag_ms (медиана локальных)         | 298.1
+partial_count                      | 40
+final_count                        | 3
+latency p50/p95 мс (n=1)           | 739 / 739
+endpoint_wait p50/p95 мс (n=1)     | 717 / 717
+gate                               | PASS (validate rc=0, gate rc=0): PASS
+run_dir                            | experiments\e2e_audio\runs\e2e_duplex_sherpa_3clips_r3
+recording                          | experiments\e2e_audio\runs\e2e_duplex_sherpa_3clips_r3\artifacts\recording.wav

@@ -1,0 +1,48 @@
+05:39:46 [+   0.0s] STEP  PLAN
+05:39:52 [+   6.0s] WARN  planner: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+05:39:54 [+   8.0s] INFO  planner: gemini_lite_free ok in=4238 out=477 cost=$0.0000 lat=2.0s
+05:39:54 [+   8.0s] OK    план построен: 2 задач: stream-asr-browser-output, monthly-report-preparation
+05:39:54 [+   8.1s] STEP  EXECUTE задача=stream-asr-browser-output
+05:46:26 [+ 400.3s] INFO  executor: local ok in=1749 out=11106 cost=$0.0000 lat=389.3s
+05:46:26 [+ 400.3s] INFO  записан experiments/stream_output.py (6024 симв.)
+05:46:26 [+ 400.3s] INFO  summary: Создаёт experiments/stream_output.py: симулирует потоковую выдачу ASR (partial/final), печатает в консоль, генерирует HTML UI, делает скриншот через python -m autonomy.screenshot с fallback на matplotlib/1x1 PNG, пишет плоский metrics.json с p50_latency_ms. Реальный ASR не запускается, больших загру
+05:46:26 [+ 400.3s] INFO  $ python experiments/stream_output.py
+05:46:26 [+ 400.4s] ERROR rc=1:   File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\experiments\stream_output.py", line 27
+    rows = ''.join('<div class='line'>' + line + '</div>' for line in lines)
+          
+05:52:45 [+ 778.8s] INFO  executor: local ok in=1869 out=10666 cost=$0.0000 lat=376.9s
+05:52:45 [+ 778.8s] INFO  записан experiments/stream_output.py (4336 симв.)
+05:52:45 [+ 778.8s] INFO  summary: Create experiments/stream_output.py that simulates ASR streaming partial/final chunks, measures inter-chunk latency, writes experiments/stream_output/metrics.json, renders HTML UI, and invokes autonomy.screenshot to save experiments/stream_output/results/screenshots/ui.png. No model/dataset download
+05:52:45 [+ 778.8s] INFO  $ python experiments/stream_output.py
+05:52:49 [+ 782.7s] OK    rc=0: "chunk_count": 11, "partial_count": 10, "final_count": 4, "seed": 0, "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]", "time": "2026-11-09T05:52:45+0500", "status": "ok"}
+
+05:52:49 [+ 782.7s] STEP  VERIFY задача=stream-asr-browser-output
+05:52:52 [+ 786.3s] INFO  verify: pass=True (verify.stream-asr-browser-output.json)
+05:52:52 [+ 786.3s] STEP  REVIEW задача=stream-asr-browser-output
+05:52:57 [+ 791.2s] WARN  verifier: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+05:53:02 [+ 796.2s] INFO  verifier: gemini_lite_free ok in=862 out=48 cost=$0.0000 lat=5.0s
+05:53:02 [+ 796.2s] INFO  вердикт контролёра: FAIL — Верификация прошла, но в логах есть ошибка синтаксиса (SyntaxError) при запуске скрипта, что указывает на незафиксированные проблемы в коде.
+05:53:02 [+ 796.2s] WARN  stream-asr-browser-output: исчерпаны итерации (2)
+05:53:02 [+ 796.3s] STEP  EXECUTE задача=monthly-report-preparation
+05:55:51 [+ 964.8s] INFO  executor: local ok in=4180 out=4492 cost=$0.0000 lat=167.0s
+05:55:51 [+ 964.8s] INFO  записан reports/report-2026-11.md (1920 симв.)
+05:55:51 [+ 964.8s] INFO  записан experiments/2026-11-monthly-report/results/metrics.json (251 симв.)
+05:55:51 [+ 964.8s] INFO  summary: Подготовить черновик ежемесячного отчёта за ноябрь 2026 по этапу 2; без скачиваний; сохранить отчёт в разрешённом пути reports/report-2026-11.md, так как docs/report-2026-11.md вне разрешённых путей; WER/p50/p95 не измерены, зафиксированы как placeholders.
+05:55:51 [+ 964.8s] INFO  $ python -c "import os; os.makedirs('reports', exist_ok=True); os.makedirs('experiments/2026-11-monthly-report/results', exist_ok=True)"
+05:55:51 [+ 964.8s] OK    rc=0: 
+05:55:51 [+ 964.8s] INFO  $ python -c "import os; print(os.path.exists('reports/report-2026-11.md'))"
+05:55:51 [+ 964.9s] OK    rc=0: True
+
+05:55:51 [+ 964.9s] STEP  VERIFY задача=monthly-report-preparation
+05:55:51 [+ 964.9s] INFO  verify: pass=False (verify.monthly-report-preparation.json)
+05:55:51 [+ 964.9s] STEP  REVIEW задача=monthly-report-preparation
+05:55:56 [+ 970.4s] WARN  verifier: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+05:56:05 [+ 978.8s] INFO  verifier: gemini_lite_free ok in=550 out=62 cost=$0.0000 lat=8.4s
+05:56:05 [+ 978.8s] INFO  вердикт контролёра: FAIL — Файл отчета создан по другому пути (reports/report-2026-11.md вместо docs/report-2026-11.md), из-за чего проверки не прошли.
+05:59:46 [+1200.2s] INFO  executor: local ok in=4252 out=6067 cost=$0.0000 lat=219.9s
+05:59:46 [+1200.2s] WARN  monthly-report-preparation: исчерпаны итерации (2)
+05:59:46 [+1200.2s] STEP  REPORT
+05:59:51 [+1205.0s] WARN  reporter: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+05:59:53 [+1207.1s] INFO  reporter: gemini_lite_free ok in=1437 out=512 cost=$0.0000 lat=2.1s
+05:59:53 [+1207.1s] OK    отчёт: autonomy\workspace\outbox\report.md
+05:59:53 [+1207.1s] OK    ночь завершена: бюджет $0.000, задачи: stream-asr-browser-output=failed, monthly-report-preparation=failed

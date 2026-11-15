@@ -1,0 +1,10 @@
+23:09:59 [+   0.0s] STEP  PLAN
+23:09:59 [+   0.0s] INFO  план с диска: перегенерация не нужна, проверяю критиком
+23:12:16 [+ 136.7s] INFO  critic: kimi_pro ok in=13417 out=5611 reasoning=4496 cost=$0.0000 lat=136.7s
+23:12:23 [+ 144.4s] INFO  planner: chatgpt ok in=13031 out=179 reasoning=55 cost=$0.0000 lat=7.7s
+23:13:26 [+ 206.7s] INFO  critic: kimi_pro ok in=14253 out=4416 reasoning=3086 cost=$0.0000 lat=62.3s
+23:13:26 [+ 206.7s] INFO  критика записана: autonomy\workspace\requests\MT-2026-11-13-literature-review-v2\run\outbox\critique.md
+23:13:26 [+ 206.7s] ERROR план не получил валидное одобрение критика
+23:13:26 [+ 206.7s] STEP  REPORT
+23:13:26 [+ 206.7s] OK    отчёт: autonomy\workspace\requests\MT-2026-11-13-literature-review-v2\run\outbox\reports\20261113.md (и report.md)
+23:13:26 [+ 206.7s] OK    ночь завершена: бюджет $0.000, задачи: collect-sources=pending, answer-mentor=pending

@@ -1,0 +1,75 @@
+# Реестр целей ночной системы.
+# Машинная проекция ROADMAP.md: глобальная цель, текущий этап и его критерии.
+# Локальные цели (LG) добавляются только после фильтра docs/local-goals.md;
+# отклонённые LG сюда не попадают.
+#
+# Инварианты (проверяет autonomy/goals.py):
+# - задача ночи обязана ссылаться на goal_id открытой цели;
+# - статус done ставится только при наличии существующих файлов-доказательств;
+# - счётчик nights_without_progress переживает перезапуск и ночи.
+
+version: 1
+
+global:
+  statement: "Человек с нарушением слуха видит в умных очках субтитры речи выбранного собеседника с небольшой задержкой"
+  deadline: "2027-06-30"
+
+stage:
+  id: "этап2"
+  title: "Потоковое распознавание русской речи и вывод"
+  deadline: "2026-11-24"
+  status: "active"
+  exit_criteria:
+    - id: "E2.1"
+      text: "Одна streaming-ASR модель на русском запущена; зафиксированы задержка и ошибки"
+      status: "done"
+      benchmark: "docs/benchmarks.md#2"
+      benchmark_note: "внешние ориентиры по WER и латентности — там; сравнение не заявлялось"
+      evidence:
+        - "experiments/stage2_conditions/sherpa_conditions.json"
+        - "experiments/stage2_conditions/vosk_conditions.json"
+        - "experiments/stage2_resources/sherpa_resources.json"
+        - "experiments/stage2_resources/vosk_resources.json"
+      closed_night: "20261111"
+      nights_without_progress: 0
+
+    - id: "E2.2"
+      text: "Частичный и финальный текст выводятся в браузер/на экран и проверены на тестовом аудио"
+      status: "done"
+      evidence:
+        - "experiments/web_demo/asr_page.html"
+        - "experiments/web_demo/screenshots/ui.png"
+        - "experiments/web_demo/results/metrics.json"
+      closed_night: "20261111"
+      nights_without_progress: 0
+
+    - id: "E2.3"
+      text: "Статистика задержки и WER: медиана/p95 и примеры ошибок; для WER выборка не менее 20 клипов"
+      status: "open"
+      benchmark: "docs/benchmarks.md#2"
+      benchmark_note: "сравнивать с внешними числами только после совпадения условий: датасет, домен, метрика"
+      evidence:
+        - "experiments/stage2_conditions/sherpa_conditions.json"
+        - "experiments/stage2_conditions/vosk_conditions.json"
+      last_evidence_night: "20261111"
+      nights_without_progress: 0
+      note: "Сейчас 5 клипов: числа предварительные, 20 клипов ещё не прогнаны"
+
+    - id: "E2.4"
+      text: "Демонстрация и отчёт к 24.11.2026 подготовлены"
+      status: "open"
+      evidence: []
+      nights_without_progress: 0
+      note: "Черновик отчёта есть, но критерий закрывается отправленной версией и демонстрацией"
+
+local_goals: []
+
+policy:
+  autonomy: "pragmatic"
+  max_nights_without_progress: 3
+  # Необратимое и внешнее всегда останавливается на человека:
+  human_gates:
+    - "roadmap_change"
+    - "publication"
+    - "credentials"
+    - "spending_over_budget"

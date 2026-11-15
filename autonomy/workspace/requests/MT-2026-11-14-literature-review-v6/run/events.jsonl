@@ -1,0 +1,12 @@
+{"ts": "2026-11-14 21:05:44", "t": 1794672344.706, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-14 21:07:10", "t": 1794672430.743, "type": "model_call", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 15562, "out_tok": 2869, "reasoning_tok": 1924, "cost_usd": 0.0, "latency": 85.9, "finish": "stop"}
+{"ts": "2026-11-14 21:07:23", "t": 1794672443.931, "type": "model_call", "role": "planner", "provider": "chatgpt", "model": "gpt-6.1-terra", "in_tok": 14255, "out_tok": 178, "reasoning_tok": 41, "cost_usd": 0, "latency": 13.0, "finish": "stop"}
+{"ts": "2026-11-14 21:08:50", "t": 1794672530.476, "type": "model_call", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 15632, "out_tok": 3086, "reasoning_tok": 2080, "cost_usd": 0.0, "latency": 86.5, "finish": "stop"}
+{"ts": "2026-11-14 21:08:50", "t": 1794672530.508, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-14 21:08:52", "t": 1794672532.64, "type": "task_start", "task_id": "collect-sources", "goal": "Проверить актуальные внешние источники по заданию"}
+{"ts": "2026-11-14 21:09:27", "t": 1794672567.496, "type": "task_end", "task_id": "collect-sources", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-14 21:09:27", "t": 1794672567.502, "type": "phase_change", "frm": "EXECUTE", "to": "MANAGER"}
+{"ts": "2026-11-14 21:09:27", "t": 1794672567.535, "type": "phase_change", "frm": "MANAGER", "to": "EXECUTE"}
+{"ts": "2026-11-14 21:09:27", "t": 1794672567.561, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-14 21:09:27", "t": 1794672567.574, "type": "night_report", "budget_usd": 0.0, "tasks": {"collect-sources": "failed", "answer-mentor": "pending"}, "needs_human": "ответ не создаётся: сбор источников не принят"}
+{"ts": "2026-11-14 21:09:27", "t": 1794672567.576, "type": "phase_change", "frm": "REPORT", "to": "DONE"}

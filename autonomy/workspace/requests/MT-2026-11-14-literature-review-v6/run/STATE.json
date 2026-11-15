@@ -1,0 +1,204 @@
+{
+  "night_id": "20261114",
+  "phase": "DONE",
+  "task": null,
+  "tasks": [
+    {
+      "goal_id": "MT-2026-11-14-literature-review-v6",
+      "closes": "roadmap:этап1-шаг2",
+      "max_iter": 1,
+      "status": "failed",
+      "request_sha256": "25ddc289b8acb58b41950972ea2a644e145a9bae6cc01a352785cf9797039357",
+      "id": "collect-sources",
+      "goal": "Проверить актуальные внешние источники по заданию",
+      "kind": "research",
+      "execution": "approved_commands",
+      "commands": [
+        "python -m autonomy.research \"smart glasses live captions deaf hard of hearing product accessibility research speaker identification XRAI Google\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md\" --fresh",
+        "python -m autonomy.research \"audio visual active speaker detection AVA ActiveSpeaker benchmark original paper smart glasses subtitles\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md\" --fresh",
+        "python -m autonomy.research \"speaker attributed ASR streaming online offline diarization cpWER DER WDER Russian Vosk GigaAM T-one model data license hardware\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md\" --fresh"
+      ],
+      "inputs": [
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/request.json",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/context.md",
+        "docs/agent-context.md",
+        "docs/scope.md",
+        "docs/benchmarks.md",
+        "docs/roadmap-changes.md",
+        "docs/environment.md",
+        "STATUS.md",
+        "docs/local-goals.md",
+        "docs/literature-review-2026-11.md",
+        "docs/sources.md",
+        "experiments/engine_choice.md",
+        "reports/analytics-note-2026-11.md",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/run/research-plan-01.json"
+      ],
+      "time_limit_minutes": 10,
+      "acceptance": [
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md.json"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md.json"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md.json"
+        }
+      ],
+      "time_budget": {
+        "lane": "sources",
+        "scope": "shared_request_lane",
+        "allowed_seconds": 600.0
+      },
+      "hint": "",
+      "receipt": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/run/evidence/20261114T210852-3b888687ef35/receipt.json"
+    },
+    {
+      "goal_id": "MT-2026-11-14-literature-review-v6",
+      "closes": "roadmap:этап1-шаг2",
+      "max_iter": 2,
+      "status": "pending",
+      "request_sha256": "25ddc289b8acb58b41950972ea2a644e145a9bae6cc01a352785cf9797039357",
+      "id": "answer-mentor",
+      "kind": "documentation",
+      "execution": "document_only",
+      "goal": "Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей теме до Вас.\n\nТогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.",
+      "inputs": [
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/request.json",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/context.md",
+        "docs/agent-context.md",
+        "docs/scope.md",
+        "docs/benchmarks.md",
+        "docs/roadmap-changes.md",
+        "docs/environment.md",
+        "STATUS.md",
+        "docs/local-goals.md",
+        "docs/literature-review-2026-11.md",
+        "docs/sources.md",
+        "experiments/engine_choice.md",
+        "reports/analytics-note-2026-11.md",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/run/research-plan-01.json",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md.json",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md.json",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md",
+        "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-2.md.json"
+      ],
+      "depends_on": [
+        "collect-sources"
+      ],
+      "time_limit_minutes": 15,
+      "hint": "Писать только response.md, claims.json, decision.json в reports/mentor/MT-2026-11-14-literature-review-v6. claims: список {id, claim, status:supported|unverified, source_url, quote, evidence_file}. supported — точная цитата из sources-*.md.json, не из памяти. decision: {roadmap_change:boolean, report_change:boolean, reason, trigger, options:[no_change,...], owner_actions:[...]}. При roadmap_change нужен trigger и минимум один supported claim; не менять канонические документы. В response.md ссылаться на claim id и URL, разделять источник/измерено/план; дать ответ по каждому requirements карточки и ограничения поиска. Обязательная матрица decision.coverage: [{topic: точная тема research_policy.topics, claim_ids: [ID подтверждённых утверждений]}], по записи на каждую тему. Минимумы разных URL/доменов берутся из research_policy; количество не доказывает полноту. Если источников не хватает, не выдумывай цитаты: decision.completion_status=partial, limitations=[причины/что не проверено], по каждой непокрытой теме claim_ids=[] и gap=причина. В response.md явно напиши ЧАСТИЧНЫЙ РЕЗУЛЬТАТ и перечисли ограничения. Это сохранение материала, не выполнение задания; полный исход completion_status=complete.",
+      "acceptance": [
+        {
+          "file_exists": "reports/mentor/MT-2026-11-14-literature-review-v6/response.md"
+        },
+        {
+          "file_exists": "reports/mentor/MT-2026-11-14-literature-review-v6/claims.json"
+        },
+        {
+          "file_exists": "reports/mentor/MT-2026-11-14-literature-review-v6/decision.json"
+        },
+        {
+          "mentor_response": "MT-2026-11-14-literature-review-v6"
+        }
+      ],
+      "time_budget": {
+        "lane": "answer",
+        "scope": "shared_request_lane",
+        "allowed_seconds": 900.0
+      }
+    }
+  ],
+  "iter": 0,
+  "budget_used_usd": 0.0,
+  "calls_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "history": [
+    {
+      "h": "181b3a5effc3",
+      "n": 1
+    }
+  ],
+  "violations": [],
+  "last_error": null,
+  "manager_context": null,
+  "goal_bump_night": "20261114",
+  "needs_human": "ответ не создаётся: сбор источников не принят",
+  "lessons_admitted": [],
+  "updated": 1794672567.5799239,
+  "night_started_ts": 1794672344.710709,
+  "provider_fails": {
+    "kimi_pro": 0,
+    "chatgpt": 0
+  },
+  "attempts_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "attempts_night": "20261114",
+  "last_model_by_role": {
+    "critic": "kimi-for-coding",
+    "planner": "gpt-6.1-terra"
+  },
+  "subscription_run_id": "270e561950e04f37a70401b5dc09cf6f",
+  "plan_author_model": "gpt-6.1-terra",
+  "critique": {
+    "verdict": "approve",
+    "summary": "План соответствует карточке MT-2026-11-14-literature-review-v6: три начальных запроса покрывают продуктовые аналоги доступности, AV-ASD и speaker-attributed ASR/русские модели/метрики/лицензии; бюджеты 10+15 минут укладываются в work_total 25 минут, резерв 3 запросов и 1 followup доступны для непокрытых классов; честная маркировка partial и запрет отправки/закрытия шага соблюдены. Критичных замечаний нет.",
+    "objections": [
+      {
+        "task_id": "answer-mentor",
+        "severity": "low",
+        "issue": "В плане нет задачи followup-поиска, хотя research_policy разрешает 1 дополнительный раунд (remaining=1), а правок плана больше нет (plan_revisions remaining=0). Если после sources-0..2 какой-то из 6 тем останется непокрыт, followup должен сработать как отдельный механизм раннера без редактирования этого плана; в hint об этом не сказано.",
+        "fix": "Добавить в hint answer-mentor одну фразу: при непокрытых темах инициировать разрешённый followup-раунд (без правки плана) с приоритетом непокрытых классов по requirements; при невозможности — partial с gap по теме."
+      },
+      {
+        "task_id": "collect-sources",
+        "severity": "low",
+        "issue": "Acceptance только на существование файлов; не фиксирует, что каждый .md.json непуст и содержит хотя бы один URL (пустой успешный вывод пройдёт file_exists). Фактическая приёмка цитат/URL ложится на intake, но плановый критерий слабый.",
+        "fix": "Добавить критерий: каждый sources-N.md.json содержит >=1 запись с непустым url (или команда research завершилась кодом 0 с ненулевым числом страниц в stdout-логе)."
+      },
+      {
+        "task_id": "answer-mentor",
+        "severity": "low",
+        "issue": "Фраза в hint «Это сохранение материала, не выполнение задания» перекочевала из сценария ремонта v5; для v6 (новый run с used=0) она рудиментарна и может смутить автора относительно того, считается ли полный исход выполнением поручения.",
+        "fix": "Убрать или заменить на: «полный исход completion_status=complete считается выполнением поручения, но не закрывает roadmap:этап1-шаг2 и не отправляется ментору»."
+      }
+    ],
+    "defense_value": [
+      {
+        "task_id": "collect-sources",
+        "verdict": "covers",
+        "why": "Первичные источники с цитатами и URL — обязательная база для матрицы «класс решения → работа → первоисточник» и таблицы аналогов, которые пойдут в аналитическую записку (артефакт этапа 1, шаг 2) и в раздел обзора отчёта/защиты."
+      },
+      {
+        "task_id": "answer-mentor",
+        "verdict": "adds",
+        "why": "Черновик обзора с разделением источник/измерено/план, coverage-матрицей по 6 темам и честными пробелами напрямую даёт материал для сравнения с аналогами на защите и критерии выбора инструментов; decision.json фиксирует, нужны ли RC, не меняя карту автоматически."
+      }
+    ],
+    "searches": [],
+    "rounds": 2,
+    "model_answered": true
+  },
+  "snapshot": "before",
+  "request_sources_attempted": 2,
+  "request_work_seconds": {
+    "sources": 34.639999999984866,
+    "answer": 0.0
+  }
+}

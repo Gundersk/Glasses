@@ -1,0 +1,48 @@
+{
+  "input_device": {
+    "index": 1,
+    "name": "Microphone (fifine Microphone)",
+    "max_input_channels": 2,
+    "default_samplerate": 44100.0
+  },
+  "output_device": {
+    "index": 4,
+    "name": "Динамики (Realtek(R) Audio)",
+    "max_output_channels": 8,
+    "default_samplerate": 44100.0
+  },
+  "tone": {
+    "freq_hz": 440.0,
+    "dur_s": 0.6,
+    "level_dbfs": -25.0,
+    "fade_ms": 20.0
+  },
+  "blocksize": 1024,
+  "sr": 48000,
+  "sr_note": "48000 supported",
+  "stream_latency_s": [
+    0.042666666666666665,
+    0.21333333333333335
+  ],
+  "status": "ok",
+  "rms_db_in": -29.96855878340312,
+  "rms_db_out_recording": -46.97643021666204,
+  "rms_db_tone_window_recording": -42.21138415128533,
+  "rms_db_noise_windows_recording": -77.55438968096816,
+  "peak_dbfs_recording": -38.57725260575926,
+  "snr_db": 35.34300552968283,
+  "lag_samples": 14226,
+  "lag_ms": 296.375,
+  "corr_peak": 0.9985514673208956,
+  "n_samples_in": 86400,
+  "n_samples_out": 86400,
+  "notes": "rms_db_in = RMS of whole played buffer incl. silence; tone-only RMS is -25 dBFS nominal. lag_ms is relative to the nominal tone start in the played buffer (includes driver in+out latency and acoustic path).",
+  "timestamp": "2026-11-09T19:20:18.980822+05:00",
+  "versions": {
+    "sounddevice": "0.5.6",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "python": "3.12.15"
+  },
+  "os": "Windows-11-10.0.26300-SP0"
+}

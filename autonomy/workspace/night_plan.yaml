@@ -1,0 +1,100 @@
+# Ночь A: замер на 20 клипах, разделённый по движкам.
+# Критик 12.11.2026 (раунд 1): 160 прогонов в одной задаче на 45 мин не оставляют
+# запаса, а обрыв теряет оба движка сразу. Поэтому две задачи с отдельными приёмками.
+# Оценка времени измерена, а не придумана: T2 на 5 клипах дал 278 с на движок при
+# speed=1.0 (≈13.9 с на прогон). Для 20 клипов: 238 с аудио + 20 с хвоста на условие,
+# то есть ≈18.5 мин на движок и ≈19 мин с генерацией 60 шумных WAV. Лимит 23 мин —
+# запас ≈24 % к измеренному. Сумма 46 мин в тике 50, остальное — фазы.
+# Бюджет задачи теперь проверяется кодом: команда не стартует, если не влезает в тик,
+# а команда длиннее остатка бюджета убивается (autonomy/runner.py, _fits_tick).
+# Запуск только по прямой команде владельца: python -m autonomy.runner tick.
+
+- id: E23-sherpa-20
+  kind: measurement
+  execution: approved_commands
+  seed: 20261109
+  protocol: "file_stream_eval.py conditions; CPU; FLEURS ru reading; chunk 100 ms; speed 1.0; clean/snr20/snr10/snr5; existing model and normalizer"
+  title: "WER и задержка sherpa-onnx на 20 клипах, 4 условия"
+  closes: roadmap:этап2-шаг3
+  goal_id: E2.3
+  priority: P0
+  goal: "Прогнать файловый потоковый замер sherpa-onnx на 20 клипах FLEURS ru в clean, snr20, snr10, snr5; получить WER, p50/p95 задержки и переиспользуемые шумные WAV с паспортом seed."
+  rationale: "E2.3 требует выборку не менее 20 клипов; 5 клипов дают только предварительную оценку (STATUS.md). Движок идёт первым, потому что создаёт шумные WAV для второго."
+  inputs:
+    - data/fleurs_ru_test/manifest.jsonl
+    - experiments/file_stream_eval.py
+    - experiments/stage2_conditions/sherpa_conditions.json
+  steps:
+    - "Использовать тот же experiments/file_stream_eval.py и те же определения задержки и WER, что в T2. Не менять модель, endpointing, чанк 100 мс и speed=1.0."
+    - "Взять первые 20 клипов manifest.jsonl: clip_000..clip_019. Если в manifest меньше 20 клипов — задача провалена, а не выполнена частично."
+    - "Писать в новую папку experiments/stage2_conditions_20/, не перезаписывая проверенные JSON на 5 клипах."
+    - "Шум: seed 20261109, SNR 20, 10, 5 дБ, WAV в experiments/stage2_conditions_20/audio, паспорт в noise_manifest.json."
+    - "Порядок условий задаёт CLI: clean, затем snr20, snr10, snr5. JSON пишется после каждого условия с partial=true, поэтому при обрыве видно, что успело: недоделанные условия не выдаются за сделанные, а результат E2.3 требует всех четырёх и partial=false."
+    - "Повторный запуск переиспользует готовые шумные WAV (скрипт не перегенерирует существующие), поэтому обрыв не удорожает генерацию шума; распознавание прогоняется заново."
+    - "WER в JSON хранится долей (0.023 = 2.3 %), как в T2; допуск паспорта шума — measured_snr_db в пределах 0.1 дБ от целевого."
+    - "Числа в отчёт переносить только из полученных JSON, с n и ограничениями. Не округлять в пользу результата."
+  commands:
+    - "python experiments\\file_stream_eval.py conditions --engine sherpa --manifest data\\fleurs_ru_test\\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004,clip_005,clip_006,clip_007,clip_008,clip_009,clip_010,clip_011,clip_012,clip_013,clip_014,clip_015,clip_016,clip_017,clip_018,clip_019 --snr 20,10,5 --seed 20261109 --noise-dir experiments\\stage2_conditions_20\\audio --out experiments\\stage2_conditions_20\\sherpa_conditions.json"
+  acceptance:
+    - file_exists: experiments/stage2_conditions_20/sherpa_conditions.json
+    - json_eq: [experiments/stage2_conditions_20/sherpa_conditions.json, engine, sherpa]
+    - json_eq: [experiments/stage2_conditions_20/sherpa_conditions.json, seed, 20261109]
+    - number_range: [experiments/stage2_conditions_20/sherpa_conditions.json, n_clips, 20, 20]
+    - command: >-
+        python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_conditions_20'); d=json.loads((p/'sherpa_conditions.json').read_text(encoding='utf-8')); keys=('wer','final_latency_p50_ms','final_latency_p95_ms','final_latency_n','partial_latency_p50_ms','partial_latency_p95_ms','partial_latency_n'); want={'clean','snr20','snr10','snr5'}; assert d.get('partial') is False and d['n_clips']==20 and len(d['clips'])==20; assert len(d['conditions'])==4 and {c['name'] for c in d['conditions']}==want; assert all(len(c['results'])==20 for c in d['conditions']); assert all(all(k in c for k in keys) for c in d['conditions']); assert all(0<=c['wer']<=1.5 and c['final_latency_n']>=1 and c['partial_latency_n']>=1 for c in d['conditions']); assert all(math.isfinite(float(c[k])) for c in d['conditions'] for k in keys if not k.endswith('_n')); assert all(str(r.get('ref','')).strip() and 'hyp' in r for c in d['conditions'] for r in c['results']); nm=json.loads((p/'noise_manifest.json').read_text(encoding='utf-8')); assert nm['seed']==20261109 and len(nm['files'])==60; assert all(Path(f['path']).is_file() and abs(f['measured_snr_db']-f['target_snr_db'])<=0.1 for f in nm['files'])"
+  failure:
+    - "Меньше 20 клипов, повторное использование JSON на 5 клипах, другой seed или SNR, подмена noise-dir."
+    - "Набор условий не равен clean/snr20/snr10/snr5: частичный прогон не выдаётся за n=20."
+    - "Отсутствует WER или задержка, WER вне [0, 1.5] (WER > 1 возможен из-за вставок и не обрезается), пустые ref/hyp в поклиповых результатах."
+    - "Обрыв по времени: JSON с partial=true показывает готовые условия, но как результат E2.3 не публикуется; повторный запуск идёт заново, переиспользуя готовые шумные WAV."
+  time_limit_minutes: 23
+  max_iter: 1
+  hint: "20 клипов — небольшая выборка; p95 называть предварительным. Старые JSON в stage2_conditions/ не трогать."
+  morning_rules:
+    - "Сверить n_clips, seed, SNR, список клипов и паспорт шумных WAV."
+    - "Открыть несколько ref/hyp и проверить расчёт WER и определение задержки."
+    - "Выписать 3–5 расхождений ref/hyp (сначала snr10 и snr5) — это материал для раздела ошибок в отчёте."
+    - "Не сравнивать новые числа со старой offline-семантикой и с 50-клиповым прогоном без пометки об условиях."
+
+- id: E23-vosk-20
+  kind: measurement
+  execution: approved_commands
+  seed: 20261109
+  protocol: "same protocol and noisy WAV as sherpa; CPU; not microphone-to-screen latency"
+  title: "WER и задержка Vosk на тех же 20 клипах и тех же WAV"
+  closes: roadmap:этап2-шаг3
+  goal_id: E2.3
+  priority: P0
+  goal: "Прогнать тот же замер на 20 клипах для Vosk на тех же шумных WAV, что у sherpa, и получить WER и p50/p95 задержки для сравнения движков в одинаковых условиях."
+  rationale: "Без второго движка на той же выборке нет сравнения sherpa vs Vosk, а именно оно делает результат весомым. Отдельная задача: обрыв одного движка не теряет другой."
+  inputs:
+    - data/fleurs_ru_test/manifest.jsonl
+    - experiments/file_stream_eval.py
+    - experiments/stage2_conditions/vosk_conditions.json
+  steps:
+    - "Тот же скрипт, те же клипы clip_000..clip_019, тот же seed 20261109 и те же SNR; менять модель Vosk и параметры потока нельзя."
+    - "Запускать с тем же --noise-dir experiments\\stage2_conditions_20\\audio: существующие шумные WAV переиспользуются, поэтому оба движка распознают одни и те же файлы на диске."
+    - "Если шумных WAV ещё нет (первая задача оборвалась), скрипт создаст недостающие с тем же seed — это допустимо, но сверить пути и паспорт обязательно."
+    - "Писать в experiments/stage2_conditions_20/vosk_conditions.json, не перезаписывая 5-клиповый JSON."
+    - "Числа переносить только из JSON, с n и ограничениями."
+  commands:
+    - "python experiments\\file_stream_eval.py conditions --engine vosk --manifest data\\fleurs_ru_test\\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004,clip_005,clip_006,clip_007,clip_008,clip_009,clip_010,clip_011,clip_012,clip_013,clip_014,clip_015,clip_016,clip_017,clip_018,clip_019 --snr 20,10,5 --seed 20261109 --noise-dir experiments\\stage2_conditions_20\\audio --out experiments\\stage2_conditions_20\\vosk_conditions.json"
+  acceptance:
+    - file_exists: experiments/stage2_conditions_20/vosk_conditions.json
+    - json_eq: [experiments/stage2_conditions_20/vosk_conditions.json, engine, vosk]
+    - json_eq: [experiments/stage2_conditions_20/vosk_conditions.json, seed, 20261109]
+    - number_range: [experiments/stage2_conditions_20/vosk_conditions.json, n_clips, 20, 20]
+    - command: >-
+        python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_conditions_20'); d=json.loads((p/'vosk_conditions.json').read_text(encoding='utf-8')); keys=('wer','final_latency_p50_ms','final_latency_p95_ms','final_latency_n','partial_latency_p50_ms','partial_latency_p95_ms','partial_latency_n'); want={'clean','snr20','snr10','snr5'}; assert d.get('partial') is False and d['n_clips']==20 and len(d['clips'])==20; assert len(d['conditions'])==4 and {c['name'] for c in d['conditions']}==want; assert all(len(c['results'])==20 for c in d['conditions']); assert all(all(k in c for k in keys) for c in d['conditions']); assert all(0<=c['wer']<=1.5 and c['final_latency_n']>=1 and c['partial_latency_n']>=1 for c in d['conditions']); assert all(math.isfinite(float(c[k])) for c in d['conditions'] for k in keys if not k.endswith('_n')); assert all(str(r.get('ref','')).strip() and 'hyp' in r for c in d['conditions'] for r in c['results']); noisy=[r for c in d['conditions'] if c['name']!='clean' for r in c['results']]; assert noisy and all('stage2_conditions_20/audio' in str(r['wav']).replace(chr(92),'/') and Path(str(r['wav']).replace(chr(92),'/')).is_file() for r in noisy); nm=json.loads((p/'noise_manifest.json').read_text(encoding='utf-8')); assert nm['seed']==20261109 and len(nm['files'])==60; assert all(abs(f['measured_snr_db']-f['target_snr_db'])<=0.1 and Path(f['path']).is_file() for f in nm['files'])"
+  failure:
+    - "Другие клипы, другой seed или SNR, другие шумные WAV, чем у sherpa."
+    - "Набор условий не равен clean/snr20/snr10/snr5: частичный прогон не выдаётся за n=20."
+    - "Отсутствует WER или задержка, WER вне [0, 1.5] (WER > 1 возможен из-за вставок), пустые ref/hyp."
+  time_limit_minutes: 23
+  max_iter: 1
+  hint: "Качество Vosk на нашем 50-клиповом замере ниже (18.92 % против 11.35 %), но время задаёт speed=1.0: поток идёт в темпе реального времени."
+  morning_rules:
+    - "Сверить, что пути шумных WAV у sherpa и Vosk совпадают поклипово."
+    - "Сверить в паспорте measured_snr_db в пределах 0.1 дБ от целевого и ровно 60 записей, даже если часть WAV создал Vosk."
+    - "Если нет sherpa_conditions.json с partial=false, сравнение движков не публиковать, даже когда vosk_conditions.json готов: писать «сравнение не проводилось»."
+    - "Сравнивать движки только на одинаковых условиях; p95 называть предварительным."

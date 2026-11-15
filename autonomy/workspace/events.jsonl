@@ -1,0 +1,526 @@
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.026, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.039, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.087, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.136, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.191, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.195, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.199, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.2, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.202, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.21, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}}
+{"ts": "2026-11-09 02:57:52", "t": 1794175072.211, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.311, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.317, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.319, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.367, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.369, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.424, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.478, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.481, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.483, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.484, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.486, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.488, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.496, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.498, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}}
+{"ts": "2026-11-09 02:58:11", "t": 1794175091.5, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 03:09:54", "t": 1794175794.8, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 03:10:04", "t": 1794175804.537, "type": "model_call", "role": "planner", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 4024, "out_tok": 435, "cost_usd": 0.0, "latency": 9.7, "finish": "stop"}
+{"ts": "2026-11-09 03:10:04", "t": 1794175804.543, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 03:10:04", "t": 1794175804.584, "type": "task_start", "task_id": "run-asr-streaming-benchmark", "goal": "Выполнить реальный бенчмарк ASR-моделей на тестовом аудиофайле и сформировать итоговый metrics.json с показателями WER и задержки (p50, p95)."}
+{"ts": "2026-11-09 03:15:09", "t": 1794176109.521, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 03:15:09", "t": 1794176109.523, "type": "phase_error", "phase": "EXECUTE", "error": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 03:20:14", "t": 1794176414.391, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 03:20:14", "t": 1794176414.394, "type": "phase_error", "phase": "EXECUTE", "error": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 03:25:19", "t": 1794176719.263, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 03:25:19", "t": 1794176719.265, "type": "phase_error", "phase": "EXECUTE", "error": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 03:25:19", "t": 1794176719.267, "type": "phase_change", "frm": "EXECUTE", "to": "REPAIR"}
+{"ts": "2026-11-09 03:25:44", "t": 1794176744.828, "type": "model_call", "role": "mentor", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 531, "out_tok": 881, "cost_usd": 0.0, "latency": 25.6, "finish": "stop"}
+{"ts": "2026-11-09 03:25:44", "t": 1794176744.83, "type": "mentor_action", "task_id": "run-asr-streaming-benchmark", "action": "replan", "notes": "Корень не в формулировке задачи, а в инфраструктуре: единственный провайдер 'local' отвечает HTTP 502, исполнитель бросается в цикл повторов. Нужно разорвать жёсткую зависимость бенчмарка от живого провайдера: (1) сначала health-check эндпоинта как явный шаг, (2) бенчмарк должен иметь режим dry-run/"}
+{"ts": "2026-11-09 03:25:44", "t": 1794176744.832, "type": "phase_change", "frm": "REPAIR", "to": "EXECUTE"}
+{"ts": "2026-11-09 03:25:45", "t": 1794176745.146, "type": "task_start", "task_id": "build-browser-subtitle-demo", "goal": "Создать скрипт локального веб-сервера вывода частичных и финальных субтитров в браузер и проверить его работу с фиксацией метрик вывода."}
+{"ts": "2026-11-09 03:30:50", "t": 1794177050.058, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 03:30:50", "t": 1794177050.061, "type": "phase_error", "phase": "EXECUTE", "error": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 03:35:55", "t": 1794177355.216, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 03:35:55", "t": 1794177355.22, "type": "phase_error", "phase": "EXECUTE", "error": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 03:39:39", "t": 1794177579.317, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1761, "out_tok": 6790, "cost_usd": 0.0, "latency": 224.0, "finish": "stop"}
+{"ts": "2026-11-09 03:39:40", "t": 1794177580.341, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 03:39:40", "t": 1794177580.395, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 03:39:43", "t": 1794177583.296, "type": "model_call", "role": "verifier", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 670, "out_tok": 60, "cost_usd": 0.0, "latency": 2.9, "finish": "stop"}
+{"ts": "2026-11-09 03:39:43", "t": 1794177583.298, "type": "verdict", "task_id": "build-browser-subtitle-demo", "verdict": "PASS", "reason": "Все критерии приемки выполнены, необходимые файлы (web_subtitles_demo.py и web_demo_metrics.json) созданы, метрики корректны и соответствуют логам выполнения.", "verify_pass": true}
+{"ts": "2026-11-09 03:39:43", "t": 1794177583.3, "type": "task_end", "task_id": "build-browser-subtitle-demo", "status": "done", "iter": 1}
+{"ts": "2026-11-09 03:39:43", "t": 1794177583.301, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 03:39:43", "t": 1794177583.304, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 03:39:54", "t": 1794177594.933, "type": "model_call", "role": "reporter", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 6262, "out_tok": 776, "cost_usd": 0.0, "latency": 11.6, "finish": "stop"}
+{"ts": "2026-11-09 03:39:54", "t": 1794177594.935, "type": "night_report", "budget_usd": 0.0, "tasks": {"run-asr-streaming-benchmark": "failed", "build-browser-subtitle-demo": "done"}}
+{"ts": "2026-11-09 03:39:54", "t": 1794177594.937, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 03:43:18", "t": 1794177798.819, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 03:43:18", "t": 1794177798.825, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 03:43:18", "t": 1794177798.871, "type": "task_start", "task_id": "run-asr-streaming-benchmark", "goal": "Выполнить реальный бенчмарк ASR-моделей на тестовом аудиофайле и сформаровать итоговый metrics.json с показателями WER и задержки (p50, p95)."}
+{"ts": "2026-11-09 03:48:23", "t": 1794178103.738, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 03:48:23", "t": 1794178103.739, "type": "local_grace_wait", "task_id": "run-asr-streaming-benchmark", "grace_min": 25, "reason": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 03:54:30", "t": 1794178470.022, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 03:54:30", "t": 1794178470.025, "type": "phase_error", "phase": "EXECUTE", "error": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 03:59:46", "t": 1794178786.555, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 03:59:46", "t": 1794178786.558, "type": "phase_error", "phase": "EXECUTE", "error": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 04:04:53", "t": 1794179093.203, "type": "model_fail", "role": "executor", "provider": "local", "error": "local: HTTP 502"}
+{"ts": "2026-11-09 04:04:53", "t": 1794179093.205, "type": "phase_error", "phase": "EXECUTE", "error": "executor: все провайдеры недоступны: local: local: HTTP 502"}
+{"ts": "2026-11-09 04:04:53", "t": 1794179093.206, "type": "phase_change", "frm": "EXECUTE", "to": "REPAIR"}
+{"ts": "2026-11-09 04:05:17", "t": 1794179117.785, "type": "model_call", "role": "mentor", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 537, "out_tok": 858, "cost_usd": 0.0, "latency": 24.6, "finish": "stop"}
+{"ts": "2026-11-09 04:05:17", "t": 1794179117.788, "type": "mentor_action", "task_id": "run-asr-streaming-benchmark", "action": "replan", "notes": "Корень проблемы инфраструктурный, а не в логике задачи: локальный ASR-провайдер отдаёт HTTP 502, и исполнитель бессмысленно крутит ретраи. Бенчмарк до восстановления эндпоинта не запустить. Разбиваю на две задачи: сначала диагностика и поднятие провайдера (health-check, логи, рестарт/фолбэк), затем "}
+{"ts": "2026-11-09 04:05:17", "t": 1794179117.79, "type": "phase_change", "frm": "REPAIR", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:05:17", "t": 1794179117.849, "type": "task_start", "task_id": "demo-screenshot", "goal": "Запустить локальный сервер субтитров из experiments/web_subtitles_demo.py и сделать скриншот страницы с отрендеренными субтитрами в experiments/web_demo/screenshots/ui.png."}
+{"ts": "2026-11-09 04:07:48", "t": 1794179268.137, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1859, "out_tok": 4240, "cost_usd": 0.0, "latency": 148.8, "finish": "stop"}
+{"ts": "2026-11-09 04:07:48", "t": 1794179268.143, "type": "violation", "task_id": "demo-screenshot", "detail": "запрещённая команда: python experiments/web_demo/run_screenshot.py"}
+{"ts": "2026-11-09 04:11:18", "t": 1794179478.208, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1903, "out_tok": 6047, "cost_usd": 0.0, "latency": 208.6, "finish": "stop"}
+{"ts": "2026-11-09 04:11:18", "t": 1794179478.213, "type": "violation", "task_id": "demo-screenshot", "detail": "запрещённая команда: python experiments/web_demo/run_demo_screenshot.py"}
+{"ts": "2026-11-09 04:11:18", "t": 1794179478.216, "type": "task_end", "task_id": "demo-screenshot", "status": "failed", "reason": "итерации исчерпаны", "iter": 2}
+{"ts": "2026-11-09 04:11:18", "t": 1794179478.218, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 04:11:29", "t": 1794179489.327, "type": "model_call", "role": "reporter", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 6305, "out_tok": 815, "cost_usd": 0.0, "latency": 11.1, "finish": "stop"}
+{"ts": "2026-11-09 04:11:29", "t": 1794179489.332, "type": "night_report", "budget_usd": 0.0, "tasks": {"run-asr-streaming-benchmark": "failed", "demo-screenshot": "failed"}}
+{"ts": "2026-11-09 04:11:29", "t": 1794179489.334, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 04:21:55", "t": 1794180115.571, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 04:21:55", "t": 1794180115.576, "type": "phase_error", "phase": "PLAN", "error": "mapping values are not allowed here\n  in \"<unicode string>\", line 3, column 48:\n     ... h_ru.wav и зафиксировать метрики: WER и задержку чанков p50/p95 в\n                                         ^"}
+{"ts": "2026-11-09 04:21:55", "t": 1794180115.578, "type": "phase_change", "frm": "PLAN", "to": "REPAIR"}
+{"ts": "2026-11-09 04:22:11", "t": 1794180131.998, "type": "model_call", "role": "mentor", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 457, "out_tok": 496, "cost_usd": 0.0, "latency": 16.4, "finish": "stop"}
+{"ts": "2026-11-09 04:22:12", "t": 1794180132.001, "type": "mentor_action", "task_id": null, "action": "continue", "notes": "Ошибка не в логике, а в формате: планировщик сгенерировал YAML, где свободный текст содержит двоеточие (напр. «метрики: WER и ...»), и парсер сломался. Правило: любое свободное текстовое значение в YAML оборачивать в двойные кавычки, особенно если в нём есть ':', '#' или переносы строк; либо использ"}
+{"ts": "2026-11-09 04:22:12", "t": 1794180132.003, "type": "phase_change", "frm": "REPAIR", "to": "REPORT"}
+{"ts": "2026-11-09 04:22:23", "t": 1794180143.927, "type": "model_call", "role": "reporter", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 6383, "out_tok": 688, "cost_usd": 0.0, "latency": 11.9, "finish": "stop"}
+{"ts": "2026-11-09 04:22:23", "t": 1794180143.93, "type": "night_report", "budget_usd": 0.0, "tasks": {}}
+{"ts": "2026-11-09 04:22:23", "t": 1794180143.932, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 04:24:06", "t": 1794180246.535, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 04:24:06", "t": 1794180246.542, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:24:06", "t": 1794180246.607, "type": "task_start", "task_id": "run-asr-streaming-benchmark", "goal": "Выполнить реальный прогон потокового ASR (Vosk) на подготовленном русском аудио speech_ru.wav и зафиксировать метрики (WER, задержку чанков p50/p95) в experiments/benchmarks/metrics.json."}
+{"ts": "2026-11-09 04:28:37", "t": 1794180517.888, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 6019, "out_tok": 9396, "cost_usd": 0.0, "latency": 271.0, "finish": "stop"}
+{"ts": "2026-11-09 04:28:43", "t": 1794180523.251, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 04:28:43", "t": 1794180523.325, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 04:28:47", "t": 1794180527.451, "type": "model_call", "role": "verifier", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 906, "out_tok": 71, "cost_usd": 0.0, "latency": 2.5, "finish": "stop"}
+{"ts": "2026-11-09 04:28:47", "t": 1794180527.454, "type": "verdict", "task_id": "run-asr-streaming-benchmark", "verdict": "PASS", "reason": "Все автоматические проверки пройдены, артефакт `experiments/benchmarks/metrics.json` успешно создан, и значения метрик (WER, latency_p50, latency_count) соответствуют ожиданиям.", "verify_pass": true}
+{"ts": "2026-11-09 04:28:47", "t": 1794180527.455, "type": "task_end", "task_id": "run-asr-streaming-benchmark", "status": "done", "iter": 1}
+{"ts": "2026-11-09 04:28:47", "t": 1794180527.456, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:28:47", "t": 1794180527.501, "type": "task_start", "task_id": "demo-screenshot", "goal": "Запустить локальный веб-сервер субтитров из experiments/web_subtitles_demo.py и сделать скриншот страницы с субтитрами в experiments/web_demo/screenshots/ui.png."}
+{"ts": "2026-11-09 04:31:29", "t": 1794180689.898, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1919, "out_tok": 4541, "cost_usd": 0.0, "latency": 160.7, "finish": "stop"}
+{"ts": "2026-11-09 04:31:33", "t": 1794180693.885, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 04:31:33", "t": 1794180693.947, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 04:31:52", "t": 1794180712.743, "type": "model_call", "role": "verifier", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 377, "out_tok": 39, "cost_usd": 0.0, "latency": 17.0, "finish": "stop"}
+{"ts": "2026-11-09 04:31:52", "t": 1794180712.746, "type": "verdict", "task_id": "demo-screenshot", "verdict": "PASS", "reason": "Артефакт скриншота создан, все автоматические проверки и acceptance criteria успешно пройдены.", "verify_pass": true}
+{"ts": "2026-11-09 04:31:52", "t": 1794180712.747, "type": "task_end", "task_id": "demo-screenshot", "status": "done", "iter": 1}
+{"ts": "2026-11-09 04:31:52", "t": 1794180712.749, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:31:52", "t": 1794180712.751, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 04:32:19", "t": 1794180739.559, "type": "model_call", "role": "reporter", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 6283, "out_tok": 1133, "cost_usd": 0.0, "latency": 26.8, "finish": "stop"}
+{"ts": "2026-11-09 04:32:19", "t": 1794180739.562, "type": "night_report", "budget_usd": 0.0, "tasks": {"run-asr-streaming-benchmark": "done", "demo-screenshot": "done"}}
+{"ts": "2026-11-09 04:32:19", "t": 1794180739.563, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 04:34:52", "t": 1794180892.789, "type": "model_call", "role": "reporter", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 2369, "out_tok": 922, "cost_usd": 0.0, "latency": 12.8, "finish": "stop"}
+{"ts": "2026-11-09 04:34:52", "t": 1794180892.791, "type": "night_report", "budget_usd": 0.0, "tasks": {"run-asr-streaming-benchmark": "done", "demo-screenshot": "done"}}
+{"ts": "2026-11-09 04:37:08", "t": 1794181028.172, "type": "model_fail", "role": "reporter", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 04:37:10", "t": 1794181030.269, "type": "model_call", "role": "reporter", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 1260, "out_tok": 560, "cost_usd": 0.0, "latency": 2.1, "finish": "stop"}
+{"ts": "2026-11-09 04:37:10", "t": 1794181030.271, "type": "night_report", "budget_usd": 0.0, "tasks": {"run-asr-streaming-benchmark": "done", "demo-screenshot": "done"}}
+{"ts": "2026-11-09 04:38:18", "t": 1794181098.283, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 04:38:18", "t": 1794181098.298, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:38:18", "t": 1794181098.341, "type": "task_start", "task_id": "prepare-multispeaker-dataset", "goal": "Подготовить синтетический двухговорящий тестовый клип для будущих опытов диаризации: склеить 3 реплики двух разных синтетических голосов и записать честную разметку сегментов (speaker, start, end) с я"}
+{"ts": "2026-11-09 04:43:34", "t": 1794181414.285, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1080, "out_tok": 9743, "cost_usd": 0.0, "latency": 314.1, "finish": "stop"}
+{"ts": "2026-11-09 04:43:36", "t": 1794181416.704, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 04:43:36", "t": 1794181416.765, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 04:43:42", "t": 1794181422.2, "type": "model_fail", "role": "verifier", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 04:43:43", "t": 1794181423.076, "type": "model_call", "role": "verifier", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 576, "out_tok": 44, "cost_usd": 0.0, "latency": 0.9, "finish": "stop"}
+{"ts": "2026-11-09 04:43:43", "t": 1794181423.079, "type": "verdict", "task_id": "prepare-multispeaker-dataset", "verdict": "PASS", "reason": "Все автоматические проверки из verify.json пройдены успешно, необходимые файлы сгенерированы и соответствуют критериям приемки.", "verify_pass": true}
+{"ts": "2026-11-09 04:43:43", "t": 1794181423.081, "type": "task_end", "task_id": "prepare-multispeaker-dataset", "status": "done", "iter": 1}
+{"ts": "2026-11-09 04:43:43", "t": 1794181423.083, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:43:43", "t": 1794181423.128, "type": "task_start", "task_id": "wire-asr-into-browser-demo", "goal": "Соединить реальный ASR с браузерным выводом: прогнать потоковый Vosk по speech_ru.wav, полученные русские строки субтитрами передать в живой веб-сервер субтитров, отрендерить страницу, сделать скриншо"}
+{"ts": "2026-11-09 04:50:52", "t": 1794181852.27, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 7244, "out_tok": 11040, "cost_usd": 0.0, "latency": 427.5, "finish": "stop"}
+{"ts": "2026-11-09 04:50:59", "t": 1794181859.899, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 04:50:59", "t": 1794181859.99, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 04:51:04", "t": 1794181864.889, "type": "model_fail", "role": "verifier", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 04:51:05", "t": 1794181865.704, "type": "model_call", "role": "verifier", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 997, "out_tok": 53, "cost_usd": 0.0, "latency": 0.8, "finish": "stop"}
+{"ts": "2026-11-09 04:51:05", "t": 1794181865.707, "type": "verdict", "task_id": "wire-asr-into-browser-demo", "verdict": "PASS", "reason": "Все проверки verify.json успешно пройдены, артефакты (метрики, скриншот интерфейса) на месте и содержат валидные данные на русском языке.", "verify_pass": true}
+{"ts": "2026-11-09 04:51:05", "t": 1794181865.709, "type": "task_end", "task_id": "wire-asr-into-browser-demo", "status": "done", "iter": 1}
+{"ts": "2026-11-09 04:51:05", "t": 1794181865.71, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:51:05", "t": 1794181865.712, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 04:51:11", "t": 1794181871.506, "type": "model_fail", "role": "reporter", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 04:51:13", "t": 1794181873.283, "type": "model_call", "role": "reporter", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 1332, "out_tok": 414, "cost_usd": 0.0, "latency": 1.8, "finish": "stop"}
+{"ts": "2026-11-09 04:51:13", "t": 1794181873.285, "type": "night_report", "budget_usd": 0.0, "tasks": {"prepare-multispeaker-dataset": "done", "wire-asr-into-browser-demo": "done"}}
+{"ts": "2026-11-09 04:51:13", "t": 1794181873.287, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 04:53:10", "t": 1794181990.95, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 04:53:10", "t": 1794181990.961, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:53:11", "t": 1794181991.213, "type": "task_start", "task_id": "e2e-latency-benchmark", "goal": "Измерить осмысленную задержку потокового ASR: сколько времени проходит от момента, когда аудио сегмента полностью подано в распознаватель, до получения финального текста (finalize latency). Это то, чт"}
+{"ts": "2026-11-09 04:59:23", "t": 1794182363.891, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 6203, "out_tok": 10524, "cost_usd": 0.0, "latency": 370.9, "finish": "stop"}
+{"ts": "2026-11-09 04:59:28", "t": 1794182368.403, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 04:59:28", "t": 1794182368.47, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 04:59:33", "t": 1794182373.258, "type": "model_fail", "role": "verifier", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 04:59:34", "t": 1794182374.286, "type": "model_call", "role": "verifier", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 957, "out_tok": 59, "cost_usd": 0.0, "latency": 1.0, "finish": "stop"}
+{"ts": "2026-11-09 04:59:34", "t": 1794182374.289, "type": "verdict", "task_id": "e2e-latency-benchmark", "verdict": "PASS", "reason": "", "verify_pass": true}
+{"ts": "2026-11-09 04:59:34", "t": 1794182374.29, "type": "task_end", "task_id": "e2e-latency-benchmark", "status": "done", "iter": 1}
+{"ts": "2026-11-09 04:59:34", "t": 1794182374.291, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 04:59:34", "t": 1794182374.336, "type": "task_start", "task_id": "diarization-baseline", "goal": "Первый опыт диаризации: на синтетическом двухговорящем клипе two_speaker.wav с известной разметкой two_speaker_ref.json построить простой baseline-детектор смены говорящего (без обученной модели) и из"}
+{"ts": "2026-11-09 05:05:22", "t": 1794182722.233, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 5603, "out_tok": 10745, "cost_usd": 0.0, "latency": 346.4, "finish": "stop"}
+{"ts": "2026-11-09 05:05:22", "t": 1794182722.769, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 05:05:22", "t": 1794182722.853, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 05:05:27", "t": 1794182727.75, "type": "model_fail", "role": "verifier", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 05:05:28", "t": 1794182728.563, "type": "model_call", "role": "verifier", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 598, "out_tok": 51, "cost_usd": 0.0, "latency": 0.8, "finish": "stop"}
+{"ts": "2026-11-09 05:05:28", "t": 1794182728.568, "type": "verdict", "task_id": "diarization-baseline", "verdict": "PASS", "reason": "Все детерминированные проверки из verify.json успешно пройдены, файл с метриками и скрипт созданы, артефакты на месте.", "verify_pass": true}
+{"ts": "2026-11-09 05:05:28", "t": 1794182728.569, "type": "task_end", "task_id": "diarization-baseline", "status": "done", "iter": 1}
+{"ts": "2026-11-09 05:05:28", "t": 1794182728.57, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 05:05:28", "t": 1794182728.573, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 05:05:33", "t": 1794182733.793, "type": "model_fail", "role": "reporter", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 05:05:36", "t": 1794182736.212, "type": "model_call", "role": "reporter", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 1269, "out_tok": 680, "cost_usd": 0.0, "latency": 2.4, "finish": "stop"}
+{"ts": "2026-11-09 05:05:36", "t": 1794182736.215, "type": "night_report", "budget_usd": 0.0, "tasks": {"e2e-latency-benchmark": "done", "diarization-baseline": "done"}}
+{"ts": "2026-11-09 05:05:36", "t": 1794182736.217, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.721, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.731, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.734, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.798, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.8, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.852, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.916, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.92, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.921, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.923, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.924, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.926, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.94, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.941, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}}
+{"ts": "2026-11-09 05:19:28", "t": 1794183568.943, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 05:39:46", "t": 1794184786.45, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 05:39:52", "t": 1794184792.465, "type": "model_fail", "role": "planner", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 05:39:54", "t": 1794184794.493, "type": "model_call", "role": "planner", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 4238, "out_tok": 477, "cost_usd": 0.0, "latency": 2.0, "finish": "stop"}
+{"ts": "2026-11-09 05:39:54", "t": 1794184794.499, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 05:39:54", "t": 1794184794.55, "type": "task_start", "task_id": "stream-asr-browser-output", "goal": "Разработать скрипт визуализации потокового вывода ASR на экран и в браузер, зафиксировать метрики в experiments/stream_output/metrics.json"}
+{"ts": "2026-11-09 05:46:26", "t": 1794185186.713, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1749, "out_tok": 11106, "cost_usd": 0.0, "latency": 389.3, "finish": "stop"}
+{"ts": "2026-11-09 05:52:45", "t": 1794185565.236, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1869, "out_tok": 10666, "cost_usd": 0.0, "latency": 376.9, "finish": "stop"}
+{"ts": "2026-11-09 05:52:49", "t": 1794185569.195, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 05:52:52", "t": 1794185572.713, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 05:52:57", "t": 1794185577.642, "type": "model_fail", "role": "verifier", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 05:53:02", "t": 1794185582.69, "type": "model_call", "role": "verifier", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 862, "out_tok": 48, "cost_usd": 0.0, "latency": 5.0, "finish": "stop"}
+{"ts": "2026-11-09 05:53:02", "t": 1794185582.695, "type": "verdict", "task_id": "stream-asr-browser-output", "verdict": "FAIL", "reason": "Верификация прошла, но в логах есть ошибка синтаксиса (SyntaxError) при запуске скрипта, что указывает на незафиксированные проблемы в коде.", "verify_pass": true}
+{"ts": "2026-11-09 05:53:02", "t": 1794185582.696, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 05:53:02", "t": 1794185582.699, "type": "task_end", "task_id": "stream-asr-browser-output", "status": "failed", "reason": "итерации исчерпаны", "iter": 2}
+{"ts": "2026-11-09 05:53:02", "t": 1794185582.75, "type": "task_start", "task_id": "monthly-report-preparation", "goal": "Подготовить черновик ежемесячного отчета за ноябрь 2026 года в соответствии с требованиями этапа 2"}
+{"ts": "2026-11-09 05:55:51", "t": 1794185751.198, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 4180, "out_tok": 4492, "cost_usd": 0.0, "latency": 167.0, "finish": "stop"}
+{"ts": "2026-11-09 05:55:51", "t": 1794185751.311, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 05:55:51", "t": 1794185751.395, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 05:55:56", "t": 1794185756.84, "type": "model_fail", "role": "verifier", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 05:56:05", "t": 1794185765.228, "type": "model_call", "role": "verifier", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 550, "out_tok": 62, "cost_usd": 0.0, "latency": 8.4, "finish": "stop"}
+{"ts": "2026-11-09 05:56:05", "t": 1794185765.231, "type": "verdict", "task_id": "monthly-report-preparation", "verdict": "FAIL", "reason": "Файл отчета создан по другому пути (reports/report-2026-11.md вместо docs/report-2026-11.md), из-за чего проверки не прошли.", "verify_pass": false}
+{"ts": "2026-11-09 05:56:05", "t": 1794185765.232, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 05:59:46", "t": 1794185986.645, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 4252, "out_tok": 6067, "cost_usd": 0.0, "latency": 219.9, "finish": "stop"}
+{"ts": "2026-11-09 05:59:46", "t": 1794185986.649, "type": "violation", "task_id": "monthly-report-preparation", "detail": "файл вне песочницы: docs/report-2026-11.md"}
+{"ts": "2026-11-09 05:59:46", "t": 1794185986.653, "type": "task_end", "task_id": "monthly-report-preparation", "status": "failed", "reason": "итерации исчерпаны", "iter": 2}
+{"ts": "2026-11-09 05:59:46", "t": 1794185986.656, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 05:59:51", "t": 1794185991.431, "type": "model_fail", "role": "reporter", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 05:59:53", "t": 1794185993.581, "type": "model_call", "role": "reporter", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 1437, "out_tok": 512, "cost_usd": 0.0, "latency": 2.1, "finish": "stop"}
+{"ts": "2026-11-09 05:59:53", "t": 1794185993.587, "type": "night_report", "budget_usd": 0.0, "tasks": {"stream-asr-browser-output": "failed", "monthly-report-preparation": "failed"}}
+{"ts": "2026-11-09 05:59:53", "t": 1794185993.589, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 06:01:50", "t": 1794186110.47, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 06:01:50", "t": 1794186110.477, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 06:01:50", "t": 1794186110.552, "type": "task_start", "task_id": "prepare-fleurs-data", "goal": "Скачать публичный русский тестовый корпус FLEURS (google/fleurs, ru_ru, test) и подготовить поднабор из 50 клипов: аудио 16 кГц mono WAV + эталонные транскрипты + манифест. Это реальная живая речь, не"}
+{"ts": "2026-11-09 06:06:05", "t": 1794186365.38, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1023, "out_tok": 10648, "cost_usd": 0.0, "latency": 253.3, "finish": "stop"}
+{"ts": "2026-11-09 06:11:37", "t": 1794186697.559, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1170, "out_tok": 8575, "cost_usd": 0.0, "latency": 295.3, "finish": "stop"}
+{"ts": "2026-11-09 06:11:41", "t": 1794186701.735, "type": "task_end", "task_id": "prepare-fleurs-data", "status": "failed", "reason": "итерации исчерпаны", "iter": 2}
+{"ts": "2026-11-09 06:11:41", "t": 1794186701.819, "type": "task_start", "task_id": "run-vosk-fleurs", "goal": "Прогнать Vosk на 50 клипах FLEURS и посчитать честный WER по корпусу, задержку чанков и привести примеры ошибок (ref vs hyp)."}
+{"ts": "2026-11-09 06:18:54", "t": 1794187134.363, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 3691, "out_tok": 11424, "cost_usd": 0.0, "latency": 430.9, "finish": "stop"}
+{"ts": "2026-11-09 06:19:35", "t": 1794187175.942, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 06:19:36", "t": 1794187176.011, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 06:19:41", "t": 1794187181.147, "type": "model_fail", "role": "verifier", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 06:19:42", "t": 1794187182.144, "type": "model_call", "role": "verifier", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 1172, "out_tok": 49, "cost_usd": 0.0, "latency": 1.0, "finish": "stop"}
+{"ts": "2026-11-09 06:19:42", "t": 1794187182.146, "type": "verdict", "task_id": "run-vosk-fleurs", "verdict": "PASS", "reason": "", "verify_pass": true}
+{"ts": "2026-11-09 06:19:42", "t": 1794187182.147, "type": "task_end", "task_id": "run-vosk-fleurs", "status": "done", "iter": 1}
+{"ts": "2026-11-09 06:19:42", "t": 1794187182.148, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 06:19:42", "t": 1794187182.202, "type": "task_start", "task_id": "run-sherpa-fleurs", "goal": "Прогнать sherpa-onnx streaming zipformer на тех же 50 клипах FLEURS и посчитать WER и задержку для сравнения с Vosk."}
+{"ts": "2026-11-09 06:26:29", "t": 1794187589.887, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 4254, "out_tok": 12000, "cost_usd": 0.0, "latency": 406.0, "finish": "length"}
+{"ts": "2026-11-09 06:32:45", "t": 1794187965.277, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 4325, "out_tok": 11131, "cost_usd": 0.0, "latency": 373.8, "finish": "stop"}
+{"ts": "2026-11-09 06:32:48", "t": 1794187968.353, "type": "task_end", "task_id": "run-sherpa-fleurs", "status": "failed", "reason": "итерации исчерпаны", "iter": 2}
+{"ts": "2026-11-09 06:32:48", "t": 1794187968.356, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 06:32:54", "t": 1794187974.178, "type": "model_fail", "role": "reporter", "provider": "gemini_free", "error": "gemini_free: 429 rate limit (после 3 попыток)"}
+{"ts": "2026-11-09 06:32:55", "t": 1794187975.897, "type": "model_call", "role": "reporter", "provider": "gemini_lite_free", "model": "gemini-flash-lite-latest", "in_tok": 1181, "out_tok": 434, "cost_usd": 0.0, "latency": 1.7, "finish": "stop"}
+{"ts": "2026-11-09 06:32:55", "t": 1794187975.899, "type": "night_report", "budget_usd": 0.0, "tasks": {"prepare-fleurs-data": "failed", "run-vosk-fleurs": "done", "run-sherpa-fleurs": "failed"}}
+{"ts": "2026-11-09 06:32:55", "t": 1794187975.901, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.141, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.148, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.154, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.762, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.764, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.842, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.959, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.963, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.965, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.968, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.969, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.973, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.993, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.995, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}}
+{"ts": "2026-11-09 20:14:38", "t": 1794237278.998, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.232, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.232, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.316, "type": "task_start", "task_id": "dry-pass", "goal": "Dry-run acceptance against an existing JSON number; no audio and no external model calls."}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.316, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.366, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.448, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.45, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.45, "type": "verdict", "task_id": "dry-pass", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.45, "type": "task_end", "task_id": "dry-pass", "status": "done", "iter": 1}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.45, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.516, "type": "task_start", "task_id": "dry-fail", "goal": "Dry-run acceptance must fail on a deliberately missing file; no audio and no external model calls."}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.516, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.566, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.633, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.647, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.649, "type": "verdict", "task_id": "dry-fail", "verdict": "PASS", "reason": "mock", "verify_pass": false}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.649, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.649, "type": "task_end", "task_id": "dry-fail", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.649, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.666, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.666, "type": "night_report", "budget_usd": 0.0, "tasks": {"dry-pass": "done", "dry-fail": "failed"}}
+{"ts": "2026-11-09 20:15:52", "t": 1794237352.666, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-09 22:00:01", "t": 1794243601.882, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-09 22:15:55", "t": 1794244555.266, "type": "model_call", "role": "planner", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 3307, "out_tok": 733, "cost_usd": 0.0, "latency": 52.9, "finish": "stop"}
+{"ts": "2026-11-09 22:15:55", "t": 1794244555.273, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-09 22:15:55", "t": 1794244555.36, "type": "task_start", "task_id": "duplex_sherpa_5clips_latency", "goal": "Собрать статистику задержки на 5 клипах с движком sherpa-onnx в дуплексном режиме E2E"}
+{"ts": "2026-11-09 22:30:02", "t": 1794245402.462, "type": "task_start", "task_id": "duplex_sherpa_5clips_latency", "goal": "Собрать статистику задержки на 5 клипах с движком sherpa-onnx в дуплексном режиме E2E"}
+{"ts": "2026-11-09 22:42:20", "t": 1794246140.183, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 2149, "out_tok": 12000, "cost_usd": 0.0, "latency": 735.8, "finish": "length"}
+{"ts": "2026-11-09 22:53:35", "t": 1794246815.264, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 2220, "out_tok": 11382, "cost_usd": 0.0, "latency": 673.0, "finish": "stop"}
+{"ts": "2026-11-09 22:54:10", "t": 1794246850.922, "type": "phase_error", "phase": "EXECUTE", "error": "'charmap' codec can't encode characters in position 97-105: character maps to <undefined>"}
+{"ts": "2026-11-09 22:54:10", "t": 1794246850.926, "type": "task_end", "task_id": "duplex_sherpa_5clips_latency", "status": "failed", "reason": "итерации исчерпаны", "iter": 2}
+{"ts": "2026-11-09 22:54:11", "t": 1794246851.078, "type": "task_start", "task_id": "ui_screenshot_check", "goal": "Зафиксировать скриншот UI браузерного вывода субтитров и проверить визуальный интерфейс"}
+{"ts": "2026-11-09 22:57:03", "t": 1794247023.386, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 1952, "out_tok": 2392, "cost_usd": 0.0, "latency": 170.1, "finish": "stop"}
+{"ts": "2026-11-09 22:57:07", "t": 1794247027.101, "type": "phase_error", "phase": "EXECUTE", "error": "'charmap' codec can't encode characters in position 214-222: character maps to <undefined>"}
+{"ts": "2026-11-09 23:03:07", "t": 1794247387.738, "type": "model_call", "role": "executor", "provider": "local", "model": "swift-iq3_xxs", "in_tok": 2005, "out_tok": 6254, "cost_usd": 0.0, "latency": 358.6, "finish": "stop"}
+{"ts": "2026-11-09 23:03:10", "t": 1794247390.174, "type": "task_end", "task_id": "ui_screenshot_check", "status": "failed", "reason": "итерации исчерпаны", "iter": 2}
+{"ts": "2026-11-09 23:03:10", "t": 1794247390.301, "type": "task_start", "task_id": "update_monthly_report_draft", "goal": "Обновить черновик ежемесячного отчёта 2026-11-draft.md текущими измеримыми результатами"}
+{"ts": "2026-11-11 01:19:05", "t": 1794341945.335, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 01:19:05", "t": 1794341945.347, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 01:19:06", "t": 1794341946.051, "type": "task_start", "task_id": "T1", "goal": "Измерить CPU, RAM и wall time при потоковом распознавании одного WAV для sherpa-onnx и Vosk без динамика, микрофона и другого акустического тракта."}
+{"ts": "2026-11-11 01:19:09", "t": 1794341949.231, "type": "model_fail", "role": "executor", "provider": "gemini_free", "error": "gemini_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:19:11", "t": 1794341951.532, "type": "model_fail", "role": "executor", "provider": "gemini_lite_free", "error": "gemini_lite_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:19:13", "t": 1794341953.8, "type": "model_fail", "role": "executor", "provider": "gemini_alt", "error": "gemini_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:19:16", "t": 1794341956.453, "type": "model_fail", "role": "executor", "provider": "gemini_lite_alt", "error": "gemini_lite_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:20:01", "t": 1794342001.71, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 10472, "out_tok": 12000, "cost_usd": 0.00415, "latency": 45.3, "finish": "length"}
+{"ts": "2026-11-11 01:20:01", "t": 1794342001.716, "type": "task_end", "task_id": "T1", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 01:20:01", "t": 1794342001.797, "type": "task_start", "task_id": "T2", "goal": "На пяти коротких русских WAV измерить WER и задержку partial/final для sherpa-onnx и Vosk на чистом сигнале и при цифровом шуме SNR 20, 10 и 5 дБ без динамика."}
+{"ts": "2026-11-11 01:20:05", "t": 1794342005.091, "type": "model_fail", "role": "executor", "provider": "gemini_free", "error": "gemini_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:20:07", "t": 1794342007.282, "type": "model_fail", "role": "executor", "provider": "gemini_lite_free", "error": "gemini_lite_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:20:09", "t": 1794342009.633, "type": "model_fail", "role": "executor", "provider": "gemini_alt", "error": "gemini_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:20:11", "t": 1794342011.814, "type": "model_fail", "role": "executor", "provider": "gemini_lite_alt", "error": "gemini_lite_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:21:37", "t": 1794342097.761, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 11007, "out_tok": 12000, "cost_usd": 0.00417, "latency": 85.9, "finish": "length"}
+{"ts": "2026-11-11 01:21:37", "t": 1794342097.766, "type": "task_end", "task_id": "T2", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 01:21:37", "t": 1794342097.842, "type": "task_start", "task_id": "T3", "goal": "Проверить и финально оформить experiments/engine_choice.md: sherpa-onnx выбран основным движком по измеренному WER, без неправомерного сравнения задержек."}
+{"ts": "2026-11-11 01:21:40", "t": 1794342100.275, "type": "model_fail", "role": "executor", "provider": "gemini_free", "error": "gemini_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:21:42", "t": 1794342102.629, "type": "model_fail", "role": "executor", "provider": "gemini_lite_free", "error": "gemini_lite_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:21:45", "t": 1794342105.06, "type": "model_fail", "role": "executor", "provider": "gemini_alt", "error": "gemini_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:21:47", "t": 1794342107.264, "type": "model_fail", "role": "executor", "provider": "gemini_lite_alt", "error": "gemini_lite_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:22:36", "t": 1794342156.909, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 4871, "out_tok": 8505, "cost_usd": 0.00285, "latency": 49.6, "finish": "stop"}
+{"ts": "2026-11-11 01:22:37", "t": 1794342157.193, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 01:22:37", "t": 1794342157.293, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 01:22:38", "t": 1794342158.721, "type": "model_fail", "role": "verifier", "provider": "gemini_free", "error": "gemini_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:22:40", "t": 1794342160.232, "type": "model_fail", "role": "verifier", "provider": "gemini_lite_free", "error": "gemini_lite_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:22:41", "t": 1794342161.768, "type": "model_fail", "role": "verifier", "provider": "gemini_alt", "error": "gemini_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:22:43", "t": 1794342163.23, "type": "model_fail", "role": "verifier", "provider": "gemini_lite_alt", "error": "gemini_lite_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:22:46", "t": 1794342166.722, "type": "model_call", "role": "verifier", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 667, "out_tok": 212, "cost_usd": 9e-05, "latency": 3.5, "finish": "stop"}
+{"ts": "2026-11-11 01:22:46", "t": 1794342166.725, "type": "verdict", "task_id": "T3", "verdict": "ESCALATE", "reason": "Формальные проверки прошли, но stub_markers показал «не запуска»/«не измер» в STATE.json — числа 11.35%/18.92% в артефакте, похоже, не получены реальными замерами, а вписаны вручную (выдуманный резуль", "verify_pass": false}
+{"ts": "2026-11-11 01:22:46", "t": 1794342166.726, "type": "phase_change", "frm": "REVIEW", "to": "REPAIR"}
+{"ts": "2026-11-11 01:23:16", "t": 1794342196.583, "type": "model_call", "role": "mentor", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 1000, "out_tok": 1291, "cost_usd": 0.0, "latency": 29.9, "finish": "stop"}
+{"ts": "2026-11-11 01:23:16", "t": 1794342196.588, "type": "mentor_action", "task_id": "T3", "action": "halt", "notes": "ментор вернул не JSON"}
+{"ts": "2026-11-11 01:23:16", "t": 1794342196.59, "type": "phase_change", "frm": "REPAIR", "to": "REPORT"}
+{"ts": "2026-11-11 01:23:18", "t": 1794342198.267, "type": "model_fail", "role": "reporter", "provider": "gemini_free", "error": "gemini_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:23:19", "t": 1794342199.865, "type": "model_fail", "role": "reporter", "provider": "gemini_lite_free", "error": "gemini_lite_free: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:23:21", "t": 1794342201.504, "type": "model_fail", "role": "reporter", "provider": "gemini_alt", "error": "gemini_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:23:23", "t": 1794342203.172, "type": "model_fail", "role": "reporter", "provider": "gemini_lite_alt", "error": "gemini_lite_alt: HTTP 400: [{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n]"}
+{"ts": "2026-11-11 01:23:41", "t": 1794342221.215, "type": "model_call", "role": "reporter", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 1165, "out_tok": 2193, "cost_usd": 0.00022, "latency": 18.0, "finish": "stop"}
+{"ts": "2026-11-11 01:23:41", "t": 1794342221.217, "type": "night_report", "budget_usd": 0.0115, "tasks": {"T1": "failed", "T2": "failed", "T3": "failed", "T4": "pending"}}
+{"ts": "2026-11-11 01:23:41", "t": 1794342221.22, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 01:28:09", "t": 1794342489.075, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 01:28:09", "t": 1794342489.098, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 01:28:09", "t": 1794342489.188, "type": "task_start", "task_id": "T1", "goal": "Измерить CPU, RAM и wall time при потоковом распознавании одного WAV для sherpa-onnx и Vosk без динамика, микрофона и другого акустического тракта."}
+{"ts": "2026-11-11 01:28:20", "t": 1794342500.749, "type": "model_call", "role": "executor", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 10804, "out_tok": 0, "cost_usd": 0.0, "latency": 11.6, "finish": "function_call_filter: MALFORMED_FUNCTION_CALL"}
+{"ts": "2026-11-11 01:28:20", "t": 1794342500.753, "type": "task_end", "task_id": "T1", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 01:28:20", "t": 1794342500.827, "type": "task_start", "task_id": "T2", "goal": "На пяти коротких русских WAV измерить WER и задержку partial/final для sherpa-onnx и Vosk на чистом сигнале и при цифровом шуме SNR 20, 10 и 5 дБ без динамика."}
+{"ts": "2026-11-11 01:29:44", "t": 1794342584.979, "type": "model_call", "role": "executor", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 11920, "out_tok": 478, "cost_usd": 0.0, "latency": 69.0, "finish": "length"}
+{"ts": "2026-11-11 01:29:44", "t": 1794342584.986, "type": "task_end", "task_id": "T2", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 01:29:45", "t": 1794342585.057, "type": "task_start", "task_id": "T3", "goal": "Проверить и финально оформить experiments/engine_choice.md: sherpa-onnx выбран основным движком по измеренному WER, без неправомерного сравнения задержек."}
+{"ts": "2026-11-11 01:30:07", "t": 1794342607.532, "type": "model_call", "role": "executor", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 5089, "out_tok": 1862, "cost_usd": 0.0, "latency": 16.0, "finish": "stop"}
+{"ts": "2026-11-11 01:30:07", "t": 1794342607.623, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 01:30:07", "t": 1794342607.723, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 01:30:13", "t": 1794342613.168, "type": "model_call", "role": "verifier", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 637, "out_tok": 60, "cost_usd": 0.0, "latency": 5.4, "finish": "stop"}
+{"ts": "2026-11-11 01:30:13", "t": 1794342613.173, "type": "verdict", "task_id": "T3", "verdict": "FAIL", "reason": "Проверка verify_pass не пройдена: в файле STATE.json обнаружены маркеры незавершённости работы («не запуска», «не измер»).", "verify_pass": false}
+{"ts": "2026-11-11 01:30:13", "t": 1794342613.174, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-11 01:30:13", "t": 1794342613.178, "type": "task_end", "task_id": "T3", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 01:30:13", "t": 1794342613.24, "type": "task_start", "task_id": "T4", "goal": "Обновить reports/monthly/2026-11-draft.md только подтверждёнными числами потокового вывода, акустического E2E и, при успешной проверке, новых файловых замеров ресурсов и условий."}
+{"ts": "2026-11-11 01:30:22", "t": 1794342622.532, "type": "model_call", "role": "executor", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 9035, "out_tok": 173, "cost_usd": 0.0, "latency": 9.3, "finish": "stop"}
+{"ts": "2026-11-11 01:30:22", "t": 1794342622.673, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 01:30:22", "t": 1794342622.773, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 01:30:26", "t": 1794342626.96, "type": "model_call", "role": "verifier", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 1421, "out_tok": 69, "cost_usd": 0.0, "latency": 4.2, "finish": "stop"}
+{"ts": "2026-11-11 01:30:26", "t": 1794342626.965, "type": "verdict", "task_id": "T4", "verdict": "FAIL", "reason": "Файл `reports/monthly/2026-11-draft.md` не содержит необходимых ключевых метрик и строк (regex_in_file ok=False), а также обнаружены маркеры незавершённости работы.", "verify_pass": false}
+{"ts": "2026-11-11 01:30:26", "t": 1794342626.966, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-11 01:30:26", "t": 1794342626.97, "type": "task_end", "task_id": "T4", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 01:30:26", "t": 1794342626.974, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-11 01:31:05", "t": 1794342665.472, "type": "model_call", "role": "reporter", "provider": "gemini_free", "model": "gemini-3.6-flash", "in_tok": 1776, "out_tok": 1139, "cost_usd": 0.0, "latency": 20.7, "finish": "stop"}
+{"ts": "2026-11-11 01:31:05", "t": 1794342665.476, "type": "night_report", "budget_usd": 0.0, "tasks": {"T1": "failed", "T2": "failed", "T3": "failed", "T4": "failed"}}
+{"ts": "2026-11-11 01:31:05", "t": 1794342665.477, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 02:15:21", "t": 1794345321.157, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 02:15:21", "t": 1794345321.174, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 02:15:21", "t": 1794345321.606, "type": "task_start", "task_id": "T1", "goal": "Измерить CPU, RAM и wall time при потоковом распознавании одного WAV для sherpa-onnx и Vosk без динамика, микрофона и другого акустического тракта."}
+{"ts": "2026-11-11 02:15:40", "t": 1794345340.082, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 10447, "out_tok": 3121, "cost_usd": 0.00135, "latency": 18.5, "finish": "stop"}
+{"ts": "2026-11-11 02:15:40", "t": 1794345340.306, "type": "task_end", "task_id": "T1", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 02:15:40", "t": 1794345340.391, "type": "task_start", "task_id": "T2", "goal": "На пяти коротких русских WAV измерить WER и задержку partial/final для sherpa-onnx и Vosk на чистом сигнале и при цифровом шуме SNR 20, 10 и 5 дБ без динамика."}
+{"ts": "2026-11-11 02:16:02", "t": 1794345362.896, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 12543, "out_tok": 7741, "cost_usd": 0.00288, "latency": 22.5, "finish": "stop"}
+{"ts": "2026-11-11 02:16:03", "t": 1794345363.098, "type": "task_end", "task_id": "T2", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 02:16:03", "t": 1794345363.174, "type": "task_start", "task_id": "T3", "goal": "Проверить и финально оформить experiments/engine_choice.md: sherpa-onnx выбран основным движком по измеренному WER, без неправомерного сравнения задержек."}
+{"ts": "2026-11-11 02:16:10", "t": 1794345370.216, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 4995, "out_tok": 1320, "cost_usd": 0.00059, "latency": 7.0, "finish": "stop"}
+{"ts": "2026-11-11 02:16:10", "t": 1794345370.48, "type": "task_end", "task_id": "T3", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 02:16:10", "t": 1794345370.557, "type": "task_start", "task_id": "T4", "goal": "Обновить reports/monthly/2026-11-draft.md только подтверждёнными числами потокового вывода, акустического E2E и, при успешной проверке, новых файловых замеров ресурсов и условий."}
+{"ts": "2026-11-11 02:16:26", "t": 1794345386.176, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 8009, "out_tok": 3616, "cost_usd": 0.00142, "latency": 15.6, "finish": "stop"}
+{"ts": "2026-11-11 02:16:26", "t": 1794345386.273, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 02:16:26", "t": 1794345386.357, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 02:16:28", "t": 1794345388.389, "type": "model_call", "role": "verifier", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 776, "out_tok": 99, "cost_usd": 6e-05, "latency": 2.0, "finish": "stop"}
+{"ts": "2026-11-11 02:16:28", "t": 1794345388.392, "type": "verdict", "task_id": "T4", "verdict": "PASS", "reason": "Все 10 acceptance-проверок прошли (verify_pass=true), файл отчёта существует и содержит требуемые идентификаторы прогонов и числовые метрики (739 мс, 298.1 мс, -54.7 ppm, n=1); артефакт на месте, заяв", "verify_pass": true}
+{"ts": "2026-11-11 02:16:28", "t": 1794345388.393, "type": "task_end", "task_id": "T4", "status": "done", "iter": 1}
+{"ts": "2026-11-11 02:16:28", "t": 1794345388.395, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-11 02:16:28", "t": 1794345388.395, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-11 02:16:52", "t": 1794345412.641, "type": "model_call", "role": "reporter", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 1489, "out_tok": 1295, "cost_usd": 0.00016, "latency": 24.2, "finish": "stop"}
+{"ts": "2026-11-11 02:16:52", "t": 1794345412.643, "type": "night_report", "budget_usd": 0.0065, "tasks": {"T1": "failed", "T2": "failed", "T3": "failed", "T4": "done"}}
+{"ts": "2026-11-11 02:16:52", "t": 1794345412.645, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 02:17:35", "t": 1794345455.191, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 02:17:35", "t": 1794345455.207, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 02:17:35", "t": 1794345455.291, "type": "task_start", "task_id": "T1", "goal": "Измерить CPU, RAM и wall time при потоковом распознавании одного WAV для sherpa-onnx и Vosk без динамика, микрофона и другого акустического тракта."}
+{"ts": "2026-11-11 02:17:46", "t": 1794345466.043, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 10447, "out_tok": 2387, "cost_usd": 0.00112, "latency": 10.7, "finish": "stop"}
+{"ts": "2026-11-11 02:18:15", "t": 1794345495.424, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 02:18:15", "t": 1794345495.641, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 02:18:18", "t": 1794345498.865, "type": "model_call", "role": "verifier", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 1763, "out_tok": 64, "cost_usd": 8e-05, "latency": 3.2, "finish": "stop"}
+{"ts": "2026-11-11 02:18:18", "t": 1794345498.87, "type": "verdict", "task_id": "T1", "verdict": "FAIL", "reason": "Все проверки артефактов и чисел прошли, но обязательный файл autonomy/workspace/outbox/T1_result.md отсутствует (exists=False), из-за чего verify_pass=false — исполнитель может просто создать отчёт.", "verify_pass": false}
+{"ts": "2026-11-11 02:18:18", "t": 1794345498.872, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-11 02:18:18", "t": 1794345498.875, "type": "task_end", "task_id": "T1", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 02:18:18", "t": 1794345498.956, "type": "task_start", "task_id": "T2", "goal": "На пяти коротких русских WAV измерить WER и задержку partial/final для sherpa-onnx и Vosk на чистом сигнале и при цифровом шуме SNR 20, 10 и 5 дБ без динамика."}
+{"ts": "2026-11-11 02:18:30", "t": 1794345510.906, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 12500, "out_tok": 3926, "cost_usd": 0.00167, "latency": 11.9, "finish": "stop"}
+{"ts": "2026-11-11 02:18:31", "t": 1794345511.107, "type": "task_end", "task_id": "T2", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 02:18:31", "t": 1794345511.191, "type": "task_start", "task_id": "T3", "goal": "Проверить и финально оформить experiments/engine_choice.md: sherpa-onnx выбран основным движком по измеренному WER, без неправомерного сравнения задержек."}
+{"ts": "2026-11-11 02:18:39", "t": 1794345519.684, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 4995, "out_tok": 1448, "cost_usd": 0.00063, "latency": 8.5, "finish": "stop"}
+{"ts": "2026-11-11 02:18:39", "t": 1794345519.957, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 02:18:40", "t": 1794345520.057, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 02:18:42", "t": 1794345522.34, "type": "model_call", "role": "verifier", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 591, "out_tok": 95, "cost_usd": 5e-05, "latency": 2.3, "finish": "stop"}
+{"ts": "2026-11-11 02:18:42", "t": 1794345522.343, "type": "verdict", "task_id": "T3", "verdict": "PASS", "reason": "Все acceptance-проверки прошли (verify_pass=true): файл experiments/engine_choice.md и T3_result.md существуют, в отчёте присутствуют требуемые числа 11.35%, 18.92%, упоминания самописного движка, 150", "verify_pass": true}
+{"ts": "2026-11-11 02:18:42", "t": 1794345522.344, "type": "task_end", "task_id": "T3", "status": "done", "iter": 1}
+{"ts": "2026-11-11 02:18:42", "t": 1794345522.345, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-11 02:18:42", "t": 1794345522.424, "type": "task_start", "task_id": "T4", "goal": "Обновить reports/monthly/2026-11-draft.md только подтверждёнными числами потокового вывода, акустического E2E и, при успешной проверке, новых файловых замеров ресурсов и условий."}
+{"ts": "2026-11-11 02:19:01", "t": 1794345541.41, "type": "model_call", "role": "executor", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 8905, "out_tok": 4522, "cost_usd": 0.00174, "latency": 19.0, "finish": "stop"}
+{"ts": "2026-11-11 02:19:01", "t": 1794345541.507, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 02:19:01", "t": 1794345541.607, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 02:19:03", "t": 1794345543.542, "type": "model_call", "role": "verifier", "provider": "deepseek1017", "model": "deepseek/deepseek-v4.1-flash-1017", "in_tok": 779, "out_tok": 79, "cost_usd": 5e-05, "latency": 1.9, "finish": "stop"}
+{"ts": "2026-11-11 02:19:03", "t": 1794345543.547, "type": "verdict", "task_id": "T4", "verdict": "FAIL", "reason": "Один acceptance-чек не выполнен: в reports/monthly/2026-11-draft.md отсутствует фраза «независимые такты ADC и DAC» (verify_pass=false), остальные проверки и артефакты на месте — исполнитель может доп", "verify_pass": false}
+{"ts": "2026-11-11 02:19:03", "t": 1794345543.549, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-11 02:19:03", "t": 1794345543.553, "type": "task_end", "task_id": "T4", "status": "failed", "reason": "итерации исчерпаны", "iter": 1}
+{"ts": "2026-11-11 02:19:03", "t": 1794345543.556, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-11 02:19:44", "t": 1794345584.273, "type": "model_call", "role": "reporter", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 2176, "out_tok": 4000, "cost_usd": 0.00041, "latency": 40.7, "finish": "length"}
+{"ts": "2026-11-11 02:19:44", "t": 1794345584.277, "type": "night_report", "budget_usd": 0.0058, "tasks": {"T1": "failed", "T2": "failed", "T3": "done", "T4": "failed"}}
+{"ts": "2026-11-11 02:19:44", "t": 1794345584.28, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 22:06:37", "t": 1794416797.758, "type": "model_fail", "role": "executor", "provider": "ds_test", "kind": "truncated", "error": "ds_test: обрезано лимитом max_tokens=16 (finish=length, out=16, reasoning=0)"}
+{"ts": "2026-11-11 22:06:38", "t": 1794416798.881, "type": "model_fail", "role": "executor", "provider": "ds_test", "kind": "truncated", "error": "ds_test: обрезано лимитом max_tokens=32 (finish=length, out=32, reasoning=0)"}
+{"ts": "2026-11-11 22:06:39", "t": 1794416799.729, "type": "model_fail", "role": "executor", "provider": "ds_test", "kind": "truncated", "error": "ds_test: обрезано лимитом max_tokens=16 (finish=length, out=16, reasoning=0)"}
+{"ts": "2026-11-11 22:06:41", "t": 1794416801.232, "type": "model_fail", "role": "executor", "provider": "ds_test", "kind": "truncated", "error": "ds_test: обрезано лимитом max_tokens=32 (finish=length, out=32, reasoning=0)"}
+{"ts": "2026-11-11 22:06:41", "t": 1794416801.235, "type": "provider_disabled", "provider": "ds_test", "reason": "ds_test: обрезано лимитом max_tokens=32 (finish=length, out=32, reasoning=0)"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.327, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.345, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.348, "type": "phase_error", "phase": "PLAN", "error": "задача mock-wer: отсутствует обязательное поле closes; ожидается roadmap:этапN-шагM или LG-YYYY-MM-DD-NN"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.349, "type": "phase_change", "frm": "PLAN", "to": "REPAIR"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.352, "type": "model_call", "role": "mentor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.354, "type": "mentor_action", "task_id": null, "action": "halt", "notes": "mock halt"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.354, "type": "phase_change", "frm": "REPAIR", "to": "REPORT"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.365, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.366, "type": "night_report", "budget_usd": 0.0, "tasks": {}}
+{"ts": "2026-11-11 22:06:49", "t": 1794416809.368, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 22:06:54", "t": 1794416814.956, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 22:06:54", "t": 1794416814.964, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:06:54", "t": 1794416814.968, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 22:06:55", "t": 1794416815.929, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-11 22:06:55", "t": 1794416815.933, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:06:55", "t": 1794416815.991, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.075, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.078, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.08, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.081, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.083, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.085, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.099, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.101, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}}
+{"ts": "2026-11-11 22:06:56", "t": 1794416816.103, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 22:33:48", "t": 1794418428.981, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 22:33:48", "t": 1794418428.997, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:33:48", "t": 1794418428.998, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.065, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.065, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.133, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.215, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.231, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.234, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.234, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.236, "type": "phase_change", "frm": "REVIEW", "to": "EXECUTE"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.238, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.248, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.248, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}}
+{"ts": "2026-11-11 22:33:49", "t": 1794418429.261, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.069, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.077, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.08, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.159, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.161, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.214, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.297, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.3, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.302, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.304, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.305, "type": "phase_change", "frm": "REVIEW", "to": "MANAGER"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.316, "type": "model_call", "role": "manager", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.32, "type": "phase_change", "frm": "MANAGER", "to": "EXECUTE"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.323, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.337, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.344, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}, "needs_human": null}
+{"ts": "2026-11-11 23:15:33", "t": 1794420933.345, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.508, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.519, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.519, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.602, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.602, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.652, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.735, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.751, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.752, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.753, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.756, "type": "phase_change", "frm": "REVIEW", "to": "MANAGER"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.768, "type": "model_call", "role": "manager", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.769, "type": "phase_change", "frm": "MANAGER", "to": "EXECUTE"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.769, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.769, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.786, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}, "needs_human": null}
+{"ts": "2026-11-11 23:16:57", "t": 1794421017.786, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.505, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.514, "type": "model_call", "role": "planner", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.517, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.6, "type": "task_start", "task_id": "mock-wer", "goal": "тестовая задача"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.602, "type": "model_call", "role": "executor", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.656, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.739, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.742, "type": "model_call", "role": "verifier", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.744, "type": "verdict", "task_id": "mock-wer", "verdict": "PASS", "reason": "mock", "verify_pass": true}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.745, "type": "task_end", "task_id": "mock-wer", "status": "done", "iter": 1}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.747, "type": "phase_change", "frm": "REVIEW", "to": "MANAGER"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.759, "type": "model_call", "role": "manager", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.764, "type": "phase_change", "frm": "MANAGER", "to": "EXECUTE"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.766, "type": "phase_change", "frm": "EXECUTE", "to": "REPORT"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.78, "type": "model_call", "role": "reporter", "provider": "mock", "model": "mock", "in_tok": 0, "out_tok": 0, "cost_usd": 0.0, "latency": 0.0, "finish": "stop"}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.785, "type": "night_report", "budget_usd": 0.0, "tasks": {"mock-wer": "done"}, "needs_human": null}
+{"ts": "2026-11-11 23:17:34", "t": 1794421054.786, "type": "phase_change", "frm": "REPORT", "to": "DONE"}
+{"ts": "2026-11-12 13:40:49", "t": 1794472849.402, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 6701, "out_tok": 2434, "reasoning_tok": 1442, "cost_usd": 0.00041, "latency": 53.0, "finish": "stop"}
+{"ts": "2026-11-12 13:42:12", "t": 1794472932.832, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 5274, "out_tok": 2225, "reasoning_tok": 1415, "cost_usd": 0.00035, "latency": 44.6, "finish": "stop"}
+{"ts": "2026-11-12 13:43:23", "t": 1794473003.534, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 5335, "out_tok": 1769, "reasoning_tok": 1181, "cost_usd": 0.00032, "latency": 32.2, "finish": "stop"}
+{"ts": "2026-11-12 18:15:25", "t": 1794489325.071, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 4067, "out_tok": 1883, "reasoning_tok": 913, "cost_usd": 0.00029, "latency": 48.8, "finish": "stop"}
+{"ts": "2026-11-12 18:17:03", "t": 1794489423.308, "type": "model_fail", "role": "critic", "provider": "glm53_flash", "kind": "empty_reasoning", "error": "glm53_flash: пустой ответ (finish=length, out=12000, reasoning=12000 из max_tokens=12000)"}
+{"ts": "2026-11-12 18:17:12", "t": 1794489432.094, "type": "model_call", "role": "critic", "provider": "qwen38_flash", "model": "qwen/qwen3.8-flash", "in_tok": 5284, "out_tok": 483, "reasoning_tok": 0, "cost_usd": 0.00102, "latency": 8.8, "finish": "stop"}
+{"ts": "2026-11-12 18:18:32", "t": 1794489512.746, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 4043, "out_tok": 7771, "reasoning_tok": 7498, "cost_usd": 0.00079, "latency": 73.6, "finish": "stop"}
+{"ts": "2026-11-12 18:19:06", "t": 1794489546.285, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 5168, "out_tok": 5314, "reasoning_tok": 4402, "cost_usd": 0.00061, "latency": 21.3, "finish": "stop"}
+{"ts": "2026-11-12 18:19:44", "t": 1794489584.287, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 5543, "out_tok": 6948, "reasoning_tok": 6262, "cost_usd": 0.00076, "latency": 33.9, "finish": "stop"}
+{"ts": "2026-11-12 18:22:08", "t": 1794489728.41, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 6571, "out_tok": 2205, "reasoning_tok": 1470, "cost_usd": 0.00039, "latency": 40.7, "finish": "stop"}
+{"ts": "2026-11-12 18:24:33", "t": 1794489873.52, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 6613, "out_tok": 6886, "reasoning_tok": 5867, "cost_usd": 0.00079, "latency": 63.4, "finish": "stop"}
+{"ts": "2026-11-12 18:25:48", "t": 1794489948.527, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 6703, "out_tok": 2073, "reasoning_tok": 1269, "cost_usd": 0.00038, "latency": 38.7, "finish": "stop"}
+{"ts": "2026-11-12 18:27:40", "t": 1794490060.08, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 6753, "out_tok": 10400, "reasoning_tok": 10380, "cost_usd": 0.00109, "latency": 99.1, "finish": "stop"}
+{"ts": "2026-11-12 18:29:33", "t": 1794490173.745, "type": "model_call", "role": "critic", "provider": "glm53_flash", "model": "z-ai/glm-5.3-flash", "in_tok": 6874, "out_tok": 8661, "reasoning_tok": 7803, "cost_usd": 0.00095, "latency": 65.5, "finish": "stop"}
+{"ts": "2026-11-14 15:32:38", "t": 1794652358.565, "type": "model_fail", "role": "context_digest", "provider": "browser_digest", "kind": "browser_unavailable", "error": "browser_digest: request_failed (browser_unavailable)", "cost_usd": 0.0, "in_tok": 0, "out_tok": 0, "attempt": 1}
+{"ts": "2026-11-14 15:37:56", "t": 1794652676.612, "type": "model_fail", "role": "context_digest", "provider": "browser_digest", "kind": "browser_unavailable", "error": "browser_gateway:http_error", "cost_usd": 0.0, "in_tok": 0, "out_tok": 0, "attempt": 1}
+{"ts": "2026-11-14 18:55:41", "t": 1794664541.449, "type": "model_fail", "role": "context_digest", "provider": "browser_digest", "kind": "browser_unavailable", "error": "browser_gateway:http_500", "cost_usd": 0.0, "in_tok": 0, "out_tok": 0, "attempt": 1}

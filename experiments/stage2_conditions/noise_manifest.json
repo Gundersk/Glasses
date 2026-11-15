@@ -1,0 +1,173 @@
+{
+  "seed": 20261109,
+  "sample_rate": 16000,
+  "chunk_ms": 100,
+  "tail_s": 1.0,
+  "files": [
+    {
+      "path": "experiments/stage2_conditions/audio/clip_000_snr20.wav",
+      "target_snr_db": 20.0,
+      "measured_snr_db": 20.034,
+      "seed": 20261109,
+      "sigma": 0.001219,
+      "sample_count": 270720,
+      "clip_id": "clip_000",
+      "source_wav": "data/fleurs_ru_test/clip_000.wav",
+      "condition": "snr20"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_001_snr20.wav",
+      "target_snr_db": 20.0,
+      "measured_snr_db": 19.992,
+      "seed": 20261110,
+      "sigma": 0.001568,
+      "sample_count": 184320,
+      "clip_id": "clip_001",
+      "source_wav": "data/fleurs_ru_test/clip_001.wav",
+      "condition": "snr20"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_002_snr20.wav",
+      "target_snr_db": 20.0,
+      "measured_snr_db": 20.032,
+      "seed": 20261111,
+      "sigma": 0.00107,
+      "sample_count": 138240,
+      "clip_id": "clip_002",
+      "source_wav": "data/fleurs_ru_test/clip_002.wav",
+      "condition": "snr20"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_003_snr20.wav",
+      "target_snr_db": 20.0,
+      "measured_snr_db": 20.032,
+      "seed": 20261112,
+      "sigma": 0.001008,
+      "sample_count": 126720,
+      "clip_id": "clip_003",
+      "source_wav": "data/fleurs_ru_test/clip_003.wav",
+      "condition": "snr20"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_004_snr20.wav",
+      "target_snr_db": 20.0,
+      "measured_snr_db": 20.012,
+      "seed": 20261113,
+      "sigma": 0.001041,
+      "sample_count": 311040,
+      "clip_id": "clip_004",
+      "source_wav": "data/fleurs_ru_test/clip_004.wav",
+      "condition": "snr20"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_000_snr10.wav",
+      "target_snr_db": 10.0,
+      "measured_snr_db": 10.034,
+      "seed": 20261109,
+      "sigma": 0.003853,
+      "sample_count": 270720,
+      "clip_id": "clip_000",
+      "source_wav": "data/fleurs_ru_test/clip_000.wav",
+      "condition": "snr10"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_001_snr10.wav",
+      "target_snr_db": 10.0,
+      "measured_snr_db": 9.992,
+      "seed": 20261110,
+      "sigma": 0.004959,
+      "sample_count": 184320,
+      "clip_id": "clip_001",
+      "source_wav": "data/fleurs_ru_test/clip_001.wav",
+      "condition": "snr10"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_002_snr10.wav",
+      "target_snr_db": 10.0,
+      "measured_snr_db": 10.032,
+      "seed": 20261111,
+      "sigma": 0.003385,
+      "sample_count": 138240,
+      "clip_id": "clip_002",
+      "source_wav": "data/fleurs_ru_test/clip_002.wav",
+      "condition": "snr10"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_003_snr10.wav",
+      "target_snr_db": 10.0,
+      "measured_snr_db": 10.032,
+      "seed": 20261112,
+      "sigma": 0.003188,
+      "sample_count": 126720,
+      "clip_id": "clip_003",
+      "source_wav": "data/fleurs_ru_test/clip_003.wav",
+      "condition": "snr10"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_004_snr10.wav",
+      "target_snr_db": 10.0,
+      "measured_snr_db": 10.012,
+      "seed": 20261113,
+      "sigma": 0.003293,
+      "sample_count": 311040,
+      "clip_id": "clip_004",
+      "source_wav": "data/fleurs_ru_test/clip_004.wav",
+      "condition": "snr10"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_000_snr5.wav",
+      "target_snr_db": 5.0,
+      "measured_snr_db": 5.034,
+      "seed": 20261109,
+      "sigma": 0.006852,
+      "sample_count": 270720,
+      "clip_id": "clip_000",
+      "source_wav": "data/fleurs_ru_test/clip_000.wav",
+      "condition": "snr5"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_001_snr5.wav",
+      "target_snr_db": 5.0,
+      "measured_snr_db": 4.992,
+      "seed": 20261110,
+      "sigma": 0.008819,
+      "sample_count": 184320,
+      "clip_id": "clip_001",
+      "source_wav": "data/fleurs_ru_test/clip_001.wav",
+      "condition": "snr5"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_002_snr5.wav",
+      "target_snr_db": 5.0,
+      "measured_snr_db": 5.032,
+      "seed": 20261111,
+      "sigma": 0.006019,
+      "sample_count": 138240,
+      "clip_id": "clip_002",
+      "source_wav": "data/fleurs_ru_test/clip_002.wav",
+      "condition": "snr5"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_003_snr5.wav",
+      "target_snr_db": 5.0,
+      "measured_snr_db": 5.032,
+      "seed": 20261112,
+      "sigma": 0.005669,
+      "sample_count": 126720,
+      "clip_id": "clip_003",
+      "source_wav": "data/fleurs_ru_test/clip_003.wav",
+      "condition": "snr5"
+    },
+    {
+      "path": "experiments/stage2_conditions/audio/clip_004_snr5.wav",
+      "target_snr_db": 5.0,
+      "measured_snr_db": 5.012,
+      "seed": 20261113,
+      "sigma": 0.005856,
+      "sample_count": 311040,
+      "clip_id": "clip_004",
+      "source_wav": "data/fleurs_ru_test/clip_004.wav",
+      "condition": "snr5"
+    }
+  ]
+}

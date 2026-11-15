@@ -1,0 +1,42 @@
+{
+  "rms_before_dbfs": -37.9423225135021,
+  "gain_db": 16.10214553033375,
+  "rms_after_dbfs": -21.840177430421193,
+  "target_rms_dbfs": -20.0,
+  "limited_by_peak": true,
+  "peak_cap_dbfs": -1.0,
+  "peak_dbfs": -1.0000002900227403,
+  "n_samples": 1895040,
+  "duration_s": 39.48,
+  "gap_s": 1.2,
+  "fade_ms": 20.0,
+  "clips": [
+    {
+      "file": "clip_000.wav",
+      "start_ms": 0.0,
+      "end_ms": 16920.0,
+      "speech_start_ms": 200.0,
+      "speech_end_ms": 16360.0,
+      "orig_sr": 16000,
+      "duration_s": 16.92
+    },
+    {
+      "file": "clip_001.wav",
+      "start_ms": 18120.0,
+      "end_ms": 29640.0,
+      "speech_start_ms": 18320.0,
+      "speech_end_ms": 29120.0,
+      "orig_sr": 16000,
+      "duration_s": 11.52
+    },
+    {
+      "file": "clip_002.wav",
+      "start_ms": 30840.0,
+      "end_ms": 39480.0,
+      "speech_start_ms": 31040.0,
+      "speech_end_ms": 38880.0,
+      "orig_sr": 16000,
+      "duration_s": 8.64
+    }
+  ]
+}

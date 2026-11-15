@@ -1,0 +1,81 @@
+{
+  "task_id": "prepare-multispeaker-dataset",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/data/two_speaker.wav"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/data/two_speaker_ref.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/data/two_speaker_ref.json",
+          "num_speakers",
+          2,
+          3
+        ]
+      },
+      "ok": true,
+      "detail": "got=2 range=[2,3]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/data/two_speaker_ref.json",
+          "num_segments",
+          3,
+          10
+        ]
+      },
+      "ok": true,
+      "detail": "got=3 range=[3,10]"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "experiments/data/two_speaker_ref.json",
+          "\"synthetic\": true"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "experiments/data/two_speaker_ref.json",
+          "\"speaker\": *\"B\""
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    }
+  ],
+  "ts": "2026-11-09 04:43:36",
+  "diff": {
+    "added": [
+      "experiments/data/two_speaker_ref.json",
+      "experiments/prepare_multispeaker.py"
+    ],
+    "modified": [
+      "autonomy/README.md",
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

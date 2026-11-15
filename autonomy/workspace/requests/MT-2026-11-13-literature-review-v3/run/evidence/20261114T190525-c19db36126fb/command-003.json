@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"audiovisual active speaker detection talking face audio video research captions accessibility\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-3.md\" --fresh",
+  "command_sha256": "720ed2ce408c6ae9e75bfd9443a0d11160aab4cd44170c6d08fca9e2840f1b6f",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794665147042024800,
+  "finished_ns": 1794665155917027900,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v3\\run\\evidence\\20261114T190525-c19db36126fb\\command-003.stdout.txt",
+    "status": "file",
+    "sha256": "ebb478653f6263694ab855a908569a0fc4f9cc76ad0e0102513cc9f15b7e90df",
+    "size": 194,
+    "mtime_ns": 1794665155918007500
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v3\\run\\evidence\\20261114T190525-c19db36126fb\\command-003.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794665155924365000
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "layer": 1,
+  "run_id": "stream_sherpa_clip001_r3",
+  "run_dir_name": "stream_sherpa_clip001_r3",
+  "kind": "streaming",
+  "pass": true,
+  "allow_missing_vision": false,
+  "min_snr": 10.0,
+  "checks": [
+    {
+      "name": "metrics_readable",
+      "ok": true,
+      "expected": "valid json object",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "kind_valid",
+      "ok": true,
+      "expected": "streaming|e2e",
+      "actual": "streaming",
+      "detail": ""
+    },
+    {
+      "name": "kind_matches_arg",
+      "ok": true,
+      "expected": "streaming",
+      "actual": "streaming",
+      "detail": "--kind не совпал с metrics.kind"
+    },
+    {
+      "name": "structure",
+      "ok": true,
+      "expected": "no missing/bad fields",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "simulated_is_false",
+      "ok": true,
+      "expected": false,
+      "actual": false,
+      "detail": "строго bool false; true = симуляция, не результат"
+    },
+    {
+      "name": "run_id_matches_dir",
+      "ok": true,
+      "expected": "stream_sherpa_clip001_r3",
+      "actual": "stream_sherpa_clip001_r3",
+      "detail": "защита от копии metrics.json из чужого прогона"
+    },
+    {
+      "name": "created_iso8601",
+      "ok": true,
+      "expected": "ISO8601",
+      "actual": "2026-11-09T19:34:48.920875+05:00",
+      "detail": ""
+    },
+    {
+      "name": "engine_nonempty",
+      "ok": true,
+      "expected": "non-empty",
+      "actual": "sherpa",
+      "detail": ""
+    },
+    {
+      "name": "source_duration_positive",
+      "ok": true,
+      "expected": ">0",
+      "actual": 12.52,
+      "detail": ""
+    },
+    {
+      "name": "partial_count_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 11,
+      "detail": ""
+    },
+    {
+      "name": "final_count_ge_1",
+      "ok": true,
+      "expected": ">=1",
+      "actual": 1,
+      "detail": ""
+    },
+    {
+      "name": "partial_count_matches_list",
+      "ok": true,
+      "expected": 11,
+      "actual": 11,
+      "detail": "счётчик должен совпадать с длиной списка"
+    },
+    {
+      "name": "final_count_matches_list",
+      "ok": true,
+      "expected": 1,
+      "actual": 1,
+      "detail": "счётчик должен совпадать с длиной списка"
+    },
+    {
+      "name": "finals_nonempty",
+      "ok": true,
+      "expected": "all non-empty",
+      "actual": "1/1 non-empty",
+      "detail": ""
+    },
+    {
+      "name": "finals_cyrillic",
+      "ok": true,
+      "expected": "all contain cyrillic",
+      "actual": "1/1",
+      "detail": ""
+    },
+    {
+      "name": "finals_distinct",
+      "ok": true,
+      "expected": ">=1 unique",
+      "actual": 1,
+      "detail": "final_count==1: достаточно unique==1 (и суммарная длина >=10 ниже)"
+    },
+    {
+      "name": "finals_total_len",
+      "ok": true,
+      "expected": ">=10 chars",
+      "actual": 99,
+      "detail": ""
+    },
+    {
+      "name": "partials_distinct",
+      "ok": true,
+      "expected": ">=2 unique non-empty partials",
+      "actual": 11,
+      "detail": "поток partial с одним текстом не доказывает инкрементальность"
+    },
+    {
+      "name": "no_placeholder_text",
+      "ok": true,
+      "expected": "no lorem/test/example/.../TODO/placeholder",
+      "actual": "none",
+      "detail": ""
+    },
+    {
+      "name": "not_all_finals_identical",
+      "ok": true,
+      "expected": "not identical",
+      "actual": "varied",
+      "detail": ""
+    },
+    {
+      "name": "first_partial_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 3417.465,
+      "detail": ""
+    },
+    {
+      "name": "p50_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 13.243,
+      "detail": ""
+    },
+    {
+      "name": "p95_ge_p50",
+      "ok": true,
+      "expected": ">=p50",
+      "actual": "p50=13.243 p95=13.243",
+      "detail": ""
+    },
+    {
+      "name": "finals_t_ms_nondecreasing",
+      "ok": true,
+      "expected": "non-decreasing",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "finals_t_ms_range",
+      "ok": true,
+      "expected": "0..42520 ms (duration+30s)",
+      "actual": "min=10413.243 max=10413.243",
+      "detail": "защита от выдуманных чисел"
+    },
+    {
+      "name": "partials_t_ms_nondecreasing",
+      "ok": true,
+      "expected": "non-decreasing",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "partials_t_ms_range",
+      "ok": true,
+      "expected": "0..42520 ms (duration+30s)",
+      "actual": "min=3417.465 max=9813.345",
+      "detail": "защита от выдуманных чисел"
+    },
+    {
+      "name": "first_partial_matches_list",
+      "ok": true,
+      "expected": "first_partial_ms ~ min(partials.t_ms) +-5.0 ms",
+      "actual": "field=3417.465 list_min=3417.465",
+      "detail": ""
+    },
+    {
+      "name": "finals_source_end_range",
+      "ok": true,
+      "expected": "non-decreasing, 0..13520 ms",
+      "actual": "min=10400.0 max=10400.0",
+      "detail": ""
+    },
+    {
+      "name": "artifacts_dir_exists",
+      "ok": true,
+      "expected": "dir",
+      "actual": "present",
+      "detail": ""
+    },
+    {
+      "name": "artifact:screenshot.png",
+      "ok": true,
+      "expected": "exists, >1024 B",
+      "actual": 39584,
+      "detail": ""
+    },
+    {
+      "name": "artifact:page.html",
+      "ok": true,
+      "expected": "exists, >1024 B",
+      "actual": 1864,
+      "detail": ""
+    },
+    {
+      "name": "page_html_cyrillic",
+      "ok": true,
+      "expected": "contains cyrillic",
+      "actual": "yes",
+      "detail": ""
+    },
+    {
+      "name": "screenshot_not_blank",
+      "ok": true,
+      "expected": "check_screenshot pass",
+      "actual": "pass",
+      "detail": "bands=2 std=34.19261055076776"
+    },
+    {
+      "name": "log_exists_nonempty",
+      "ok": true,
+      "expected": "non-empty file",
+      "actual": "2818 chars",
+      "detail": ""
+    },
+    {
+      "name": "log_no_traceback",
+      "ok": true,
+      "expected": "no traceback",
+      "actual": "none",
+      "detail": ""
+    }
+  ],
+  "created": "2026-11-09T20:17:30.031986+05:00"
+}

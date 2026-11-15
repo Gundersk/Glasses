@@ -1,0 +1,29 @@
+{
+  "closes": "LG-2026-11-14-03",
+  "created": "2026-11-14T21:22:32.745104+05:00",
+  "provider": "tinyfish",
+  "requested_urls": [
+    "https://ieeexplore.ieee.org/document/9053900",
+    "https://ui.adsabs.harvard.edu/abs/2020spsi.conf..906R/abstract"
+  ],
+  "searches": 0,
+  "limitation": "Provider outcome, not a diagnosis of site firewall or IP reputation",
+  "pages": [
+    {
+      "url": "https://ieeexplore.ieee.org/document/9053900",
+      "content_received": false,
+      "characters": 0,
+      "sha256": null
+    },
+    {
+      "url": "https://ui.adsabs.harvard.edu/abs/2020spsi.conf..906R/abstract",
+      "content_received": false,
+      "characters": 0,
+      "sha256": null
+    }
+  ],
+  "error_codes": [
+    "bot_blocked",
+    "bot_blocked"
+  ]
+}

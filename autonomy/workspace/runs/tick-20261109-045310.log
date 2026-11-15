@@ -1,0 +1,36 @@
+04:53:10 [+   0.0s] STEP  PLAN
+04:53:10 [+   0.0s] OK    план загружен из night_plan.yaml: 2 задач
+04:53:11 [+   0.3s] STEP  EXECUTE задача=e2e-latency-benchmark
+04:59:23 [+ 372.9s] INFO  executor: local ok in=6203 out=10524 cost=$0.0000 lat=370.9s
+04:59:23 [+ 373.0s] INFO  записан experiments/e2e_latency.py (4184 симв.)
+04:59:23 [+ 373.0s] INFO  summary: Write experiments/e2e_latency.py to measure Vosk streaming ASR finalize latency: wall-clock time from last chunk fully submitted to Result()/FinalResult(). Install vosk/numpy/huggingface_hub, download alphacep/vosk-model-small-ru-0.22 (estimated ~30 MB), then run the benchmark. Results are not produ
+04:59:23 [+ 373.0s] INFO  $ uv pip install --python .venv\Scripts\python.exe vosk numpy huggingface_hub
+04:59:24 [+ 373.2s] OK    rc=0: 
+04:59:24 [+ 373.2s] INFO  $ python -c "from huggingface_hub import snapshot_download; snapshot_download('alphacep/vosk-model-small-ru-0.22', local_dir='models/vosk-model-small-ru-0.22')"
+04:59:25 [+ 374.4s] OK    rc=0: 
+04:59:25 [+ 374.4s] INFO  $ python experiments/e2e_latency.py
+04:59:28 [+ 377.5s] OK    rc=0: в университете задержка распознавания должна быть небольшой чтобы человек успевал читать текст", "audio_frames": 266880, "audio_sample_rate": 16000, "audio_channels": 1, "processed_samples": 266880}}
+
+04:59:28 [+ 377.5s] STEP  VERIFY задача=e2e-latency-benchmark
+04:59:28 [+ 377.5s] INFO  verify: pass=True (verify.e2e-latency-benchmark.json)
+04:59:28 [+ 377.5s] STEP  REVIEW задача=e2e-latency-benchmark
+04:59:33 [+ 382.3s] WARN  verifier: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+04:59:34 [+ 383.3s] INFO  verifier: gemini_lite_free ok in=957 out=59 cost=$0.0000 lat=1.0s
+04:59:34 [+ 383.3s] INFO  вердикт контролёра: PASS — 
+04:59:34 [+ 383.4s] STEP  EXECUTE задача=diarization-baseline
+05:05:22 [+ 731.3s] INFO  executor: local ok in=5603 out=10745 cost=$0.0000 lat=346.4s
+05:05:22 [+ 731.3s] INFO  записан experiments/diarization_baseline.py (5858 симв.)
+05:05:22 [+ 731.3s] INFO  summary: Создаю experiments/diarization_baseline.py: читает WAV через wave+numpy, строит окна 25 мс с шагом 10 мс, извлекает 24 log-band FFT-признака, запускает 2-means на numpy с seed=0, считает num_detected_speakers, num_change_points, frame_accuracy по перестановке кластер->говорящий и пишет experiments/d
+05:05:22 [+ 731.3s] INFO  $ python experiments/diarization_baseline.py
+05:05:22 [+ 731.8s] OK    rc=0: 
+05:05:22 [+ 731.8s] STEP  VERIFY задача=diarization-baseline
+05:05:22 [+ 731.9s] INFO  verify: pass=True (verify.diarization-baseline.json)
+05:05:22 [+ 731.9s] STEP  REVIEW задача=diarization-baseline
+05:05:27 [+ 736.8s] WARN  verifier: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+05:05:28 [+ 737.6s] INFO  verifier: gemini_lite_free ok in=598 out=51 cost=$0.0000 lat=0.8s
+05:05:28 [+ 737.6s] INFO  вердикт контролёра: PASS — Все детерминированные проверки из verify.json успешно пройдены, файл с метриками и скрипт созданы, артефакты на месте.
+05:05:28 [+ 737.6s] STEP  REPORT
+05:05:33 [+ 742.8s] WARN  reporter: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+05:05:36 [+ 745.3s] INFO  reporter: gemini_lite_free ok in=1269 out=680 cost=$0.0000 lat=2.4s
+05:05:36 [+ 745.3s] OK    отчёт: autonomy\workspace\outbox\report.md
+05:05:36 [+ 745.3s] OK    ночь завершена: бюджет $0.000, задачи: e2e-latency-benchmark=done, diarization-baseline=done

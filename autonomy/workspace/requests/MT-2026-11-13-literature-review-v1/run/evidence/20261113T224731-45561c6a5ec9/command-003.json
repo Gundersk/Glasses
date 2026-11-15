@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"audiovisual active speaker detection speech captions accessibility dataset evaluation research paper\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-3.md\" --fresh",
+  "command_sha256": "32ec8c6b2d5d031874640ee384a45a97fadd9caa17965cfdacc7c8c40ef605b0",
+  "returncode": 1,
+  "status": "completed",
+  "started_ns": 1794592096639125900,
+  "finished_ns": 1794592113294279800,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-003.stdout.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794592113294279800
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-003.stderr.txt",
+    "status": "file",
+    "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+    "size": 997,
+    "mtime_ns": 1794592113294279800
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "closes": "LG-2026-11-14-02",
+  "created": "2026-11-14T20:49:19.663351+05:00",
+  "request_id": "MT-2026-11-13-literature-review-v5",
+  "mode": "read_only_local_regression",
+  "new_model_calls": 0,
+  "new_searches": 0,
+  "validation": "rejected",
+  "diagnostics": {
+    "schema_version": 1,
+    "errors": [
+      {
+        "claim_id": "C02",
+        "codes": [
+          "quote_missing"
+        ],
+        "source_url": "https://doi.org/10.48550/arxiv.2107.02852",
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md.json",
+        "metadata_truncated": false
+      },
+      {
+        "claim_id": "C03",
+        "codes": [
+          "url_missing_in_evidence"
+        ],
+        "source_url": "https://arxiv.org/html/2609.02812v1",
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md.json",
+        "metadata_truncated": false
+      }
+    ],
+    "claims_checked": 8,
+    "limitation": "literal evidence only, not semantic support"
+  },
+  "author_packet": {
+    "characters": 59999,
+    "pages": 12,
+    "omitted_characters": 138295,
+    "all_pages_have_explicit_omission": true,
+    "all_sources": [
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md.json",
+        "url": "https://www.reddit.com/r/deaf/comments/1kpiq62/looking_for_any_smart_glasses_that_support/",
+        "source_sha256": "49936f373e11eec4023a9b191154f7d9dbdff2e48f46f597a4843d72acf49505",
+        "visible_characters": 4720,
+        "omitted_characters": 1601
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md.json",
+        "url": "https://xrai.glass/",
+        "source_sha256": "49936f373e11eec4023a9b191154f7d9dbdff2e48f46f597a4843d72acf49505",
+        "visible_characters": 2631,
+        "omitted_characters": 0
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md.json",
+        "url": "https://sibnn.github.io/asr_eval/guide_streaming_evaluation.html",
+        "source_sha256": "6e354d3af12501e7f95dfdf635bad41954900973bb26474565c30f09636fac8d",
+        "visible_characters": 4720,
+        "omitted_characters": 7719
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md.json",
+        "url": "https://huggingface.co/papers?q=ASR%20evaluation",
+        "source_sha256": "6e354d3af12501e7f95dfdf635bad41954900973bb26474565c30f09636fac8d",
+        "visible_characters": 4720,
+        "omitted_characters": 25232
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md.json",
+        "url": "https://github.com/DongKeon/Awesome-Speaker-Diarization",
+        "source_sha256": "fe6368f81f5f85c0cc06d76bfd5e03861655fac519f6c454f57c2ce80644d062",
+        "visible_characters": 4720,
+        "omitted_characters": 25103
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md.json",
+        "url": "https://arxiv.org/html/2101.08473v2",
+        "source_sha256": "fe6368f81f5f85c0cc06d76bfd5e03861655fac519f6c454f57c2ce80644d062",
+        "visible_characters": 4720,
+        "omitted_characters": 20270
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md.json",
+        "url": "https://github.com/TaoRuijie/TalkNet-ASD",
+        "source_sha256": "0868a6d8fefcd678f656608fc54885710f3a0e4d46ded8c00ff7551340523835",
+        "visible_characters": 4720,
+        "omitted_characters": 1540
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md.json",
+        "url": "https://arxiv.org/html/2305.12831v3",
+        "source_sha256": "0868a6d8fefcd678f656608fc54885710f3a0e4d46ded8c00ff7551340523835",
+        "visible_characters": 4720,
+        "omitted_characters": 22518
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md.json",
+        "url": "https://arxiv.org/pdf/2604.11269",
+        "source_sha256": "93baaf55fe36c67365d37b6a06df258576cc9e6a45942f028e2bbfe489b919ba",
+        "visible_characters": 4720,
+        "omitted_characters": 19680
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md.json",
+        "url": "https://doi.org/10.48550/arxiv.2107.02852",
+        "source_sha256": "93baaf55fe36c67365d37b6a06df258576cc9e6a45942f028e2bbfe489b919ba",
+        "visible_characters": 4340,
+        "omitted_characters": 0
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-5.md.json",
+        "url": "https://github.com/collabora/WhisperLive",
+        "source_sha256": "06404ba754230fbacae61613e7cae03ae52ca3adef47d595b29562c4165d9669",
+        "visible_characters": 4720,
+        "omitted_characters": 11535
+      },
+      {
+        "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-5.md.json",
+        "url": "https://github.com/collabora/WhisperLive/pull/491/files",
+        "source_sha256": "06404ba754230fbacae61613e7cae03ae52ca3adef47d595b29562c4165d9669",
+        "visible_characters": 4720,
+        "omitted_characters": 3097
+      }
+    ]
+  },
+  "protected_files": 82,
+  "old_artifacts_unchanged": true
+}

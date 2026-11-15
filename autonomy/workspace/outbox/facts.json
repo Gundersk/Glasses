@@ -1,0 +1,128 @@
+{
+  "night_id": "20261111",
+  "started": "2026-11-11 01:00",
+  "finished": "2026-11-12 11:13",
+  "tasks": [
+    {
+      "id": "T1",
+      "goal_id": null,
+      "status": "done",
+      "verify_pass": true,
+      "checks_ok": 23,
+      "checks_total": 23,
+      "artifacts": [
+        "autonomy/workspace/outbox/T1_result.md",
+        "experiments/file_stream_eval.py",
+        "experiments/stage2_resources/sherpa_resources.json",
+        "experiments/stage2_resources/sherpa_result.json",
+        "experiments/stage2_resources/vosk_resources.json",
+        "experiments/stage2_resources/vosk_result.json"
+      ],
+      "last_error": null
+    },
+    {
+      "id": "T2",
+      "goal_id": null,
+      "status": "done",
+      "verify_pass": true,
+      "checks_ok": 27,
+      "checks_total": 27,
+      "artifacts": [
+        "autonomy/workspace/outbox/T2_result.md",
+        "experiments/stage2_conditions/noise_manifest.json",
+        "experiments/stage2_conditions/sherpa_conditions.json",
+        "experiments/stage2_conditions/vosk_conditions.json"
+      ],
+      "last_error": null
+    },
+    {
+      "id": "T3",
+      "goal_id": null,
+      "status": "done",
+      "verify_pass": true,
+      "checks_ok": 7,
+      "checks_total": 7,
+      "artifacts": [
+        "autonomy/workspace/outbox/T3_result.md",
+        "experiments/engine_choice.md"
+      ],
+      "last_error": null
+    },
+    {
+      "id": "T4",
+      "goal_id": null,
+      "status": "done",
+      "verify_pass": true,
+      "checks_ok": 10,
+      "checks_total": 10,
+      "artifacts": [
+        "reports/monthly/2026-11-draft.md"
+      ],
+      "last_error": null
+    }
+  ],
+  "budget_usd": 0.0053,
+  "calls_by_provider": {},
+  "violations": [],
+  "last_error": null,
+  "needs_human": null,
+  "lessons": [],
+  "plan_file": "autonomy/workspace/night_plan.yaml",
+  "goals_file": "autonomy/goals.yaml",
+  "goals": {
+    "global": "Человек с нарушением слуха видит в умных очках субтитры речи выбранного собеседника с небольшой задержкой",
+    "stage": "этап2",
+    "stage_deadline": "2026-11-24",
+    "stage_closed": false,
+    "targets": [
+      {
+        "id": "E2.1",
+        "kind": "stage",
+        "text": "Одна streaming-ASR модель на русском запущена; зафиксированы задержка и ошибки",
+        "status": "done",
+        "evidence": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "experiments/stage2_resources/sherpa_resources.json",
+          "experiments/stage2_resources/vosk_resources.json"
+        ],
+        "nights_without_progress": 0,
+        "blocked_reason": null
+      },
+      {
+        "id": "E2.2",
+        "kind": "stage",
+        "text": "Частичный и финальный текст выводятся в браузер/на экран и проверены на тестовом аудио",
+        "status": "done",
+        "evidence": [
+          "experiments/web_demo/asr_page.html",
+          "experiments/web_demo/screenshots/ui.png",
+          "experiments/web_demo/results/metrics.json"
+        ],
+        "nights_without_progress": 0,
+        "blocked_reason": null
+      },
+      {
+        "id": "E2.3",
+        "kind": "stage",
+        "text": "Статистика задержки и WER: медиана/p95 и примеры ошибок; для WER выборка не менее 20 клипов",
+        "status": "open",
+        "evidence": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "experiments/stage2_conditions/vosk_conditions.json"
+        ],
+        "nights_without_progress": 0,
+        "blocked_reason": null
+      },
+      {
+        "id": "E2.4",
+        "kind": "stage",
+        "text": "Демонстрация и отчёт к 24.11.2026 подготовлены",
+        "status": "open",
+        "evidence": [],
+        "nights_without_progress": 0,
+        "blocked_reason": null
+      }
+    ]
+  }
+}

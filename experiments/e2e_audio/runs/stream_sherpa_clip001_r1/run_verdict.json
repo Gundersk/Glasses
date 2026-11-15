@@ -1,0 +1,40 @@
+{
+  "pass": false,
+  "run_id": "stream_sherpa_clip001_r1",
+  "kind": "streaming",
+  "layers": {
+    "layer1_validate": {
+      "status": "fail",
+      "pass": false,
+      "required": true,
+      "failed_checks": [
+        "screenshot_not_blank"
+      ]
+    },
+    "layer2_dom": {
+      "status": "pass",
+      "pass": true,
+      "required": true,
+      "failed_checks": []
+    },
+    "layer2_screenshot": {
+      "status": "fail",
+      "pass": false,
+      "required": true,
+      "failed_checks": [
+        "bottom_third_nonempty"
+      ]
+    },
+    "layer3_vision": {
+      "status": "missing",
+      "pass": null,
+      "required": false,
+      "reason": "vision_review.json не передан"
+    }
+  },
+  "failed_layers": [
+    "layer1_validate",
+    "layer2_screenshot"
+  ],
+  "created": "2026-11-09T19:32:17.932073+05:00"
+}

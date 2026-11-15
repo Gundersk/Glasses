@@ -1,0 +1,19 @@
+{
+  "method": "Algorithmic streaming ASR finalize latency: wall-clock time from AcceptWaveform returning True (last chunk of segment fully submitted) to Result() returning non-empty text; includes stream FinalResult after last chunk. Not network/browser latency.",
+  "p50_ms": 11.70310000088648,
+  "p95_ms": 11.70310000088648,
+  "n_finals": 1,
+  "audio": "experiments/data/speech_ru.wav",
+  "model": "models/vosk-model-small-ru-0.22",
+  "sample_rate": 16000,
+  "vosk_version": "unknown",
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "chunk_frames": 4000,
+  "meta": {
+    "final_text": "сегодня мы проверяем систему субтитров для умных очков собеседник говорит про погоду и про встречу в университете задержка распознавания должна быть небольшой чтобы человек успевал читать текст",
+    "audio_frames": 266880,
+    "audio_sample_rate": 16000,
+    "audio_channels": 1,
+    "processed_samples": 266880
+  }
+}

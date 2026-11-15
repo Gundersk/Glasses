@@ -1,0 +1,74 @@
+{
+  "closes": "LG-2026-11-14-03",
+  "created": "2026-11-14T21:40:17.864943+05:00",
+  "scope": "offline regression suite, no new research or generation",
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "autonomy/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "tests": 304,
+      "log": "source-availability-tests-0.log",
+      "sha256": "b37a75cbec69d178f1c1b3c4ff9793e129f3e043e1a7e35d6b614adc5effee7c"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_critic_search.py"
+      ],
+      "returncode": 0,
+      "log": "source-availability-tests-1.log",
+      "sha256": "55b41b96b89a8a54c6a86ee89e7496b1db3777cee1b783f948cb149b58fb7fe4"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_noise_manifest_merge.py"
+      ],
+      "returncode": 0,
+      "log": "source-availability-tests-2.log",
+      "sha256": "5039278e368bde630b710206f6ede3675be078c96f7a10a407fa630cc7d70b7f"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_plan_approval.py"
+      ],
+      "returncode": 0,
+      "log": "source-availability-tests-3.log",
+      "sha256": "f848689e54605f7b571f2f54b2463e3cf9001cd64a480e44d9eec3c5d9759557"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_tick_budget.py"
+      ],
+      "returncode": 0,
+      "log": "source-availability-tests-4.log",
+      "sha256": "8ced8ddb8ba536f1941f1763498eef1cbda02171d86558c967459ff685f90a3d"
+    }
+  ],
+  "source_sha256": {
+    "autonomy/research.py": "69f33bcbdb3a51e2f2f9be3c49003d9f1a83f469a3fcb4a953c4d6f9a285638e",
+    "autonomy/source_outcomes.py": "f5b8e0789129b5b04d951a2483f0fbe6b00ddf2235f64a5cb96d0cc36f7dddef",
+    "autonomy/source_selection.py": "b0263dca0144e287c082b4a9a2ab54abda12b2d6106192afdb9c79a9f8a44527",
+    "autonomy/author_evidence.py": "d2b2b8cfc1267f765aa156be1fd9d69b279169be28b33076fa68fb06adeda7a4",
+    "autonomy/intake.py": "07ef0a8e974774840bcc91f8d8e98c78e291db2cea09a6e36dd0c1e0161620b8",
+    "autonomy/request_research.py": "8e193d3b82d861a61a4292c472a5ee00227a49b340bd1eb7e7f600969a68cdb6",
+    "autonomy/runner.py": "c45b860e2a38e3299983baba143148c1ab15bbf53f21207a5b4564b01bdbe9b4",
+    "autonomy/verify.py": "0741034778c39686ff5cd8b3427b07b9d2d2a5a715aed245e933137e9482aa46",
+    "autonomy/tests/test_source_outcomes.py": "9e5b572ef98a530553360e969a61ea52ff7b6af738ec4aa691d28cb6c4210747",
+    "autonomy/tests/test_source_availability_integration.py": "1a62ecde0d6e2f1025119f8d12b4cd258ed8936540f09d9015c3f1e5be8522ba",
+    "autonomy/tests/test_research_contract.py": "ce11c4f7da16c5ddd6f74440f0043aef8eda0079f20ead6907d0924f2306d986",
+    "autonomy/tests/test_author_evidence.py": "2b941318ff1d00959bcbd271aa1dbc9c2c656dd62003fab5ce745914eb1946e0"
+  }
+}

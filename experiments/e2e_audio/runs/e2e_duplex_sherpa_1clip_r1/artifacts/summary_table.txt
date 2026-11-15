@@ -1,0 +1,17 @@
+engine                             | sherpa
+n_clips                            | 1
+duration_s                         | 16.92
+snr_db (окна)                      | 34.78
+snr_db_recomputed (p90/p10)        | 63.19
+corr_peak (медиана окон)           | 0.716
+corr_global (справочно)            | 0.732
+drift_ppm                          | -62.5
+valid_window_fraction              | 1.0
+lag_ms (медиана локальных)         | 298.6
+partial_count                      | 18
+final_count                        | 2
+latency p50/p95 мс (n=0)           | не измерено
+endpoint_wait p50/p95 мс (n=0)     | не измерено
+gate                               | FAIL (validate rc=1, gate rc=1): FAIL: layer1_validate: ['p50_gt_0']
+run_dir                            | experiments\e2e_audio\runs\e2e_duplex_sherpa_1clip_r1
+recording                          | experiments\e2e_audio\runs\e2e_duplex_sherpa_1clip_r1\artifacts\recording.wav

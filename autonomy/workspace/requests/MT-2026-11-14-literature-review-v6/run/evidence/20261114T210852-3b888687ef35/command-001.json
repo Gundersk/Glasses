@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"audio visual active speaker detection AVA ActiveSpeaker benchmark original paper smart glasses subtitles\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-1.md\" --fresh",
+  "command_sha256": "5280bf2222f5dece98334842e81c4587e93b039ab0a8620be864e66f10b5385d",
+  "returncode": 1,
+  "status": "completed",
+  "started_ns": 1794672556266961900,
+  "finished_ns": 1794672567430176600,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-14-literature-review-v6\\run\\evidence\\20261114T210852-3b888687ef35\\command-001.stdout.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794672567430176600
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-14-literature-review-v6\\run\\evidence\\20261114T210852-3b888687ef35\\command-001.stderr.txt",
+    "status": "file",
+    "sha256": "f6734dcf165e3b54de0bf6664bf4dc2634d09f0e64dfdc38d17095a22449c6c3",
+    "size": 1025,
+    "mtime_ns": 1794672567433645200
+  }
+}

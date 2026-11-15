@@ -1,0 +1,39 @@
+04:38:18 [+   0.0s] STEP  PLAN
+04:38:18 [+   0.0s] OK    план загружен из night_plan.yaml: 2 задач
+04:38:18 [+   0.1s] STEP  EXECUTE задача=prepare-multispeaker-dataset
+04:43:34 [+ 316.0s] INFO  executor: local ok in=1080 out=9743 cost=$0.0000 lat=314.1s
+04:43:34 [+ 316.0s] INFO  записан experiments/prepare_multispeaker.py (3164 симв.)
+04:43:34 [+ 316.0s] INFO  summary: Создаю скрипт experiments/prepare_multispeaker.py: через gTTS (lang=ru) генерирует две короткие русские фразы, конвертирует mp3 в 16k mono wav, для второго говорящего делает питч-шифт asetrate=16000*1.25, склеивает A,B,A в experiments/data/two_speaker.wav и пишет experiments/data/two_speaker_ref.jso
+04:43:34 [+ 316.0s] INFO  $ uv pip install --python .venv\Scripts\python.exe gTTS
+04:43:34 [+ 316.4s] OK    rc=0: 
+04:43:34 [+ 316.4s] INFO  $ python experiments/prepare_multispeaker.py
+04:43:36 [+ 318.4s] OK    rc=0: 
+04:43:36 [+ 318.4s] STEP  VERIFY задача=prepare-multispeaker-dataset
+04:43:36 [+ 318.5s] INFO  verify: pass=True (verify.prepare-multispeaker-dataset.json)
+04:43:36 [+ 318.5s] STEP  REVIEW задача=prepare-multispeaker-dataset
+04:43:42 [+ 323.9s] WARN  verifier: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+04:43:43 [+ 324.8s] INFO  verifier: gemini_lite_free ok in=576 out=44 cost=$0.0000 lat=0.9s
+04:43:43 [+ 324.8s] INFO  вердикт контролёра: PASS — Все автоматические проверки из verify.json пройдены успешно, необходимые файлы сгенерированы и соответствуют критериям приемки.
+04:43:43 [+ 324.8s] STEP  EXECUTE задача=wire-asr-into-browser-demo
+04:50:52 [+ 754.0s] INFO  executor: local ok in=7244 out=11040 cost=$0.0000 lat=427.5s
+04:50:52 [+ 754.0s] INFO  записан experiments/asr_web_pipeline.py (5888 симв.)
+04:50:52 [+ 754.0s] INFO  summary: Write experiments/asr_web_pipeline.py to run Vosk ASR on experiments/data/speech_ru.wav using models/vosk-model-small-ru-0.22, serve the recognized Russian subtitles through web_subtitles_demo.Handler, fetch the rendered page, count Cyrillic subtitles, capture a screenshot via autonomy.screenshot, a
+04:50:52 [+ 754.0s] INFO  $ uv pip install --python .venv\Scripts\python.exe vosk huggingface_hub
+04:50:52 [+ 754.5s] OK    rc=0: 
+04:50:52 [+ 754.5s] INFO  $ hf download alphacep/vosk-model-small-ru-0.22 --local-dir models/vosk-model-small-ru-0.22
+04:50:54 [+ 755.8s] OK    rc=0: path=C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\models\vosk-model-small-ru-0.22
+
+04:50:54 [+ 755.8s] INFO  $ python experiments/asr_web_pipeline.py
+04:50:59 [+ 761.6s] OK    rc=0: ебольшой чтобы человек успевал читать текст", "asr_meta": {"sample_rate": 16000, "model": "models/vosk-model-small-ru-0.22", "total_time": 1.1731214999999793, "vosk": "unknown"}, "latency_count": 68}
+
+04:50:59 [+ 761.6s] STEP  VERIFY задача=wire-asr-into-browser-demo
+04:50:59 [+ 761.7s] INFO  verify: pass=True (verify.wire-asr-into-browser-demo.json)
+04:50:59 [+ 761.7s] STEP  REVIEW задача=wire-asr-into-browser-demo
+04:51:04 [+ 766.6s] WARN  verifier: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+04:51:05 [+ 767.4s] INFO  verifier: gemini_lite_free ok in=997 out=53 cost=$0.0000 lat=0.8s
+04:51:05 [+ 767.4s] INFO  вердикт контролёра: PASS — Все проверки verify.json успешно пройдены, артефакты (метрики, скриншот интерфейса) на месте и содержат валидные данные на русском языке.
+04:51:05 [+ 767.4s] STEP  REPORT
+04:51:11 [+ 773.2s] WARN  reporter: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+04:51:13 [+ 775.0s] INFO  reporter: gemini_lite_free ok in=1332 out=414 cost=$0.0000 lat=1.8s
+04:51:13 [+ 775.0s] OK    отчёт: autonomy\workspace\outbox\report.md
+04:51:13 [+ 775.0s] OK    ночь завершена: бюджет $0.000, задачи: prepare-multispeaker-dataset=done, wire-asr-into-browser-demo=done

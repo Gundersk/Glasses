@@ -1,0 +1,7 @@
+22:06:37 [+  10.3s] WARN  executor: ds_test -> ds_test: обрезано лимитом max_tokens=16 (finish=length, out=16, reasoning=0)
+22:06:37 [+  10.3s] WARN  executor: ds_test обрезан — повтор с max_tokens=32
+22:06:38 [+  11.4s] WARN  executor: ds_test -> ds_test: обрезано лимитом max_tokens=32 (finish=length, out=32, reasoning=0)
+22:06:39 [+  12.3s] WARN  executor: ds_test -> ds_test: обрезано лимитом max_tokens=16 (finish=length, out=16, reasoning=0)
+22:06:39 [+  12.3s] WARN  executor: ds_test обрезан — повтор с max_tokens=32
+22:06:41 [+  13.8s] WARN  executor: ds_test -> ds_test: обрезано лимитом max_tokens=32 (finish=length, out=32, reasoning=0)
+22:06:41 [+  13.8s] WARN  провайдер ds_test отключён до утра: ds_test: обрезано лимитом max_tokens=32 (finish=length, out=32, reasoning=0)

@@ -1,0 +1,7 @@
+check               | res  | expected                           | actual
+-------------------------------------------------------------------------------
+metrics_readable    | FAIL | valid json object                  | FileNotFoundError
+                      -> [Errno 2] No such file or directory: 'experiments\\e2e_audio\\runs\\e2e_duplex_sherpa_3clips_r1\\metrics.json'
+log_exists_nonempty | ok   | non-empty file                     | 1284 chars
+log_no_traceback    | ok   | no traceback                       | none
+LAYER1 FAIL: metrics_readable

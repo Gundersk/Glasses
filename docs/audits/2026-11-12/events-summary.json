@@ -1,0 +1,31 @@
+{
+  "captured_utc": "2026-11-12T15:59:14.835059+00:00",
+  "source": "autonomy/workspace/events.jsonl",
+  "sha256": "b500f0f40bcb08462ab4f2757e352a157fa851f9fcfb57f04ba022c4f588e669",
+  "events": 523,
+  "first": "2026-11-09 02:57:52",
+  "last": "2026-11-12 18:29:33",
+  "event_types": {
+    "phase_change": 185,
+    "task_start": 45,
+    "verdict": 28,
+    "task_end": 40,
+    "night_report": 25,
+    "model_call": 131,
+    "model_fail": 47,
+    "phase_error": 12,
+    "mentor_action": 5,
+    "local_grace_wait": 1,
+    "violation": 3,
+    "provider_disabled": 1
+  },
+  "task_status_counts": {
+    "done": 20,
+    "failed": 20
+  },
+  "model_success_events": 131,
+  "model_failure_events": 47,
+  "failures_without_cost_field": 47,
+  "contains_mock_calls": true,
+  "warning": "Mixed historical/manual/mock records. Counts do not measure scientific progress or total billing. Do not infer zero cost for missing fields."
+}

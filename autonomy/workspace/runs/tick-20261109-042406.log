@@ -1,0 +1,38 @@
+04:24:06 [+   0.0s] STEP  PLAN
+04:24:06 [+   0.0s] OK    план загружен из night_plan.yaml: 2 задач
+04:24:06 [+   0.1s] STEP  EXECUTE задача=run-asr-streaming-benchmark
+04:28:37 [+ 271.4s] INFO  executor: local ok in=6019 out=9396 cost=$0.0000 lat=271.0s
+04:28:37 [+ 271.4s] INFO  summary: Установлю Vosk и huggingface_hub в venv, скачаю модель alphacep/vosk-model-small-ru-0.22 (оценка размера: ~40 MB для small-ru модели), создам выходной каталог и выполню experiments/asr_benchmark.py на experiments/data/speech_ru.wav с эталоном experiments/data/speech_ru.txt, записав метрики в experim
+04:28:37 [+ 271.4s] INFO  $ uv pip install --python .venv\Scripts\python.exe vosk
+04:28:37 [+ 271.5s] OK    rc=0: 
+04:28:37 [+ 271.5s] INFO  $ uv pip install --python .venv\Scripts\python.exe huggingface_hub
+04:28:38 [+ 272.3s] OK    rc=0: 
+04:28:38 [+ 272.3s] INFO  $ .venv\Scripts\hf.exe download alphacep/vosk-model-small-ru-0.22 --local-dir models/vosk-model-small-ru-0.22
+04:28:40 [+ 274.4s] OK    rc=0: path=C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\models\vosk-model-small-ru-0.22
+
+04:28:40 [+ 274.4s] INFO  $ python -c "import os; os.makedirs('experiments/benchmarks', exist_ok=True)"
+04:28:40 [+ 274.5s] OK    rc=0: 
+04:28:40 [+ 274.5s] INFO  $ python experiments/asr_benchmark.py --audio experiments/data/speech_ru.wav --ref experiments/data/speech_ru.txt --model models/vosk-model-small-ru-0.22 --out experiments/benchmarks/metrics.json
+04:28:43 [+ 276.7s] OK    rc=0:  bit (AMD64)]", "vosk": "unknown", "time": "2026-11-09T04:28:43+0500", "meta": {"sample_rate": 16000, "model": "models/vosk-model-small-ru-0.22", "total_time": 1.2154148999998142, "vosk": "unknown"}}
+
+04:28:43 [+ 276.7s] STEP  VERIFY задача=run-asr-streaming-benchmark
+04:28:43 [+ 276.8s] INFO  verify: pass=True (verify.run-asr-streaming-benchmark.json)
+04:28:43 [+ 276.8s] STEP  REVIEW задача=run-asr-streaming-benchmark
+04:28:47 [+ 280.9s] INFO  verifier: gemini_free ok in=906 out=71 cost=$0.0000 lat=2.5s
+04:28:47 [+ 280.9s] INFO  вердикт контролёра: PASS — Все автоматические проверки пройдены, артефакт `experiments/benchmarks/metrics.json` успешно создан, и значения метрик (WER, latency_p50, latency_count) соответствуют ожиданиям.
+04:28:47 [+ 281.0s] STEP  EXECUTE задача=demo-screenshot
+04:31:29 [+ 443.4s] INFO  executor: local ok in=1919 out=4541 cost=$0.0000 lat=160.7s
+04:31:29 [+ 443.4s] INFO  записан experiments/web_demo/capture_ui.py (2331 симв.)
+04:31:29 [+ 443.4s] INFO  summary: Создаёт experiments/web_demo/capture_ui.py: он выбирает свободный порт, запускает experiments/web_subtitles_demo.py через subprocess.Popen с --host/--port, ждёт /health, выполняет python -m autonomy.screenshot http://127.0.0.1:<port>/ experiments/web_demo/screenshots/ui.png, сохраняет метрики в expe
+04:31:29 [+ 443.4s] INFO  $ python experiments/web_demo/capture_ui.py
+04:31:33 [+ 447.4s] OK    rc=0: OK: experiments/web_demo/screenshots/ui.png
+
+04:31:33 [+ 447.4s] STEP  VERIFY задача=demo-screenshot
+04:31:33 [+ 447.4s] INFO  verify: pass=True (verify.demo-screenshot.json)
+04:31:33 [+ 447.4s] STEP  REVIEW задача=demo-screenshot
+04:31:52 [+ 466.2s] INFO  verifier: gemini_free ok in=377 out=39 cost=$0.0000 lat=17.0s
+04:31:52 [+ 466.2s] INFO  вердикт контролёра: PASS — Артефакт скриншота создан, все автоматические проверки и acceptance criteria успешно пройдены.
+04:31:52 [+ 466.2s] STEP  REPORT
+04:32:19 [+ 493.0s] INFO  reporter: gemini_free ok in=6283 out=1133 cost=$0.0000 lat=26.8s
+04:32:19 [+ 493.0s] OK    отчёт: autonomy\workspace\outbox\report.md
+04:32:19 [+ 493.0s] OK    ночь завершена: бюджет $0.000, задачи: run-asr-streaming-benchmark=done, demo-screenshot=done

@@ -1,0 +1,35 @@
+03:09:54 [+   0.0s] STEP  PLAN
+03:10:04 [+   9.7s] INFO  planner: gemini_free ok in=4024 out=435 cost=$0.0000 lat=9.7s
+03:10:04 [+   9.7s] OK    план построен: 2 задач: run-asr-streaming-benchmark, build-browser-subtitle-demo
+03:10:04 [+   9.8s] STEP  EXECUTE задача=run-asr-streaming-benchmark
+03:15:09 [+ 314.7s] WARN  executor: local -> local: HTTP 502
+03:15:09 [+ 314.7s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTP 502
+03:20:14 [+ 619.6s] WARN  executor: local -> local: HTTP 502
+03:20:14 [+ 619.6s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTP 502
+03:25:19 [+ 924.5s] WARN  executor: local -> local: HTTP 502
+03:25:19 [+ 924.5s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTP 502
+03:25:19 [+ 924.5s] STEP  REPAIR задача=run-asr-streaming-benchmark
+03:25:44 [+ 950.0s] INFO  mentor: kimi_pro ok in=531 out=881 cost=$0.0000 lat=25.6s
+03:25:44 [+ 950.0s] INFO  ментор: action=replan notes=Корень не в формулировке задачи, а в инфраструктуре: единственный провайдер 'local' отвечает HTTP 502, исполнитель бросается в цикл повторов. Нужно разорвать жёсткую зависимость бенчмарка от живого пр
+03:25:44 [+ 950.0s] WARN  replan без tasks: текущая задача помечена failed, план не тронут
+03:25:45 [+ 950.3s] STEP  EXECUTE задача=build-browser-subtitle-demo
+03:30:50 [+1255.3s] WARN  executor: local -> local: HTTP 502
+03:30:50 [+1255.3s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTP 502
+03:35:55 [+1560.4s] WARN  executor: local -> local: HTTP 502
+03:35:55 [+1560.4s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTP 502
+03:39:39 [+1784.5s] INFO  executor: local ok in=1761 out=6790 cost=$0.0000 lat=224.0s
+03:39:39 [+1784.5s] INFO  записан experiments/web_subtitles_demo.py (3971 симв.)
+03:39:39 [+1784.5s] INFO  записан experiments/web_demo_metrics.json (200 симв.)
+03:39:39 [+1784.5s] INFO  summary: Создаю локальный веб-сервер субтитров на stdlib Python: он отдаёт HTML с частичными и финальными субтитрами, а режим --check-demo запускает сервер, получает страницу, считает отрендеренные элементы .subtitle и записывает метрики в experiments/web_demo_metrics.json. Крупные скачивания не требуются.
+03:39:39 [+1784.5s] INFO  $ python experiments/web_subtitles_demo.py --check-demo --output experiments/web_demo_metrics.json
+03:39:40 [+1785.5s] OK    rc=0: server_url": "http://127.0.0.1:57875/", "duration": 1.0, "interval": 0.2, "seed": 0, "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]", "time": "2026-11-09T03:39:40+0500"}
+
+03:39:40 [+1785.5s] STEP  VERIFY задача=build-browser-subtitle-demo
+03:39:40 [+1785.6s] INFO  verify: pass=True (verify.build-browser-subtitle-demo.json)
+03:39:40 [+1785.6s] STEP  REVIEW задача=build-browser-subtitle-demo
+03:39:43 [+1788.5s] INFO  verifier: gemini_free ok in=670 out=60 cost=$0.0000 lat=2.9s
+03:39:43 [+1788.5s] INFO  вердикт контролёра: PASS — Все критерии приемки выполнены, необходимые файлы (web_subtitles_demo.py и web_demo_metrics.json) созданы, метрики корректны и соответствуют логам выполнения.
+03:39:43 [+1788.5s] STEP  REPORT
+03:39:54 [+1800.1s] INFO  reporter: gemini_free ok in=6262 out=776 cost=$0.0000 lat=11.6s
+03:39:54 [+1800.1s] OK    отчёт: autonomy\workspace\outbox\report.md
+03:39:54 [+1800.1s] OK    ночь завершена: бюджет $0.000, задачи: run-asr-streaming-benchmark=failed, build-browser-subtitle-demo=done

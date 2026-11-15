@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"smart glasses live captions deaf hard of hearing product accessibility research speaker identification XRAI Google\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/sources-0.md\" --fresh",
+  "command_sha256": "13365d965f0cc6ecd46873ee68324138bc7406541d37a3725651a82273f51807",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794672532773885600,
+  "finished_ns": 1794672556252145700,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-14-literature-review-v6\\run\\evidence\\20261114T210852-3b888687ef35\\command-000.stdout.txt",
+    "status": "file",
+    "sha256": "6ae9b1ac7e53570cb025d43ab437fd43d6d04b7371ece78f0f5795da04e87c43",
+    "size": 194,
+    "mtime_ns": 1794672556253231100
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-14-literature-review-v6\\run\\evidence\\20261114T210852-3b888687ef35\\command-000.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794672556259557300
+  }
+}

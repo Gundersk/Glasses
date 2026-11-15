@@ -1,0 +1,10 @@
+{
+  "WER": "not_measured",
+  "p50": "not_measured",
+  "p95": "not_measured",
+  "measured": false,
+  "smoke_test": "PASS",
+  "report_path": "reports/report-2026-11.md",
+  "acceptance_path": "docs/report-2026-11.md",
+  "acceptance_path_allowed": false
+}

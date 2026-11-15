@@ -1,0 +1,75 @@
+{
+  "task_id": "e2e-latency-benchmark",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/benchmarks/e2e_latency.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/benchmarks/e2e_latency.json",
+          "p50_ms",
+          1.0,
+          30000.0
+        ]
+      },
+      "ok": true,
+      "detail": "got=11.70310000088648 range=[1.0,30000.0]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/benchmarks/e2e_latency.json",
+          "p95_ms",
+          1.0,
+          60000.0
+        ]
+      },
+      "ok": true,
+      "detail": "got=11.70310000088648 range=[1.0,60000.0]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/benchmarks/e2e_latency.json",
+          "n_finals",
+          1,
+          1000
+        ]
+      },
+      "ok": true,
+      "detail": "got=1 range=[1,1000]"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "experiments/benchmarks/e2e_latency.json",
+          "\"method\": *\""
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    }
+  ],
+  "ts": "2026-11-09 04:59:28",
+  "diff": {
+    "added": [
+      "experiments/benchmarks/e2e_latency.json",
+      "experiments/e2e_latency.py"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

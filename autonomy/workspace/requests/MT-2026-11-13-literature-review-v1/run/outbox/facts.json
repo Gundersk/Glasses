@@ -1,0 +1,70 @@
+{
+  "night_id": "20261113",
+  "started": "2026-11-13 22:43",
+  "finished": "2026-11-13 22:48",
+  "tasks": [
+    {
+      "id": "collect-sources",
+      "goal_id": "MT-2026-11-13-literature-review-v1",
+      "status": "failed",
+      "verify_pass": null,
+      "checks_ok": 0,
+      "checks_total": 0,
+      "artifacts": [],
+      "last_error": null,
+      "verify_file": null,
+      "receipt": null,
+      "evidence_level": "file_only_or_legacy"
+    },
+    {
+      "id": "answer-mentor",
+      "goal_id": "MT-2026-11-13-literature-review-v1",
+      "status": "pending",
+      "verify_pass": null,
+      "checks_ok": 0,
+      "checks_total": 0,
+      "artifacts": [],
+      "last_error": null,
+      "verify_file": null,
+      "receipt": null,
+      "evidence_level": "file_only_or_legacy"
+    }
+  ],
+  "budget_usd": 0.0,
+  "calls_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "attempts_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "violations": [],
+  "last_error": null,
+  "needs_human": "ответ не создаётся: сбор источников не принят",
+  "lessons": [],
+  "plan_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/run/night_plan.yaml",
+  "goals_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/run/goals.yaml",
+  "request_id": "MT-2026-11-13-literature-review-v1",
+  "request_sha256": "6d6c49a699e451c317f9bfeab46cb9752063dc42418f0873ddb8496d94b055f4",
+  "request_outcome": "blocked",
+  "request_gaps": [],
+  "request_limitations": [],
+  "goals": {
+    "global": "Ответить на задание в контексте проекта",
+    "stage": "request",
+    "stage_deadline": "not_assigned_by_owner",
+    "stage_closed": false,
+    "targets": [
+      {
+        "id": "MT-2026-11-13-literature-review-v1",
+        "kind": "local",
+        "text": "Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей теме до Вас.\n\nТогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.",
+        "status": "open",
+        "evidence": [],
+        "nights_without_progress": 1,
+        "blocked_reason": null
+      }
+    ]
+  }
+}

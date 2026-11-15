@@ -1,0 +1,273 @@
+{
+  "created": "2026-11-09T19:53:39.845466+05:00",
+  "total": 38,
+  "mismatches": 0,
+  "rows": [
+    {
+      "fixture": "L1 good_streaming",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "L1 good_e2e",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "L1 good_single_final",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "L1 bad_simulated",
+      "expected": "FAIL (simulated_is_false)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: simulated_is_false"
+    },
+    {
+      "fixture": "L1 bad_empty_text",
+      "expected": "FAIL (final_count_ge_1)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: final_count_ge_1, finals_nonempty, finals_cyrillic"
+    },
+    {
+      "fixture": "L1 bad_repeated",
+      "expected": "FAIL (finals_distinct)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: finals_distinct, not_all_finals_identical"
+    },
+    {
+      "fixture": "L1 bad_float32",
+      "expected": "FAIL (partial_count_gt_0)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: partial_count_gt_0, final_count_ge_1, finals_nonempty"
+    },
+    {
+      "fixture": "L1 bad_low_snr",
+      "expected": "FAIL (snr_db_min)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: snr_db_min"
+    },
+    {
+      "fixture": "L1 bad_snr_inflated",
+      "expected": "FAIL (snr_recomputed_consistent)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: snr_recomputed_consistent"
+    },
+    {
+      "fixture": "L1 bad_snr_zero",
+      "expected": "FAIL (snr_recomputed_consistent)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: snr_db_min, snr_recomputed_consistent, corr_windows_enough"
+    },
+    {
+      "fixture": "L1 bad_missing_wav",
+      "expected": "FAIL (recording_exists)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: recording_exists"
+    },
+    {
+      "fixture": "L1 bad_no_metrics",
+      "expected": "FAIL (metrics_readable)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: metrics_readable"
+    },
+    {
+      "fixture": "L1 bad_placeholder",
+      "expected": "FAIL (no_placeholder_text)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: finals_cyrillic, no_placeholder_text"
+    },
+    {
+      "fixture": "L1 bad_missing_field",
+      "expected": "FAIL (missing_field:timing)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: missing_field:timing, missing_field:timing.p50_ms, missing_field:timing.p95_ms"
+    },
+    {
+      "fixture": "L1 bad_silent_wav",
+      "expected": "FAIL (recording_peak_dbfs)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: snr_recomputed_consistent, recording_peak_dbfs, corr_windows_enough"
+    },
+    {
+      "fixture": "L1 bad_wrong_corr",
+      "expected": "FAIL (corr_recomputed_min)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: snr_recomputed_consistent, corr_windows_enough, corr_recomputed_min"
+    },
+    {
+      "fixture": "L1 bad_high_drift",
+      "expected": "FAIL (drift_ppm_limit)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: drift_ppm_limit, corr_recomputed_min, corr_claim_consistent"
+    },
+    {
+      "fixture": "L1 bad_no_screenshot",
+      "expected": "FAIL (artifact:screenshot.png)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: artifact:screenshot.png"
+    },
+    {
+      "fixture": "L1 bad_blank_screenshot",
+      "expected": "FAIL (screenshot_not_blank)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: screenshot_not_blank"
+    },
+    {
+      "fixture": "L2 dom dynamic",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "L2 dom sse",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "L2 dom static",
+      "expected": "FAIL (text_changes_at_least_once)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: text_changes_at_least_once, distinct_texts_ge_2"
+    },
+    {
+      "fixture": "L2 dom latin",
+      "expected": "FAIL (cyrillic_present)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: cyrillic_present"
+    },
+    {
+      "fixture": "L2 dom http404",
+      "expected": "FAIL (http_404)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: http_404, http_200"
+    },
+    {
+      "fixture": "L2 dom refused",
+      "expected": "FAIL (connection_refused)",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "failed: connection_refused, http_200"
+    },
+    {
+      "fixture": "L2 screenshot good",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "L2 screenshot blank",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "L2 screenshot missing",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "L2 screenshot corrupt",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "fixture": "gate all layers ok",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true,
+      "note": "PASS"
+    },
+    {
+      "fixture": "gate no dom (auto-required)",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "FAIL: layer2_dom(missing): dom_checks.json не передан"
+    },
+    {
+      "fixture": "gate no vision (auto-required)",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "FAIL: layer3_vision(missing): vision_review.json не передан"
+    },
+    {
+      "fixture": "gate no vision, allowed",
+      "expected": "PASS",
+      "actual": "PASS",
+      "ok": true,
+      "note": "PASS"
+    },
+    {
+      "fixture": "gate dom fails",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "FAIL: layer2_dom: ['text_changes_at_least_once', 'distinct_texts_ge_2'"
+    },
+    {
+      "fixture": "gate vision pass=false",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "FAIL: layer3_vision: pass != true"
+    },
+    {
+      "fixture": "gate vision hash mismatch",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "FAIL: layer3_vision: screenshot_sha256 не совпадает с проверяемым скри"
+    },
+    {
+      "fixture": "gate dom file missing",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": "FAIL: layer2_dom: FileNotFoundError: [Errno 2] No such file or directo"
+    },
+    {
+      "fixture": "gate layer1 fail",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "ok": true,
+      "note": ""
+    }
+  ]
+}

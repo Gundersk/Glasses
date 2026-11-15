@@ -1,0 +1,213 @@
+- id: T1
+  title: "Расход ресурсов при файловом потоковом ASR"
+  closes: roadmap:этап2-шаг3
+  priority: P0
+  goal: "Измерить CPU, RAM и wall time при потоковом распознавании одного WAV для sherpa-onnx и Vosk без динамика, микрофона и другого акустического тракта."
+  rationale: "Этап 2, шаг 3 прямо требует измерить расход ресурсов. Одинаковый файловый вход и единый потоковый цикл позволяют получить сопоставимые значения без артефактов акустического стенда."
+  inputs:
+    - data/fleurs_ru_test/clip_001.wav
+    - experiments/e2e_audio/streaming_asr.py
+    - experiments/e2e_audio/stream_browser.py
+  steps:
+    - "Создать experiments/file_stream_eval.py с режимом resources. Использовать существующий streaming_asr.create_asr, soundfile, моно float32, 16 кГц, чанки 100 мс и подачу в темпе speed=1.0. Не менять модели и параметры endpointing."
+    - "Не поднимать браузер, не проигрывать звук и не использовать микрофон. Для обоих движков подать один и тот же data/fleurs_ru_test/clip_001.wav и добавить одинаковую тишину 1.0 с в конце."
+    - "Измерять текущий процесс через psutil после инициализации модели: cpu_percent_avg как среднее периодических показаний, cpu_percent_max как максимум, rss_mb_max как максимум RSS в МиБ, wall_s как длительность подачи и финализации, n_frames как число поданных аудиокадров. Первый вызов cpu_percent выполнить заранее для калибровки; интервал и число измерений сохранить."
+    - "Для каждого движка сохранить отдельный JSON ресурсов с обязательными полями cpu_percent_avg, cpu_percent_max, rss_mb_max, wall_s, n_frames, а также engine, wav, chunk_ms, speed, tail_s, sample_rate, sample_count, command, model_version и конфигурацией ASR."
+    - "Сохранить отдельный JSON результата с simulated: false, asr_ok, списками partials и finals, временами событий и числом аудиокадров. Пустой ASR-результат или ошибка движка означают FAIL, числа ресурсов нельзя выдавать за успешный замер."
+    - "Записать autonomy/workspace/outbox/T1_result.md с командами, путями JSON, версиями и фактическими числами. Не сравнивать скорость движков по старым метрикам с другой семантикой."
+  commands:
+    - "python experiments\\file_stream_eval.py resources --engine sherpa --wav data\\fleurs_ru_test\\clip_001.wav --metrics experiments\\stage2_resources\\sherpa_resources.json --result experiments\\stage2_resources\\sherpa_result.json"
+    - "python experiments\\file_stream_eval.py resources --engine vosk --wav data\\fleurs_ru_test\\clip_001.wav --metrics experiments\\stage2_resources\\vosk_resources.json --result experiments\\stage2_resources\\vosk_result.json"
+  acceptance:
+    - file_exists: experiments/file_stream_eval.py
+    - file_exists: experiments/stage2_resources/sherpa_resources.json
+    - file_exists: experiments/stage2_resources/vosk_resources.json
+    - file_exists: experiments/stage2_resources/sherpa_result.json
+    - file_exists: experiments/stage2_resources/vosk_result.json
+    - file_exists: autonomy/workspace/outbox/T1_result.md
+    - json_eq: [experiments/stage2_resources/sherpa_resources.json, engine, sherpa]
+    - json_eq: [experiments/stage2_resources/vosk_resources.json, engine, vosk]
+    - json_eq: [experiments/stage2_resources/sherpa_result.json, simulated, false]
+    - json_eq: [experiments/stage2_resources/vosk_result.json, simulated, false]
+    - json_eq: [experiments/stage2_resources/sherpa_result.json, asr_ok, true]
+    - json_eq: [experiments/stage2_resources/vosk_result.json, asr_ok, true]
+    - number_range: [experiments/stage2_resources/sherpa_resources.json, cpu_percent_avg, 0, 1600]
+    - number_range: [experiments/stage2_resources/sherpa_resources.json, cpu_percent_max, 0, 1600]
+    - number_range: [experiments/stage2_resources/sherpa_resources.json, rss_mb_max, 1, 65536]
+    - number_range: [experiments/stage2_resources/sherpa_resources.json, wall_s, 0.001, 3600]
+    - number_range: [experiments/stage2_resources/sherpa_resources.json, n_frames, 1, 100000000]
+    - number_range: [experiments/stage2_resources/vosk_resources.json, cpu_percent_avg, 0, 1600]
+    - number_range: [experiments/stage2_resources/vosk_resources.json, cpu_percent_max, 0, 1600]
+    - number_range: [experiments/stage2_resources/vosk_resources.json, rss_mb_max, 1, 65536]
+    - number_range: [experiments/stage2_resources/vosk_resources.json, wall_s, 0.001, 3600]
+    - number_range: [experiments/stage2_resources/vosk_resources.json, n_frames, 1, 100000000]
+    - command: >-
+        python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_resources'); ms=[json.loads((p/f'{e}_resources.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; rs=[json.loads((p/f'{e}_result.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; keys=('cpu_percent_avg','cpu_percent_max','rss_mb_max','wall_s','n_frames'); assert all(all(k in m for k in keys) for m in ms); assert all(math.isfinite(float(m[k])) for m in ms for k in keys); assert all(m['cpu_percent_max'] >= m['cpu_percent_avg'] and m['n_frames'] == m['sample_count'] for m in ms); assert all(r['partials'] and r['finals'] and all(x['text'].strip() for x in r['finals']) for r in rs)"
+  failure:
+    - "Отсутствует любой обязательный JSON или поле, нечисловое, NaN, inf или отрицательное значение ресурса, n_frames не совпадает с sample_count."
+    - "Ошибка инициализации или распознавания, simulated: true, пустые partials или finals, пустой финальный текст."
+    - "Использован динамик, микрофон, разные исходные WAV или разные параметры потоковой подачи для двух движков."
+    - "Значения записаны по документации или предположению вместо фактического замера."
+  time_limit_minutes: 20
+  max_iter: 1
+  status: done
+  hint: "Это новый файловый замер, не акустический E2E. Старые JSON нельзя переименовывать в результаты T1. Ночной запуск выполняется только после команды владельца."
+  morning_rules:
+    - "Вручную открыть оба JSON ресурсов и оба JSON результата, сверить engine, входной WAV, sample_rate, chunk_ms, speed и n_frames."
+    - "Проверить логи и код мониторинга: CPU и RSS должны относиться к процессу фактического ASR, а не к неактивному родителю."
+    - "Не считать один короткий WAV оценкой всех условий и не исправлять JSON ради PASS."
+
+- id: T2
+  title: "Короткие русские фразы в разных цифровых условиях"
+  closes: roadmap:этап2-шаг3
+  priority: P0
+  goal: "На пяти коротких русских WAV измерить WER и задержку partial/final для sherpa-onnx и Vosk на чистом сигнале и при цифровом шуме SNR 20, 10 и 5 дБ без динамика."
+  rationale: "Этап 2, шаг 3 требует проверку коротких русских фраз при разных условиях и задержку. Цифровое подмешивание шума даёт воспроизводимые условия и не добавляет дрейф ADC/DAC."
+  inputs:
+    - data/fleurs_ru_test/manifest.jsonl
+    - experiments/file_stream_eval.py
+    - experiments/e2e_audio/streaming_asr.py
+    - experiments/e2e_audio/stream_browser.py
+    - experiments/benchmark_fleurs_sherpa.py
+    - experiments/benchmark_fleurs_vosk.py
+  steps:
+    - "Использовать общий experiments/file_stream_eval.py из T1. Если файл отсутствует, не подменять задачу старым бенчмарком: сначала восстановить тот же потоковый файловый цикл и его определения задержки."
+    - "Добавить режим conditions с фиксированным списком clip_000, clip_001, clip_002, clip_003, clip_004, seed 20261109, чанками 100 мс, speed=1.0 и tail_s=1.0. Сохранить список клипов, seed, команды, версии и конфигурацию."
+    - "Сформировать условия clean, snr20, snr10 и snr5. Для шумных условий добавлять белый гауссов шум непосредственно к отсчётам WAV по заданному SNR, без динамика и микрофона. Сохранить полученные WAV и noise_manifest.json с исходником, seed, целевым и пересчитанным SNR."
+    - "Для обоих движков использовать одни и те же сохранённые WAV. Не менять нормализацию эталона между условиями. Считать корпусной WER по пяти эталонам из manifest.jsonl и показывать S, D, I и число эталонных слов."
+    - "Для каждого условия и движка сохранить wer, final_latency_p50_ms, final_latency_p95_ms, final_latency_n, partial_latency_p50_ms, partial_latency_p95_ms, partial_latency_n и поклиповые ref, hyp, события и пути WAV. Задержку определять одинаково: время события минус позиция конца последнего поданного чанка; не включать старое несопоставимое время декодирования."
+    - "Записать experiments/stage2_conditions/sherpa_conditions.json и vosk_conditions.json с conditions в порядке clean, snr20, snr10, snr5. Записать autonomy/workspace/outbox/T2_result.md с фактическими таблицами и ограничением: пять клипов не дают статистически широкого вывода."
+  commands:
+    - "python experiments\\file_stream_eval.py conditions --engine sherpa --manifest data\\fleurs_ru_test\\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004 --snr 20,10,5 --seed 20261109 --noise-dir experiments\\stage2_conditions\\audio --out experiments\\stage2_conditions\\sherpa_conditions.json"
+    - "python experiments\\file_stream_eval.py conditions --engine vosk --manifest data\\fleurs_ru_test\\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004 --snr 20,10,5 --seed 20261109 --noise-dir experiments\\stage2_conditions\\audio --out experiments\\stage2_conditions\\vosk_conditions.json"
+  acceptance:
+    - file_exists: experiments/stage2_conditions/sherpa_conditions.json
+    - file_exists: experiments/stage2_conditions/vosk_conditions.json
+    - file_exists: experiments/stage2_conditions/noise_manifest.json
+    - file_exists: autonomy/workspace/outbox/T2_result.md
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, engine, sherpa]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, engine, vosk]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, seed, 20261109]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, seed, 20261109]
+    - number_range: [experiments/stage2_conditions/sherpa_conditions.json, n_clips, 5, 5]
+    - number_range: [experiments/stage2_conditions/vosk_conditions.json, n_clips, 5, 5]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, conditions.0.name, clean]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, conditions.1.name, snr20]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, conditions.2.name, snr10]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, conditions.3.name, snr5]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, conditions.0.name, clean]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, conditions.1.name, snr20]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, conditions.2.name, snr10]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, conditions.3.name, snr5]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, conditions.0.snr_db, null]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, conditions.1.snr_db, 20]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, conditions.2.snr_db, 10]
+    - json_eq: [experiments/stage2_conditions/sherpa_conditions.json, conditions.3.snr_db, 5]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, conditions.0.snr_db, null]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, conditions.1.snr_db, 20]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, conditions.2.snr_db, 10]
+    - json_eq: [experiments/stage2_conditions/vosk_conditions.json, conditions.3.snr_db, 5]
+    - command: >-
+        python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_conditions'); ds=[json.loads((p/f'{e}_conditions.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; names=['clean','snr20','snr10','snr5']; snrs=[None,20,10,5]; keys=('wer','final_latency_p50_ms','final_latency_p95_ms','final_latency_n','partial_latency_p50_ms','partial_latency_p95_ms','partial_latency_n'); assert all([c['name'] for c in d['conditions']]==names and [c['snr_db'] for c in d['conditions']]==snrs for d in ds); assert all(all(k in c for k in keys) for d in ds for c in d['conditions']); assert all(0<=c['wer']<=1 and c['final_latency_n']>=1 and c['partial_latency_n']>=1 and len(c['results'])==5 for d in ds for c in d['conditions']); assert all(math.isfinite(float(c[k])) for d in ds for c in d['conditions'] for k in keys if not k.endswith('_n')); nm=json.loads((p/'noise_manifest.json').read_text(encoding='utf-8')); assert nm['seed']==20261109 and len(nm['files'])==15; assert all(Path(f['path']).is_file() and abs(f['measured_snr_db']-f['target_snr_db'])<=0.1 for f in nm['files'])"
+  failure:
+    - "Отсутствует чистое или любое шумное условие, неверный порядок или SNR, разные WAV у движков, не сохранён цифровой шумной WAV."
+    - "Отсутствует WER, любая метрика задержки, n или поклиповый результат; WER вне [0, 1], пустые эталоны, нулевое число сэмплов."
+    - "Использованы старые несопоставимые latency_p50/latency_p95 из offline-бенчмарка или числа без нового файлового прогона."
+    - "Динамик, микрофон, акустический дрейф, изменение seed или подбор шума ради лучшего WER."
+  time_limit_minutes: 35
+  max_iter: 1
+  status: done
+  hint: "Нужны фактические WER и задержка по каждому условию, а не только создание шумных файлов. Пять клипов - предварительная проверка, p95 при таком n не называть устойчивой оценкой."
+  morning_rules:
+    - "Вручную сверить seed, список клипов, SNR и SHA-256 входных WAV у обоих движков; открыть несколько ref/hyp и проверить расчёт WER."
+    - "Проверить определения задержки и число сэмплов по каждому условию. Не сравнивать эти значения со старой offline-семантикой."
+    - "При любом пропущенном условии или подмене файлового шума акустическим стендом считать задачу FAIL."
+
+- id: T3
+  title: "Фиксация основного ASR-движка"
+  closes: roadmap:этап2-шаг1
+  priority: P1
+  goal: "Проверить и финально оформить experiments/engine_choice.md: sherpa-onnx выбран основным движком по измеренному WER, без неправомерного сравнения задержек."
+  rationale: "На одном наборе из 50 клипов FLEURS WER sherpa-onnx составил 11.35%, Vosk - 18.92%, но задержки измерены в разной семантике."
+  inputs:
+    - experiments/engine_choice.md
+    - experiments/fleurs_benchmark/sherpa_metrics.json
+    - experiments/fleurs_benchmark/vosk_metrics.json
+  steps:
+    - "Сверить документ только с указанными измерениями: sherpa-onnx WER 11.35%, Vosk WER 18.92%, 50 клипов FLEURS."
+    - "Сохранить разделы: вопрос, варианты, измерения, ограничения, решение, что пересмотреть при 150 клипах."
+    - "Явно оставить ограничения: самописный WER, 50 клипов, чтение без шума. Не утверждать, что sherpa быстрее Vosk: семантика задержек разная."
+    - "Новые прогоны не запускать. Записать autonomy/workspace/outbox/T3_result.md с подтверждением проверки документа и без новых неизмеренных результатов."
+  commands:
+    - "python -c \"from pathlib import Path; p=Path('experiments/engine_choice.md'); assert p.is_file() and p.stat().st_size > 0\""
+  acceptance:
+    - file_exists: experiments/engine_choice.md
+    - file_exists: autonomy/workspace/outbox/T3_result.md
+    - regex_in_file: [experiments/engine_choice.md, '11\.35%']
+    - regex_in_file: [experiments/engine_choice.md, '18\.92%']
+    - regex_in_file: [experiments/engine_choice.md, 'самописн']
+    - regex_in_file: [experiments/engine_choice.md, '150 клип']
+    - regex_in_file: [experiments/engine_choice.md, 'разн\w* семантик']
+  failure:
+    - "Выбор не зафиксирован, числа WER изменены, ограничения удалены или задержки движков названы напрямую сопоставимыми."
+    - "Добавлены новые экспериментальные результаты без прогона и артефактов."
+  time_limit_minutes: 8
+  max_iter: 1
+  status: done
+  hint: "Это документная задача, новый бенчмарк ночью не запускать. Решение: sherpa-onnx основной, Vosk остаётся сравнительным вариантом."
+  morning_rules:
+    - "PASS контролёра не доверять. Утром вручную прочитать engine_choice.md и сверить числа с указанными metrics.json."
+    - "Любые неизмеренные числа или скрытые ограничения считать провалом задачи."
+
+- id: T4
+  title: "Обновление ноябрьского черновика измерениями"
+  closes: roadmap:этап2-шаг3
+  priority: P1
+  goal: "Обновить reports/monthly/2026-11-draft.md только подтверждёнными числами потокового вывода, акустического E2E и, при успешной проверке, новых файловых замеров ресурсов и условий."
+  rationale: "Этап 2, шаг 3 требует подготовить отчёт. В черновик можно переносить только числа с первичными артефактами, сохраняя n и ограничения методики."
+  inputs:
+    - reports/monthly/2026-11-draft.md
+    - experiments/e2e_audio/runs/stream_sherpa_clip001_r3/metrics.json
+    - experiments/e2e_audio/runs/stream_vosk_clip001_r3/metrics.json
+    - experiments/e2e_audio/runs/e2e_duplex_sherpa_3clips_r3/artifacts/summary_table.txt
+    - experiments/e2e_audio/runs/e2e_duplex_sherpa_3clips_r3/run_verdict.json
+    - experiments/stage2_resources/sherpa_resources.json
+    - experiments/stage2_resources/vosk_resources.json
+    - experiments/stage2_conditions/sherpa_conditions.json
+    - experiments/stage2_conditions/vosk_conditions.json
+  steps:
+    - "Добавить потоковые субтитры в браузере: sherpa 11 partial и 1 final, Vosk 17 partial и 1 final, gate PASS. Указать оба run_id и наличие скриншотов в тех же каталогах."
+    - "Добавить валидный дуплексный E2E e2e_duplex_sherpa_3clips_r3: 40 partial и 3 final, задержка 739 мс только при n=1, лаг 298.1 мс, дрейф -54.7 ppm."
+    - "Оставить ограничение: независимые такты ADC и DAC. Не выдавать 739 мс за p50 или устойчивую статистику и не утверждать, что измерен тракт микрофон -> браузер."
+    - "Исправить устаревшие фразы об отсутствии акустического E2E, но сохранить, что E2E микрофон -> браузер не измерен. Указать FAIL одноклипового прогона e2e_duplex_sherpa_1clip_r1 с n=0."
+    - "Добавить результаты T1 и T2 только если соответствующие файлы получены и прошли проверку. Переносить WER, задержки и ресурсы вместе с условиями, n и ограничениями. Если результата нет, прямо написать «не измерялось», не заполнять пробел предположением."
+    - "Ничего не округлять в пользу результата. Не менять reports/report-2026-11.md. Не добавлять удалённые дуплексные и vision-задачи как новые результаты."
+  commands:
+    - "python -c \"from pathlib import Path; p=Path('reports/monthly/2026-11-draft.md'); assert p.is_file() and p.stat().st_size > 0\""
+  acceptance:
+    - file_exists: reports/monthly/2026-11-draft.md
+    - regex_in_file: [reports/monthly/2026-11-draft.md, 'stream_sherpa_clip001_r3']
+    - regex_in_file: [reports/monthly/2026-11-draft.md, 'stream_vosk_clip001_r3']
+    - regex_in_file: [reports/monthly/2026-11-draft.md, 'e2e_duplex_sherpa_3clips_r3']
+    - regex_in_file: [reports/monthly/2026-11-draft.md, '739 мс']
+    - regex_in_file: [reports/monthly/2026-11-draft.md, 'n=1']
+    - regex_in_file: [reports/monthly/2026-11-draft.md, '298\.1 мс']
+    - regex_in_file: [reports/monthly/2026-11-draft.md, '-54\.7 ppm']
+    - regex_in_file: [reports/monthly/2026-11-draft.md, 'независимые такты ADC и DAC']
+    - regex_in_file: [reports/monthly/2026-11-draft.md, 'e2e_duplex_sherpa_1clip_r1']
+  failure:
+    - "Любое новое число без указанного измерения, скрытие n=1 или n=0, округление в пользу результата, удаление ограничения про ADC и DAC."
+    - "Заявление об измеренном тракте микрофон -> браузер или изменение отправленного reports/report-2026-11.md."
+    - "Перенос результатов T1 или T2 из ожидаемых значений, из непроверенных JSON либо без n и условий измерения."
+  time_limit_minutes: 10
+  max_iter: 1
+  status: done
+  hint: "Работать только с черновиком reports/monthly/2026-11-draft.md. Эксперименты в этой задаче не запускать."
+  morning_rules:
+    - "PASS контролёра не доверять. Утром вручную сверить каждое новое число черновика с первичными metrics.json и run_verdict.json или с проверенными JSON задач T1 и T2."
+    - "При simulated: true, пустых текстах или непроверенных результатах T1 и T2 не включать их в отчёт."
+    - "ROADMAP.md, PROJECT.md и reports/report-2026-11.md не изменять."
+
+# Рабочий резерв плана. Перед ручным запуском восстановить из него night_plan.yaml.
+# Запуск только по прямой команде владельца: python -m autonomy.runner tick.
+# reset удаляет night_plan.yaml; не вызывать reset после восстановления плана.

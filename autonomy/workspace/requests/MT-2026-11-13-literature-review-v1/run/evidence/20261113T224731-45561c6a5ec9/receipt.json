@@ -1,0 +1,349 @@
+{
+  "version": 2,
+  "run_id": "20261113T224731-45561c6a5ec9",
+  "task_id": "collect-sources",
+  "plan_sha256": "d5fe8487629f48de9e38531729ff1201bca3006a783f456327b8e1795f303855",
+  "execution": "approved_commands",
+  "mock": false,
+  "started_ns": 1794592051469080300,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "seed": null,
+  "protocol": null,
+  "inputs": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/request.json",
+      "status": "file",
+      "sha256": "85f25c756d359124c26553490f3c3c95038645d1f64899b558371aac5176302e",
+      "size": 10327,
+      "mtime_ns": 1794591815245981900
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/context.md",
+      "status": "file",
+      "sha256": "ca3f55873d5f1d6c634ca7fa322a9632c914c2e048bc7af3d8a02689ef5954ac",
+      "size": 10833,
+      "mtime_ns": 1794591815246501300
+    },
+    {
+      "path": "docs/agent-context.md",
+      "status": "file",
+      "sha256": "2405fdff3ea60adae55fd3609c30b7bd021c3926ff4da38819d026ab0590c1ec",
+      "size": 13304,
+      "mtime_ns": 1794577086678940600
+    },
+    {
+      "path": "docs/scope.md",
+      "status": "file",
+      "sha256": "59cbac7b085d460bdddc380e99d4b590b11266ef62269aeebba6ddb2eaaa946b",
+      "size": 19825,
+      "mtime_ns": 1794498249201621100
+    },
+    {
+      "path": "docs/benchmarks.md",
+      "status": "file",
+      "sha256": "d62355574d35448763af968fd66f10f2c73988b260093ac0133d116fe07be0f4",
+      "size": 10502,
+      "mtime_ns": 1794568380778384100
+    },
+    {
+      "path": "docs/roadmap-changes.md",
+      "status": "file",
+      "sha256": "7680005c559882050a8b188e8958842efcb698602592528af5cdcb62141e3190",
+      "size": 11459,
+      "mtime_ns": 1793956454705395900
+    },
+    {
+      "path": "docs/environment.md",
+      "status": "file",
+      "sha256": "feb6c4e0091177c1c931b2da13c295f585085238460953dcdf6d92a47f6a58c7",
+      "size": 10370,
+      "mtime_ns": 1794568589096297600
+    },
+    {
+      "path": "STATUS.md",
+      "status": "file",
+      "sha256": "ef1987b01ed978466abe1c2493402b6bf9573a7dba440a61b7a5ed9637d4256a",
+      "size": 55575,
+      "mtime_ns": 1794577321794723500
+    },
+    {
+      "path": "docs/local-goals.md",
+      "status": "file",
+      "sha256": "8341568295284a587ce51dde22fac56c0e9c6a8b472454aaf00183a93c37ec05",
+      "size": 25458,
+      "mtime_ns": 1794577321795763300
+    },
+    {
+      "path": "docs/literature-review-2026-11.md",
+      "status": "file",
+      "sha256": "c18c61aebf21eb7bdf204f6e253591b0649e4ee1c0824b53aedae4cf92b84022",
+      "size": 29544,
+      "mtime_ns": 1794568380777391100
+    },
+    {
+      "path": "docs/sources.md",
+      "status": "file",
+      "sha256": "4d5ced8f0b11fa04adc9c6c41513e97a09229884c4314030c8a15c920f7d4fda",
+      "size": 31478,
+      "mtime_ns": 1794571900705730000
+    },
+    {
+      "path": "experiments/engine_choice.md",
+      "status": "file",
+      "sha256": "f29186fdfaf92e970838b76c0d4630b295298a6af19ed927d39aa941c3e6d755",
+      "size": 5256,
+      "mtime_ns": 1794342607536728400
+    },
+    {
+      "path": "reports/analytics-note-2026-11.md",
+      "status": "file",
+      "sha256": "28ff44a27ff975ef923c58d95dce37b0f3b233c84e93e3605512dee7b92641b5",
+      "size": 16101,
+      "mtime_ns": 1794227546667681100
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/run/research-plan-01.json",
+      "status": "file",
+      "sha256": "d3e7225b1ae4e46e14c7cee93ccb08a4bb10cf5605ce2b6658779accc5a95745",
+      "size": 1519,
+      "mtime_ns": 1794591990428492300
+    }
+  ],
+  "outputs_before": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-0.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-0.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-1.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-1.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-2.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-2.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-3.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-3.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-4.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-4.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-5.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-5.md.json",
+      "status": "missing_or_not_file"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python -m autonomy.research \"streaming captions smart glasses hearing impaired speaker attribution diarization research\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-0.md\" --fresh",
+      "command_sha256": "b53922397679e8c3ea8638031a45aa5ca785e6782ac0881a5e46850e7a2e9762",
+      "returncode": 1,
+      "status": "completed",
+      "started_ns": 1794592051540532500,
+      "finished_ns": 1794592084693910000,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-000.stdout.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794592084693910000
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-000.stderr.txt",
+        "status": "file",
+        "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+        "size": 997,
+        "mtime_ns": 1794592084697191600
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"Russian streaming speech recognition speaker diarization WER DER latency\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-1.md\" --fresh",
+      "command_sha256": "28d5d78a151fdde7c6f09d05a942f42b7c14a47a22cf41e74ac7708d62d89a71",
+      "returncode": 1,
+      "status": "completed",
+      "started_ns": 1794592084705211000,
+      "finished_ns": 1794592090889998700,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-001.stdout.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794592090891144500
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-001.stderr.txt",
+        "status": "file",
+        "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+        "size": 997,
+        "mtime_ns": 1794592090893113400
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"streaming speaker attributed ASR end to end online diarization latency\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-2.md\" --fresh",
+      "command_sha256": "09b88c038b896a93a5802c224475adb062922cd971a59c7f08a462d13e03cce1",
+      "returncode": 1,
+      "status": "completed",
+      "started_ns": 1794592090897640200,
+      "finished_ns": 1794592096632121100,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-002.stdout.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794592096633121700
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-002.stderr.txt",
+        "status": "file",
+        "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+        "size": 997,
+        "mtime_ns": 1794592096635120900
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"audiovisual active speaker detection speech captions accessibility dataset evaluation research paper\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-3.md\" --fresh",
+      "command_sha256": "32ec8c6b2d5d031874640ee384a45a97fadd9caa17965cfdacc7c8c40ef605b0",
+      "returncode": 1,
+      "status": "completed",
+      "started_ns": 1794592096639125900,
+      "finished_ns": 1794592113294279800,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-003.stdout.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794592113294279800
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-003.stderr.txt",
+        "status": "file",
+        "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+        "size": 997,
+        "mtime_ns": 1794592113294279800
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"streaming ASR diarization speaker attributed WER DER latency benchmark datasets reproducibility Russian dialogue\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-4.md\" --fresh",
+      "command_sha256": "296a60e5c6ffbf2bc3723c86db6bf100ad37e79935ba77c3b809cc6f943e4179",
+      "returncode": 1,
+      "status": "completed",
+      "started_ns": 1794592113310108300,
+      "finished_ns": 1794592119723935000,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-004.stdout.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794592119723935000
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-004.stderr.txt",
+        "status": "file",
+        "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+        "size": 997,
+        "mtime_ns": 1794592119723935000
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"smart glasses live captions speaker identification research prototype commercial product accessibility\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-5.md\" --fresh",
+      "command_sha256": "73d523d570edd9c6a93aac482c1b4ad70c3bf44eacc330f6d5ee856e47460517",
+      "returncode": 1,
+      "status": "completed",
+      "started_ns": 1794592119723935000,
+      "finished_ns": 1794592127694827400,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-005.stdout.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794592127694827400
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-005.stderr.txt",
+        "status": "file",
+        "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+        "size": 997,
+        "mtime_ns": 1794592127710631600
+      }
+    }
+  ],
+  "finished_ns": 1794592127710631600,
+  "outputs_after": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-0.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-0.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-1.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-1.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-2.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-2.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-3.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-3.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-4.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-4.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-5.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-5.md.json",
+      "status": "missing_or_not_file"
+    }
+  ]
+}

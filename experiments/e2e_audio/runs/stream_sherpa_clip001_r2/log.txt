@@ -1,0 +1,24 @@
+19:32:38.059 run_id=stream_sherpa_clip001_r2 engine=sherpa wav=data/fleurs_ru_test/clip_001.wav speed=1.0 chunk_ms=100 tail_s=1.0
+19:32:38.059 команда: experiments\e2e_audio\stream_browser.py --wav data/fleurs_ru_test/clip_001.wav --engine sherpa --run-dir experiments/e2e_audio/runs/stream_sherpa_clip001_r2 --port 0 --speed 1.0 --chunk-ms 100
+19:32:38.059 WAV: sr=16000 n=184320 dur=11.520s peak=0.1370 dtype=float32 (soundfile)
+19:32:39.636 ASR готов за 1.58 с: sherpa-onnx 2.0.1; {"model_dir": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\models\\sherpa-onnx-streaming-zipformer-small-ru-vosk-int8-2025-08-16", "num_threads": 2, "decoding": "greedy_search", "provider": "cpu", "sample_rate": 16000, "feature_dim": 80, "rule1_min_trailing_silence": 2.4, "rule2_min_trailing_silence": 0.8, "rule3_min_utterance_length": 20.0, "flush_tail_s": 0.3}
+19:32:39.668 сервер: http://127.0.0.1:61641/  (state: http://127.0.0.1:61641/state)
+19:32:43.080 partial t=  3414.1 ms src=  3400.0 lat=  14.1: мадагаска
+19:32:43.100 запуск check_dom.py на живом сервере
+19:32:43.673 partial t=  4015.2 ms src=  4000.0 lat=  15.2: мадагаскар намного
+19:32:44.374 partial t=  4716.2 ms src=  4700.0 lat=  16.2: мадагаскар намного больше
+19:32:44.982 partial t=  5313.3 ms src=  5300.0 lat=  13.3: мадагаскар намного больше других и я
+19:32:45.671 partial t=  6012.6 ms src=  6000.0 lat=  12.6: мадагаскар намного больше других и является
+19:32:46.281 partial t=  6613.6 ms src=  6600.0 lat=  13.6: мадагаскар намного больше других и является самобытным
+19:32:46.882 partial t=  7213.6 ms src=  7200.0 lat=  13.6: мадагаскар намного больше других и является самобытным континент
+19:32:47.575 partial t=  7915.5 ms src=  7900.0 lat=  15.5: мадагаскар намного больше других и является самобытным континентом в том
+19:32:48.179 partial t=  8517.3 ms src=  8500.0 lat=  17.3: мадагаскар намного больше других и является самобытным континентом в том что касается
+19:32:48.321 check_dom rc=0: DOM PASS
+19:32:48.871 partial t=  9213.1 ms src=  9200.0 lat=  13.1: мадагаскар намного больше других и является самобытным континентом в том что касается дикой
+19:32:49.480 partial t=  9815.9 ms src=  9800.0 lat=  15.9: мадагаскар намного больше других и является самобытным континентом в том что касается дикой природы
+19:32:50.083 FINAL   t= 10416.2 ms src_end= 10400.0 lat=  16.2 [endpoint]: мадагаскар намного больше других и является самобытным континентом в том что касается дикой природы
+19:32:52.189 подача завершена: partials=11 finals=1 feed_lag_max=0.0 ms wall=12.52 с
+19:32:54.152 скриншот: playwright-msedge -> experiments\e2e_audio\runs\stream_sherpa_clip001_r2\artifacts\screenshot.png (39466 байт)
+19:32:54.152 metrics.json записан
+19:32:54.471 validate_run rc=0: LAYER1 PASS
+19:32:54.788 gate rc=0: PASS

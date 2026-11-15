@@ -1,0 +1,81 @@
+06:01:50 [+   0.0s] STEP  PLAN
+06:01:50 [+   0.0s] OK    план загружен из night_plan.yaml: 3 задач
+06:01:50 [+   0.1s] STEP  EXECUTE задача=prepare-fleurs-data
+06:06:05 [+ 254.9s] INFO  executor: local ok in=1023 out=10648 cost=$0.0000 lat=253.3s
+06:06:05 [+ 254.9s] INFO  записан experiments/prepare_fleurs.py (4033 симв.)
+06:06:05 [+ 254.9s] INFO  summary: Скачать только тестовый parquet FLEURS ru_ru (google/fleurs, test-00000-of-00001.parquet), оценить размер через HF API, из первых 50 валидных строк сохранить 16 kHz mono WAV и manifest.jsonl в data/fleurs_ru_test. Полный train не скачивается.
+06:06:05 [+ 254.9s] INFO  $ uv pip install --python .venv/Scripts/python.exe huggingface_hub pandas pyarrow soundfile scipy
+06:06:10 [+ 260.2s] OK    rc=0: 
+06:06:10 [+ 260.2s] INFO  $ python -c "from huggingface_hub import HfApi; info = HfApi().file_info('google/fleurs', 'parquet-data/ru_ru/test-00000-of-00001.parquet', repo_type='dataset'); print('test_parquet_size_bytes', getattr(info, 'size', 'unknown'))"
+06:06:11 [+ 260.8s] ERROR rc=1: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AttributeError: 'HfApi' object has no attribute 'file_info'
+
+06:06:11 [+ 260.8s] INFO  $ python experiments/prepare_fleurs.py
+06:06:40 [+ 290.0s] OK    rc=0: -google--fleurs\snapshots\70bb2e84b976b7e960aa89f1c648e09c59f894dd\parquet-data\ru_ru\test-00000-of-00001.parquet
+Prepared 50 clips in data\fleurs_ru_test
+Manifest: data\fleurs_ru_test\manifest.jsonl
+
+06:06:40 [+ 290.0s] INFO  $ python -c "import json; lines=[json.loads(l) for l in open('data/fleurs_ru_test/manifest.jsonl',encoding='utf-8')]; assert len(lines)>=50; assert all('wav' in x and 'ref' in x and x['ref'].strip() for x in lines); print('ok',len(lines))"
+06:06:40 [+ 290.1s] OK    rc=0: ok 50
+
+06:11:37 [+ 587.1s] INFO  executor: local ok in=1170 out=8575 cost=$0.0000 lat=295.3s
+06:11:37 [+ 587.1s] INFO  записан experiments/prepare_fleurs.py (3505 симв.)
+06:11:37 [+ 587.1s] INFO  summary: Скачать только публичный test-паркет google/fleurs для ru_ru, оценить размер через HfApi.list_files_info (ожидаемо ~100-200 МБ), затем подготовить 50 клипов: WAV 16 kHz mono в data/fleurs_ru_test и manifest.jsonl с clip_id, wav, ref.
+06:11:37 [+ 587.1s] INFO  $ uv venv .venv
+06:11:37 [+ 587.2s] ERROR rc=2: Using CPython 3.12.15
+Creating virtual environment at: .venv
+error: Failed to create virtual environment
+  cause: A virtual environment already exists at: .venv
+
+hint: Use the `--clear` flag or set `U
+06:11:37 [+ 587.2s] INFO  $ uv pip install --python .venv\Scripts\python.exe pandas pyarrow huggingface_hub numpy
+06:11:37 [+ 587.2s] OK    rc=0: 
+06:11:37 [+ 587.2s] INFO  $ python -c "from huggingface_hub import HfApi; api=HfApi();
+try:
+    infos=api.list_files_info('google/fleurs', filenames=['parquet-data/ru_ru/test-00000-of-00001.parquet'], repo_type='dataset')
+    print('test_parquet_size_bytes', infos[0].size if infos else 'unknown')
+except Exception as e:
+    print('size_estimate_failed', repr(e))"
+06:11:38 [+ 587.8s] OK    rc=0: 
+06:11:38 [+ 587.8s] INFO  $ python experiments/prepare_fleurs.py
+06:11:41 [+ 591.2s] OK    rc=0: prepared 50 clips in data\fleurs_ru_test
+
+06:11:41 [+ 591.2s] INFO  $ python -c "import json; lines=[json.loads(l) for l in open('data/fleurs_ru_test/manifest.jsonl',encoding='utf-8')]; assert len(lines)>=50; assert all('wav' in x and 'ref' in x and x['ref'].strip() for x in lines); print('ok',len(lines))"
+06:11:41 [+ 591.3s] OK    rc=0: ok 50
+
+06:11:41 [+ 591.3s] WARN  prepare-fleurs-data: исчерпаны итерации (2)
+06:11:41 [+ 591.4s] STEP  EXECUTE задача=run-vosk-fleurs
+06:18:54 [+1023.9s] INFO  executor: local ok in=3691 out=11424 cost=$0.0000 lat=430.9s
+06:18:54 [+1023.9s] INFO  записан experiments/benchmark_fleurs_vosk.py (6104 симв.)
+06:18:54 [+1023.9s] INFO  summary: Создаю experiments/benchmark_fleurs_vosk.py для прогона Vosk по manifest.jsonl (50 клипов FLEURS RU), чанками 4000 кадров, с подсчётом суммарных S/D/I, WER, p50/p95 задержек и примеров ошибок. Модель vosk-model-small-ru-0.22 оценивается примерно в 40 МБ; в команды включены установка vosk/huggingface
+06:18:54 [+1023.9s] INFO  $ uv pip install --python .venv\Scripts\python.exe vosk huggingface_hub
+06:18:54 [+1024.0s] OK    rc=0: 
+06:18:54 [+1024.0s] INFO  $ hf download alphacep/vosk-model-small-ru-0.22 --local-dir models/vosk-model-small-ru-0.22
+06:18:55 [+1025.2s] OK    rc=0: path=C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\models\vosk-model-small-ru-0.22
+
+06:18:55 [+1025.2s] INFO  $ python experiments/benchmark_fleurs_vosk.py
+06:19:35 [+1065.5s] OK    rc=0: ru-0.22", "model_ok": true, "model_error": null, "manifest_error": null, "clip_errors": [], "time": "2026-11-09T06:19:35+0500", "chunk_frames": 4000, "S": 0, "D": 1057, "I": 0, "latency_count": 5047}
+
+06:19:35 [+1065.5s] STEP  VERIFY задача=run-vosk-fleurs
+06:19:36 [+1065.5s] INFO  verify: pass=True (verify.run-vosk-fleurs.json)
+06:19:36 [+1065.5s] STEP  REVIEW задача=run-vosk-fleurs
+06:19:41 [+1070.7s] WARN  verifier: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+06:19:42 [+1071.7s] INFO  verifier: gemini_lite_free ok in=1172 out=49 cost=$0.0000 lat=1.0s
+06:19:42 [+1071.7s] INFO  вердикт контролёра: PASS — 
+06:19:42 [+1071.7s] STEP  EXECUTE задача=run-sherpa-fleurs
+06:26:29 [+1479.4s] INFO  executor: local ok in=4254 out=12000 cost=$0.0000 lat=406.0s
+06:32:45 [+1854.8s] INFO  executor: local ok in=4325 out=11131 cost=$0.0000 lat=373.8s
+06:32:45 [+1854.8s] INFO  записан experiments/benchmark_fleurs_sherpa.py (5614 симв.)
+06:32:45 [+1854.8s] INFO  summary: Создаю experiments/benchmark_fleurs_sherpa.py для прогона sherpa-onnx streaming zipformer на 50 клипах FLEURS: чанки 0.2с, endpoint detection, WER по корпусу и decode-latency p50/p95. Модель assumed exists, скачивание не требуется.
+06:32:45 [+1854.8s] INFO  $ python experiments/benchmark_fleurs_sherpa.py
+06:32:48 [+1857.9s] ERROR rc=1: Traceback (most recent call last):
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\experiments\benchmark_fleurs_sherpa.py", line 158, in <module>
+    main()
+  File "C:\Users\
+06:32:48 [+1857.9s] WARN  run-sherpa-fleurs: исчерпаны итерации (2)
+06:32:48 [+1857.9s] STEP  REPORT
+06:32:54 [+1863.7s] WARN  reporter: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+06:32:55 [+1865.4s] INFO  reporter: gemini_lite_free ok in=1181 out=434 cost=$0.0000 lat=1.7s
+06:32:55 [+1865.4s] OK    отчёт: autonomy\workspace\outbox\report.md
+06:32:55 [+1865.4s] OK    ночь завершена: бюджет $0.000, задачи: prepare-fleurs-data=failed, run-vosk-fleurs=done, run-sherpa-fleurs=failed

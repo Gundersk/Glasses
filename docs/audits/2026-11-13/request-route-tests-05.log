@@ -1,0 +1,6 @@
+normal: rc= 0 | normal ok
+timeout path: rc=-1 за 6.1s | grandchild pid=28188
+stdout tail: 8 / �⢥� �� 127.0.0.1: �᫮ ����=32 �६�<1�� TTL=128 / �⢥� �� 127.0.0.1: �᫮ ����=32 �६�<1�� TTL=128 /  / [TIMEOUT 6s — дерево убито]
+внук после таймаута: DEAD
+TREE-KILL OK: дерево процессов умирает по таймауту
+

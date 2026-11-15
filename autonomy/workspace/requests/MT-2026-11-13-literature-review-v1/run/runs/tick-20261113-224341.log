@@ -1,0 +1,44 @@
+22:43:41 [+   0.0s] STEP  PLAN
+22:43:42 [+   0.0s] INFO  план с диска: перегенерация не нужна, проверяю критиком
+22:46:20 [+ 158.9s] INFO  critic: kimi_pro ok in=13395 out=4197 reasoning=3016 cost=$0.0000 lat=158.8s
+22:46:30 [+ 168.5s] INFO  planner: chatgpt ok in=13016 out=190 reasoning=21 cost=$0.0000 lat=9.6s
+22:47:30 [+ 228.7s] INFO  critic: kimi_pro ok in=14431 out=2571 reasoning=1657 cost=$0.0000 lat=60.2s
+22:47:30 [+ 228.7s] INFO  критика записана: autonomy\workspace\requests\MT-2026-11-13-literature-review-v1\run\outbox\critique.md
+22:47:30 [+ 228.7s] INFO  критик: approve (раундов 2, замечаний 3)
+22:47:30 [+ 228.8s] OK    план построен: 2 задач: collect-sources->MT-2026-11-13-literature-review-v1, answer-mentor->MT-2026-11-13-literature-review-v1
+22:47:31 [+ 229.5s] STEP  EXECUTE задача=collect-sources
+22:47:31 [+ 229.6s] INFO  summary: утверждённый протокол без LLM
+22:47:31 [+ 229.6s] INFO  $ python -m autonomy.research "streaming captions smart glasses hearing impaired speaker attribution diarization research" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-0.md" --fresh
+22:48:04 [+ 262.7s] ERROR rc=1: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\Op
+22:48:04 [+ 262.7s] INFO  $ python -m autonomy.research "Russian streaming speech recognition speaker diarization WER DER latency" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-1.md" --fresh
+22:48:10 [+ 268.9s] ERROR rc=1: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\Op
+22:48:10 [+ 268.9s] INFO  $ python -m autonomy.research "streaming speaker attributed ASR end to end online diarization latency" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-2.md" --fresh
+22:48:16 [+ 274.7s] ERROR rc=1: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\Op
+22:48:16 [+ 274.7s] INFO  $ python -m autonomy.research "audiovisual active speaker detection speech captions accessibility dataset evaluation research paper" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-3.md" --fresh
+22:48:33 [+ 291.3s] ERROR rc=1: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\Op
+22:48:33 [+ 291.3s] INFO  $ python -m autonomy.research "streaming ASR diarization speaker attributed WER DER latency benchmark datasets reproducibility Russian dialogue" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-4.md" --fresh
+22:48:39 [+ 297.7s] ERROR rc=1: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\Op
+22:48:39 [+ 297.7s] INFO  $ python -m autonomy.research "smart glasses live captions speaker identification research prototype commercial product accessibility" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-5.md" --fresh
+22:48:47 [+ 305.7s] ERROR rc=1: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\Op
+22:48:47 [+ 305.8s] WARN  collect-sources: исчерпаны итерации (1)
+22:48:47 [+ 305.8s] STEP  REPORT
+22:48:47 [+ 305.8s] OK    отчёт: autonomy\workspace\requests\MT-2026-11-13-literature-review-v1\run\outbox\reports\20261113.md (и report.md)
+22:48:47 [+ 305.8s] OK    ночь завершена: бюджет $0.000, задачи: collect-sources=failed, answer-mentor=pending

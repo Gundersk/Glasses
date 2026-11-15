@@ -1,0 +1,38 @@
+check                       | res  | expected                           | actual
+---------------------------------------------------------------------------------------
+metrics_readable            | ok   | valid json object                  | ok
+kind_valid                  | ok   | streaming|e2e                      | streaming
+structure                   | ok   | no missing/bad fields              | ok
+simulated_is_false          | ok   | false                              | false
+run_id_matches_dir          | ok   | stream_sherpa_clip001_r2           | stream_sherpa_clip001_r2
+created_iso8601             | ok   | ISO8601                            | 2026-11-09T19:32:54.152780+05:00
+engine_nonempty             | ok   | non-empty                          | sherpa
+source_duration_positive    | ok   | >0                                 | 12.52
+partial_count_gt_0          | ok   | >0                                 | 11
+final_count_ge_1            | ok   | >=1                                | 1
+partial_count_matches_list  | ok   | 11                                 | 11
+final_count_matches_list    | ok   | 1                                  | 1
+finals_nonempty             | ok   | all non-empty                      | 1/1 non-empty
+finals_cyrillic             | ok   | all contain cyrillic               | 1/1
+finals_distinct             | ok   | >=1 unique                         | 1
+finals_total_len            | ok   | >=10 chars                         | 99
+partials_distinct           | ok   | >=2 unique non-empty partials      | 11
+no_placeholder_text         | ok   | no lorem/test/example/.../TODO/... | none
+not_all_finals_identical    | ok   | not identical                      | varied
+first_partial_gt_0          | ok   | >0                                 | 3414.111
+p50_gt_0                    | ok   | >0                                 | 16.232
+p95_ge_p50                  | ok   | >=p50                              | p50=16.232 p95=16.232
+finals_t_ms_nondecreasing   | ok   | non-decreasing                     | ok
+finals_t_ms_range           | ok   | 0..42520 ms (duration+30s)         | min=10416.232 max=10416.232
+partials_t_ms_nondecreasing | ok   | non-decreasing                     | ok
+partials_t_ms_range         | ok   | 0..42520 ms (duration+30s)         | min=3414.111 max=9815.869
+first_partial_matches_list  | ok   | first_partial_ms ~ min(partials... | field=3414.111 list_min=3414.111
+finals_source_end_range     | ok   | non-decreasing, 0..13520 ms        | min=10400.0 max=10400.0
+artifacts_dir_exists        | ok   | dir                                | present
+artifact:screenshot.png     | ok   | exists, >1024 B                    | 39466
+artifact:page.html          | ok   | exists, >1024 B                    | 1864
+page_html_cyrillic          | ok   | contains cyrillic                  | yes
+screenshot_not_blank        | ok   | check_screenshot pass              | pass
+log_exists_nonempty         | ok   | non-empty file                     | 2745 chars
+log_no_traceback            | ok   | no traceback                       | none
+LAYER1 PASS

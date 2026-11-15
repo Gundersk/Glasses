@@ -1,0 +1,54 @@
+check                           | res  | expected                           | actual
+-------------------------------------------------------------------------------------------
+metrics_readable                | ok   | valid json object                  | ok
+kind_valid                      | ok   | streaming|e2e                      | e2e
+kind_matches_arg                | ok   | e2e                                | e2e
+structure                       | ok   | no missing/bad fields              | ok
+simulated_is_false              | ok   | false                              | false
+run_id_matches_dir              | ok   | e2e_duplex_sherpa_3clips_r3        | e2e_duplex_sherpa_3clips_r3
+created_iso8601                 | ok   | ISO8601                            | 2026-11-09T19:56:43.995896+05:00
+engine_nonempty                 | ok   | non-empty                          | sherpa
+source_duration_positive        | ok   | >0                                 | 39.48
+partial_count_gt_0              | ok   | >0                                 | 40
+final_count_ge_1                | ok   | >=1                                | 3
+partial_count_matches_list      | ok   | 40                                 | 40
+final_count_matches_list        | ok   | 3                                  | 3
+finals_nonempty                 | ok   | all non-empty                      | 3/3 non-empty
+finals_cyrillic                 | ok   | all contain cyrillic               | 3/3
+finals_distinct                 | ok   | >=2 unique                         | 3
+finals_total_len                | ok   | >=10 chars                         | 325
+partials_distinct               | ok   | >=2 unique non-empty partials      | 40
+no_placeholder_text             | ok   | no lorem/test/example/.../TODO/... | none
+not_all_finals_identical        | ok   | not identical                      | varied
+first_partial_gt_0              | ok   | >0                                 | 3418.558
+p50_gt_0                        | ok   | >0                                 | 739.27
+p95_ge_p50                      | ok   | >=p50                              | p50=739.27 p95=739.27
+finals_t_ms_nondecreasing       | ok   | non-decreasing                     | ok
+finals_t_ms_range               | ok   | 0..69480 ms (duration+30s)         | min=16213.832 max=39917.395
+partials_t_ms_nondecreasing     | ok   | non-decreasing                     | ok
+partials_t_ms_range             | ok   | 0..69480 ms (duration+30s)         | min=3418.558 max=39216.727
+first_partial_matches_list      | ok   | first_partial_ms ~ min(partials... | field=3418.558 list_min=3418.558
+finals_source_end_range         | ok   | non-decreasing, 0..40480 ms        | min=15901.875 max=38880.0
+snr_db_min                      | ok   | >=10.0                             | 33.985
+corr_peak_min                   | ok   | >=0.6                              | 0.69109
+drift_ppm_limit                 | ok   | |drift| < 500.0 ppm                | -54.688
+valid_window_fraction_min       | ok   | >=0.6                              | 0.88889
+lag_ms_range                    | ok   | 0..2000                            | 298.125
+recording_exists                | ok   | file exists                        | experiments\e2e_audio\runs\e2e_duplex_sherpa_3c...
+recording_size_gt_1kb           | ok   | >1024                              | 4030124
+recording_readable              | ok   | readable wav                       | sr=48000 n=2015040
+snr_recomputed_consistent       | ok   | claimed<=recomputed+10 and reco... | claimed=33.98 recomputed=63.79
+recording_duration_gt_5s        | ok   | >5.0 s                             | 41.98
+recording_peak_dbfs             | ok   | >-50.0 dBFS                        | -12.44
+recording_covers_source         | ok   | >=0.8*source (31.6 s)              | 41.98
+corr_windows_enough             | ok   | n_windows>=2 and n_valid>=2        | n_windows=18 n_valid=16
+corr_recomputed_min             | ok   | >=0.6                              | 0.69109
+corr_claim_consistent           | ok   | |claim-recomputed|<=0.15           | claim=0.69109 recomputed=0.6911
+corr_global_claim_consistent    | ok   | |claim-recomputed|<=0.15           | claim=0.45643 recomputed=0.4564
+lag_claim_consistent            | ok   | |claim-recomputed|<=50.0 ms        | claim=298.125 recomputed=298.1
+drift_claim_consistent          | ok   | |claim-recomputed|<=150.0 ppm      | claim=-54.688 recomputed=-54.7
+valid_fraction_claim_consistent | ok   | |claim-recomputed|<=0.1            | claim=0.88889 recomputed=0.889
+artifacts_dir_exists            | ok   | dir                                | present
+log_exists_nonempty             | ok   | non-empty file                     | 7049 chars
+log_no_traceback                | ok   | no traceback                       | none
+LAYER1 PASS

@@ -1,0 +1,382 @@
+{
+  "layer": 1,
+  "run_id": "e2e_duplex_sherpa_3clips_r3",
+  "run_dir_name": "e2e_duplex_sherpa_3clips_r3",
+  "kind": "e2e",
+  "pass": true,
+  "allow_missing_vision": true,
+  "min_snr": 10.0,
+  "snr_db_claimed": 33.985,
+  "snr_db_recomputed": 63.787,
+  "corr_peak_recomputed": 0.69109,
+  "corr_global_recomputed": 0.45643,
+  "drift_ppm_recomputed": -54.688,
+  "valid_window_fraction_recomputed": 0.88889,
+  "lag_ms_recomputed": 298.125,
+  "corr_windows": {
+    "n_windows": 18,
+    "n_valid": 16,
+    "n_fit": 13,
+    "win_s": 4.0,
+    "step_s": 2.0,
+    "min_win_corr": 0.3,
+    "dropped_as_outliers": [
+      6.0,
+      26.0,
+      30.0
+    ]
+  },
+  "checks": [
+    {
+      "name": "metrics_readable",
+      "ok": true,
+      "expected": "valid json object",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "kind_valid",
+      "ok": true,
+      "expected": "streaming|e2e",
+      "actual": "e2e",
+      "detail": ""
+    },
+    {
+      "name": "structure",
+      "ok": true,
+      "expected": "no missing/bad fields",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "simulated_is_false",
+      "ok": true,
+      "expected": false,
+      "actual": false,
+      "detail": "строго bool false; true = симуляция, не результат"
+    },
+    {
+      "name": "run_id_matches_dir",
+      "ok": true,
+      "expected": "e2e_duplex_sherpa_3clips_r3",
+      "actual": "e2e_duplex_sherpa_3clips_r3",
+      "detail": "защита от копии metrics.json из чужого прогона"
+    },
+    {
+      "name": "created_iso8601",
+      "ok": true,
+      "expected": "ISO8601",
+      "actual": "2026-11-09T19:56:43.995896+05:00",
+      "detail": ""
+    },
+    {
+      "name": "engine_nonempty",
+      "ok": true,
+      "expected": "non-empty",
+      "actual": "sherpa",
+      "detail": ""
+    },
+    {
+      "name": "source_duration_positive",
+      "ok": true,
+      "expected": ">0",
+      "actual": 39.48,
+      "detail": ""
+    },
+    {
+      "name": "partial_count_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 40,
+      "detail": ""
+    },
+    {
+      "name": "final_count_ge_1",
+      "ok": true,
+      "expected": ">=1",
+      "actual": 3,
+      "detail": ""
+    },
+    {
+      "name": "partial_count_matches_list",
+      "ok": true,
+      "expected": 40,
+      "actual": 40,
+      "detail": "счётчик должен совпадать с длиной списка"
+    },
+    {
+      "name": "final_count_matches_list",
+      "ok": true,
+      "expected": 3,
+      "actual": 3,
+      "detail": "счётчик должен совпадать с длиной списка"
+    },
+    {
+      "name": "finals_nonempty",
+      "ok": true,
+      "expected": "all non-empty",
+      "actual": "3/3 non-empty",
+      "detail": ""
+    },
+    {
+      "name": "finals_cyrillic",
+      "ok": true,
+      "expected": "all contain cyrillic",
+      "actual": "3/3",
+      "detail": ""
+    },
+    {
+      "name": "finals_distinct",
+      "ok": true,
+      "expected": ">=2 unique",
+      "actual": 3,
+      "detail": "уникальных >= max(2, final_count-1)"
+    },
+    {
+      "name": "finals_total_len",
+      "ok": true,
+      "expected": ">=10 chars",
+      "actual": 325,
+      "detail": ""
+    },
+    {
+      "name": "partials_distinct",
+      "ok": true,
+      "expected": ">=2 unique non-empty partials",
+      "actual": 40,
+      "detail": "поток partial с одним текстом не доказывает инкрементальность"
+    },
+    {
+      "name": "no_placeholder_text",
+      "ok": true,
+      "expected": "no lorem/test/example/.../TODO/placeholder",
+      "actual": "none",
+      "detail": ""
+    },
+    {
+      "name": "not_all_finals_identical",
+      "ok": true,
+      "expected": "not identical",
+      "actual": "varied",
+      "detail": ""
+    },
+    {
+      "name": "first_partial_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 3418.558,
+      "detail": ""
+    },
+    {
+      "name": "p50_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 739.27,
+      "detail": ""
+    },
+    {
+      "name": "p95_ge_p50",
+      "ok": true,
+      "expected": ">=p50",
+      "actual": "p50=739.27 p95=739.27",
+      "detail": ""
+    },
+    {
+      "name": "finals_t_ms_nondecreasing",
+      "ok": true,
+      "expected": "non-decreasing",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "finals_t_ms_range",
+      "ok": true,
+      "expected": "0..69480 ms (duration+30s)",
+      "actual": "min=16213.832 max=39917.395",
+      "detail": "защита от выдуманных чисел"
+    },
+    {
+      "name": "partials_t_ms_nondecreasing",
+      "ok": true,
+      "expected": "non-decreasing",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "partials_t_ms_range",
+      "ok": true,
+      "expected": "0..69480 ms (duration+30s)",
+      "actual": "min=3418.558 max=39216.727",
+      "detail": "защита от выдуманных чисел"
+    },
+    {
+      "name": "first_partial_matches_list",
+      "ok": true,
+      "expected": "first_partial_ms ~ min(partials.t_ms) +-5.0 ms",
+      "actual": "field=3418.558 list_min=3418.558",
+      "detail": ""
+    },
+    {
+      "name": "finals_source_end_range",
+      "ok": true,
+      "expected": "non-decreasing, 0..40480 ms",
+      "actual": "min=15901.875 max=38880.0",
+      "detail": ""
+    },
+    {
+      "name": "snr_db_min",
+      "ok": true,
+      "expected": ">=10.0",
+      "actual": 33.985,
+      "detail": "заявленное значение из metrics.json; честность проверяет snr_recomputed_consistent"
+    },
+    {
+      "name": "corr_peak_min",
+      "ok": true,
+      "expected": ">=0.6",
+      "actual": 0.69109,
+      "detail": "медиана корреляции по валидным окнам 4 с; глобальный пик критерием не является"
+    },
+    {
+      "name": "drift_ppm_limit",
+      "ok": true,
+      "expected": "|drift| < 500.0 ppm",
+      "actual": -54.688,
+      "detail": "наклон лага по окнам: независимые такты ADC/DAC"
+    },
+    {
+      "name": "valid_window_fraction_min",
+      "ok": true,
+      "expected": ">=0.6",
+      "actual": 0.88889,
+      "detail": "доля окон с corr>=0.3 от всех окон 4 с / шаг 2 с"
+    },
+    {
+      "name": "lag_ms_range",
+      "ok": true,
+      "expected": "0..2000",
+      "actual": 298.125,
+      "detail": ""
+    },
+    {
+      "name": "recording_exists",
+      "ok": true,
+      "expected": "file exists",
+      "actual": "experiments\\e2e_audio\\runs\\e2e_duplex_sherpa_3clips_r3\\artifacts\\recording.wav",
+      "detail": "artifacts/recording.wav"
+    },
+    {
+      "name": "recording_size_gt_1kb",
+      "ok": true,
+      "expected": ">1024",
+      "actual": 4030124,
+      "detail": ""
+    },
+    {
+      "name": "recording_readable",
+      "ok": true,
+      "expected": "readable wav",
+      "actual": "sr=48000 n=2015040",
+      "detail": ""
+    },
+    {
+      "name": "snr_recomputed_consistent",
+      "ok": true,
+      "expected": "claimed<=recomputed+10 and recomputed>=10",
+      "actual": "claimed=33.98 recomputed=63.79",
+      "detail": "p10=-96.4 dB, p90=-32.6 dB, frames=1399 x 30 ms; claimed-recomputed=-29.80 дБ"
+    },
+    {
+      "name": "recording_duration_gt_5s",
+      "ok": true,
+      "expected": ">5.0 s",
+      "actual": 41.98,
+      "detail": ""
+    },
+    {
+      "name": "recording_peak_dbfs",
+      "ok": true,
+      "expected": ">-50.0 dBFS",
+      "actual": -12.44,
+      "detail": "пересчитано из файла, а не из metrics.json"
+    },
+    {
+      "name": "recording_covers_source",
+      "ok": true,
+      "expected": ">=0.8*source (31.6 s)",
+      "actual": 41.98,
+      "detail": ""
+    },
+    {
+      "name": "corr_windows_enough",
+      "ok": true,
+      "expected": "n_windows>=2 and n_valid>=2",
+      "actual": "n_windows=18 n_valid=16",
+      "detail": "на короткой записи медиана и дрейф не определены"
+    },
+    {
+      "name": "corr_recomputed_min",
+      "ok": true,
+      "expected": ">=0.6",
+      "actual": 0.69109,
+      "detail": "пересчитано из source.path и записи оконной методикой"
+    },
+    {
+      "name": "corr_claim_consistent",
+      "ok": true,
+      "expected": "|claim-recomputed|<=0.15",
+      "actual": "claim=0.69109 recomputed=0.6911",
+      "detail": ""
+    },
+    {
+      "name": "corr_global_claim_consistent",
+      "ok": true,
+      "expected": "|claim-recomputed|<=0.15",
+      "actual": "claim=0.45643 recomputed=0.4564",
+      "detail": "справочное поле: критерием не является, но заявленное обязано совпадать с пересчётом"
+    },
+    {
+      "name": "lag_claim_consistent",
+      "ok": true,
+      "expected": "|claim-recomputed|<=50.0 ms",
+      "actual": "claim=298.125 recomputed=298.1",
+      "detail": ""
+    },
+    {
+      "name": "drift_claim_consistent",
+      "ok": true,
+      "expected": "|claim-recomputed|<=150.0 ppm",
+      "actual": "claim=-54.688 recomputed=-54.7",
+      "detail": ""
+    },
+    {
+      "name": "valid_fraction_claim_consistent",
+      "ok": true,
+      "expected": "|claim-recomputed|<=0.1",
+      "actual": "claim=0.88889 recomputed=0.889",
+      "detail": ""
+    },
+    {
+      "name": "artifacts_dir_exists",
+      "ok": true,
+      "expected": "dir",
+      "actual": "present",
+      "detail": ""
+    },
+    {
+      "name": "log_exists_nonempty",
+      "ok": true,
+      "expected": "non-empty file",
+      "actual": "7130 chars",
+      "detail": ""
+    },
+    {
+      "name": "log_no_traceback",
+      "ok": true,
+      "expected": "no traceback",
+      "actual": "none",
+      "detail": ""
+    }
+  ],
+  "created": "2026-11-09T19:57:45.313448+05:00"
+}

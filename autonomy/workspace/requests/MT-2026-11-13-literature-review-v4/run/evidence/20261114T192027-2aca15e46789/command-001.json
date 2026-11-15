@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"WhisperX pyannote.audio NeMo streaming speaker diarization license hardware requirements GPU\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-4.md\" --fresh",
+  "command_sha256": "2761e5ccb32a65bc329f6cb12d3f9ce9a66d8294f87e1e9e4d4f546825902305",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794666036209787800,
+  "finished_ns": 1794666042980577500,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T192027-2aca15e46789\\command-001.stdout.txt",
+    "status": "file",
+    "sha256": "f4383513afbeeeca087cbc9e8c1c2b8a96df2f7c9bb928558afe10433301004c",
+    "size": 194,
+    "mtime_ns": 1794666042981574400
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T192027-2aca15e46789\\command-001.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794666042990000400
+  }
+}

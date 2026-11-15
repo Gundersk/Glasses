@@ -1,0 +1,15 @@
+01:58:44 [+   0.0s] STEP  PLAN
+01:58:44 [+   0.0s] OK    план построен: 1 задач: mock-wer
+01:58:44 [+   0.1s] STEP  EXECUTE задача=mock-wer
+01:58:44 [+   0.1s] INFO  записан autonomy/workspace/outbox/mock_result.json (24 симв.)
+01:58:44 [+   0.1s] INFO  summary: mock: записываю результат
+01:58:44 [+   0.1s] INFO  $ python -c "print('mock ok')"
+01:58:44 [+   0.1s] OK    rc=0: mock ok
+
+01:58:44 [+   0.1s] STEP  VERIFY задача=mock-wer
+01:58:44 [+   0.1s] INFO  verify: pass=True (verify.mock-wer.json)
+01:58:44 [+   0.1s] STEP  REVIEW задача=mock-wer
+01:58:44 [+   0.1s] INFO  вердикт контролёра: PASS — mock
+01:58:44 [+   0.1s] STEP  REPORT
+01:58:44 [+   0.1s] OK    отчёт: autonomy\workspace\outbox\report.md
+01:58:44 [+   0.1s] OK    ночь завершена: бюджет $0.000, задачи: mock-wer=done

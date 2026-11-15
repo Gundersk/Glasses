@@ -1,0 +1,6 @@
+http_200                       ok    expected=200 actual=[200]
+text_changes_at_least_once     ok    expected=>=1 change actual=7
+lines_ge_1                     ok    expected=>=1 line actual=1
+cyrillic_present               ok    expected=>=1 sample with cyrillic actual=8
+distinct_texts_ge_2            ok    expected=>=2 distinct non-empty texts actual=8
+DOM PASS

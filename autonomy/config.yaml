@@ -1,0 +1,288 @@
+# Конфигурация автономной ночной системы.
+# Секретов здесь нет — только имена переменных окружения (см. .env.example).
+
+night:
+  budget_usd_per_night: 1.0        # локальный бюджет; абсолютный billing cap задаётся у провайдера
+  max_tasks_per_night: 8           # больше — не успеет и не нужно
+  stale_lock_minutes: 20           # лок старше — считать мёртвым
+  phase_timeout_minutes: 50        # один тик не должен висеть вечно
+  local_load_grace_min: 25         # сколько минут ждать загрузку модели Strata (502)
+  # Лимит вызовов на провайдера за ночь. Подписка Kimi не безлимитная:
+  # квота тратится, поэтому эскалация ограничена числом, а не только деньгами.
+  # Новый предел 12.11: беречь оставшуюся подписочную квоту; не гарантировать
+  # ремонт каждой задачи любой ценой. Критик использует тот же общий счётчик.
+  max_calls_per_provider:
+    kimi_pro: 8
+    chatgpt: 6
+    chatgpt_critic: 4
+  # Общая квота аккаунта, не отдельная на каждую модель. Это локальные
+  # предохранители, НЕ эквивалент фактического лимита Plus.
+  chatgpt_max_attempts_per_run: 10
+  chatgpt_max_attempts_7d: 60
+  subscription_wait_max_s: 21600
+  subscription_reset_fallback_s: 18300
+  # Провайдер, давший N отказов подряд (пустой ответ, обрезка, 429), отключается
+  # до конца ночи: иначе одна мёртвая модель сжигает время на каждой роли.
+  provider_fail_limit: 2
+  # Потолок, до которого можно увеличить max_tokens при обрезке ответа.
+  truncation_retry_cap: 131072
+  probe_timeout_s: 45              # таймаут preflight-пробы одного провайдера
+  # Пробе нужен запас: у glm и kimi reasoning обязательный, на 64 токенах ответ
+  # не успевает появиться и живой провайдер выглядел мёртвым (11.11.2026).
+  probe_max_tokens: 1024
+  # Срез на файл не равен окну модели. Общий подписочный вход проверяется
+  # отдельно; превышение блокируется без молчаливой обрезки.
+  input_chars_per_file: 8000
+  # Сколько ночей подряд цель может не получать новых доказательств, прежде чем
+  # система остановится и вынесет решение владельцу вместо бесконечных прогонов.
+  max_nights_without_progress: 3
+  # Потолок текста интерпретации в отчёте: факты считает код, модель только объясняет.
+  report_interpretation_chars: 1800
+  # Проверка одних чисел не защищает от выдуманного вывода: пока без LLM-текста.
+  report_interpretation_enabled: false
+
+sandbox:
+  # Писать можно только сюда (относительно корня проекта). Всё остальное — read-only.
+  allowed_write_paths:
+    - "autonomy/workspace/**"
+    - "experiments/**"
+    - "reports/**"
+    - "docs/research/notes/**"
+    - "data/interim/**"
+    - "STATUS.md"
+  # Команды-паттерны, которые запрещены всегда (reject + violation в отчёт).
+  denied_command_patterns:
+    - "rm -rf"
+    - "Remove-Item.*-Recurse"
+    - "del /s"
+    - "rmdir /s"
+    - "format "
+    - "mkfs"
+    - "curl\\s[^|]*\\|\\s*(ba)?sh\\b"
+    - "wget\\s[^|]*\\|\\s*(ba)?sh\\b"
+    - "Set-ExecutionPolicy"
+    - "schtasks"
+    - "reg (add|delete)"
+    - "net user"
+    - "taskkill"
+    - "Stop-Process"
+    - "shutdown"
+    - "Restart-Computer"
+    - "netsh"
+    - "route (add|delete)"
+    - "ipconfig /flushdns"
+
+providers:
+  browser_digest:
+    kind: browser-session
+    model: deepseek-flash
+    base_url_env: CHAT2API_BASE_URL
+    api_key_env: CHAT2API_KEY
+    timeout_s: 180
+    retries: 0
+    skip_probe: true
+    max_output_tokens: 4000
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+  browser_scout:
+    kind: browser-session
+    model: perplexity
+    base_url_env: CHAT2API_BASE_URL
+    api_key_env: CHAT2API_KEY
+    timeout_s: 180
+    retries: 0
+    skip_probe: true
+    max_output_tokens: 2000
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+  local:
+    # Не входит в лестницу ролей с 11.11.2026: исполнитель переведён на deepseek1017.
+    # Оставлен для локальных приватных прогонов, включать вручную.
+    kind: openai-compatible
+    base_url_env: LOCAL_LLM_BASE_URL
+    api_key_env: LOCAL_LLM_API_KEY
+    model_env: LOCAL_LLM_MODEL
+    timeout_s: 1800          # локалка может думать долго
+    retries: 0               # НЕ повторять: повтор забьёт очередь и удвоит время
+    stream: true             # SSE: длинные генерации иначе убиваются gateway-таймаутом (~300 c)
+    stream_idle_timeout_s: 180   # нет байтов дольше — считаем зависло
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+
+  gemini_free:
+    kind: openai-compatible
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    api_key_env: GEMINI_API_KEY
+    model: "gemini-3.6-flash"
+    timeout_s: 120
+    retries: 2
+    rpm: 10                    # консервативно к лимиту 10–15
+    tpm: 900000                # запас от 1M
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+
+  gemini_lite_free:
+    kind: openai-compatible
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    api_key_env: GEMINI_API_KEY
+    model: "gemini-flash-lite-latest"   # рабочий free-fallback, когда 3.6 под нагрузкой
+    timeout_s: 120
+    retries: 2
+    rpm: 10
+    tpm: 900000
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+
+  # Второй бесплатный аккаунт Google, отдельная квота. Ключ в .env: GEMINI_API_KEY_ALT.
+  # Стоит в лестнице после первой пары: лимит 10 rpm на аккаунт не общий.
+  gemini_alt:
+    kind: openai-compatible
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    api_key_env: GEMINI_API_KEY_ALT
+    model: "gemini-3.6-flash"
+    timeout_s: 120
+    retries: 2
+    rpm: 10
+    tpm: 900000
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+
+  gemini_lite_alt:
+    kind: openai-compatible
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    api_key_env: GEMINI_API_KEY_ALT
+    model: "gemini-flash-lite-latest"
+    timeout_s: 120
+    retries: 2
+    rpm: 10
+    tpm: 900000
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+
+  qwen38_flash:
+    kind: openai-compatible
+    base_url: "https://openrouter.ai/api/v1"
+    api_key_env: OPENROUTER_API_KEY
+    model: "qwen/qwen3.8-flash"
+    timeout_s: 300
+    retries: 2
+    # Как и deepseek: без этого reasoning съедает весь max_tokens (проверено 11.11.2026).
+    reasoning: {enabled: false}
+    max_output_tokens: 131072
+    # Сверено с каталогом OpenRouter 12.11.2026.
+    price_in_usd_per_mtok: 0.15
+    price_out_usd_per_mtok: 0.47
+
+  glm53_flash:
+    kind: openai-compatible
+    base_url: "https://openrouter.ai/api/v1"
+    api_key_env: OPENROUTER_API_KEY
+    model: "z-ai/glm-5.3-flash"
+    timeout_s: 300
+    retries: 2
+    # Reasoning у этой модели обязательный: эндпоинт отвергает enabled=false
+    # (проверено 11.11.2026). Поэтому glm стоит на коротких ролях, а пустой
+    # ответ ловится как ошибка и уходит на deepseek с выключенным reasoning.
+    max_output_tokens: 131072
+    # Сверено с каталогом OpenRouter 12.11.2026.
+    price_in_usd_per_mtok: 0.0399
+    price_out_usd_per_mtok: 0.0784
+
+  deepseek1017:
+    kind: openai-compatible
+    base_url: "https://openrouter.ai/api/v1"
+    api_key_env: OPENROUTER_API_KEY
+    model: "deepseek/deepseek-v4.1-flash-1017"
+    timeout_s: 300
+    retries: 2
+    # Проверено 11.11.2026: без этого модель отдаёт только reasoning и пустой content.
+    reasoning: {enabled: false}
+    # Реальный потолок ответа у провайдера — 393216 (каталог 12.11.2026).
+    max_output_tokens: 393216
+    # Цены каталога 12.11.2026: $0.15/$0.60 за Mtok, но по будням
+    # 10:00-16:40 UTC действует двойной тариф $0.30/$1.20. Для проверки
+    # бюджета берём максимум (завышение безопаснее занижения); фактическую
+    # стоимость успешного вызова роутер берёт из usage.cost, если он есть.
+    price_in_usd_per_mtok: 0.30
+    price_out_usd_per_mtok: 1.20
+
+  chatgpt:
+    kind: opencode-chatgpt
+    model: "gpt-6.1-terra"
+    variant: autonomy
+    timeout_s: 300
+    retries: 0
+    max_output_tokens: 12000
+    max_input_tokens: 160000
+    skip_probe: true
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+
+  chatgpt_critic:
+    kind: opencode-chatgpt
+    model: "gpt-6.1-sol"
+    variant: autonomy-audit
+    timeout_s: 300
+    retries: 0
+    max_output_tokens: 24000
+    max_input_tokens: 192000
+    skip_probe: true
+    price_in_usd_per_mtok: 0.0
+    price_out_usd_per_mtok: 0.0
+
+  kimi_pro:
+    # подписка Kimi For Coding, проверено 09.11.2026: 9 вызовов mentor за ночь, cost 0
+    kind: openai-compatible
+    base_url: "https://api.kimi.com/coding/v1"
+    api_key_env: KIMI_API_KEY
+    model: "kimi-for-coding"
+    temperature: 1             # Kimi For Coding принимает только temperature=1
+    timeout_s: 300
+    retries: 0                 # повтор на таймауте/429 тратит квоту дважды
+    skip_probe: true
+    price_in_usd_per_mtok: 0.0    # входит в подписку
+    price_out_usd_per_mtok: 0.0
+
+# Потолок вывода на роль. Размер выбран по фактическим нуждам, а не «на глаз»:
+# автор пишет файл до ~20 тыс. символов (~8 тыс. токенов) плюс запас; контролёр
+# отвечает вердиктом, ему хватает единиц тысяч. Reasoning выключен у моделей,
+# поэтому бюджет не съедается размышлениями (ночь 11.11.2026: 12k уходили в 0).
+role_limits:
+  context_digest: {max_tokens: 4000}
+  source_scout: {max_tokens: 2000}
+  planner:   {max_tokens: 32000}
+  executor:  {max_tokens: 48000}
+  verifier:  {max_tokens: 8000}
+  manager:   {max_tokens: 16000}
+  reporter:  {max_tokens: 16000}
+  mentor:    {max_tokens: 32000}
+  # Критик отвечает вердиктом с замечаниями. 12k НЕ хватает: после выжимки
+  # поиска glm упирается в finish=length (reasoning съедает весь потолок) и
+  # вердикт достаётся запасной модели. 24k — проверено живым прогоном.
+  critic:    {max_tokens: 24000}
+
+# Лестница ролей: первый доступный провайдер, прошедший бюджет и пробу preflight.
+# Gemini free исключён из лестниц: региональный блок и исчерпанная квота (11.11.2026).
+# Верификатор стоит на glm, чтобы контроль не был самопроверкой исполнителя.
+# Менеджер — не исполнитель и не контролёр: он двигает статусы целей.
+roles:
+  # Только вспомогательные задачи; не замена критика/исполнителя.
+  context_digest: ["browser_digest", "deepseek1017", "qwen38_flash"]
+  source_scout: ["browser_scout", "deepseek1017", "qwen38_flash"]
+  planner:   ["chatgpt", "deepseek1017", "qwen38_flash"]
+  executor:  ["chatgpt", "deepseek1017", "qwen38_flash"]
+  verifier:  ["glm53_flash", "deepseek1017"]
+  manager:   ["deepseek1017", "qwen38_flash"]
+  reporter:  ["glm53_flash", "deepseek1017"]
+  mentor:    ["kimi_pro", "chatgpt_critic"]
+  # Сильный контроль, а не молчаливая подмена критика дешёвым исполнителем.
+  # При исчерпании бюджета/квоты — остановка, не одобрение без проверки.
+  critic:    ["kimi_pro", "chatgpt_critic"]
+
+research:
+  # TinyFish MCP: бесплатные в пределах актуальных квот; кэш обязателен
+  tinyfish_mcp_url: "https://agent.tinyfish.ai/mcp"
+  tinyfish_key_env: TINYFISH_API_KEY
+  cache_dir: "autonomy/workspace/cache/web"
+  max_searches_per_task: 3
+  max_pages_per_task: 5

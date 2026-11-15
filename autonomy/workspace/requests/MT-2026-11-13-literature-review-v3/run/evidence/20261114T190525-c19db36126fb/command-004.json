@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"Russian streaming speech recognition models datasets benchmarks primary publication\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-4.md\" --fresh",
+  "command_sha256": "fd237ea02b795802edfde4fc8e42b101e09529ee5cbb7bc0d4e437382bfe31e3",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794665155927371100,
+  "finished_ns": 1794665178338509600,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v3\\run\\evidence\\20261114T190525-c19db36126fb\\command-004.stdout.txt",
+    "status": "file",
+    "sha256": "c4c58c0feaf71f1b76aff0b75ecaedb4a51362d79828cbb8470e56d7bfaa4f37",
+    "size": 194,
+    "mtime_ns": 1794665178339500800
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v3\\run\\evidence\\20261114T190525-c19db36126fb\\command-004.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794665178346078100
+  }
+}

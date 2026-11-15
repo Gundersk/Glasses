@@ -1,0 +1,518 @@
+{
+  "kind": "e2e",
+  "run_id": "e2e_duplex_sherpa_3clips_r3",
+  "created": "2026-11-09T19:56:43.995896+05:00",
+  "simulated": false,
+  "engine": "sherpa",
+  "source": {
+    "type": "loopback",
+    "path": "artifacts/source_played.wav",
+    "duration_s": 39.48,
+    "n_clips": 3,
+    "clips": [
+      {
+        "file": "clip_000.wav",
+        "start_ms": 0.0,
+        "end_ms": 16920.0,
+        "speech_start_ms": 200.0,
+        "speech_end_ms": 16360.0,
+        "orig_sr": 16000,
+        "duration_s": 16.92
+      },
+      {
+        "file": "clip_001.wav",
+        "start_ms": 18120.0,
+        "end_ms": 29640.0,
+        "speech_start_ms": 18320.0,
+        "speech_end_ms": 29120.0,
+        "orig_sr": 16000,
+        "duration_s": 11.52
+      },
+      {
+        "file": "clip_002.wav",
+        "start_ms": 30840.0,
+        "end_ms": 39480.0,
+        "speech_start_ms": 31040.0,
+        "speech_end_ms": 38880.0,
+        "orig_sr": 16000,
+        "duration_s": 8.64
+      }
+    ],
+    "gap_s": 1.2,
+    "target_dbfs": -20.0,
+    "dataset": "data/fleurs_ru_test",
+    "sample_rate": 48000
+  },
+  "partial_count": 40,
+  "final_count": 3,
+  "first_partial_ms": 3418.558,
+  "finals": [
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семья находившаяся у власти были особо династией",
+      "t_ms": 16213.832,
+      "chunk_end_pos_ms": 16200.0,
+      "reason": "endpoint",
+      "source_end_ms": 15901.875,
+      "kind": "mid_speech",
+      "clip_index": null,
+      "latency_ms": null,
+      "endpoint_wait_ms": null,
+      "t_first_chunk_after_source_end_ms": null
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в то что касается дикой природы",
+      "t_ms": 29018.168,
+      "chunk_end_pos_ms": 29000.0,
+      "reason": "endpoint",
+      "source_end_ms": 28701.875,
+      "kind": "mid_speech",
+      "clip_index": null,
+      "latency_ms": null,
+      "endpoint_wait_ms": null,
+      "t_first_chunk_after_source_end_ms": null
+    },
+    {
+      "text": "во всех научных вопросах включая психологию были приняты взгляды аристотеля",
+      "t_ms": 39917.395,
+      "chunk_end_pos_ms": 39900.0,
+      "reason": "endpoint",
+      "source_end_ms": 38880.0,
+      "kind": "post_gap",
+      "clip_index": 2,
+      "latency_ms": 739.27,
+      "endpoint_wait_ms": 717.393,
+      "t_first_chunk_after_source_end_ms": 39200.002,
+      "latency_vs_clip_end_ms": 139.27
+    }
+  ],
+  "partials": [
+    {
+      "text": "в древне",
+      "t_ms": 3418.558,
+      "chunk_end_pos_ms": 3400.0
+    },
+    {
+      "text": "в древнем китае",
+      "t_ms": 4016.89,
+      "chunk_end_pos_ms": 4000.0
+    },
+    {
+      "text": "в древнем китае использо",
+      "t_ms": 4717.733,
+      "chunk_end_pos_ms": 4700.0
+    },
+    {
+      "text": "в древнем китае использовали у",
+      "t_ms": 5314.187,
+      "chunk_end_pos_ms": 5300.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный спо",
+      "t_ms": 6015.894,
+      "chunk_end_pos_ms": 6000.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозна",
+      "t_ms": 6614.916,
+      "chunk_end_pos_ms": 6600.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения пери",
+      "t_ms": 7216.848,
+      "chunk_end_pos_ms": 7200.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бре",
+      "t_ms": 7912.751,
+      "chunk_end_pos_ms": 7900.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен",
+      "t_ms": 8516.564,
+      "chunk_end_pos_ms": 8500.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый",
+      "t_ms": 9217.506,
+      "chunk_end_pos_ms": 9200.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая",
+      "t_ms": 9813.284,
+      "chunk_end_pos_ms": 9800.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или ка",
+      "t_ms": 10415.193,
+      "chunk_end_pos_ms": 10400.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семь",
+      "t_ms": 11116.37,
+      "chunk_end_pos_ms": 11100.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семья",
+      "t_ms": 11716.826,
+      "chunk_end_pos_ms": 11700.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семья наход",
+      "t_ms": 12412.733,
+      "chunk_end_pos_ms": 12400.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семья находившаяся",
+      "t_ms": 13016.353,
+      "chunk_end_pos_ms": 13000.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семья находившаяся у власти",
+      "t_ms": 13614.364,
+      "chunk_end_pos_ms": 13600.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семья находившаяся у власти были о",
+      "t_ms": 14315.31,
+      "chunk_end_pos_ms": 14300.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семья находившаяся у власти были особо династи",
+      "t_ms": 14916.702,
+      "chunk_end_pos_ms": 14900.0
+    },
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения периодов бремен каждый этап китая или каждая семья находившаяся у власти были особо династией",
+      "t_ms": 15616.572,
+      "chunk_end_pos_ms": 15600.0
+    },
+    {
+      "text": "мадагаска",
+      "t_ms": 22012.541,
+      "chunk_end_pos_ms": 22000.0
+    },
+    {
+      "text": "мадагаскар намного",
+      "t_ms": 22613.111,
+      "chunk_end_pos_ms": 22600.0
+    },
+    {
+      "text": "мадагаскар намного больше друг",
+      "t_ms": 23217.426,
+      "chunk_end_pos_ms": 23200.0
+    },
+    {
+      "text": "мадагаскар намного больше других и яв",
+      "t_ms": 23917.122,
+      "chunk_end_pos_ms": 23900.0
+    },
+    {
+      "text": "мадагаскар намного больше других и является само",
+      "t_ms": 24512.946,
+      "chunk_end_pos_ms": 24500.0
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным",
+      "t_ms": 25212.317,
+      "chunk_end_pos_ms": 25200.0
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континент",
+      "t_ms": 25816.303,
+      "chunk_end_pos_ms": 25800.0
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в то",
+      "t_ms": 26416.933,
+      "chunk_end_pos_ms": 26400.0
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в то что касается",
+      "t_ms": 27118.006,
+      "chunk_end_pos_ms": 27100.0
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в то что касается дикой при",
+      "t_ms": 27718.069,
+      "chunk_end_pos_ms": 27700.0
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в то что касается дикой природы",
+      "t_ms": 28417.799,
+      "chunk_end_pos_ms": 28400.0
+    },
+    {
+      "text": "во всех",
+      "t_ms": 34115.245,
+      "chunk_end_pos_ms": 34100.0
+    },
+    {
+      "text": "во всех научных",
+      "t_ms": 34818.041,
+      "chunk_end_pos_ms": 34800.0
+    },
+    {
+      "text": "во всех научных вопросах",
+      "t_ms": 35415.031,
+      "chunk_end_pos_ms": 35400.0
+    },
+    {
+      "text": "во всех научных вопросах включая пси",
+      "t_ms": 36017.329,
+      "chunk_end_pos_ms": 36000.0
+    },
+    {
+      "text": "во всех научных вопросах включая психологию",
+      "t_ms": 36717.509,
+      "chunk_end_pos_ms": 36700.0
+    },
+    {
+      "text": "во всех научных вопросах включая психологию были при",
+      "t_ms": 37313.533,
+      "chunk_end_pos_ms": 37300.0
+    },
+    {
+      "text": "во всех научных вопросах включая психологию были приняты взгля",
+      "t_ms": 38018.241,
+      "chunk_end_pos_ms": 38000.0
+    },
+    {
+      "text": "во всех научных вопросах включая психологию были приняты взгляды аристоте",
+      "t_ms": 38618.042,
+      "chunk_end_pos_ms": 38600.0
+    },
+    {
+      "text": "во всех научных вопросах включая психологию были приняты взгляды аристотеля",
+      "t_ms": 39216.727,
+      "chunk_end_pos_ms": 39200.0
+    }
+  ],
+  "audio": {
+    "recording_path": "artifacts/recording.wav",
+    "snr_db": 33.985,
+    "snr_db_recomputed": 63.787,
+    "snr_method": "snr_db: RMS окон речи / RMS окон пауз (по позициям исходника + лаг); snr_db_recomputed: p90/p10 энергий кадров 30 мс записи (как в validate_run)",
+    "corr_peak": 0.69109,
+    "lag_ms": 298.125,
+    "lag_samples": 14310,
+    "corr_global": 0.45643,
+    "lag_global_ms": 303.562,
+    "drift_ppm": -54.688,
+    "valid_window_fraction": 0.88889,
+    "corr_windows": {
+      "win_s": 4.0,
+      "step_s": 2.0,
+      "min_win_corr": 0.3,
+      "n_windows": 18,
+      "n_valid": 16,
+      "n_fit": 13,
+      "dropped_as_outliers": [
+        6.0,
+        26.0,
+        30.0
+      ],
+      "windows": [
+        {
+          "t_s": 0.0,
+          "corr": 0.7111,
+          "lag_samples": 4781,
+          "lag_ms": 298.812
+        },
+        {
+          "t_s": 2.0,
+          "corr": 0.82775,
+          "lag_samples": 4781,
+          "lag_ms": 298.812
+        },
+        {
+          "t_s": 4.0,
+          "corr": 0.89643,
+          "lag_samples": 4782,
+          "lag_ms": 298.875
+        },
+        {
+          "t_s": 6.0,
+          "corr": 0.7307,
+          "lag_samples": 4840,
+          "lag_ms": 302.5
+        },
+        {
+          "t_s": 8.0,
+          "corr": 0.46862,
+          "lag_samples": 4774,
+          "lag_ms": 298.375
+        },
+        {
+          "t_s": 10.0,
+          "corr": 0.58888,
+          "lag_samples": 4771,
+          "lag_ms": 298.188
+        },
+        {
+          "t_s": 12.0,
+          "corr": 0.69678,
+          "lag_samples": 4770,
+          "lag_ms": 298.125
+        },
+        {
+          "t_s": 14.0,
+          "corr": 0.44991,
+          "lag_samples": 4770,
+          "lag_ms": 298.125
+        },
+        {
+          "t_s": 16.0,
+          "corr": 0.11742,
+          "lag_samples": 4765,
+          "lag_ms": 297.812
+        },
+        {
+          "t_s": 18.0,
+          "corr": 0.67554,
+          "lag_samples": 4766,
+          "lag_ms": 297.875
+        },
+        {
+          "t_s": 20.0,
+          "corr": 0.63164,
+          "lag_samples": 4764,
+          "lag_ms": 297.75
+        },
+        {
+          "t_s": 22.0,
+          "corr": 0.84679,
+          "lag_samples": 4765,
+          "lag_ms": 297.812
+        },
+        {
+          "t_s": 24.0,
+          "corr": 0.86862,
+          "lag_samples": 4765,
+          "lag_ms": 297.812
+        },
+        {
+          "t_s": 26.0,
+          "corr": 0.78373,
+          "lag_samples": 4822,
+          "lag_ms": 301.375
+        },
+        {
+          "t_s": 28.0,
+          "corr": 0.12591,
+          "lag_samples": 4753,
+          "lag_ms": 297.062
+        },
+        {
+          "t_s": 30.0,
+          "corr": 0.6854,
+          "lag_samples": 4815,
+          "lag_ms": 300.938
+        },
+        {
+          "t_s": 32.0,
+          "corr": 0.64467,
+          "lag_samples": 4753,
+          "lag_ms": 297.062
+        },
+        {
+          "t_s": 34.0,
+          "corr": 0.68446,
+          "lag_samples": 4751,
+          "lag_ms": 296.938
+        }
+      ]
+    },
+    "corr_method": "окна 4 с / шаг 2 с: в каждом окне лаг по кросс-корреляции; окна с corr<0.3 отброшены; corr_peak = медиана корреляции валидных окон; лаг - линейная модель по времени (Theil-Sen + отброс выбросов), drift_ppm = наклон; lag_ms = медиана локальных лагов. corr_global - справочное поле глобального пика, критерием не является",
+    "stream_latency_in": 0.042666666666666665,
+    "stream_latency_out": 0.21333333333333335,
+    "stream_latency_unit": "s",
+    "lag_minus_stream_latency_ms": 42.125,
+    "sample_rate": 48000,
+    "blocksize": 1024,
+    "dtype": "float32",
+    "input_device": {
+      "index": 1,
+      "name": "Microphone (fifine Microphone)",
+      "hostapi": "MME"
+    },
+    "output_device": {
+      "index": 4,
+      "name": "Динамики (Realtek(R) Audio)",
+      "hostapi": "MME"
+    },
+    "recording_peak_dbfs": -12.44,
+    "recording_rms_dbfs": -34.7,
+    "sanity": {
+      "speech_rms_dbfs": -33.8523615823783,
+      "pause_rms_dbfs": -67.8376019566,
+      "per_clip_speech_rms_dbfs": [
+        -35.34079470219273,
+        -31.48672402313206,
+        -36.06324586198407
+      ],
+      "speech_s": 34.49997916666667,
+      "pause_s": 5.879979166666667,
+      "n_speech_windows": 3,
+      "n_pause_windows": 4
+    },
+    "callback_status_flags": 0,
+    "callback_status_first": []
+  },
+  "timing": {
+    "p50_ms": 739.27,
+    "p95_ms": 739.27,
+    "n": 1,
+    "basis": "latency_ms = t_final_ms - t0_resend_ms - lag_ms - source_end_ms (только post_gap endpoint-финалы)",
+    "t0_resend_ms": 0.0,
+    "endpoint_wait_p50_ms": 717.393,
+    "endpoint_wait_p95_ms": 717.393,
+    "endpoint_wait_n": 1,
+    "endpoint_wait_basis": "t_final_ms - t_first_chunk_after_source_end_ms (реальное время подачи чанка)",
+    "excluded_finals": [
+      {
+        "kind": "mid_speech",
+        "reason": "endpoint",
+        "text": "в древнем китае использовали уникальный способ обозначения п"
+      },
+      {
+        "kind": "mid_speech",
+        "reason": "endpoint",
+        "text": "мадагаскар намного больше других и является самобытным конти"
+      }
+    ]
+  },
+  "feed": {
+    "speed": 1.0,
+    "chunk_ms": 100,
+    "feed_wall_s": 41.981,
+    "chunks": 420,
+    "feed_lag_ms_max": 0.052
+  },
+  "asr": {
+    "ok": true,
+    "engine": "sherpa",
+    "message": "",
+    "version": "sherpa-onnx 2.0.1",
+    "config": {
+      "model_dir": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\models\\sherpa-onnx-streaming-zipformer-small-ru-vosk-int8-2025-08-16",
+      "num_threads": 2,
+      "decoding": "greedy_search",
+      "provider": "cpu",
+      "sample_rate": 16000,
+      "feature_dim": 80,
+      "rule1_min_trailing_silence": 2.4,
+      "rule2_min_trailing_silence": 0.8,
+      "rule3_min_utterance_length": 20.0,
+      "flush_tail_s": 0.3
+    }
+  },
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "sounddevice": "0.5.6",
+    "soundfile": "0.14.0"
+  },
+  "command": "experiments\\e2e_audio\\duplex_e2e.py --clips 3 --engine sherpa --target-dbfs -20 --gap-s 1.2 --post-checks --run-dir experiments\\e2e_audio\\runs\\e2e_duplex_sherpa_3clips_r3"
+}

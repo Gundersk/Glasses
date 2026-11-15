@@ -1,0 +1,14 @@
+{
+  "request_sha256": "1d2dbf4196cc6eff09ab40ead9c2f68edffdd70a3ba630f6f6b804bae170cb8a",
+  "previous_sha256": null,
+  "queries": [
+    "streaming captions smart glasses hearing impaired speaker attribution diarization research",
+    "Russian streaming ASR speaker attributed WER cpWER DER latency evaluation protocol datasets",
+    "streaming speaker attributed ASR end to end online diarization latency",
+    "audio visual active speaker detection speech transcription captions speaker attribution research paper TalkNet"
+  ],
+  "reason": "Добавлен запрос по первичным исследованиям аудиовизуального определения активного говорящего и его связи с атрибуцией речи; остальные темы охватываются существующими запросами и контекстными материалами. Два запроса остаются в резерве для выявленных пробелов; полнота обзора не гарантируется.",
+  "kind": "plan",
+  "author_model": "gpt-6.1-terra",
+  "sha256": "1b6dfd6422390f470722eb7c7c7ff2ca25b6b6ae64d4feb838cb180b69b10eaf"
+}

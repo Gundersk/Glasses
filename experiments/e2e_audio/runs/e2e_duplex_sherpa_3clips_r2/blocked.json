@@ -1,0 +1,30 @@
+{
+  "status": "blocked_low_correlation",
+  "run_id": "e2e_duplex_sherpa_3clips_r2",
+  "reason": "corr_peak 0.471 < 0.5",
+  "created": "2026-11-09T19:46:22.000801+05:00",
+  "corr_peak": 0.4708151836150949,
+  "lag_ms": 303.875,
+  "peak_dbfs": -14.13802767438625,
+  "rms_dbfs": -35.48010795255084,
+  "devices": {
+    "input": {
+      "index": 1,
+      "name": "Microphone (fifine Microphone)",
+      "hostapi": "MME"
+    },
+    "output": {
+      "index": 4,
+      "name": "Динамики (Realtek(R) Audio)",
+      "hostapi": "MME"
+    }
+  },
+  "recording_path": "artifacts/recording.wav",
+  "causes": [
+    "микрофон ловит комнатный шум/голос, а не динамики (слишком тихо при -20 dBFS или далеко)",
+    "включены AGC/шумоподавление микрофона и подавляют речь из динамиков",
+    "звук идёт на другое устройство, не на Realtek-динамики",
+    "лаг больше 2.5 с или дрейф частоты",
+    "эхоподавление драйвера (AEC) вычитает воспроизводимый сигнал"
+  ]
+}

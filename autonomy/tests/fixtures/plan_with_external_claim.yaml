@@ -1,0 +1,26 @@
+# Фикстура для проверки критика с поиском. НЕ план ночи, раннер её не читает.
+# Содержит типичную ошибку: чужое число взято как ориентир без условий сравнения.
+# Критик должен либо потребовать условия (high), либо проверить поиском, существует
+# ли такой бенчмарк и что именно он меряет.
+
+- id: X-benchmark-gap
+  title: "Догнать CHiME-8 MMCSG по WER"
+  closes: roadmap:этап2-шаг3
+  goal_id: E2.3
+  priority: P0
+  goal: "Сравнить наш потоковый русский ASR с опубликованным результатом CHiME-8 Task 3 MMCSG и показать, что мы не хуже."
+  rationale: "На защите нужен внешний ориентир, иначе наши 11.35 % ничего не говорят."
+  inputs:
+    - experiments/stage2_conditions/sherpa_conditions.json
+  steps:
+    - "Взять WER 21.4 % из статьи CHiME-8 MMCSG как целевой ориентир."
+    - "Записать таблицу «наш WER против ориентира» в отчёт."
+  commands:
+    - "python -c \"print('ok')\""
+  acceptance:
+    - file_exists: experiments/stage2_conditions/sherpa_conditions.json
+  failure:
+    - "Ориентир не проверен и взят из пересказа."
+  time_limit_minutes: 10
+  max_iter: 1
+  hint: "Фикстура для теста критика, не выполнять."

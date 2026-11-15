@@ -1,0 +1,10 @@
+- `2026-11-13 23:09:59` **PLAN**
+- `2026-11-13 23:09:59` план с диска: перегенерация не нужна, проверяю критиком
+- `2026-11-13 23:12:16` critic: kimi_pro ok in=13417 out=5611 reasoning=4496 cost=$0.0000 lat=136.7s
+- `2026-11-13 23:12:23` planner: chatgpt ok in=13031 out=179 reasoning=55 cost=$0.0000 lat=7.7s
+- `2026-11-13 23:13:26` critic: kimi_pro ok in=14253 out=4416 reasoning=3086 cost=$0.0000 lat=62.3s
+- `2026-11-13 23:13:26` критика записана: autonomy\workspace\requests\MT-2026-11-13-literature-review-v2\run\outbox\critique.md
+- `2026-11-13 23:13:26` ✖ план не получил валидное одобрение критика
+- `2026-11-13 23:13:26` **REPORT**
+- `2026-11-13 23:13:26` ✔ отчёт: autonomy\workspace\requests\MT-2026-11-13-literature-review-v2\run\outbox\reports\20261113.md (и report.md)
+- `2026-11-13 23:13:26` ✔ ночь завершена: бюджет $0.000, задачи: collect-sources=pending, answer-mentor=pending

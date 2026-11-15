@@ -1,0 +1,83 @@
+{
+  "layer": 2,
+  "url": "http://127.0.0.1:55665/",
+  "pass": true,
+  "mode": "html",
+  "selector": "class*=subtitle",
+  "samples": [
+    {
+      "t": 0.015,
+      "text": "мадагаска"
+    },
+    {
+      "t": 0.734,
+      "text": "мадагаскар намного"
+    },
+    {
+      "t": 1.453,
+      "text": "мадагаскар намного больше"
+    },
+    {
+      "t": 2.187,
+      "text": "мадагаскар намного больше других и я"
+    },
+    {
+      "t": 2.89,
+      "text": "мадагаскар намного больше других и является"
+    },
+    {
+      "t": 3.609,
+      "text": "мадагаскар намного больше других и является самобытным"
+    },
+    {
+      "t": 4.328,
+      "text": "мадагаскар намного больше других и является самобытным континентом в том"
+    },
+    {
+      "t": 5.062,
+      "text": "мадагаскар намного больше других и является самобытным континентом в том что касается"
+    }
+  ],
+  "distinct_texts": 8,
+  "checks": [
+    {
+      "name": "http_200",
+      "ok": true,
+      "expected": 200,
+      "actual": [
+        200
+      ],
+      "detail": ""
+    },
+    {
+      "name": "text_changes_at_least_once",
+      "ok": true,
+      "expected": ">=1 change",
+      "actual": 7,
+      "detail": "селектор: class*=subtitle; режим: html"
+    },
+    {
+      "name": "lines_ge_1",
+      "ok": true,
+      "expected": ">=1 line",
+      "actual": 1,
+      "detail": "селектор: class*=subtitle"
+    },
+    {
+      "name": "cyrillic_present",
+      "ok": true,
+      "expected": ">=1 sample with cyrillic",
+      "actual": 8,
+      "detail": ""
+    },
+    {
+      "name": "distinct_texts_ge_2",
+      "ok": true,
+      "expected": ">=2 distinct non-empty texts",
+      "actual": 8,
+      "detail": "защита от одной и той же копии текста"
+    }
+  ],
+  "reason": null,
+  "created": "2026-11-09T19:34:38.018566+05:00"
+}

@@ -1,0 +1,7 @@
+check               | res  | expected                           | actual
+-------------------------------------------------------------------------------
+metrics_readable    | FAIL | valid json object                  | FileNotFoundError
+                      -> [Errno 2] No such file or directory: 'experiments\\e2e_audio\\runs\\stream_vosk_clip001_r2\\metrics.json'
+log_exists_nonempty | ok   | non-empty file                     | 525 chars
+log_no_traceback    | ok   | no traceback                       | none
+LAYER1 FAIL: metrics_readable

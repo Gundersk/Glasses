@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"streaming captions smart glasses hearing impaired speaker attribution diarization research\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-0.md\" --fresh",
+  "command_sha256": "5cb749b0671a82b4f23738543b9c6ab14feedc67788884af9e33bb0ec6da7538",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794665945519956800,
+  "finished_ns": 1794665959915423500,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T191905-373b99a32843\\command-000.stdout.txt",
+    "status": "file",
+    "sha256": "5b5f909812dc58ac8c1ea74743b4a0c578d130699422c29fd0922b6c10ce66c4",
+    "size": 194,
+    "mtime_ns": 1794665959916423400
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T191905-373b99a32843\\command-000.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794665959923009300
+  }
+}

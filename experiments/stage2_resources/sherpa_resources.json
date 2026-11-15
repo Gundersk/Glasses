@@ -1,0 +1,33 @@
+{
+  "engine": "sherpa",
+  "wav": "data/fleurs_ru_test/clip_001.wav",
+  "chunk_ms": 100,
+  "speed": 1.0,
+  "tail_s": 1.0,
+  "sample_rate": 16000,
+  "sample_count": 200320,
+  "n_frames": 200320,
+  "cpu_percent_avg": 29.87,
+  "cpu_percent_max": 199.5,
+  "rss_mb_max": 133.051,
+  "wall_s": 12.5206,
+  "cpu_interval_s": 0.05,
+  "cpu_samples_n": 126,
+  "command": "python.exe experiments/file_stream_eval.py resources --engine sherpa --wav data\\fleurs_ru_test\\clip_001.wav --metrics experiments\\stage2_resources\\sherpa_resources.json --result experiments\\stage2_resources\\sherpa_result.json",
+  "model_version": "sherpa-onnx 2.0.1",
+  "asr_config": {
+    "model_dir": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\models\\sherpa-onnx-streaming-zipformer-small-ru-vosk-int8-2025-08-16",
+    "num_threads": 2,
+    "decoding": "greedy_search",
+    "provider": "cpu",
+    "sample_rate": 16000,
+    "feature_dim": 80,
+    "rule1_min_trailing_silence": 2.4,
+    "rule2_min_trailing_silence": 0.8,
+    "rule3_min_utterance_length": 20.0,
+    "flush_tail_s": 0.3
+  },
+  "n_frames_unit": "audio_samples",
+  "python": "3.12.15",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

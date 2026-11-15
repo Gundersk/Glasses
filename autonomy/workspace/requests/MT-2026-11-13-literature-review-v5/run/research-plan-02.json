@@ -1,0 +1,16 @@
+{
+  "request_sha256": "1d2dbf4196cc6eff09ab40ead9c2f68edffdd70a3ba630f6f6b804bae170cb8a",
+  "previous_sha256": "1b6dfd6422390f470722eb7c7c7ff2ca25b6b6ae64d4feb838cb180b69b10eaf",
+  "queries": [
+    "streaming captions smart glasses hearing impaired speaker attribution diarization research",
+    "Russian streaming ASR speaker attributed WER cpWER DER latency evaluation protocol datasets",
+    "streaming speaker attributed ASR end to end online diarization latency",
+    "audio visual active speaker detection speech transcription captions speaker attribution research paper TalkNet",
+    "speaker-attributed ASR cpWER ORC-WER AS-WER evaluation protocol SA-ASR paper AMI CALLHOME",
+    "WhisperLive pyannote.audio Vosk GigaAM streaming diarization license MIT hardware GPU requirements real-time factor"
+  ],
+  "reason": "Покрыты очки/субтитры, стриминговые метрики русского ASR, обзор диаризации и аудиовизуальный ASD, но нет первоисточников по speaker-attributed ASR с определениями cpWER/ORC-WER (ключевая метрика из acceptance) и нет подтверждённых лицензий/требований к оборудованию 2–3 готовых инструментов потокового ASR/диаризации; это прямые пробелы двух резервных запросов.",
+  "kind": "followup",
+  "author_model": "kimi-for-coding",
+  "sha256": "ed2f108f3152a89e99f8be051d2b9a69cbdaf4269a7189950dc33009771f3568"
+}

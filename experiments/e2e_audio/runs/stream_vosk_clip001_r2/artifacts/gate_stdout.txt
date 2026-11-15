@@ -1,0 +1,1 @@
+FAIL: layer1_validate: ['metrics_readable'] | layer2_dom: FileNotFoundError: [Errno 2] No such file or directory: 'experiments\\e2e_audio\\runs\\stream_vosk_clip001_r2\\artifacts\\dom_checks.json' | layer2_screenshot: ['file_exists']

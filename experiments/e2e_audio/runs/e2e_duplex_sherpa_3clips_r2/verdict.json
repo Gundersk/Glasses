@@ -1,0 +1,33 @@
+{
+  "layer": 1,
+  "run_id": "e2e_duplex_sherpa_3clips_r2",
+  "run_dir_name": "e2e_duplex_sherpa_3clips_r2",
+  "kind": null,
+  "pass": false,
+  "allow_missing_vision": true,
+  "min_snr": 10.0,
+  "checks": [
+    {
+      "name": "metrics_readable",
+      "ok": false,
+      "expected": "valid json object",
+      "actual": "FileNotFoundError",
+      "detail": "[Errno 2] No such file or directory: 'experiments\\\\e2e_audio\\\\runs\\\\e2e_duplex_sherpa_3clips_r2\\\\metrics.json'"
+    },
+    {
+      "name": "log_exists_nonempty",
+      "ok": true,
+      "expected": "non-empty file",
+      "actual": "1284 chars",
+      "detail": ""
+    },
+    {
+      "name": "log_no_traceback",
+      "ok": true,
+      "expected": "no traceback",
+      "actual": "none",
+      "detail": ""
+    }
+  ],
+  "created": "2026-11-09T19:47:29.143011+05:00"
+}

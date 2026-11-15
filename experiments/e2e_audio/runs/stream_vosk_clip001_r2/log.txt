@@ -1,0 +1,6 @@
+19:32:55.305 run_id=stream_vosk_clip001_r2 engine=vosk wav=data/fleurs_ru_test/clip_001.wav speed=1.0 chunk_ms=100 tail_s=1.0
+19:32:55.305 команда: experiments\e2e_audio\stream_browser.py --wav data/fleurs_ru_test/clip_001.wav --engine vosk --run-dir experiments/e2e_audio/runs/stream_vosk_clip001_r2 --port 0 --speed 1.0 --chunk-ms 100
+19:32:55.305 WAV: sr=16000 n=184320 dur=11.520s peak=0.1370 dtype=float32 (soundfile)
+19:32:55.456 ПРОГОН НЕ УДАЛСЯ: RuntimeError: ASR не создан: init: Exception: Failed to create a model
+19:32:55.559 validate_run rc=1: LAYER1 FAIL: metrics_readable
+19:32:55.665 gate rc=1: FAIL: layer1_validate: ['metrics_readable'] | layer2_dom: FileNotFoundError: [Errno 2] No such file or directory: 'experiments\\e2e_audio\\runs\\stream_vosk_clip001_r2\\artifacts\\dom_checks.json' | layer2_screenshot: ['file_exists']

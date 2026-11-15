@@ -1,0 +1,64 @@
+{
+  "task_id": "stream-asr-browser-output",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/stream_output.py"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/stream_output/metrics.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stream_output/metrics.json",
+          "p50_latency_ms",
+          1.0,
+          5000.0
+        ]
+      },
+      "ok": true,
+      "detail": "got=45.995 range=[1.0,5000.0]"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/stream_output/results/screenshots/ui.png"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "command": "python experiments/stream_output.py"
+      },
+      "ok": true,
+      "detail": "rc=0 err="
+    }
+  ],
+  "ts": "2026-11-09 05:52:52",
+  "diff": {
+    "added": [
+      "experiments/stream_output.py",
+      "experiments/stream_output/metrics.json",
+      "experiments/stream_output/results/screenshots/ui.png",
+      "experiments/stream_output/results/ui.html"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

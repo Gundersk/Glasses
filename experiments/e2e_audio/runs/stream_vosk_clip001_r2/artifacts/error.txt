@@ -1,0 +1,1 @@
+RuntimeError: ASR не создан: init: Exception: Failed to create a model

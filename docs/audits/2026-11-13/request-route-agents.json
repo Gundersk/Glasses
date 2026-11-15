@@ -1,0 +1,37 @@
+{
+  "agents": [
+    {
+      "sessionID": "ses_e2b07e178ffe4FDGkhVyaEgDCl",
+      "model": {
+        "id": "gpt-6.1-sol",
+        "providerID": "openai",
+        "variant": "autonomy-audit"
+      }
+    },
+    {
+      "sessionID": "ses_e2b074a05ffey1mAAX3ywcBTud",
+      "model": {
+        "id": "gpt-6.1-terra",
+        "providerID": "openai",
+        "variant": "autonomy"
+      }
+    },
+    {
+      "sessionID": "ses_e2aff872dffeEhu3jHpBeJYG3A",
+      "model": {
+        "id": "gpt-6.1-terra",
+        "providerID": "openai",
+        "variant": "autonomy"
+      }
+    },
+    {
+      "sessionID": "ses_e2aff367bffeaTVcx3kxDcDkTG",
+      "model": {
+        "id": "gpt-6.1-sol",
+        "providerID": "openai",
+        "variant": "autonomy-audit"
+      }
+    }
+  ],
+  "limitation": "Separate sessions are not proof of model independence; these are software reviews, not scientific calibration"
+}

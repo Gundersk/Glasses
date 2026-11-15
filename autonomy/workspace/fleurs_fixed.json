@@ -1,0 +1,19 @@
+{
+  "audio": "data/fleurs_ru_test/clip_000.wav",
+  "ref": "data/fleurs_ru_test/clip_000.txt",
+  "hyp": "в древнем китае использовали уникальный способ обозначения периодов времени каждая этап китая или каждая семья находившаяся у власти были особой династии ",
+  "wer": 0.09523809523809523,
+  "latency_p50": 0.010525400000915397,
+  "latency_p95": 0.03634135999818675,
+  "latency_count": 69,
+  "seed": 0,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "vosk": "unknown",
+  "time": "2026-11-09T06:36:32+0500",
+  "meta": {
+    "sample_rate": 16000,
+    "model": "models/vosk-model-small-ru-0.22",
+    "total_time": 1.0463410000011208,
+    "vosk": "unknown"
+  }
+}

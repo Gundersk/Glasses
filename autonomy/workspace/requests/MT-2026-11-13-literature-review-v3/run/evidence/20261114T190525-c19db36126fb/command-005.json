@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"streaming ASR diarization tools official documentation hardware requirements code model weights data licenses\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-5.md\" --fresh",
+  "command_sha256": "3c254e14cd40baa51da13d251db392d711cd92b2d889d740ec602559671a80bc",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794665178350181200,
+  "finished_ns": 1794665183807713900,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v3\\run\\evidence\\20261114T190525-c19db36126fb\\command-005.stdout.txt",
+    "status": "file",
+    "sha256": "ec8cadcb08afaedee67ca1462c8fd3b2900abe29b25d52799cee2f0009255cd8",
+    "size": 194,
+    "mtime_ns": 1794665183807713900
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v3\\run\\evidence\\20261114T190525-c19db36126fb\\command-005.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794665183815913200
+  }
+}

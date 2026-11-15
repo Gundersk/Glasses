@@ -1,0 +1,7 @@
+{
+  "reference_text": "привет мир это тестовый аудиофайл для бенчмарка распознавания речи",
+  "audio": "experiments/data/test_16k.wav",
+  "sample_rate": 16000,
+  "duration_sec": 2.0,
+  "seed": 0
+}

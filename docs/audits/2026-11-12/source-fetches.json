@@ -1,0 +1,37 @@
+[
+  {
+    "name": "scientist-license",
+    "url": "https://raw.githubusercontent.com/SakanaAI/AI-Scientist-v2/main/LICENSE",
+    "status": 200,
+    "accessed_utc": "2026-11-12T15:55:48.126400+00:00",
+    "sha256": "9c82e554a54dfcf2550b452801475a36f9cb909ede00b03e492089e4836a7462"
+  },
+  {
+    "name": "serena-license",
+    "url": "https://raw.githubusercontent.com/oraios/serena/main/LICENSE",
+    "status": 200,
+    "accessed_utc": "2026-11-12T15:55:49.568106+00:00",
+    "sha256": "6239f4be78ccff409aedfbce88ac89b26f488f76aac7ab199fb6876dc7fdeb4c"
+  },
+  {
+    "name": "playwright-license",
+    "url": "https://raw.githubusercontent.com/microsoft/playwright-mcp/main/LICENSE",
+    "status": 200,
+    "accessed_utc": "2026-11-12T15:55:50.986385+00:00",
+    "sha256": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda"
+  },
+  {
+    "name": "ru-book-card",
+    "url": "https://huggingface.co/datasets/mexus/ru-book-mix-10h/raw/main/README.md",
+    "status": 200,
+    "accessed_utc": "2026-11-12T15:55:53.381605+00:00",
+    "sha256": "72c1360b6dc09eb76a4eeb2aca1062cf5bf2cd834e96aa73dafd7f90784c0350"
+  },
+  {
+    "name": "dai-card",
+    "url": "https://huggingface.co/datasets/davidai-labs/DAI-ASR-I18N/raw/main/README.md",
+    "status": 401,
+    "accessed_utc": "2026-11-12T15:55:55.950943+00:00",
+    "sha256": "93bf2aba02314d8d602d33a181967bcaaf38a19dfef7f37618f59e52f6fc50be"
+  }
+]

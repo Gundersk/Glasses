@@ -1,0 +1,41 @@
+{
+  "pass": false,
+  "run_id": "stream_vosk_clip001_r2",
+  "kind": null,
+  "layers": {
+    "layer1_validate": {
+      "status": "fail",
+      "pass": false,
+      "required": true,
+      "failed_checks": [
+        "metrics_readable"
+      ]
+    },
+    "layer2_dom": {
+      "status": "unreadable",
+      "pass": false,
+      "required": false,
+      "reason": "FileNotFoundError: [Errno 2] No such file or directory: 'experiments\\\\e2e_audio\\\\runs\\\\stream_vosk_clip001_r2\\\\artifacts\\\\dom_checks.json'"
+    },
+    "layer2_screenshot": {
+      "status": "fail",
+      "pass": false,
+      "required": false,
+      "failed_checks": [
+        "file_exists"
+      ]
+    },
+    "layer3_vision": {
+      "status": "missing",
+      "pass": null,
+      "required": false,
+      "reason": "vision_review.json не передан"
+    }
+  },
+  "failed_layers": [
+    "layer1_validate",
+    "layer2_dom",
+    "layer2_screenshot"
+  ],
+  "created": "2026-11-09T19:32:55.653692+05:00"
+}

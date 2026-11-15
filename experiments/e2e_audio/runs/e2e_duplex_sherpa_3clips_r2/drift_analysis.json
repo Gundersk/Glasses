@@ -1,0 +1,142 @@
+{
+  "global_corr_peak": 0.4708149893715401,
+  "global_lag_samples": 14586,
+  "windows": [
+    {
+      "t_s": 0.0,
+      "corr": 0.7044,
+      "lag_samples": 14358,
+      "lag_ms": 299.12
+    },
+    {
+      "t_s": 2.0,
+      "corr": 0.8221,
+      "lag_samples": 14359,
+      "lag_ms": 299.15
+    },
+    {
+      "t_s": 4.0,
+      "corr": 0.891,
+      "lag_samples": 14360,
+      "lag_ms": 299.17
+    },
+    {
+      "t_s": 6.0,
+      "corr": 0.7159,
+      "lag_samples": 14356,
+      "lag_ms": 299.08
+    },
+    {
+      "t_s": 8.0,
+      "corr": 0.4559,
+      "lag_samples": 14337,
+      "lag_ms": 298.69
+    },
+    {
+      "t_s": 10.0,
+      "corr": 0.5693,
+      "lag_samples": 14329,
+      "lag_ms": 298.52
+    },
+    {
+      "t_s": 12.0,
+      "corr": 0.6762,
+      "lag_samples": 14326,
+      "lag_ms": 298.46
+    },
+    {
+      "t_s": 14.0,
+      "corr": 0.0908,
+      "lag_samples": 14326,
+      "lag_ms": 298.46
+    },
+    {
+      "t_s": 16.0,
+      "corr": 0.1303,
+      "lag_samples": 17527,
+      "lag_ms": 365.15
+    },
+    {
+      "t_s": 18.0,
+      "corr": 0.6513,
+      "lag_samples": 14313,
+      "lag_ms": 298.19
+    },
+    {
+      "t_s": 20.0,
+      "corr": 0.7576,
+      "lag_samples": 14311,
+      "lag_ms": 298.15
+    },
+    {
+      "t_s": 22.0,
+      "corr": 0.8688,
+      "lag_samples": 14310,
+      "lag_ms": 298.12
+    },
+    {
+      "t_s": 24.0,
+      "corr": 0.8713,
+      "lag_samples": 14487,
+      "lag_ms": 301.81
+    },
+    {
+      "t_s": 26.0,
+      "corr": 0.844,
+      "lag_samples": 14483,
+      "lag_ms": 301.73
+    },
+    {
+      "t_s": 28.0,
+      "corr": 0.2901,
+      "lag_samples": 14469,
+      "lag_ms": 301.44
+    },
+    {
+      "t_s": 30.0,
+      "corr": 0.6242,
+      "lag_samples": 14277,
+      "lag_ms": 297.44
+    },
+    {
+      "t_s": 32.0,
+      "corr": 0.6956,
+      "lag_samples": 14274,
+      "lag_ms": 297.38
+    },
+    {
+      "t_s": 34.0,
+      "corr": 0.7603,
+      "lag_samples": 14269,
+      "lag_ms": 297.27
+    }
+  ],
+  "n_windows": 18,
+  "n_windows_corr_ge_0.6": 13,
+  "win_s": 4.0,
+  "step_s": 2.0,
+  "windows_corr_median": 0.7,
+  "note": "ДИАГНОСТИКА причины blocked_low_correlation, не метрика прогона",
+  "drift": {
+    "slope_samples_per_s": -2.6213235294117645,
+    "ppm": -54.6109068627451,
+    "lag0_samples": 14378.426470588236,
+    "total_drift_samples_over_play": -100.8685294117647,
+    "total_drift_ms_over_play": -2.101427696078431
+  },
+  "corr_after_linear_drift_compensation_lag0": 0.7231405252522598,
+  "hypothesis_note": "корреляция после линейной компенсации дрейфа (скалярное произведение при лаге 0 по перераспределённой записи); сравнить с global_corr_peak",
+  "sanity": {
+    "lag_ms_used_median_good_windows": 298.46,
+    "speech_rms_dbfs": -34.73948507055467,
+    "pause_rms_dbfs": -56.363834357214955,
+    "snr_windows_db": 21.624349286660284,
+    "snr_p90_p10_db": 34.15126558632148,
+    "per_clip_speech_rms_dbfs": [
+      -36.18147382675832,
+      -32.45462361573718,
+      -36.75202883448636
+    ],
+    "note": "диагностика; в metrics.json не попадает (прогон blocked)"
+  }
+}

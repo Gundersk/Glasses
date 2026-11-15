@@ -1,0 +1,13 @@
+COMMAND: .venv\Scripts\python.exe autonomy/tests/test_noise_manifest_merge.py
+STARTED_UTC: 2026-11-12T16:03:03.303155+00:00
+STDOUT:
+ok: второй прогон сохраняет записи первого — case_merge_keeps_old
+ok: повтор не дублирует запись — case_same_key_updates
+ok: другой seed не смешивается со старым — case_other_seed_resets
+ok: битый манифест перезаписывается, ночь не падает — case_corrupt_manifest_recovers
+ok: частичный JSON помечается partial, финальный — нет — case_partial_flag
+итог: 5 проверок пройдено
+
+STDERR:
+
+EXIT_CODE: 0

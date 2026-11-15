@@ -1,0 +1,19 @@
+{"ts": "2026-11-14 19:18:01", "t": 1794665881.923, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-14 19:19:05", "t": 1794665945.22, "type": "model_call", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 14734, "out_tok": 2202, "reasoning_tok": 1391, "cost_usd": 0.0, "latency": 63.3, "finish": "stop"}
+{"ts": "2026-11-14 19:19:05", "t": 1794665945.254, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-14 19:19:05", "t": 1794665945.423, "type": "task_start", "task_id": "collect-sources", "goal": "Проверить актуальные внешние источники по заданию"}
+{"ts": "2026-11-14 19:19:31", "t": 1794665971.005, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-14 19:19:31", "t": 1794665971.243, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-14 19:19:51", "t": 1794665991.905, "type": "model_call", "role": "verifier", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 21726, "out_tok": 821, "reasoning_tok": 543, "cost_usd": 0.0, "latency": 20.6, "finish": "stop"}
+{"ts": "2026-11-14 19:19:52", "t": 1794665992.029, "type": "request_followup", "request_id": "MT-2026-11-13-literature-review-v4", "queries": 2, "author_model": "kimi-for-coding"}
+{"ts": "2026-11-14 19:19:52", "t": 1794665992.031, "type": "phase_change", "frm": "REVIEW", "to": "PLAN"}
+{"ts": "2026-11-14 19:19:52", "t": 1794665992.05, "type": "model_skip", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "reason": "independence"}
+{"ts": "2026-11-14 19:20:27", "t": 1794666027.39, "type": "model_call", "role": "critic", "provider": "chatgpt_critic", "model": "gpt-6.1-sol", "in_tok": 17755, "out_tok": 405, "reasoning_tok": 360, "cost_usd": 0, "latency": 35.3, "finish": "stop"}
+{"ts": "2026-11-14 19:20:27", "t": 1794666027.416, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-14 19:20:27", "t": 1794666027.613, "type": "task_start", "task_id": "collect-sources-r1", "goal": "Проверить актуальные внешние источники по заданию"}
+{"ts": "2026-11-14 19:20:43", "t": 1794666043.031, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-14 19:20:43", "t": 1794666043.261, "type": "phase_change", "frm": "VERIFY", "to": "REVIEW"}
+{"ts": "2026-11-14 19:21:17", "t": 1794666077.505, "type": "model_call", "role": "verifier", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 15465, "out_tok": 1271, "reasoning_tok": 1002, "cost_usd": 0.0, "latency": 34.2, "finish": "stop"}
+{"ts": "2026-11-14 19:21:17", "t": 1794666077.655, "type": "phase_change", "frm": "REVIEW", "to": "REPORT"}
+{"ts": "2026-11-14 19:21:17", "t": 1794666077.673, "type": "night_report", "budget_usd": 0.0, "tasks": {"collect-sources": "done", "collect-sources-r1": "pending", "answer-mentor": "pending"}, "needs_human": "дополнительный поиск отклонён: followup round limit exhausted"}
+{"ts": "2026-11-14 19:21:17", "t": 1794666077.673, "type": "phase_change", "frm": "REPORT", "to": "DONE"}

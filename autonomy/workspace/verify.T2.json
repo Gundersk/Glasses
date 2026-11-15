@@ -1,0 +1,286 @@
+{
+  "task_id": "T2",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/stage2_conditions/sherpa_conditions.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/stage2_conditions/vosk_conditions.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/stage2_conditions/noise_manifest.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/outbox/T2_result.md"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "engine",
+          "sherpa"
+        ]
+      },
+      "ok": true,
+      "detail": "got='sherpa' expected='sherpa'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "engine",
+          "vosk"
+        ]
+      },
+      "ok": true,
+      "detail": "got='vosk' expected='vosk'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "seed",
+          20261109
+        ]
+      },
+      "ok": true,
+      "detail": "got=20261109 expected=20261109"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "seed",
+          20261109
+        ]
+      },
+      "ok": true,
+      "detail": "got=20261109 expected=20261109"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "n_clips",
+          5,
+          5
+        ]
+      },
+      "ok": true,
+      "detail": "got=5 range=[5,5]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "n_clips",
+          5,
+          5
+        ]
+      },
+      "ok": true,
+      "detail": "got=5 range=[5,5]"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "conditions.0.name",
+          "clean"
+        ]
+      },
+      "ok": true,
+      "detail": "got='clean' expected='clean'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "conditions.1.name",
+          "snr20"
+        ]
+      },
+      "ok": true,
+      "detail": "got='snr20' expected='snr20'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "conditions.2.name",
+          "snr10"
+        ]
+      },
+      "ok": true,
+      "detail": "got='snr10' expected='snr10'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "conditions.3.name",
+          "snr5"
+        ]
+      },
+      "ok": true,
+      "detail": "got='snr5' expected='snr5'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "conditions.0.name",
+          "clean"
+        ]
+      },
+      "ok": true,
+      "detail": "got='clean' expected='clean'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "conditions.1.name",
+          "snr20"
+        ]
+      },
+      "ok": true,
+      "detail": "got='snr20' expected='snr20'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "conditions.2.name",
+          "snr10"
+        ]
+      },
+      "ok": true,
+      "detail": "got='snr10' expected='snr10'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "conditions.3.name",
+          "snr5"
+        ]
+      },
+      "ok": true,
+      "detail": "got='snr5' expected='snr5'"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "conditions.0.snr_db",
+          null
+        ]
+      },
+      "ok": true,
+      "detail": "got=None expected=None"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "conditions.1.snr_db",
+          20
+        ]
+      },
+      "ok": true,
+      "detail": "got=20 expected=20"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "conditions.2.snr_db",
+          10
+        ]
+      },
+      "ok": true,
+      "detail": "got=10 expected=10"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/sherpa_conditions.json",
+          "conditions.3.snr_db",
+          5
+        ]
+      },
+      "ok": true,
+      "detail": "got=5 expected=5"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "conditions.0.snr_db",
+          null
+        ]
+      },
+      "ok": true,
+      "detail": "got=None expected=None"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "conditions.1.snr_db",
+          20
+        ]
+      },
+      "ok": true,
+      "detail": "got=20 expected=20"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "conditions.2.snr_db",
+          10
+        ]
+      },
+      "ok": true,
+      "detail": "got=10 expected=10"
+    },
+    {
+      "check": {
+        "json_eq": [
+          "experiments/stage2_conditions/vosk_conditions.json",
+          "conditions.3.snr_db",
+          5
+        ]
+      },
+      "ok": true,
+      "detail": "got=5 expected=5"
+    },
+    {
+      "check": {
+        "command": "python -c \"import json,math; from pathlib import Path; p=Path('experiments/stage2_conditions'); ds=[json.loads((p/f'{e}_conditions.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; names=['clean','snr20','snr10','snr5']; snrs=[None,20,10,5]; keys=('wer','final_latency_p50_ms','final_latency_p95_ms','final_latency_n','partial_latency_p50_ms','partial_latency_p95_ms','partial_latency_n'); assert all([c['name'] for c in d['conditions']]==names and [c['snr_db'] for c in d['conditions']]==snrs for d in ds); assert all(all(k in c for k in keys) for d in ds for c in d['conditions']); assert all(0<=c['wer']<=1 and c['final_latency_n']>=1 and c['partial_latency_n']>=1 and len(c['results'])==5 for d in ds for c in d['conditions']); assert all(math.isfinite(float(c[k])) for d in ds for c in d['conditions'] for k in keys if not k.endswith('_n')); nm=json.loads((p/'noise_manifest.json').read_text(encoding='utf-8')); assert nm['seed']==20261109 and len(nm['files'])==15; assert all(Path(f['path']).is_file() and abs(f['measured_snr_db']-f['target_snr_db'])<=0.1 for f in nm['files'])\""
+      },
+      "ok": true,
+      "detail": "rc=0 err="
+    }
+  ],
+  "ts": "2026-11-11 02:43:36"
+}

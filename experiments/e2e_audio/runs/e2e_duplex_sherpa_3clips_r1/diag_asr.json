@@ -1,0 +1,54 @@
+{
+  "note": "ДИАГНОСТИКА blocked-прогона, не метрика; latency не считается",
+  "engine": "sherpa",
+  "recording_s": 40.98,
+  "feed_wall_s": 40.99612329999218,
+  "partial_count": 34,
+  "final_count": 7,
+  "final_count_endpoint": 7,
+  "finals": [
+    {
+      "text": "в древнем китае использовали уникальный способ обозначения",
+      "t_ms": 7916.975,
+      "chunk_end_pos_ms": 7900.0,
+      "reason": "endpoint"
+    },
+    {
+      "text": "каждый этап",
+      "t_ms": 10413.478,
+      "chunk_end_pos_ms": 10400.0,
+      "reason": "endpoint"
+    },
+    {
+      "text": "ла",
+      "t_ms": 14316.989,
+      "chunk_end_pos_ms": 14300.0,
+      "reason": "endpoint"
+    },
+    {
+      "text": "втоматизированную сделать чтобы",
+      "t_ms": 17513.271,
+      "chunk_end_pos_ms": 17500.0,
+      "reason": "endpoint"
+    },
+    {
+      "text": "короче я сделал пенчмарт то есть измерял несколько на много",
+      "t_ms": 23218.371,
+      "chunk_end_pos_ms": 23200.0,
+      "reason": "endpoint"
+    },
+    {
+      "text": "является самобытным континентом в том что касается диктория",
+      "t_ms": 29014.64,
+      "chunk_end_pos_ms": 29000.0,
+      "reason": "endpoint"
+    },
+    {
+      "text": "всех научных вопросах включая психологию были приняты взгляды аристотеля",
+      "t_ms": 38612.733,
+      "chunk_end_pos_ms": 38600.0,
+      "reason": "endpoint"
+    }
+  ],
+  "n_partials_unique": 34
+}

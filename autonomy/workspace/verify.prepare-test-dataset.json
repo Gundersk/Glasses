@@ -1,0 +1,40 @@
+{
+  "task_id": "prepare-test-dataset",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/data/test_ref.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "experiments/data/test_ref.json",
+          "reference_text"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    }
+  ],
+  "ts": "2026-11-09 02:47:12",
+  "diff": {
+    "added": [
+      "experiments/data/test_ref.json",
+      "experiments/prepare_test_dataset.py"
+    ],
+    "modified": [
+      "autonomy/prompts.py",
+      "autonomy/shellutil.py",
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

@@ -1,0 +1,19 @@
+{
+  "audio": "experiments/data/speech_ru.wav",
+  "ref": "experiments/data/speech_ru.txt",
+  "hyp": "сегодня мы проверяем систему субтитров для умных очков собеседник говорит про погоду и про встречу в университете задержка распознавания должна быть небольшой чтобы человек успевал читать текст",
+  "wer": 0.0,
+  "latency_p50": 0.013310199999978067,
+  "latency_p95": 0.04790599999996629,
+  "latency_count": 68,
+  "seed": 0,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "vosk": "unknown",
+  "time": "2026-11-09T04:28:43+0500",
+  "meta": {
+    "sample_rate": 16000,
+    "model": "models/vosk-model-small-ru-0.22",
+    "total_time": 1.2154148999998142,
+    "vosk": "unknown"
+  }
+}

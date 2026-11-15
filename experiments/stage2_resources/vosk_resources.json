@@ -1,0 +1,27 @@
+{
+  "engine": "vosk",
+  "wav": "data/fleurs_ru_test/clip_001.wav",
+  "chunk_ms": 100,
+  "speed": 1.0,
+  "tail_s": 1.0,
+  "sample_rate": 16000,
+  "sample_count": 200320,
+  "n_frames": 200320,
+  "cpu_percent_avg": 8.318,
+  "cpu_percent_max": 58.7,
+  "rss_mb_max": 246.176,
+  "wall_s": 12.5535,
+  "cpu_interval_s": 0.05,
+  "cpu_samples_n": 126,
+  "command": "python.exe experiments/file_stream_eval.py resources --engine vosk --wav data\\fleurs_ru_test\\clip_001.wav --metrics experiments\\stage2_resources\\vosk_resources.json --result experiments\\stage2_resources\\vosk_result.json",
+  "model_version": "vosk 0.3.45",
+  "asr_config": {
+    "model_dir": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\models\\vosk-model-small-ru-0.22",
+    "sample_rate": 16000,
+    "endpointer": "по умолчанию Vosk",
+    "model_path_used": "models\\vosk-model-small-ru-0.22"
+  },
+  "n_frames_unit": "audio_samples",
+  "python": "3.12.15",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

@@ -1,0 +1,156 @@
+{
+  "kind": "offline_software_tests_not_literature_review",
+  "closes": "LG-2026-11-13-03",
+  "captured_utc": "2026-11-13T13:15:25.027258+00:00",
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "runs": [
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "unittest",
+        "autonomy.tests.test_intake",
+        "autonomy.tests.test_request_research",
+        "autonomy.tests.test_request_review_safety",
+        "autonomy.tests.test_safety_gates",
+        "autonomy.tests.test_provider_contracts",
+        "autonomy.tests.test_evidence",
+        "autonomy.tests.test_subscription",
+        "autonomy.tests.test_source_selection",
+        "-v"
+      ],
+      "started_utc": "2026-11-13T13:15:10.331314+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-13/request-route-tests-00.log",
+      "log_sha256": "8ce82674449c37f208d52d6b06bb1b883f9d4e851f90d432c71788fc0cd9cfd7",
+      "unittest_count": 139
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_plan_approval.py"
+      ],
+      "started_utc": "2026-11-13T13:15:15.566261+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-13/request-route-tests-01.log",
+      "log_sha256": "57ef6af34020cc22d9d0c62ced27d3fbe1c582eb9f5daa9901e70c1844fdcecd"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_tick_budget.py"
+      ],
+      "started_utc": "2026-11-13T13:15:15.947666+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-13/request-route-tests-02.log",
+      "log_sha256": "b09add8161c281b5a1063cf30dba4318fba6880a3a214d8ebfe329e134a9fd93"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_critic_search.py"
+      ],
+      "started_utc": "2026-11-13T13:15:16.242973+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-13/request-route-tests-03.log",
+      "log_sha256": "31bc3c947f407fd11e411984bde3778eb98c7a91eef78d732c406b77fe0f9ce5"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_noise_manifest_merge.py"
+      ],
+      "started_utc": "2026-11-13T13:15:16.326985+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-13/request-route-tests-04.log",
+      "log_sha256": "f3eeaffb9b19f9acd79696a793625ea7e34e4cd3a9d5375a5d854825aef9cec7"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_shellutil_treekill.py"
+      ],
+      "started_utc": "2026-11-13T13:15:16.563447+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-13/request-route-tests-05.log",
+      "log_sha256": "3503013cf8928830ff8d8e1d44aed2f951f1964cfd9e20d3788a182c36049a92"
+    }
+  ],
+  "runtime_before": {
+    "autonomy/workspace/STATE.json": "3b666e0194affd8202efc2afc4182591b26732fe4f93541133225017f2d5bb6d",
+    "autonomy/workspace/night_plan.yaml": "63cb80984b0f4dff5f09c9a33a0b3faf6cf00814dcb62f816c4381dc90f2260a",
+    "autonomy/workspace/night_plan.approval.json": null,
+    "autonomy/workspace/events.jsonl": "b500f0f40bcb08462ab4f2757e352a157fa851f9fcfb57f04ba022c4f588e669",
+    "autonomy/goals.yaml": "4fd59d6977da8f8e5e7c704abba2ac90edb2a97174d157fdb90a1246fd87f67e",
+    "autonomy/workspace/requests/drafts/literature-review-spec.json": "46dcc967a2c8428922745728c2ed4f44ff1d4c71729397c4fc6fc45d60ce7c6f",
+    "docs/literature-review-2026-11.md": "c18c61aebf21eb7bdf204f6e253591b0649e4ee1c0824b53aedae4cf92b84022"
+  },
+  "runtime_after": {
+    "autonomy/workspace/STATE.json": "3b666e0194affd8202efc2afc4182591b26732fe4f93541133225017f2d5bb6d",
+    "autonomy/workspace/night_plan.yaml": "63cb80984b0f4dff5f09c9a33a0b3faf6cf00814dcb62f816c4381dc90f2260a",
+    "autonomy/workspace/night_plan.approval.json": null,
+    "autonomy/workspace/events.jsonl": "b500f0f40bcb08462ab4f2757e352a157fa851f9fcfb57f04ba022c4f588e669",
+    "autonomy/goals.yaml": "4fd59d6977da8f8e5e7c704abba2ac90edb2a97174d157fdb90a1246fd87f67e",
+    "autonomy/workspace/requests/drafts/literature-review-spec.json": "46dcc967a2c8428922745728c2ed4f44ff1d4c71729397c4fc6fc45d60ce7c6f",
+    "docs/literature-review-2026-11.md": "c18c61aebf21eb7bdf204f6e253591b0649e4ee1c0824b53aedae4cf92b84022"
+  },
+  "runtime_unchanged": true,
+  "code_sha256": {
+    "autonomy/critic.py": "ddbc83f6c93597155c1785b961d53e1cb5f3ff4ce2c9579c01a482d01da46bf5",
+    "autonomy/env.py": "02b6d3f351356ecb2bbfa3582ea3d7641f7f42b12d973eec400caea29a1d94a5",
+    "autonomy/events.py": "117bca695739421703390c16537d06ef50be54cca857031fb1edd771a3ad62a4",
+    "autonomy/evidence.py": "bf54251816e28b8fdbb19788c22328b273d3382da482df8e728a83fd115c6932",
+    "autonomy/goals.py": "00f25451e16471e203c68397b53fbf1e9eb4d8f6977328c7e22174290400648a",
+    "autonomy/history.py": "3915dca8ea245681a2f98f1d0d991e52a354b105ed2b12e247da22c64d12714f",
+    "autonomy/intake.py": "6b810502a03dc3e24678e4742fc60744337f9e7cb748516fa9dc7d111cfc7310",
+    "autonomy/lock.py": "ff13ced27f7fabb89dd5907babfd5fa0bbbf42b5a7ab0145b9ac9b60679dbc05",
+    "autonomy/logs.py": "e713f7c94096cb48e4d430bce8602c5faffdd41004ffc2c4a0ecff75d2f608ce",
+    "autonomy/manifest.py": "acc71c0a9da7d983c754798b11398e1e2866390704448286aea1a240485af9b9",
+    "autonomy/opencode_provider.py": "c11a407283756d2b79cc4cdd2aad90a2df1df9c8f5ed7af4ed266677b68ec927",
+    "autonomy/paths.py": "6b16a5dfe84b60258d0acbea66515862e0720ee29bd2d5468199a9497db9b39f",
+    "autonomy/preflight.py": "81046bb36c1b259a004eb6152dd4fbd272fa14b5e38034785d0ac3eec73ec938",
+    "autonomy/prompts.py": "75093160439167a9ff8ccc5ef3da8d0a97ecaf5f585ee757f75cd12fb12ac3fa",
+    "autonomy/providers.py": "16d3bd09d89950d9a30200a91a1eb1312f00a68f748a3a90b5af17ad33da187b",
+    "autonomy/report.py": "416262af19d05603a865fbc9050071ded39217bddcc06b8d6f81c48d4cea1818",
+    "autonomy/request_research.py": "4635c069bc5574d89029434d2d130f99fc5f85ac28c085e71d962f8036351d57",
+    "autonomy/research.py": "93dcc8ea2eab7eb19c3a21c326780d062718a714ce3dd15dc6c5381f9a163a7c",
+    "autonomy/router.py": "a1be9a764c3f0dacc8697799e4bece92875a08f73e601a7bf060d9860be4e358",
+    "autonomy/runner.py": "af29290fc41bae598026267ef811545f15b9c8e25d8b1bb2d8f9cb54f1421752",
+    "autonomy/screenshot.py": "d184af078080cb6a0d9f37b053ffc3c2598d811c0a6dd0649786c61e1461b2d6",
+    "autonomy/shellutil.py": "6e4d0a7945d0fdf45bc8ee3c491f56a8ffab5eec8ee1ff168df42a9833bc748b",
+    "autonomy/source_selection.py": "b0263dca0144e287c082b4a9a2ab54abda12b2d6106192afdb9c79a9f8a44527",
+    "autonomy/state.py": "ab70d199280ec6ad594444387bbd147d263bafe1c5f331b5e31d6b6335b959a1",
+    "autonomy/subscription.py": "6c72a4d5ec12f5e134f5f5f7a9f4bac75778cff9c84be526e39e990df077c495",
+    "autonomy/verify.py": "e5d3af092bcb349e793738557f3acab40f5c83231de6fcb53362d3ec80e2e69d",
+    "autonomy/__init__.py": "944774d7466417f4f3ecb138a6b1f93ff8dc9a843fde070012267d3b6e83d9b5",
+    "autonomy/tests/check_plan_acceptance.py": "ef47ce81d4b6aeecbe0864592cdc6195704f6a2651fb64e766cd432738f2425f",
+    "autonomy/tests/critique_current_plan.py": "0b5937a974523bdce49d8787a141c529fcd8df05adfbcb80545c5b21da5f9119",
+    "autonomy/tests/diag_fleurs_audio.py": "d0b13d23131484f46ceed9b4527bf10db8ace65850dd0a18a6ff8e5bab055cd4",
+    "autonomy/tests/extract_program.py": "52d88e91e0574d4e09119a3b0ce020c4824af70783bbec1077cb50272d365239",
+    "autonomy/tests/probe_fleurs.py": "c5c7d2a7e87980f5f5c5b77466899d500dede7646ced6bf0069dcbb4c1e27cbf",
+    "autonomy/tests/probe_hf_api.py": "7b845094f3937b444dc8ebdae8a2224c4e00ac40d0a964ef5c9102b547aa7097",
+    "autonomy/tests/probe_ru_corpora.py": "279b5a5ddd69ac5dc8e759f1814c86471cb15cd424aad4b60f31e3586693eb76",
+    "autonomy/tests/test_critic_search.py": "4fe54959567b3404c5365e2db26bdcf8297431a0b241b28195c3670c625c3eb7",
+    "autonomy/tests/test_evidence.py": "1d767f0d6e23fabf097e17cc057a2c44c101c97c8211e529c9c95774213d1f7e",
+    "autonomy/tests/test_intake.py": "193277d31d45a7119699ccdc076c09647723f70f168b62a7e540d3194779e9e1",
+    "autonomy/tests/test_noise_manifest_merge.py": "54468e27004e2836602bbda92f2f6dd01ba42bba34d18f1cabb67713495920ec",
+    "autonomy/tests/test_plan_approval.py": "0922bfef7a5bc05b3f6882cdb9da1997a69dfaad1df2cfd420ef5844338e90ef",
+    "autonomy/tests/test_provider_contracts.py": "cdb82bd04fa51144857b53368925b41cf2059b9b7367df31096afc91d0875057",
+    "autonomy/tests/test_request_research.py": "e8135dac5dff4246d17757dd6a6c53d454ed35178cf48e52281bb5f94385996f",
+    "autonomy/tests/test_request_review_safety.py": "a630e6f0c4c3162fd09f94c1f396aa455554d863f6a7f6a493fc89c262d61276",
+    "autonomy/tests/test_safety_gates.py": "e565966357b637a1b173cf121f8eae304212f2e8b50553d5658a044ef99d7680",
+    "autonomy/tests/test_shellutil_treekill.py": "70abdc3c88217e796a2238a013d67140a5ab4aa900abcd61e198356455fe1c3d",
+    "autonomy/tests/test_source_selection.py": "9bc5a51411c9ba58b33c16d089fa73c2f550481fa78e7152a80dd01cd238ee22",
+    "autonomy/tests/test_subscription.py": "c0d229649898c2cefb164e54aa7da0617306240860a85e362a853e42a4af992b",
+    "autonomy/tests/test_tick_budget.py": "fbada92189f6eb4480d9c76df0a598ebe516492e0e0824d290f31cee94fb657d",
+    "opencode.json": "3bf360bf94cf49dbfec921d1f96f9cdedaeef179f6d547d16ed777f8c02d2c5d",
+    "autonomy/config.yaml": "c42b62b75244d7a3fdaf2086b8382a5b55584fb5c050d554eba9ea1387b6d8f8",
+    ".opencode/commands/mentor-task.md": "f63f1325f20e1efe242208cb9ccbd8e18ec939af3a1752bacf746caa97333eed"
+  },
+  "limitations": [
+    "Test source pages and model responses are fixtures, not evidence about literature",
+    "Includes real subprocess abrupt exit at four transaction boundaries, temporary STATE only",
+    "No mentor request, live search, night, preflight or supervisor executed",
+    "Subagent code reviews used separate sessions; actual models recorded in request-route-agents.json"
+  ]
+}

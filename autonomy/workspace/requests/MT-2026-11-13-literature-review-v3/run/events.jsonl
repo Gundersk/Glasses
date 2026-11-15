@@ -1,0 +1,10 @@
+{"ts": "2026-11-14 19:03:49", "t": 1794665029.523, "type": "phase_change", "frm": "IDLE", "to": "PLAN"}
+{"ts": "2026-11-14 19:04:35", "t": 1794665075.747, "type": "model_call", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 14818, "out_tok": 2658, "reasoning_tok": 1374, "cost_usd": 0.0, "latency": 46.2, "finish": "stop"}
+{"ts": "2026-11-14 19:04:44", "t": 1794665084.028, "type": "model_call", "role": "planner", "provider": "chatgpt", "model": "gpt-6.1-terra", "in_tok": 13982, "out_tok": 209, "reasoning_tok": 23, "cost_usd": 0, "latency": 8.3, "finish": "stop"}
+{"ts": "2026-11-14 19:05:24", "t": 1794665124.548, "type": "model_call", "role": "critic", "provider": "kimi_pro", "model": "kimi-for-coding", "in_tok": 15467, "out_tok": 1437, "reasoning_tok": 730, "cost_usd": 0.0, "latency": 40.5, "finish": "stop"}
+{"ts": "2026-11-14 19:05:24", "t": 1794665124.587, "type": "phase_change", "frm": "PLAN", "to": "EXECUTE"}
+{"ts": "2026-11-14 19:05:25", "t": 1794665125.489, "type": "task_start", "task_id": "collect-sources", "goal": "Проверить актуальные внешние источники по заданию"}
+{"ts": "2026-11-14 19:06:23", "t": 1794665183.927, "type": "phase_change", "frm": "EXECUTE", "to": "VERIFY"}
+{"ts": "2026-11-14 19:06:24", "t": 1794665184.206, "type": "phase_change", "frm": "VERIFY", "to": "REPORT"}
+{"ts": "2026-11-14 19:06:24", "t": 1794665184.217, "type": "night_report", "budget_usd": 0.0, "tasks": {"collect-sources": "pending", "answer-mentor": "pending"}, "needs_human": "обнаружены изменения вне разрешённых путей; требуется проверка владельца"}
+{"ts": "2026-11-14 19:06:24", "t": 1794665184.219, "type": "phase_change", "frm": "REPORT", "to": "DONE"}

@@ -1,0 +1,8 @@
+{
+  "method": "numpy_fft_24band_2means_baseline",
+  "synthetic": true,
+  "num_detected_speakers": 2,
+  "num_change_points": 84,
+  "frame_accuracy": 0.515970515970516,
+  "num_windows": 814
+}

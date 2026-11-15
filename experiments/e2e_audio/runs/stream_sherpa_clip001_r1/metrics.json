@@ -1,0 +1,147 @@
+{
+  "kind": "streaming",
+  "run_id": "stream_sherpa_clip001_r1",
+  "created": "2026-11-09T19:32:17.293482+05:00",
+  "simulated": false,
+  "engine": "sherpa",
+  "source": {
+    "type": "file",
+    "path": "data/fleurs_ru_test/clip_001.wav",
+    "duration_s": 12.52,
+    "wav_duration_s": 11.52,
+    "tail_silence_s": 1.0,
+    "note": "duration_s = длительность реально поданного аудио (WAV + тишина в конце)"
+  },
+  "partial_count": 11,
+  "final_count": 1,
+  "first_partial_ms": 3412.695,
+  "finals": [
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в том что касается дикой природы",
+      "t_ms": 10415.766,
+      "source_end_ms": 10400.0,
+      "latency_ms": 15.766,
+      "reason": "endpoint"
+    }
+  ],
+  "partials": [
+    {
+      "text": "мадагаска",
+      "t_ms": 3412.695,
+      "source_pos_ms": 3400.0,
+      "latency_ms": 12.695
+    },
+    {
+      "text": "мадагаскар намного",
+      "t_ms": 4018.105,
+      "source_pos_ms": 4000.0,
+      "latency_ms": 18.105
+    },
+    {
+      "text": "мадагаскар намного больше",
+      "t_ms": 4713.833,
+      "source_pos_ms": 4700.0,
+      "latency_ms": 13.833
+    },
+    {
+      "text": "мадагаскар намного больше других и я",
+      "t_ms": 5315.759,
+      "source_pos_ms": 5300.0,
+      "latency_ms": 15.759
+    },
+    {
+      "text": "мадагаскар намного больше других и является",
+      "t_ms": 6017.221,
+      "source_pos_ms": 6000.0,
+      "latency_ms": 17.221
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным",
+      "t_ms": 6612.005,
+      "source_pos_ms": 6600.0,
+      "latency_ms": 12.005
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континент",
+      "t_ms": 7216.253,
+      "source_pos_ms": 7200.0,
+      "latency_ms": 16.253
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в том",
+      "t_ms": 7916.398,
+      "source_pos_ms": 7900.0,
+      "latency_ms": 16.398
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в том что касается",
+      "t_ms": 8515.038,
+      "source_pos_ms": 8500.0,
+      "latency_ms": 15.038
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в том что касается дикой",
+      "t_ms": 9215.387,
+      "source_pos_ms": 9200.0,
+      "latency_ms": 15.387
+    },
+    {
+      "text": "мадагаскар намного больше других и является самобытным континентом в том что касается дикой природы",
+      "t_ms": 9815.171,
+      "source_pos_ms": 9800.0,
+      "latency_ms": 15.171
+    }
+  ],
+  "timing": {
+    "p50_ms": 15.766,
+    "p95_ms": 15.766,
+    "basis": "задержка финалов: t_ms - source_end_ms/speed",
+    "n": 1,
+    "partial_p50_ms": 15.387,
+    "partial_p95_ms": 17.663,
+    "partial_n": 11
+  },
+  "feed": {
+    "speed": 1.0,
+    "chunk_ms": 100,
+    "feed_lag_ms_max": 0.033,
+    "feed_lag_ms_p95": 0.003,
+    "feed_lag_ms_last": 0.0,
+    "chunk_proc_ms_p50": 0.644,
+    "chunk_proc_ms_p95": 16.791,
+    "chunk_proc_ms_max": 32.104,
+    "chunks": 126,
+    "rtf_proc": 0.0295,
+    "feed_wall_s": 12.52,
+    "run_wall_s": 16.597,
+    "realtime_kept": true
+  },
+  "asr": {
+    "ok": true,
+    "engine": "sherpa",
+    "message": "",
+    "version": "sherpa-onnx 2.0.1",
+    "config": {
+      "model_dir": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\models\\sherpa-onnx-streaming-zipformer-small-ru-vosk-int8-2025-08-16",
+      "num_threads": 2,
+      "decoding": "greedy_search",
+      "provider": "cpu",
+      "sample_rate": 16000,
+      "feature_dim": 80,
+      "rule1_min_trailing_silence": 2.4,
+      "rule2_min_trailing_silence": 0.8,
+      "rule3_min_utterance_length": 20.0,
+      "flush_tail_s": 0.3
+    }
+  },
+  "screenshot": {
+    "method": "playwright-msedge",
+    "path": "artifacts/screenshot.png",
+    "detail": "browser 157.0.4341.42"
+  },
+  "environment": {
+    "python": "3.12.15",
+    "platform": "win32"
+  },
+  "command": "experiments\\e2e_audio\\stream_browser.py --wav data/fleurs_ru_test/clip_001.wav --engine sherpa --run-dir experiments/e2e_audio/runs/stream_sherpa_clip001_r1 --port 0 --speed 1.0 --chunk-ms 100"
+}

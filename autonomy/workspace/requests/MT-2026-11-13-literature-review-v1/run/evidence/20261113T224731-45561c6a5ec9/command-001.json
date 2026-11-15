@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"Russian streaming speech recognition speaker diarization WER DER latency\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/sources-1.md\" --fresh",
+  "command_sha256": "28d5d78a151fdde7c6f09d05a942f42b7c14a47a22cf41e74ac7708d62d89a71",
+  "returncode": 1,
+  "status": "completed",
+  "started_ns": 1794592084705211000,
+  "finished_ns": 1794592090889998700,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-001.stdout.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794592090891144500
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v1\\run\\evidence\\20261113T224731-45561c6a5ec9\\command-001.stderr.txt",
+    "status": "file",
+    "sha256": "a524bd32314e2ed63f908eb92c61e285d6ea3362cd688de47ea1a679f4dcb32e",
+    "size": 997,
+    "mtime_ns": 1794592090893113400
+  }
+}

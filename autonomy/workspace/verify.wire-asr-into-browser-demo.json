@@ -1,0 +1,72 @@
+{
+  "task_id": "wire-asr-into-browser-demo",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/web_demo/asr_bridge_metrics.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "experiments/web_demo/asr_ui.png"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/web_demo/asr_bridge_metrics.json",
+          "asr_final_segments",
+          1,
+          1000
+        ]
+      },
+      "ok": true,
+      "detail": "got=6 range=[1,1000]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/web_demo/asr_bridge_metrics.json",
+          "rendered_cyrillic_subtitles",
+          1,
+          1000
+        ]
+      },
+      "ok": true,
+      "detail": "got=6 range=[1,1000]"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "experiments/web_demo/asr_bridge_metrics.json",
+          "\"sample_subtitle\": \"[^\"]*[а-яА-Я]"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    }
+  ],
+  "ts": "2026-11-09 04:50:59",
+  "diff": {
+    "added": [
+      "experiments/asr_web_pipeline.py",
+      "experiments/web_demo/asr_bridge_metrics.json",
+      "experiments/web_demo/asr_page.html",
+      "experiments/web_demo/asr_ui.png"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

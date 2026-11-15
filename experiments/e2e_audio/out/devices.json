@@ -1,0 +1,368 @@
+{
+  "sounddevice": "0.5.6",
+  "portaudio": "PortAudio V19.7.0-devel, revision unknown",
+  "default_input_index": 1,
+  "default_output_index": 4,
+  "devices": [
+    {
+      "index": 0,
+      "name": "Переназначение звуковых устр. - Input",
+      "hostapi": "MME",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 1,
+      "name": "Microphone (fifine Microphone)",
+      "hostapi": "MME",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": true,
+      "is_default_output": false
+    },
+    {
+      "index": 2,
+      "name": "Microphone (Fifine K420)",
+      "hostapi": "MME",
+      "max_input_channels": 1,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 3,
+      "name": "Переназначение звуковых устр. - Output",
+      "hostapi": "MME",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 4,
+      "name": "Динамики (Realtek(R) Audio)",
+      "hostapi": "MME",
+      "max_input_channels": 0,
+      "max_output_channels": 8,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": true
+    },
+    {
+      "index": 5,
+      "name": "1 - AQ27H1        (AMD High Def",
+      "hostapi": "MME",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 6,
+      "name": "Динамики (fifine Microphone)",
+      "hostapi": "MME",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 7,
+      "name": "4 - RTK FHD (AMD High Definitio",
+      "hostapi": "MME",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 8,
+      "name": "2 - 2270W (AMD High Definition ",
+      "hostapi": "MME",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 9,
+      "name": "Первичный драйвер записи звука",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 10,
+      "name": "Microphone (fifine Microphone)",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 11,
+      "name": "Microphone (Fifine K420)",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 1,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 12,
+      "name": "Первичный звуковой драйвер",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 13,
+      "name": "Динамики (Realtek(R) Audio)",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 0,
+      "max_output_channels": 8,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 14,
+      "name": "1 - AQ27H1        (AMD High Definition Audio Device)",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 15,
+      "name": "Динамики (fifine Microphone)",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 16,
+      "name": "4 - RTK FHD (AMD High Definition Audio Device)",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 17,
+      "name": "2 - 2270W (AMD High Definition Audio Device)",
+      "hostapi": "Windows DirectSound",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 18,
+      "name": "1 - AQ27H1        (AMD High Definition Audio Device)",
+      "hostapi": "Windows WASAPI",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 48000.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 19,
+      "name": "Динамики (fifine Microphone)",
+      "hostapi": "Windows WASAPI",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 48000.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 20,
+      "name": "4 - RTK FHD (AMD High Definition Audio Device)",
+      "hostapi": "Windows WASAPI",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 48000.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 21,
+      "name": "Динамики (Realtek(R) Audio)",
+      "hostapi": "Windows WASAPI",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 48000.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 22,
+      "name": "2 - 2270W (AMD High Definition Audio Device)",
+      "hostapi": "Windows WASAPI",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 48000.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 23,
+      "name": "Microphone (Fifine K420)",
+      "hostapi": "Windows WASAPI",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 48000.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 24,
+      "name": "Microphone (fifine Microphone)",
+      "hostapi": "Windows WASAPI",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 48000.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 25,
+      "name": "Headphones (Realtek HD Audio 2nd output)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 26,
+      "name": "Лин. вход (Realtek HD Audio Line input)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 27,
+      "name": "Стерео микшер (Realtek HD Audio Stereo input)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 28,
+      "name": "Speakers (Realtek HD Audio output)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 0,
+      "max_output_channels": 8,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 29,
+      "name": "Микрофон (Realtek HD Audio Mic input)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 30,
+      "name": "Output (AMD HD Audio DP out #0)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 31,
+      "name": "Output (AMD HD Audio HDMI out #3)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 32,
+      "name": "Output (AMD HD Audio HDMI out #1)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 33,
+      "name": "Микрофон (Fifine K420)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 1,
+      "max_output_channels": 0,
+      "default_samplerate": 16000.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 34,
+      "name": "Динамики (fifine Microphone)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    },
+    {
+      "index": 35,
+      "name": "Микрофон (fifine Microphone)",
+      "hostapi": "Windows WDM-KS",
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_samplerate": 44100.0,
+      "is_default_input": false,
+      "is_default_output": false
+    }
+  ]
+}

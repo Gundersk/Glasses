@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"WhisperLive pyannote.audio Vosk GigaAM streaming diarization license MIT hardware GPU requirements real-time factor\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-5.md\" --fresh",
+  "command_sha256": "e9be4e3fcb4c2b96e062b98b7bb0a2525d21d21ca90e23393fcb6e6d5821cddc",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794667644986138200,
+  "finished_ns": 1794667652565220600,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194709-67884ccc2e46\\command-001.stdout.txt",
+    "status": "file",
+    "sha256": "2d9e11ca51fa8100391ce4180195e564683c8b7869d1601f364c0f942154a473",
+    "size": 194,
+    "mtime_ns": 1794667652566224200
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v5\\run\\evidence\\20261114T194709-67884ccc2e46\\command-001.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794667652573220300
+  }
+}

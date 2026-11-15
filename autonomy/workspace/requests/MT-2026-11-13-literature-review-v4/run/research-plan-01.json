@@ -1,0 +1,15 @@
+{
+  "request_sha256": "c55f9922cb67a4a451136c1b1dcb0cf769e37bb65a269334c72cb6be52a38413",
+  "previous_sha256": null,
+  "queries": [
+    "streaming captions smart glasses hearing impaired speaker attribution diarization research",
+    "Russian streaming ASR speaker attributed WER cpWER DER latency evaluation protocol datasets",
+    "streaming speaker attributed ASR end to end online diarization latency",
+    "audio-visual speaker diarization active speaker detection face voice association benchmark AVSD",
+    "WhisperX pyannote.audio NeMo streaming speaker diarization license hardware requirements GPU"
+  ],
+  "reason": "Темы очков/субтитров, потокового ASR (вкл. русский), EEND/онлайн-диаризации и метрик покрыты (5 доменов, содержательные страницы: asr_eval-гайд, VibeVoice-ASR-Streaming, awesome-diarization). Пробел: аудиовизуальное определение активного говорящего (ASD/AV diarization) не имеет ни одного выделенного источника — лишь косвольное упоминание MIMO-TSVAD в списке; также не подтверждены лицензии и требования к оборудованию 2–3 инструментов (Whisper/pyannote/NeMo), требуемые для roadmap-связки. Резерв 3 запроса позволяет закрыть оба пробела.",
+  "kind": "followup",
+  "author_model": "kimi-for-coding",
+  "sha256": "fbc237e59078bccbe5ee1f7dbcac9893ba1e4dec663f7c10d86232a6b56703fb"
+}

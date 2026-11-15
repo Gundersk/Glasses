@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"audio-visual speaker diarization active speaker detection face voice association benchmark AVSD\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-3.md\" --fresh",
+  "command_sha256": "e77c47ec9dd727b987d5a500d222259765cf90d2f310388bbdd2199cccd5b5c1",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794666027648989000,
+  "finished_ns": 1794666036197598900,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T192027-2aca15e46789\\command-000.stdout.txt",
+    "status": "file",
+    "sha256": "686c7d607319ba5abdf4764f9a5e238df9e24171f3e090d6b58a3ba611f5161b",
+    "size": 194,
+    "mtime_ns": 1794666036198592300
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T192027-2aca15e46789\\command-000.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794666036204854700
+  }
+}

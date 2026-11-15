@@ -1,0 +1,112 @@
+{
+  "kind": "offline_software_tests_not_asr_measurement",
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "captured_utc": "2026-11-12T16:03:03.613123+00:00",
+  "runs": [
+    {
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "autonomy.tests.test_safety_gates",
+        "autonomy.tests.test_provider_contracts",
+        "autonomy.tests.test_evidence",
+        "-v"
+      ],
+      "started_utc": "2026-11-12T16:03:01.399322+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-12/offline-tests-00.log",
+      "log_sha256": "490aa16f6b8656d8448b201741e9479ea8dbf437d9801c7024c674b0800f9144"
+    },
+    {
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "autonomy/tests/test_plan_approval.py"
+      ],
+      "started_utc": "2026-11-12T16:03:02.530899+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-12/offline-tests-01.log",
+      "log_sha256": "88ca9d3c092a6cf9ab86b799050c607f56408d9bb51184b1176d55496deb4c12"
+    },
+    {
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "autonomy/tests/test_tick_budget.py"
+      ],
+      "started_utc": "2026-11-12T16:03:02.906693+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-12/offline-tests-02.log",
+      "log_sha256": "dccaf42efd650874a2acc63195dc087fc4d80ceecd273e39a3b9ffb688ca0abe"
+    },
+    {
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "autonomy/tests/test_critic_search.py"
+      ],
+      "started_utc": "2026-11-12T16:03:03.214331+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-12/offline-tests-03.log",
+      "log_sha256": "f5b5c936ab242b76a26d588727b1c92fbc4591ab6023b4394dbeeb5d3bf710f6"
+    },
+    {
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "autonomy/tests/test_noise_manifest_merge.py"
+      ],
+      "started_utc": "2026-11-12T16:03:03.303155+00:00",
+      "returncode": 0,
+      "log": "docs/audits/2026-11-12/offline-tests-04.log",
+      "log_sha256": "da54dcd7add15ec3317703bca0e9fa96fbd36e3b688d872bf1533b18595b8f03"
+    }
+  ],
+  "code_sha256": {
+    "autonomy/__init__.py": "944774d7466417f4f3ecb138a6b1f93ff8dc9a843fde070012267d3b6e83d9b5",
+    "autonomy/critic.py": "ddbc83f6c93597155c1785b961d53e1cb5f3ff4ce2c9579c01a482d01da46bf5",
+    "autonomy/env.py": "02b6d3f351356ecb2bbfa3582ea3d7641f7f42b12d973eec400caea29a1d94a5",
+    "autonomy/events.py": "117bca695739421703390c16537d06ef50be54cca857031fb1edd771a3ad62a4",
+    "autonomy/evidence.py": "bf54251816e28b8fdbb19788c22328b273d3382da482df8e728a83fd115c6932",
+    "autonomy/goals.py": "00f25451e16471e203c68397b53fbf1e9eb4d8f6977328c7e22174290400648a",
+    "autonomy/history.py": "3915dca8ea245681a2f98f1d0d991e52a354b105ed2b12e247da22c64d12714f",
+    "autonomy/lock.py": "ff13ced27f7fabb89dd5907babfd5fa0bbbf42b5a7ab0145b9ac9b60679dbc05",
+    "autonomy/logs.py": "e713f7c94096cb48e4d430bce8602c5faffdd41004ffc2c4a0ecff75d2f608ce",
+    "autonomy/manifest.py": "dc21c63c183cf320687349c9847a236e451c6f03f51b136815e07be490266fb1",
+    "autonomy/paths.py": "6b16a5dfe84b60258d0acbea66515862e0720ee29bd2d5468199a9497db9b39f",
+    "autonomy/preflight.py": "8691f6d119ef5ed25f833be37140ed30a9d64507871e6666c033457690542164",
+    "autonomy/prompts.py": "746ae158c53ad797a7801051aba855ca0963acac63b64003a5f5311f7cc82f1d",
+    "autonomy/providers.py": "167a282c4ab49d2313023e2dad9e7e5100d99f8bb75421fa831b9d5542acfef1",
+    "autonomy/report.py": "4b97283cdb05b5ff0ae1078cb7e16100e236e969ecd11fa151348924da6c6360",
+    "autonomy/research.py": "632d3cb19e75d71d824db2bb79bbae4e34e59b93455bd6effff1dd490330a311",
+    "autonomy/router.py": "3cb360f56695b7a0af6a3c631a762bd39f7028069bd9f69edaef8013022e5c63",
+    "autonomy/runner.py": "42621cd7070c28fc4713216befe82e3352d862e8abb66fbe3f8640afc7f6f1e7",
+    "autonomy/screenshot.py": "d184af078080cb6a0d9f37b053ffc3c2598d811c0a6dd0649786c61e1461b2d6",
+    "autonomy/shellutil.py": "6e4d0a7945d0fdf45bc8ee3c491f56a8ffab5eec8ee1ff168df42a9833bc748b",
+    "autonomy/state.py": "8ee339a8ce332c6274dfa084997357115f0bd1c53dcbd46050e28148dad01168",
+    "autonomy/verify.py": "e5d3af092bcb349e793738557f3acab40f5c83231de6fcb53362d3ec80e2e69d",
+    "autonomy/config.yaml": "599869b5943c1d4a56144a866ba3aa967563fce8960b7bdb4c11bd89958ed897",
+    "autonomy/tests/test_critic_search.py": "4fe54959567b3404c5365e2db26bdcf8297431a0b241b28195c3670c625c3eb7",
+    "autonomy/tests/test_evidence.py": "f96360090c86901cb8706606f1a370f82d2fc8c75d139faeb3fe281166ecdfca",
+    "autonomy/tests/test_noise_manifest_merge.py": "54468e27004e2836602bbda92f2f6dd01ba42bba34d18f1cabb67713495920ec",
+    "autonomy/tests/test_plan_approval.py": "0922bfef7a5bc05b3f6882cdb9da1997a69dfaad1df2cfd420ef5844338e90ef",
+    "autonomy/tests/test_provider_contracts.py": "cdb82bd04fa51144857b53368925b41cf2059b9b7367df31096afc91d0875057",
+    "autonomy/tests/test_safety_gates.py": "e565966357b637a1b173cf121f8eae304212f2e8b50553d5658a044ef99d7680",
+    "autonomy/tests/test_shellutil_treekill.py": "70abdc3c88217e796a2238a013d67140a5ab4aa900abcd61e198356455fe1c3d",
+    "autonomy/tests/test_tick_budget.py": "fbada92189f6eb4480d9c76df0a598ebe516492e0e0824d290f31cee94fb657d"
+  },
+  "production_state_before": {
+    "autonomy/workspace/STATE.json": "3b666e0194affd8202efc2afc4182591b26732fe4f93541133225017f2d5bb6d",
+    "autonomy/workspace/night_plan.yaml": "63cb80984b0f4dff5f09c9a33a0b3faf6cf00814dcb62f816c4381dc90f2260a",
+    "autonomy/workspace/night_plan.approval.json": null,
+    "autonomy/workspace/events.jsonl": "b500f0f40bcb08462ab4f2757e352a157fa851f9fcfb57f04ba022c4f588e669",
+    "autonomy/goals.yaml": "4fd59d6977da8f8e5e7c704abba2ac90edb2a97174d157fdb90a1246fd87f67e"
+  },
+  "production_state_after": {
+    "autonomy/workspace/STATE.json": "3b666e0194affd8202efc2afc4182591b26732fe4f93541133225017f2d5bb6d",
+    "autonomy/workspace/night_plan.yaml": "63cb80984b0f4dff5f09c9a33a0b3faf6cf00814dcb62f816c4381dc90f2260a",
+    "autonomy/workspace/night_plan.approval.json": null,
+    "autonomy/workspace/events.jsonl": "b500f0f40bcb08462ab4f2757e352a157fa851f9fcfb57f04ba022c4f588e669",
+    "autonomy/goals.yaml": "4fd59d6977da8f8e5e7c704abba2ac90edb2a97174d157fdb90a1246fd87f67e"
+  },
+  "production_state_unchanged": true,
+  "all_commands_passed": true,
+  "limitations": "Mocks, fixture tests and one short synthetic subprocess. No night tick, preflight, live models, ASR run, or billing/model-quality calibration."
+}

@@ -1,0 +1,64 @@
+- `2026-11-14 19:42:24` **PLAN**
+- `2026-11-14 19:42:24` план с диска: перегенерация не нужна, проверяю критиком
+- `2026-11-14 19:44:51` critic: kimi_pro ok in=14742 out=5344 reasoning=4361 cost=$0.0000 lat=146.7s
+- `2026-11-14 19:44:58` planner: chatgpt ok in=13704 out=163 reasoning=44 cost=$0.0000 lat=7.8s
+- `2026-11-14 19:45:52` critic: kimi_pro ok in=14997 out=1696 reasoning=932 cost=$0.0000 lat=53.2s
+- `2026-11-14 19:45:52` критика записана: autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\run\outbox\critique.md
+- `2026-11-14 19:45:52` критик: approve (раундов 2, замечаний 2)
+- `2026-11-14 19:45:52` ✔ план построен: 2 задач: collect-sources->MT-2026-11-13-literature-review-v5, answer-mentor->MT-2026-11-13-literature-review-v5
+- `2026-11-14 19:45:52` **EXECUTE задача=collect-sources**
+- `2026-11-14 19:45:52` summary: утверждённый протокол без LLM
+- `2026-11-14 19:45:52` $ python -m autonomy.research "streaming captions smart glasses hearing impaired speaker attribution diarization research" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md" --fresh
+- `2026-11-14 19:45:59` ✔ rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\sources-0.md (ссылок: 2)
+
+- `2026-11-14 19:45:59` $ python -m autonomy.research "Russian streaming ASR speaker attributed WER cpWER DER latency evaluation protocol datasets" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md" --fresh
+- `2026-11-14 19:46:09` ✔ rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\sources-1.md (ссылок: 2)
+
+- `2026-11-14 19:46:09` $ python -m autonomy.research "streaming speaker attributed ASR end to end online diarization latency" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md" --fresh
+- `2026-11-14 19:46:14` ✔ rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\sources-2.md (ссылок: 2)
+
+- `2026-11-14 19:46:14` $ python -m autonomy.research "audio visual active speaker detection speech transcription captions speaker attribution research paper TalkNet" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md" --fresh
+- `2026-11-14 19:46:21` ✔ rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\sources-3.md (ссылок: 2)
+
+- `2026-11-14 19:46:21` **VERIFY задача=collect-sources**
+- `2026-11-14 19:46:21` verify: pass=True (collect-sources-1794667581817559800-7d929df4.json)
+- `2026-11-14 19:46:21` **REVIEW задача=collect-sources**
+- `2026-11-14 19:46:47` verifier: kimi_pro ok in=28070 out=727 reasoning=508 cost=$0.0000 lat=25.7s
+- `2026-11-14 19:46:47` вердикт контролёра: SEARCH — Покрыты очки/субтитры, стриминговые метрики русского ASR, обзор диаризации и аудиовизуальный ASD, но нет первоисточников по speaker-attributed ASR с определениями cpWER/ORC-WER (ключевая метрика из ac
+- `2026-11-14 19:46:47` дополнительные запросы в пределах поручения; нужен новый независимый critic
+- `2026-11-14 19:46:47` **PLAN**
+- `2026-11-14 19:46:47` план с диска: перегенерация не нужна, проверяю критиком
+- `2026-11-14 19:47:09` critic: chatgpt_critic ok in=18066 out=412 reasoning=326 cost=$0.0000 lat=21.4s
+- `2026-11-14 19:47:09` критика записана: autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\run\outbox\critique.md
+- `2026-11-14 19:47:09` критик: approve (раундов 1, замечаний 1)
+- `2026-11-14 19:47:09` ✔ план построен: 3 задач: collect-sources->MT-2026-11-13-literature-review-v5, collect-sources-r2->MT-2026-11-13-literature-review-v5, answer-mentor->MT-2026-11-13-literature-review-v5
+- `2026-11-14 19:47:09` **EXECUTE задача=collect-sources-r2**
+- `2026-11-14 19:47:09` summary: утверждённый протокол без LLM
+- `2026-11-14 19:47:09` $ python -m autonomy.research "speaker-attributed ASR cpWER ORC-WER AS-WER evaluation protocol SA-ASR paper AMI CALLHOME" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md" --fresh
+- `2026-11-14 19:47:24` ✔ rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\sources-4.md (ссылок: 2)
+
+- `2026-11-14 19:47:24` $ python -m autonomy.research "WhisperLive pyannote.audio Vosk GigaAM streaming diarization license MIT hardware GPU requirements real-time factor" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-5.md" --fresh
+- `2026-11-14 19:47:32` ✔ rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\sources-5.md (ссылок: 2)
+
+- `2026-11-14 19:47:32` **VERIFY задача=collect-sources-r2**
+- `2026-11-14 19:47:32` verify: pass=True (collect-sources-r2-1794667652838129100-4f158958.json)
+- `2026-11-14 19:47:32` **REVIEW задача=collect-sources-r2**
+- `2026-11-14 19:47:52` verifier: kimi_pro ok in=18018 out=550 reasoning=353 cost=$0.0000 lat=19.2s
+- `2026-11-14 19:47:52` вердикт контролёра: PASS — verify_pass=true: оба файла источников и их .json на месте, receipt.json связывает команды с артефактами; показанные источники (IBM SAA с таблицами WDER/WER, WhisperLive с диаризацией, лицензией MIT и
+- `2026-11-14 19:47:52` **EXECUTE задача=answer-mentor**
+- `2026-11-14 19:47:52` ⚠ executor: chatgpt -> ChatGPT input exceeds conservative budget; split task
+- `2026-11-14 19:48:41` executor: deepseek1017 ok in=103923 out=14011 reasoning=0 cost=$0.0480 lat=48.8s
+- `2026-11-14 19:48:41` ⚠ executor: chatgpt -> ChatGPT input exceeds conservative budget; split task
+- `2026-11-14 19:48:41` ⚠ провайдер chatgpt отключён до утра: ChatGPT input exceeds conservative budget; split task
+- `2026-11-14 19:49:26` executor: deepseek1017 ok in=103973 out=8644 reasoning=0 cost=$0.0416 lat=44.2s
+- `2026-11-14 19:49:26` записан reports/mentor/MT-2026-11-13-literature-review-v5/response.md (15322 симв.)
+- `2026-11-14 19:49:26` записан reports/mentor/MT-2026-11-13-literature-review-v5/claims.json (4232 симв.)
+- `2026-11-14 19:49:26` записан reports/mentor/MT-2026-11-13-literature-review-v5/decision.json (3340 симв.)
+- `2026-11-14 19:49:26` summary: Пишу черновик ответа ментору по литературному обзору (v5) на основе сохранённых источников sources-0..5.md.json: response.md, claims.json, decision.json в reports/mentor/MT-2026-11-13-literature-review-v5. Источники покрывают не все 6 тем research_policy (нет подтверждённых цитат по русскому потоков
+- `2026-11-14 19:49:26` **VERIFY задача=answer-mentor**
+- `2026-11-14 19:49:26` verify: pass=False (answer-mentor-1794667766478450200-0bb2a5c8.json)
+- `2026-11-14 19:49:26` **REVIEW задача=answer-mentor**
+- `2026-11-14 19:49:26` ⚠ answer-mentor: исчерпаны итерации (2)
+- `2026-11-14 19:49:26` **REPORT**
+- `2026-11-14 19:49:26` ✔ отчёт: autonomy\workspace\requests\MT-2026-11-13-literature-review-v5\run\outbox\reports\20261114.md (и report.md)
+- `2026-11-14 19:49:26` ✔ ночь завершена: бюджет $0.090, задачи: collect-sources=done, collect-sources-r2=done, answer-mentor=failed

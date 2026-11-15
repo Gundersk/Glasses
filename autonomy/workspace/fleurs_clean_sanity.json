@@ -1,0 +1,19 @@
+{
+  "audio": "autonomy/workspace/clip_000_clean.wav",
+  "ref": "data/fleurs_ru_test/clip_000.txt",
+  "hyp": "      ",
+  "wer": 1.0,
+  "latency_p50": 0.0044565999996848404,
+  "latency_p95": 0.02438478000185559,
+  "latency_count": 137,
+  "seed": 0,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "vosk": "unknown",
+  "time": "2026-11-09T06:34:25+0500",
+  "meta": {
+    "sample_rate": 16000,
+    "model": "models/vosk-model-small-ru-0.22",
+    "total_time": 1.1598659999981464,
+    "vosk": "unknown"
+  }
+}

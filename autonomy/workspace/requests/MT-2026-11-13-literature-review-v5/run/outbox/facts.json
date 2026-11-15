@@ -1,0 +1,156 @@
+{
+  "night_id": "20261114",
+  "started": "2026-11-14 19:42",
+  "finished": "2026-11-14 19:49",
+  "tasks": [
+    {
+      "id": "collect-sources",
+      "goal_id": "MT-2026-11-13-literature-review-v5",
+      "status": "done",
+      "verify_pass": true,
+      "checks_ok": 9,
+      "checks_total": 9,
+      "artifacts": [
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-1.md.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md.json"
+      ],
+      "last_error": null,
+      "verify_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/verdicts/collect-sources-1794667581817559800-7d929df4.json",
+      "receipt": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/evidence/20261114T194552-05a909bf15ba/receipt.json",
+      "evidence_level": "command_recorded"
+    },
+    {
+      "id": "collect-sources-r2",
+      "goal_id": "MT-2026-11-13-literature-review-v5",
+      "status": "done",
+      "verify_pass": true,
+      "checks_ok": 5,
+      "checks_total": 5,
+      "artifacts": [
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-5.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-5.md.json"
+      ],
+      "last_error": null,
+      "verify_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/verdicts/collect-sources-r2-1794667652838129100-4f158958.json",
+      "receipt": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/evidence/20261114T194709-67884ccc2e46/receipt.json",
+      "evidence_level": "command_recorded"
+    },
+    {
+      "id": "answer-mentor",
+      "goal_id": "MT-2026-11-13-literature-review-v5",
+      "status": "failed",
+      "verify_pass": false,
+      "checks_ok": 3,
+      "checks_total": 4,
+      "artifacts": [
+        "reports/mentor/MT-2026-11-13-literature-review-v5/claims.json",
+        "reports/mentor/MT-2026-11-13-literature-review-v5/decision.json",
+        "reports/mentor/MT-2026-11-13-literature-review-v5/response.md"
+      ],
+      "last_error": null,
+      "verify_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/verdicts/answer-mentor-1794667766478450200-0bb2a5c8.json",
+      "receipt": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/evidence/20261114T194926-72b63b6eb3fc/receipt.json",
+      "evidence_level": "command_recorded"
+    }
+  ],
+  "budget_usd": 0.0896,
+  "calls_by_provider": {
+    "kimi_pro": 4,
+    "chatgpt": 1,
+    "chatgpt_critic": 1,
+    "deepseek1017": 2
+  },
+  "attempts_by_provider": {
+    "kimi_pro": 4,
+    "chatgpt": 3,
+    "chatgpt_critic": 1,
+    "deepseek1017": 2
+  },
+  "violations": [],
+  "last_error": null,
+  "needs_human": null,
+  "lessons": [],
+  "plan_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/night_plan.yaml",
+  "goals_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/run/goals.yaml",
+  "request_id": "MT-2026-11-13-literature-review-v5",
+  "request_sha256": "1d2dbf4196cc6eff09ab40ead9c2f68edffdd70a3ba630f6f6b804bae170cb8a",
+  "request_outcome": "blocked",
+  "request_gaps": [],
+  "request_limitations": [],
+  "request_limits": {
+    "schema_version": 1,
+    "counts": {
+      "queries": {
+        "allowed": 6,
+        "used": 6,
+        "remaining": 0,
+        "planned": 6,
+        "unplanned_capacity": 0
+      },
+      "plan_revisions": {
+        "allowed": 1,
+        "used": 1,
+        "remaining": 0
+      },
+      "followup_rounds": {
+        "allowed": 1,
+        "used": 1,
+        "remaining": 0
+      },
+      "answer_attempts": {
+        "allowed": 2,
+        "used": 2,
+        "remaining": 0
+      }
+    },
+    "time": {
+      "sources": {
+        "allowed_seconds": 600.0,
+        "used_seconds": 52.11000000004424,
+        "remaining_seconds": 547.8899999999558,
+        "scope": "shared across all collection tasks"
+      },
+      "answer": {
+        "allowed_seconds": 900.0,
+        "used_seconds": 93.29699999999139,
+        "remaining_seconds": 806.7030000000086,
+        "scope": "shared across all answer attempts"
+      },
+      "work_total": {
+        "allowed_seconds": 1500.0,
+        "used_seconds": 145.40700000003562,
+        "remaining_seconds": 1354.5929999999644
+      },
+      "coordinator": {
+        "allowed_seconds": 3000.0,
+        "scope": "wall active excluding subscription wait, includes planning/review/verification"
+      }
+    },
+    "subscription_wait_seconds": 0.0
+  },
+  "goals": {
+    "global": "Ответить на задание в контексте проекта",
+    "stage": "request",
+    "stage_deadline": "not_assigned_by_owner",
+    "stage_closed": false,
+    "targets": [
+      {
+        "id": "MT-2026-11-13-literature-review-v5",
+        "kind": "local",
+        "text": "Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей теме до Вас.\n\nТогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.",
+        "status": "open",
+        "evidence": [],
+        "nights_without_progress": 1,
+        "blocked_reason": null
+      }
+    ]
+  }
+}

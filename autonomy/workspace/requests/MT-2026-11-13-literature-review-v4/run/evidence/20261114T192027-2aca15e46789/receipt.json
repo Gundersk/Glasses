@@ -1,0 +1,209 @@
+{
+  "version": 2,
+  "run_id": "20261114T192027-2aca15e46789",
+  "task_id": "collect-sources-r1",
+  "plan_sha256": "f4feccff114d4bae7506bc6b5d4e0311dd87c24f85007c75c082be5a12eb57f6",
+  "execution": "approved_commands",
+  "mock": false,
+  "started_ns": 1794666027627812300,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "seed": null,
+  "protocol": null,
+  "inputs": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/request.json",
+      "status": "file",
+      "sha256": "3acb81dea1374eabbd2e052e341e09bf819bc6fd215ed17290c9d9fa579706eb",
+      "size": 10695,
+      "mtime_ns": 1794665874419430800
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/context.md",
+      "status": "file",
+      "sha256": "a63a46ab11d3947e993e6e9f0b1b08b18702b711bf85fc58d17b560d561389ed",
+      "size": 11201,
+      "mtime_ns": 1794665874420430100
+    },
+    {
+      "path": "docs/agent-context.md",
+      "status": "file",
+      "sha256": "58c0261064bb704b48bdb656127bebcbb2d77af0378c3d5a0962ca34f07acf3b",
+      "size": 15123,
+      "mtime_ns": 1794652824134266900
+    },
+    {
+      "path": "docs/scope.md",
+      "status": "file",
+      "sha256": "59cbac7b085d460bdddc380e99d4b590b11266ef62269aeebba6ddb2eaaa946b",
+      "size": 19825,
+      "mtime_ns": 1794498249201621100
+    },
+    {
+      "path": "docs/benchmarks.md",
+      "status": "file",
+      "sha256": "5f30b943d0675df7c6f2102ff16f8fe9cf62980306bdfc8e913e827c244340f8",
+      "size": 11268,
+      "mtime_ns": 1794652876841874700
+    },
+    {
+      "path": "docs/roadmap-changes.md",
+      "status": "file",
+      "sha256": "7680005c559882050a8b188e8958842efcb698602592528af5cdcb62141e3190",
+      "size": 11459,
+      "mtime_ns": 1793956454705395900
+    },
+    {
+      "path": "docs/environment.md",
+      "status": "file",
+      "sha256": "feb6c4e0091177c1c931b2da13c295f585085238460953dcdf6d92a47f6a58c7",
+      "size": 10370,
+      "mtime_ns": 1794568589096297600
+    },
+    {
+      "path": "STATUS.md",
+      "status": "file",
+      "sha256": "52cffae35ffd8aef16cef82c4978426eea9d4709406f2dea393d08b36012f041",
+      "size": 69460,
+      "mtime_ns": 1794665845530388600
+    },
+    {
+      "path": "docs/local-goals.md",
+      "status": "file",
+      "sha256": "5918853d80bd3a54c3528f9769c4dc811247f9c2acc6b469336a739a59f0358b",
+      "size": 33785,
+      "mtime_ns": 1794652824135683800
+    },
+    {
+      "path": "docs/literature-review-2026-11.md",
+      "status": "file",
+      "sha256": "c18c61aebf21eb7bdf204f6e253591b0649e4ee1c0824b53aedae4cf92b84022",
+      "size": 29544,
+      "mtime_ns": 1794568380777391100
+    },
+    {
+      "path": "docs/sources.md",
+      "status": "file",
+      "sha256": "c62a30d0b83e26a440bd5f509476c02742cdf3a776af74239a2414cf2da5e341",
+      "size": 33254,
+      "mtime_ns": 1794652876840875100
+    },
+    {
+      "path": "experiments/engine_choice.md",
+      "status": "file",
+      "sha256": "f29186fdfaf92e970838b76c0d4630b295298a6af19ed927d39aa941c3e6d755",
+      "size": 5256,
+      "mtime_ns": 1794342607536728400
+    },
+    {
+      "path": "reports/analytics-note-2026-11.md",
+      "status": "file",
+      "sha256": "28ff44a27ff975ef923c58d95dce37b0f3b233c84e93e3605512dee7b92641b5",
+      "size": 16101,
+      "mtime_ns": 1794227546667681100
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/research-plan-01.json",
+      "status": "file",
+      "sha256": "45fb6afb25ab42eb5868024422aa08a8cd834428a986c800ac9a4694b35d5565",
+      "size": 1664,
+      "mtime_ns": 1794665992013475000
+    }
+  ],
+  "outputs_before": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-3.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-3.md.json",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-4.md",
+      "status": "missing_or_not_file"
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-4.md.json",
+      "status": "missing_or_not_file"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python -m autonomy.research \"audio-visual speaker diarization active speaker detection face voice association benchmark AVSD\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-3.md\" --fresh",
+      "command_sha256": "e77c47ec9dd727b987d5a500d222259765cf90d2f310388bbdd2199cccd5b5c1",
+      "returncode": 0,
+      "status": "completed",
+      "started_ns": 1794666027648989000,
+      "finished_ns": 1794666036197598900,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T192027-2aca15e46789\\command-000.stdout.txt",
+        "status": "file",
+        "sha256": "686c7d607319ba5abdf4764f9a5e238df9e24171f3e090d6b58a3ba611f5161b",
+        "size": 194,
+        "mtime_ns": 1794666036198592300
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T192027-2aca15e46789\\command-000.stderr.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794666036204854700
+      }
+    },
+    {
+      "command": "python -m autonomy.research \"WhisperX pyannote.audio NeMo streaming speaker diarization license hardware requirements GPU\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-4.md\" --fresh",
+      "command_sha256": "2761e5ccb32a65bc329f6cb12d3f9ce9a66d8294f87e1e9e4d4f546825902305",
+      "returncode": 0,
+      "status": "completed",
+      "started_ns": 1794666036209787800,
+      "finished_ns": 1794666042980577500,
+      "stdout": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T192027-2aca15e46789\\command-001.stdout.txt",
+        "status": "file",
+        "sha256": "f4383513afbeeeca087cbc9e8c1c2b8a96df2f7c9bb928558afe10433301004c",
+        "size": 194,
+        "mtime_ns": 1794666042981574400
+      },
+      "stderr": {
+        "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T192027-2aca15e46789\\command-001.stderr.txt",
+        "status": "file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "mtime_ns": 1794666042990000400
+      }
+    }
+  ],
+  "finished_ns": 1794666042992262100,
+  "outputs_after": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-3.md",
+      "status": "file",
+      "sha256": "22339df3db982ea9c9c46a47e406f47fae8c61657c3f97ad385fc2edbe898c44",
+      "size": 5433,
+      "mtime_ns": 1794666036176825800
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-3.md.json",
+      "status": "file",
+      "sha256": "4f760be22b3523b63a0c468441866fd4c69f54f04ac61eff5c787c53ff6c08e7",
+      "size": 35168,
+      "mtime_ns": 1794666036177816600
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-4.md",
+      "status": "file",
+      "sha256": "3b2009b7ec4f6bcca03caaefb83da7753667a8fcfa568e7917a5fed505c55d13",
+      "size": 7065,
+      "mtime_ns": 1794666042959775400
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-4.md.json",
+      "status": "file",
+      "sha256": "5530fa2e639049aa1725d0077396ea2bf6053055f72ec84bec3f64f595cf5038",
+      "size": 21671,
+      "mtime_ns": 1794666042960395900
+    }
+  ]
+}

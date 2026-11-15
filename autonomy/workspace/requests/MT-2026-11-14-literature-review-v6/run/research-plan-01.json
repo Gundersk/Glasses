@@ -1,0 +1,13 @@
+{
+  "request_sha256": "25ddc289b8acb58b41950972ea2a644e145a9bae6cc01a352785cf9797039357",
+  "previous_sha256": null,
+  "queries": [
+    "smart glasses live captions deaf hard of hearing product accessibility research speaker identification XRAI Google",
+    "audio visual active speaker detection AVA ActiveSpeaker benchmark original paper smart glasses subtitles",
+    "speaker attributed ASR streaming online offline diarization cpWER DER WDER Russian Vosk GigaAM T-one model data license hardware"
+  ],
+  "reason": "Запросы охватывают продуктовые аналоги и исследования доступности, аудиовизуальное определение говорящего, альтернативные подходы к атрибуции и диаризации, русский ASR, метрики и лицензии. Первоисточники, документацию и маркетинговые заявления следует различать; ограниченный поиск не доказывает полноту обзора.",
+  "kind": "plan",
+  "author_model": "gpt-6.1-terra",
+  "sha256": "514c60479d5c8a4668d7f036f9982abb34e13a28cf2cc12d8a1535e24e61ab05"
+}

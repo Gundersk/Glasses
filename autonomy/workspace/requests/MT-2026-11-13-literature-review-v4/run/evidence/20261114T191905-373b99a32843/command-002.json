@@ -1,0 +1,22 @@
+{
+  "command": "python -m autonomy.research \"streaming speaker attributed ASR end to end online diarization latency\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-2.md\" --fresh",
+  "command_sha256": "489fc367c64db43b01aef83ede2ed10602561f2eb5a5ca83eee6f1cd6ad7cb8d",
+  "returncode": 0,
+  "status": "completed",
+  "started_ns": 1794665964235817400,
+  "finished_ns": 1794665970950283400,
+  "stdout": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T191905-373b99a32843\\command-002.stdout.txt",
+    "status": "file",
+    "sha256": "8e3f227812e78cab9b87782277ff5244dae9461857319a4687f46b1747459534",
+    "size": 194,
+    "mtime_ns": 1794665970951282700
+  },
+  "stderr": {
+    "path": "autonomy\\workspace\\requests\\MT-2026-11-13-literature-review-v4\\run\\evidence\\20261114T191905-373b99a32843\\command-002.stderr.txt",
+    "status": "file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1794665970957834100
+  }
+}

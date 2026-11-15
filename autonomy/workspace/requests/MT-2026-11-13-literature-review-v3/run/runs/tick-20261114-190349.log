@@ -1,0 +1,33 @@
+19:03:49 [+   0.0s] STEP  PLAN
+19:03:49 [+   0.1s] INFO  план с диска: перегенерация не нужна, проверяю критиком
+19:04:35 [+  46.2s] INFO  critic: kimi_pro ok in=14818 out=2658 reasoning=1374 cost=$0.0000 lat=46.2s
+19:04:44 [+  54.5s] INFO  planner: chatgpt ok in=13982 out=209 reasoning=23 cost=$0.0000 lat=8.3s
+19:05:24 [+  95.0s] INFO  critic: kimi_pro ok in=15467 out=1437 reasoning=730 cost=$0.0000 lat=40.5s
+19:05:24 [+  95.0s] INFO  критика записана: autonomy\workspace\requests\MT-2026-11-13-literature-review-v3\run\outbox\critique.md
+19:05:24 [+  95.1s] INFO  критик: approve (раундов 2, замечаний 2)
+19:05:24 [+  95.1s] OK    план построен: 2 задач: collect-sources->MT-2026-11-13-literature-review-v3, answer-mentor->MT-2026-11-13-literature-review-v3
+19:05:25 [+  96.0s] STEP  EXECUTE задача=collect-sources
+19:05:25 [+  96.1s] INFO  summary: утверждённый протокол без LLM
+19:05:25 [+  96.1s] INFO  $ python -m autonomy.research "streaming captions smart glasses hearing impaired speaker attribution diarization research primary study product" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-0.md" --fresh
+19:05:32 [+ 103.2s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v3\sources-0.md (ссылок: 2)
+
+19:05:32 [+ 103.2s] INFO  $ python -m autonomy.research "Russian streaming ASR speaker attributed WER cpWER DER latency evaluation protocol datasets" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-1.md" --fresh
+19:05:38 [+ 109.0s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v3\sources-1.md (ссылок: 2)
+
+19:05:38 [+ 109.1s] INFO  $ python -m autonomy.research "streaming speaker attributed ASR end to end online offline diarization latency" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-2.md" --fresh
+19:05:47 [+ 117.5s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v3\sources-2.md (ссылок: 2)
+
+19:05:47 [+ 117.5s] INFO  $ python -m autonomy.research "audiovisual active speaker detection talking face audio video research captions accessibility" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-3.md" --fresh
+19:05:55 [+ 126.4s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v3\sources-3.md (ссылок: 2)
+
+19:05:55 [+ 126.4s] INFO  $ python -m autonomy.research "Russian streaming speech recognition models datasets benchmarks primary publication" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-4.md" --fresh
+19:06:18 [+ 148.8s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v3\sources-4.md (ссылок: 2)
+
+19:06:18 [+ 148.8s] INFO  $ python -m autonomy.research "streaming ASR diarization tools official documentation hardware requirements code model weights data licenses" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-5.md" --fresh
+19:06:23 [+ 154.3s] OK    rc=0: заметка: C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\workspace\requests\MT-2026-11-13-literature-review-v3\sources-5.md (ссылок: 2)
+
+19:06:23 [+ 154.4s] STEP  VERIFY задача=collect-sources
+19:06:24 [+ 154.7s] INFO  verify: pass=False (collect-sources-1794665184192656300-bc5a9097.json)
+19:06:24 [+ 154.7s] STEP  REPORT
+19:06:24 [+ 154.7s] OK    отчёт: autonomy\workspace\requests\MT-2026-11-13-literature-review-v3\run\outbox\reports\20261114.md (и report.md)
+19:06:24 [+ 154.7s] OK    ночь завершена: бюджет $0.000, задачи: collect-sources=pending, answer-mentor=pending

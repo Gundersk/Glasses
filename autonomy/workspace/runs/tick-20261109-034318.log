@@ -1,0 +1,24 @@
+03:43:18 [+   0.0s] STEP  PLAN
+03:43:18 [+   0.0s] OK    план загружен из night_plan.yaml: 2 задач
+03:43:18 [+   0.1s] STEP  EXECUTE задача=run-asr-streaming-benchmark
+03:48:23 [+ 304.9s] WARN  executor: local -> local: HTTP 502
+03:48:23 [+ 304.9s] WARN  local недоступен — жду до 25 мин (возможно, грузится модель)
+03:49:25 [+ 366.5s] OK    local ожил — повторяю вызов исполнителя
+03:54:30 [+ 671.2s] WARN  executor: local -> local: HTTP 502
+03:54:30 [+ 671.2s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTP 502
+03:59:46 [+ 987.7s] WARN  executor: local -> local: HTTP 502
+03:59:46 [+ 987.7s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTP 502
+04:04:53 [+1294.4s] WARN  executor: local -> local: HTTP 502
+04:04:53 [+1294.4s] ERROR фаза EXECUTE: executor: все провайдеры недоступны: local: local: HTTP 502
+04:04:53 [+1294.4s] STEP  REPAIR задача=run-asr-streaming-benchmark
+04:05:17 [+1319.0s] INFO  mentor: kimi_pro ok in=537 out=858 cost=$0.0000 lat=24.6s
+04:05:17 [+1319.0s] INFO  ментор: action=replan notes=Корень проблемы инфраструктурный, а не в логике задачи: локальный ASR-провайдер отдаёт HTTP 502, и исполнитель бессмысленно крутит ретраи. Бенчмарк до восстановления эндпоинта не запустить. Разбиваю н
+04:05:17 [+1319.0s] WARN  replan без tasks: текущая задача помечена failed, план не тронут
+04:05:17 [+1319.0s] STEP  EXECUTE задача=demo-screenshot
+04:07:48 [+1469.3s] INFO  executor: local ok in=1859 out=4240 cost=$0.0000 lat=148.8s
+04:11:18 [+1679.4s] INFO  executor: local ok in=1903 out=6047 cost=$0.0000 lat=208.6s
+04:11:18 [+1679.4s] WARN  demo-screenshot: исчерпаны итерации (2)
+04:11:18 [+1679.4s] STEP  REPORT
+04:11:29 [+1690.5s] INFO  reporter: gemini_free ok in=6305 out=815 cost=$0.0000 lat=11.1s
+04:11:29 [+1690.5s] OK    отчёт: autonomy\workspace\outbox\report.md
+04:11:29 [+1690.5s] OK    ночь завершена: бюджет $0.000, задачи: run-asr-streaming-benchmark=failed, demo-screenshot=failed

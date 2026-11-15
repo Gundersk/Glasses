@@ -1,0 +1,119 @@
+{
+  "closes": "LG-2026-11-13-05",
+  "captured_utc": "2026-11-13T18:05:11.876428+00:00",
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "runs": [
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "unittest",
+        "autonomy.tests.test_research_contract",
+        "autonomy.tests.test_intake",
+        "autonomy.tests.test_request_research",
+        "autonomy.tests.test_request_review_safety",
+        "autonomy.tests.test_request_partial",
+        "autonomy.tests.test_safety_gates",
+        "autonomy.tests.test_provider_contracts",
+        "autonomy.tests.test_evidence",
+        "autonomy.tests.test_subscription",
+        "autonomy.tests.test_source_selection",
+        "-v"
+      ],
+      "returncode": 0,
+      "log": "C:/Users/Yurgirus/Desktop/urfu/Поддержка талантов/OpenCodeGlasses/docs/audits/2026-11-13/fetch-fix-tests-00.log",
+      "log_sha256": "996181816406b300349b29df97bb4c3def2fa26e66100bb4a14579918e812290",
+      "unittest_count": 167
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_plan_approval.py"
+      ],
+      "returncode": 0,
+      "log": "C:/Users/Yurgirus/Desktop/urfu/Поддержка талантов/OpenCodeGlasses/docs/audits/2026-11-13/fetch-fix-tests-01.log",
+      "log_sha256": "57ef6af34020cc22d9d0c62ced27d3fbe1c582eb9f5daa9901e70c1844fdcecd"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_tick_budget.py"
+      ],
+      "returncode": 0,
+      "log": "C:/Users/Yurgirus/Desktop/urfu/Поддержка талантов/OpenCodeGlasses/docs/audits/2026-11-13/fetch-fix-tests-02.log",
+      "log_sha256": "b09add8161c281b5a1063cf30dba4318fba6880a3a214d8ebfe329e134a9fd93"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_critic_search.py"
+      ],
+      "returncode": 0,
+      "log": "C:/Users/Yurgirus/Desktop/urfu/Поддержка талантов/OpenCodeGlasses/docs/audits/2026-11-13/fetch-fix-tests-03.log",
+      "log_sha256": "31bc3c947f407fd11e411984bde3778eb98c7a91eef78d732c406b77fe0f9ce5"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_noise_manifest_merge.py"
+      ],
+      "returncode": 0,
+      "log": "C:/Users/Yurgirus/Desktop/urfu/Поддержка талантов/OpenCodeGlasses/docs/audits/2026-11-13/fetch-fix-tests-04.log",
+      "log_sha256": "f3eeaffb9b19f9acd79696a793625ea7e34e4cd3a9d5375a5d854825aef9cec7"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "autonomy/tests/test_shellutil_treekill.py"
+      ],
+      "returncode": 0,
+      "log": "C:/Users/Yurgirus/Desktop/urfu/Поддержка талантов/OpenCodeGlasses/docs/audits/2026-11-13/fetch-fix-tests-05.log",
+      "log_sha256": "e1d820d78ff56251adbb5eaf52f93e61c9f28bf8d6550d5b004e1903ccc4ffed"
+    }
+  ],
+  "runtime_before": {
+    "autonomy/workspace/STATE.json": "3b666e0194affd8202efc2afc4182591b26732fe4f93541133225017f2d5bb6d",
+    "autonomy/workspace/night_plan.yaml": "63cb80984b0f4dff5f09c9a33a0b3faf6cf00814dcb62f816c4381dc90f2260a",
+    "autonomy/workspace/events.jsonl": "b500f0f40bcb08462ab4f2757e352a157fa851f9fcfb57f04ba022c4f588e669",
+    "autonomy/goals.yaml": "4fd59d6977da8f8e5e7c704abba2ac90edb2a97174d157fdb90a1246fd87f67e",
+    "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/request.json": "85f25c756d359124c26553490f3c3c95038645d1f64899b558371aac5176302e",
+    "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/run/STATE.json": "1b63427447df1584b3a9950f5c2b9f6c59fb23880d9c94b2f6a5bbc934f4acd5"
+  },
+  "runtime_after": {
+    "autonomy/workspace/STATE.json": "3b666e0194affd8202efc2afc4182591b26732fe4f93541133225017f2d5bb6d",
+    "autonomy/workspace/night_plan.yaml": "63cb80984b0f4dff5f09c9a33a0b3faf6cf00814dcb62f816c4381dc90f2260a",
+    "autonomy/workspace/events.jsonl": "b500f0f40bcb08462ab4f2757e352a157fa851f9fcfb57f04ba022c4f588e669",
+    "autonomy/goals.yaml": "4fd59d6977da8f8e5e7c704abba2ac90edb2a97174d157fdb90a1246fd87f67e",
+    "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/request.json": "85f25c756d359124c26553490f3c3c95038645d1f64899b558371aac5176302e",
+    "autonomy/workspace/requests/MT-2026-11-13-literature-review-v1/run/STATE.json": "1b63427447df1584b3a9950f5c2b9f6c59fb23880d9c94b2f6a5bbc934f4acd5"
+  },
+  "runtime_unchanged": true,
+  "code_sha256": {
+    "autonomy/research.py": "818ec00216c2ce66645a163ef93d6276821a8b5c23c1f36d1c2e942f905cb8d3",
+    "autonomy/runner.py": "92cf8257aae4df7f5ff3a3c4c1c223ca8516ab7c9687a00af48ffb957cc2504e",
+    "autonomy/tests/test_research_contract.py": "286530730cd9e7c28b2026db5793bcdcfed903f821832313a65f095da384895d",
+    "autonomy/tests/test_intake.py": "704ea965bc88a63e9a414ee7628674f8b42d8aa655649e6d4ca445267386032b"
+  },
+  "live_smoke": {
+    "urls": [
+      "https://huggingface.co/t-tech/T-one",
+      "https://arxiv.org/abs/2203.16685",
+      "https://www.jstage.jst.go.jp/article/comex/14/7/14_2025XBL0042/_article/-char/en"
+    ],
+    "requested": 3,
+    "accepted": 3,
+    "text_lengths": [
+      7492,
+      4372,
+      2451
+    ],
+    "elapsed_seconds": 3.25,
+    "end_to_end_persistence_chars": 7492,
+    "search": "mocked for persistence check; no thematic search",
+    "limitation": "single live run, not proof of reliability or correct extraction on all sites"
+  },
+  "limitations": [
+    "No mentor request, night, preflight or supervisor executed",
+    "Exa not integrated: subprocess cost must be budgeted first"
+  ]
+}

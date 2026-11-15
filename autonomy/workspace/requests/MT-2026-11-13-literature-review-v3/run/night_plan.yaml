@@ -1,0 +1,129 @@
+- goal_id: MT-2026-11-13-literature-review-v3
+  closes: roadmap:этап1-шаг2
+  max_iter: 1
+  status: pending
+  request_sha256: b8c4360804baf2c2e54badb2d464a5ad4e20d8b197f1bacd585d9422f66b953d
+  id: collect-sources
+  goal: Проверить актуальные внешние источники по заданию
+  kind: research
+  execution: approved_commands
+  commands:
+  - python -m autonomy.research "streaming captions smart glasses hearing impaired
+    speaker attribution diarization research primary study product" --max-pages 2
+    --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-0.md"
+    --fresh
+  - python -m autonomy.research "Russian streaming ASR speaker attributed WER cpWER
+    DER latency evaluation protocol datasets" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-1.md"
+    --fresh
+  - python -m autonomy.research "streaming speaker attributed ASR end to end online
+    offline diarization latency" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-2.md"
+    --fresh
+  - python -m autonomy.research "audiovisual active speaker detection talking face
+    audio video research captions accessibility" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-3.md"
+    --fresh
+  - python -m autonomy.research "Russian streaming speech recognition models datasets
+    benchmarks primary publication" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-4.md"
+    --fresh
+  - python -m autonomy.research "streaming ASR diarization tools official documentation
+    hardware requirements code model weights data licenses" --max-pages 2 --out "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-5.md"
+    --fresh
+  inputs:
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/request.json
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/context.md
+  - docs/agent-context.md
+  - docs/scope.md
+  - docs/benchmarks.md
+  - docs/roadmap-changes.md
+  - docs/environment.md
+  - STATUS.md
+  - docs/local-goals.md
+  - docs/literature-review-2026-11.md
+  - docs/sources.md
+  - experiments/engine_choice.md
+  - reports/analytics-note-2026-11.md
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/run/research-plan-01.json
+  time_limit_minutes: 10
+  acceptance:
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-0.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-0.md.json
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-1.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-1.md.json
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-2.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-2.md.json
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-3.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-3.md.json
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-4.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-4.md.json
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-5.md
+  - file_exists: autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-5.md.json
+  time_budget:
+    lane: sources
+    scope: shared_request_lane
+    allowed_seconds: 600.0
+  hint: ''
+- goal_id: MT-2026-11-13-literature-review-v3
+  closes: roadmap:этап1-шаг2
+  max_iter: 2
+  status: pending
+  request_sha256: b8c4360804baf2c2e54badb2d464a5ad4e20d8b197f1bacd585d9422f66b953d
+  id: answer-mentor
+  kind: documentation
+  execution: document_only
+  goal: 'Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей
+    теме до Вас.
+
+
+    Тогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.'
+  inputs:
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/request.json
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/context.md
+  - docs/agent-context.md
+  - docs/scope.md
+  - docs/benchmarks.md
+  - docs/roadmap-changes.md
+  - docs/environment.md
+  - STATUS.md
+  - docs/local-goals.md
+  - docs/literature-review-2026-11.md
+  - docs/sources.md
+  - experiments/engine_choice.md
+  - reports/analytics-note-2026-11.md
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/run/research-plan-01.json
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-0.md
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-0.md.json
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-1.md
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-1.md.json
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-2.md
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-2.md.json
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-3.md
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-3.md.json
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-4.md
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-4.md.json
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-5.md
+  - autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-5.md.json
+  depends_on:
+  - collect-sources
+  time_limit_minutes: 15
+  hint: 'Писать только response.md, claims.json, decision.json в reports/mentor/MT-2026-11-13-literature-review-v3.
+    claims: список {id, claim, status:supported|unverified, source_url, quote, evidence_file}.
+    supported — точная цитата из sources-*.md.json, не из памяти. decision: {roadmap_change:boolean,
+    report_change:boolean, reason, trigger, options:[no_change,...], owner_actions:[...]}.
+    При roadmap_change нужен trigger и минимум один supported claim; не менять канонические
+    документы. В response.md ссылаться на claim id и URL, разделять источник/измерено/план;
+    дать ответ по каждому requirements карточки и ограничения поиска. Обязательная
+    матрица decision.coverage: [{topic: точная тема research_policy.topics, claim_ids:
+    [ID подтверждённых утверждений]}], по записи на каждую тему. Минимумы разных URL/доменов
+    берутся из research_policy; количество не доказывает полноту. Если источников
+    не хватает, не выдумывай цитаты: decision.completion_status=partial, limitations=[причины/что
+    не проверено], по каждой непокрытой теме claim_ids=[] и gap=причина. В response.md
+    явно напиши ЧАСТИЧНЫЙ РЕЗУЛЬТАТ и перечисли ограничения. Это сохранение материала,
+    не выполнение задания; полный исход completion_status=complete.'
+  acceptance:
+  - file_exists: reports/mentor/MT-2026-11-13-literature-review-v3/response.md
+  - file_exists: reports/mentor/MT-2026-11-13-literature-review-v3/claims.json
+  - file_exists: reports/mentor/MT-2026-11-13-literature-review-v3/decision.json
+  - command: python -m autonomy.intake check MT-2026-11-13-literature-review-v3
+  time_budget:
+    lane: answer
+    scope: shared_request_lane
+    allowed_seconds: 900.0

@@ -1,0 +1,121 @@
+{
+  "night_id": "20261114",
+  "started": "2026-11-14 21:05",
+  "finished": "2026-11-14 21:09",
+  "tasks": [
+    {
+      "id": "collect-sources",
+      "goal_id": "MT-2026-11-14-literature-review-v6",
+      "status": "failed",
+      "verify_pass": null,
+      "checks_ok": 0,
+      "checks_total": 0,
+      "artifacts": [],
+      "last_error": null,
+      "verify_file": null,
+      "receipt": null,
+      "evidence_level": "file_only_or_legacy"
+    },
+    {
+      "id": "answer-mentor",
+      "goal_id": "MT-2026-11-14-literature-review-v6",
+      "status": "pending",
+      "verify_pass": null,
+      "checks_ok": 0,
+      "checks_total": 0,
+      "artifacts": [],
+      "last_error": null,
+      "verify_file": null,
+      "receipt": null,
+      "evidence_level": "file_only_or_legacy"
+    }
+  ],
+  "budget_usd": 0.0,
+  "calls_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "attempts_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "violations": [],
+  "last_error": null,
+  "needs_human": "ответ не создаётся: сбор источников не принят",
+  "lessons": [],
+  "plan_file": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/run/night_plan.yaml",
+  "goals_file": "autonomy/workspace/requests/MT-2026-11-14-literature-review-v6/run/goals.yaml",
+  "request_id": "MT-2026-11-14-literature-review-v6",
+  "request_sha256": "25ddc289b8acb58b41950972ea2a644e145a9bae6cc01a352785cf9797039357",
+  "request_outcome": "blocked",
+  "request_gaps": [],
+  "request_limitations": [],
+  "request_limits": {
+    "schema_version": 1,
+    "counts": {
+      "queries": {
+        "allowed": 6,
+        "used": 2,
+        "remaining": 4,
+        "planned": 3,
+        "unplanned_capacity": 3
+      },
+      "plan_revisions": {
+        "allowed": 1,
+        "used": 1,
+        "remaining": 0
+      },
+      "followup_rounds": {
+        "allowed": 1,
+        "used": 0,
+        "remaining": 1
+      },
+      "answer_attempts": {
+        "allowed": 2,
+        "used": 0,
+        "remaining": 2
+      }
+    },
+    "time": {
+      "sources": {
+        "allowed_seconds": 600.0,
+        "used_seconds": 34.639999999984866,
+        "remaining_seconds": 565.3600000000151,
+        "scope": "shared across all collection tasks"
+      },
+      "answer": {
+        "allowed_seconds": 900.0,
+        "used_seconds": 0.0,
+        "remaining_seconds": 900.0,
+        "scope": "shared across all answer attempts"
+      },
+      "work_total": {
+        "allowed_seconds": 1500.0,
+        "used_seconds": 34.639999999984866,
+        "remaining_seconds": 1465.3600000000151
+      },
+      "coordinator": {
+        "allowed_seconds": 3000.0,
+        "scope": "wall active excluding subscription wait, includes planning/review/verification"
+      }
+    },
+    "subscription_wait_seconds": 0.0
+  },
+  "goals": {
+    "global": "Ответить на задание в контексте проекта",
+    "stage": "request",
+    "stage_deadline": "not_assigned_by_owner",
+    "stage_closed": false,
+    "targets": [
+      {
+        "id": "MT-2026-11-14-literature-review-v6",
+        "kind": "local",
+        "text": "Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей теме до Вас.\n\nТогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.",
+        "status": "open",
+        "evidence": [],
+        "nights_without_progress": 1,
+        "blocked_reason": null
+      }
+    ]
+  }
+}

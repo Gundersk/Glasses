@@ -1,0 +1,39 @@
+{
+  "task_id": "asr-benchmark-script",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/asr_benchmark.py"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "command": "python experiments/asr_benchmark.py --help"
+      },
+      "ok": true,
+      "detail": "rc=0 err="
+    }
+  ],
+  "ts": "2026-11-09 02:45:07",
+  "diff": {
+    "added": [
+      "autonomy/screenshot.py",
+      "autonomy/workspace/test_page.html",
+      "autonomy/workspace/test_shot.png",
+      "experiments/asr_benchmark.py"
+    ],
+    "modified": [
+      "autonomy/prompts.py",
+      "autonomy/runner.py",
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

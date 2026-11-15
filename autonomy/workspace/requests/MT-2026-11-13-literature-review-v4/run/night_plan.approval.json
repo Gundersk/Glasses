@@ -1,0 +1,11 @@
+{
+ "version": 3,
+ "mock": false,
+ "raw_ok": true,
+ "context_sha256": "6f516cf1c3fa332467cc3ea53bec6798ea2410033be82192edb3437fbe91de31",
+ "verdict": "approve",
+ "sha256": "c3603de3a6d7cc3b42bd4314e3d904ccfc6d2bcb69469eccf8c11de52d337ecd",
+ "rounds": 1,
+ "searches": [],
+ "ts": 1794666027.4148161
+}

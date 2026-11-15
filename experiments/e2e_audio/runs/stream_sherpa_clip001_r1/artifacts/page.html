@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Субтитры: sherpa</title><style>
+html,body{margin:0;height:100%;background:#10141a;color:#f2f2f2;font-family:'Segoe UI',Arial,sans-serif}
+header{padding:18px 40px;font-size:22px;color:#8fa3b8;border-bottom:1px solid #26303c}
+#subs{padding:40px;display:flex;flex-direction:column;gap:22px}
+.subtitle{font-size:44px;line-height:1.25;font-weight:600;min-height:55px}
+.subtitle-final{color:#ffffff}
+.subtitle-partial{color:#7fd0ff;font-style:italic}
+footer{position:fixed;left:40px;bottom:16px;font-size:16px;color:#5d6e80}
+</style></head><body>
+<header>Субтитры в реальном времени · движок: sherpa · прогон: stream_sherpa_clip001_r1</header>
+<div id="subs">
+<div class="subtitle subtitle-final">мадагаскар намного больше других и является самобытным континентом в том что касается дикой природы</div>
+<div class="subtitle subtitle-partial"></div>
+</div>
+<footer><span id="st">прогон завершён, t=12.521 с</span></footer>
+<script>
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function render(st){
+  var f=st.finals.slice(-4), h='';
+  for(var i=0;i<f.length;i++){h+='<div class="subtitle subtitle-final">'+esc(f[i])+'</div>';}
+  h+='<div class="subtitle subtitle-partial">'+esc(st.partial||'')+'</div>';
+  document.getElementById('subs').innerHTML=h;
+  document.getElementById('st').textContent=(st.done?'прогон завершён':'идёт приём')+', t='+st.t+' с';
+}
+function tick(){fetch('/state',{cache:'no-store'}).then(function(r){return r.json();}).then(render).catch(function(){});}
+setInterval(tick,300);
+</script>
+</body></html>

@@ -1,0 +1,69 @@
+{
+  "closes": "LG-2026-11-14-01",
+  "created": "2026-11-14T15:42:40.165163+05:00",
+  "scope": "offline tests; network/model requests mocked except local process timeout fixture",
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "autonomy/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "log": "chat2api-tests-0.log",
+      "sha256": "54b5d7fd9a807d669de5f86b43d48545d41ca69ee569a91db5b8a26e0ee014df"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_critic_search.py"
+      ],
+      "returncode": 0,
+      "log": "chat2api-tests-1.log",
+      "sha256": "55b41b96b89a8a54c6a86ee89e7496b1db3777cee1b783f948cb149b58fb7fe4"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_noise_manifest_merge.py"
+      ],
+      "returncode": 0,
+      "log": "chat2api-tests-2.log",
+      "sha256": "5039278e368bde630b710206f6ede3675be078c96f7a10a407fa630cc7d70b7f"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_plan_approval.py"
+      ],
+      "returncode": 0,
+      "log": "chat2api-tests-3.log",
+      "sha256": "f848689e54605f7b571f2f54b2463e3cf9001cd64a480e44d9eec3c5d9759557"
+    },
+    {
+      "command": [
+        "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\.venv\\Scripts\\python.exe",
+        "autonomy/tests/test_tick_budget.py"
+      ],
+      "returncode": 0,
+      "log": "chat2api-tests-4.log",
+      "sha256": "8ced8ddb8ba536f1941f1763498eef1cbda02171d86558c967459ff685f90a3d"
+    }
+  ],
+  "source_sha256": {
+    "autonomy/browser_gateway.py": "8312c8dfaa6f36d80d48354af2a3309066aa1cb92d9598974657bc6b6b9cda3b",
+    "autonomy/browser_models.yaml": "5f6c26029945fd779323a54f6360820e1f1e9e537692efe9ea85f7198c16b777",
+    "autonomy/assist.py": "a203da2ab16e8b3c22d598a59a5408dd61680ea8eaa4e58b8e7e66f3cc81f19a",
+    "autonomy/router.py": "07e98e7a74a3139d90b23a0953d9bffddd0618a2ba1ca56f1ca603bd262b79d9",
+    "autonomy/providers.py": "4ef798d1cca9fa593ade7b8a3dcecac9a161af33af5ed152a86c4a7a200e725c",
+    "autonomy/config.yaml": "4829a62e8ef1c73b3c1c855a13ac050818041b9eec6174494184a129d0a9ac8e",
+    "autonomy/tests/test_browser_gateway.py": "8b95153e9d76f7200488054d816da3b3b991ed2f2b5f9ba47218c4f6c6825424",
+    "autonomy/tests/test_assist.py": "331b68fcae4080d0bdda2de3ba9174e5673afbc03e11bc0a23ea802e73505191"
+  }
+}

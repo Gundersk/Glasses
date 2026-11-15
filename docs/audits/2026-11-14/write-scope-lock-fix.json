@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-14",
+  "closes": "roadmap:этап1-шаг2",
+  "defect": "MT-2026-11-13-literature-review-v3: единственный FAIL write_scope для служебного autonomy/workspace/.lock",
+  "fix": "manifest.snapshot исключает только точный PROJECT_ROOT/autonomy/workspace/.lock; другие .lock и контрактные файлы остаются в diff",
+  "files": {
+    "autonomy/manifest.py": "ca6495a752e36215349031a393774c8aa08196c2bedbcb252f756cb7ff38b4ed",
+    "autonomy/tests/test_evidence.py": "a70222f0724e12d9f8ffe09c2ba05bcbde4ebbe89ddc24fff6f8437db4d9e692",
+    "docs/audits/2026-11-14/write-scope-lock-tests.log": "0d00a6ae30a5c8fcd28cac310171f76f7e9294e9fad14d828f428d8620030526"
+  },
+  "test_command": ".venv\\Scripts\\python.exe -m unittest autonomy.tests.test_evidence autonomy.tests.test_safety_gates autonomy.tests.test_intake -v",
+  "result": {
+    "tests": 60,
+    "status": "OK",
+    "seconds": 1.871
+  },
+  "reviewer": {
+    "session": "ses_e259a8396ffeOAD65Spqy3J9FU",
+    "verdict": "PASS",
+    "scope": "только статическая проверка исправления и регрессионного теста"
+  },
+  "limitations": [
+    "Старый вердикт v3 не изменён и не пересматривался.",
+    "Новый request run, поиск, tick, preflight и супервизор не запускались.",
+    "Тесты подтверждают только исправление write_scope, не качество литературного обзора."
+  ]
+}

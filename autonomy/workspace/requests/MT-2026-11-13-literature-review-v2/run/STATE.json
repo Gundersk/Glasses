@@ -1,0 +1,200 @@
+{
+  "night_id": "20261113",
+  "phase": "DONE",
+  "task": null,
+  "tasks": [
+    {
+      "goal_id": "MT-2026-11-13-literature-review-v2",
+      "closes": "roadmap:этап1-шаг2",
+      "max_iter": 1,
+      "status": "pending",
+      "request_sha256": "867f84d0e9c53f8ed90e2780075cb58686ca0eb0362584e08236490436bc6293",
+      "id": "collect-sources",
+      "goal": "Проверить актуальные внешние источники по заданию",
+      "kind": "research",
+      "execution": "approved_commands",
+      "commands": [
+        "python -m autonomy.research \"streaming captions smart glasses hearing impaired speaker attribution diarization research\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-0.md\" --fresh",
+        "python -m autonomy.research \"Russian streaming speech recognition speaker diarization WER DER latency\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-1.md\" --fresh",
+        "python -m autonomy.research \"streaming speaker attributed ASR end to end online diarization latency\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-2.md\" --fresh",
+        "python -m autonomy.research \"audio visual active speaker detection speaker attribution subtitles benchmark research paper\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-3.md\" --fresh",
+        "python -m autonomy.research \"sherpa-onnx Vosk official documentation license code model weights CPU hardware requirements\" --max-pages 2 --out \"autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-4.md\" --fresh"
+      ],
+      "inputs": [
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/request.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/context.md",
+        "docs/agent-context.md",
+        "docs/scope.md",
+        "docs/benchmarks.md",
+        "docs/roadmap-changes.md",
+        "docs/environment.md",
+        "STATUS.md",
+        "docs/local-goals.md",
+        "docs/literature-review-2026-11.md",
+        "docs/sources.md",
+        "experiments/engine_choice.md",
+        "reports/analytics-note-2026-11.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/run/research-plan-01.json"
+      ],
+      "time_limit_minutes": 10,
+      "acceptance": [
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-0.md"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-0.md.json"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-1.md"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-1.md.json"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-2.md"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-2.md.json"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-3.md"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-3.md.json"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-4.md"
+        },
+        {
+          "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-4.md.json"
+        }
+      ],
+      "hint": ""
+    },
+    {
+      "goal_id": "MT-2026-11-13-literature-review-v2",
+      "closes": "roadmap:этап1-шаг2",
+      "max_iter": 2,
+      "status": "pending",
+      "request_sha256": "867f84d0e9c53f8ed90e2780075cb58686ca0eb0362584e08236490436bc6293",
+      "id": "answer-mentor",
+      "kind": "documentation",
+      "execution": "document_only",
+      "goal": "Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей теме до Вас.\n\nТогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.",
+      "inputs": [
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/request.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/context.md",
+        "docs/agent-context.md",
+        "docs/scope.md",
+        "docs/benchmarks.md",
+        "docs/roadmap-changes.md",
+        "docs/environment.md",
+        "STATUS.md",
+        "docs/local-goals.md",
+        "docs/literature-review-2026-11.md",
+        "docs/sources.md",
+        "experiments/engine_choice.md",
+        "reports/analytics-note-2026-11.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/run/research-plan-01.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-0.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-0.md.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-1.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-1.md.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-2.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-2.md.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-3.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-3.md.json",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-4.md",
+        "autonomy/workspace/requests/MT-2026-11-13-literature-review-v2/sources-4.md.json"
+      ],
+      "depends_on": [
+        "collect-sources"
+      ],
+      "time_limit_minutes": 15,
+      "hint": "Писать только response.md, claims.json, decision.json в reports/mentor/MT-2026-11-13-literature-review-v2. claims: список {id, claim, status:supported|unverified, source_url, quote, evidence_file}. supported — точная цитата из sources-*.md.json, не из памяти. decision: {roadmap_change:boolean, report_change:boolean, reason, trigger, options:[no_change,...], owner_actions:[...]}. При roadmap_change нужен trigger и минимум один supported claim; не менять канонические документы. В response.md ссылаться на claim id и URL, разделять источник/измерено/план; дать ответ по каждому requirements карточки и ограничения поиска. Обязательная матрица decision.coverage: [{topic: точная тема research_policy.topics, claim_ids: [ID подтверждённых утверждений]}], по записи на каждую тему. Минимумы разных URL/доменов берутся из research_policy; количество не доказывает полноту. Если источников не хватает, не выдумывай цитаты: decision.completion_status=partial, limitations=[причины/что не проверено], по каждой непокрытой теме claim_ids=[] и gap=причина. В response.md явно напиши ЧАСТИЧНЫЙ РЕЗУЛЬТАТ и перечисли ограничения. Это сохранение материала, не выполнение задания; полный исход completion_status=complete.",
+      "acceptance": [
+        {
+          "file_exists": "reports/mentor/MT-2026-11-13-literature-review-v2/response.md"
+        },
+        {
+          "file_exists": "reports/mentor/MT-2026-11-13-literature-review-v2/claims.json"
+        },
+        {
+          "file_exists": "reports/mentor/MT-2026-11-13-literature-review-v2/decision.json"
+        },
+        {
+          "command": "python -m autonomy.intake check MT-2026-11-13-literature-review-v2"
+        }
+      ]
+    }
+  ],
+  "iter": 0,
+  "budget_used_usd": 0.0,
+  "calls_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "history": [],
+  "violations": [],
+  "last_error": null,
+  "manager_context": null,
+  "goal_bump_night": "20261113",
+  "needs_human": "план не одобрен критиком: План в целом соответствует карточке: 5 запросов в пределах бюджета 6, явное обращение с частичным результатом, coverage-матрица по research_policy.topics, лимиты владельца не расширяются. Но есть два high: слабое покрытие темы 5 (метрики/датасеты/определения сопоставимости) при нулевых followup-раундах и расхождение суммарного лимита времени плана (25 мин) с time_limit_minutes=15 карточки.",
+  "lessons_admitted": [],
+  "updated": 1794593606.1333067,
+  "night_started_ts": 1794593399.403338,
+  "provider_fails": {
+    "kimi_pro": 0,
+    "chatgpt": 0
+  },
+  "attempts_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "attempts_night": "20261113",
+  "last_model_by_role": {
+    "critic": "kimi-for-coding",
+    "planner": "gpt-6.1-terra"
+  },
+  "subscription_run_id": "c1cb91b78e674653942fb1454ffaef8c",
+  "plan_author_model": "gpt-6.1-terra",
+  "critique": {
+    "verdict": "revise",
+    "summary": "План в целом соответствует карточке: 5 запросов в пределах бюджета 6, явное обращение с частичным результатом, coverage-матрица по research_policy.topics, лимиты владельца не расширяются. Но есть два high: слабое покрытие темы 5 (метрики/датасеты/определения сопоставимости) при нулевых followup-раундах и расхождение суммарного лимита времени плана (25 мин) с time_limit_minutes=15 карточки.",
+    "objections": [
+      {
+        "task_id": "collect-sources",
+        "severity": "high",
+        "issue": "Тема 5 research_policy («Метрики, датасеты и условия корректного сравнения качества, задержки и вычислительных затрат») и requirements[5] требуют определений и условий WER, speaker-attributed/multitalker WER, DER, задержки и ресурсов. Ни один из 5 запросов не нацелен на определения метрик и датасеты: q2/q3 содержат только ключевые слова WER/DER/latency, что типично возвращает статьи с числами, а н",
+        "fix": "Использовать 6-й запрос под тему 5, например: \"speaker attributed WER cpWER DER NIST RT definition benchmark datasets evaluation conditions latency measurement protocol\" --max-pages 2, либо переформулировать q3, добавив туда \"benchmark datasets metrics cpWER DER evaluation\". Не расширять лимиты сверх карточки."
+      },
+      {
+        "task_id": "answer-mentor",
+        "severity": "high",
+        "issue": "Карточка фиксирует time_limit_minutes=15 (а requirements говорят, что лимиты общие на сбор, обе попытки ответа и доработки), при этом суммарный лимит задач плана 10+15=25 минут. Если 15 минут — обязательный потолок всего run, план его нарушает; если это внутренний пер-attempt лимит, в плане это нигде не зафиксировано.",
+        "fix": "Привести суммарные time_limit_minutes в соответствие карточке (например, collect-sources 7 + answer-mentor 8 с учётом двух попыток) либо явно записать в план/описание run, что time_limit_minutes=15 карточки трактуется иначе и получить подтверждение владельца, поскольку поручение и лимиты неизменяемы односторонне."
+      },
+      {
+        "task_id": "answer-mentor",
+        "severity": "low",
+        "issue": "Acceptance проверяет только существование response.md/claims.json/decision.json и rc команды intake check; обязательная проверка точных цитат (supported только из sources-*.md.json), наличие decision.coverage по всем 6 темам и корректный partial-исход находятся только в hint. Если intake check не валидирует coverage/цитаты, acceptance формально пройдёт при пустом или неподтверждённом обзоре.",
+        "fix": "Убедиться, что `python -m autonomy.intake check MT-2026-11-13-literature-review-v2` валидирует: наличие coverage по каждой теме research_policy.topics, ссылки claim→URL→цитату из сохранённых .json, и completion_status partial с limitations при нехватке источников. Если не валидирует — усилить acceptance конкретными проверками claims.json."
+      }
+    ],
+    "defense_value": [
+      {
+        "task_id": "collect-sources",
+        "verdict": "covers",
+        "why": "Собранные источники с URL, цитатами и датами — доказательная база для сравнения с аналогами (roadmap:этап1-шаг2) и для материалов ежемесячного отчёта; напрямую обслуживает обязательство «сравнить 2–3 инструмента, лицензии, требования к оборудованию»."
+      },
+      {
+        "task_id": "answer-mentor",
+        "verdict": "adds",
+        "why": "Черновик обзора с матрицей «класс решения → работа → первоисточник → пробел» и связкой с docs/benchmarks.md — готовый материал для аналитической записки и будущего раздела отчёта о предшествующих работах; claims.json даёт проверяемую трассировку каждого внешнего утверждения."
+      }
+    ],
+    "searches": [],
+    "rounds": 2,
+    "model_answered": true
+  }
+}

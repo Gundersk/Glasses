@@ -1,0 +1,18 @@
+{
+  "layer": 2,
+  "kind": "screenshot",
+  "pass": false,
+  "values": {
+    "path": "experiments\\e2e_audio\\runs\\stream_vosk_clip001_r2\\artifacts\\screenshot.png"
+  },
+  "checks": [
+    {
+      "name": "file_exists",
+      "ok": false,
+      "expected": "file",
+      "actual": "missing",
+      "detail": "experiments\\e2e_audio\\runs\\stream_vosk_clip001_r2\\artifacts\\screenshot.png"
+    }
+  ],
+  "created": "2026-11-09T19:32:55.653692+05:00"
+}

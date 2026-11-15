@@ -1,0 +1,30 @@
+{
+  "task_id": "demo-screenshot",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/web_demo/screenshots/ui.png"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    }
+  ],
+  "ts": "2026-11-09 04:31:33",
+  "diff": {
+    "added": [
+      "experiments/web_demo/capture_ui.py",
+      "experiments/web_demo/results/metrics.json",
+      "experiments/web_demo/screenshots/ui.png"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

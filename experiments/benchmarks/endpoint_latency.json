@@ -1,0 +1,65 @@
+{
+  "method": "Endpointing latency: audio-seconds of silence consumed between end-of-speech and Vosk emitting the final segment. Lower bound on the wait a user perceives AFTER finishing a sentence. Excludes chunk compute time (see asr_benchmark p50=13ms) and network/browser transport. Synthetic TTS speech, not live.",
+  "n_finals": 8,
+  "p50_ms": 509.0,
+  "p95_ms": 994.9,
+  "finals": [
+    {
+      "i": 0,
+      "text": "сегодня мы проверяем систему субтитров для умных очков",
+      "endpointing_ms": 474.0
+    },
+    {
+      "i": 1,
+      "text": "собеседник говорит про погоду и про встречу в университете",
+      "endpointing_ms": 302.0
+    },
+    {
+      "i": 2,
+      "text": "задержка распознавания должна быть небольшой чтобы человек успевал читать текст",
+      "endpointing_ms": 1046.0
+    },
+    {
+      "i": 3,
+      "text": "первые говорящие задаёт вопрос о расписание занятий",
+      "endpointing_ms": 556.0
+    },
+    {
+      "i": 4,
+      "text": "второй собеседник отвечает что лекция начнётся в десять утра",
+      "endpointing_ms": 394.0
+    },
+    {
+      "i": 5,
+      "text": "затем первое уточняет номера аудитории и этаж корпуса",
+      "endpointing_ms": 900.0
+    },
+    {
+      "i": 6,
+      "text": "в конце они договариваются встретятся у входа в библиотеку",
+      "endpointing_ms": 348.0
+    },
+    {
+      "i": 7,
+      "text": "такое диалог позволяет проверить качество потокового распознавания русской речи",
+      "endpointing_ms": 544.0
+    }
+  ],
+  "speech_end_times_s": [
+    4.776,
+    10.448,
+    17.704,
+    22.944,
+    28.856,
+    34.6,
+    40.152,
+    47.456
+  ],
+  "gap_s": 0.8,
+  "chunk_frames": 4000,
+  "audio": "experiments/data/speech_paced.wav",
+  "model": "models/vosk-model-small-ru-0.22",
+  "sample_rate": 16000,
+  "wallclock_s": 6.52,
+  "time": "2026-11-09T05:13:20+0500"
+}

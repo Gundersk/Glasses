@@ -1,0 +1,127 @@
+{
+  "night_id": "20261114",
+  "started": "2026-11-14 19:03",
+  "finished": "2026-11-14 19:06",
+  "tasks": [
+    {
+      "id": "collect-sources",
+      "goal_id": "MT-2026-11-13-literature-review-v3",
+      "status": "pending",
+      "verify_pass": null,
+      "checks_ok": 0,
+      "checks_total": 0,
+      "artifacts": [],
+      "last_error": null,
+      "verify_file": null,
+      "receipt": null,
+      "evidence_level": "file_only_or_legacy"
+    },
+    {
+      "id": "answer-mentor",
+      "goal_id": "MT-2026-11-13-literature-review-v3",
+      "status": "pending",
+      "verify_pass": null,
+      "checks_ok": 0,
+      "checks_total": 0,
+      "artifacts": [],
+      "last_error": null,
+      "verify_file": null,
+      "receipt": null,
+      "evidence_level": "file_only_or_legacy"
+    }
+  ],
+  "budget_usd": 0.0,
+  "calls_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "attempts_by_provider": {
+    "kimi_pro": 2,
+    "chatgpt": 1
+  },
+  "violations": [
+    {
+      "task": "collect-sources",
+      "kind": "changed_out_of_scope",
+      "path": "autonomy/workspace/.lock"
+    }
+  ],
+  "last_error": null,
+  "needs_human": "обнаружены изменения вне разрешённых путей; требуется проверка владельца",
+  "lessons": [],
+  "plan_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/run/night_plan.yaml",
+  "goals_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/run/goals.yaml",
+  "request_id": "MT-2026-11-13-literature-review-v3",
+  "request_sha256": "b8c4360804baf2c2e54badb2d464a5ad4e20d8b197f1bacd585d9422f66b953d",
+  "request_outcome": "blocked",
+  "request_gaps": [],
+  "request_limitations": [],
+  "request_limits": {
+    "schema_version": 1,
+    "counts": {
+      "queries": {
+        "allowed": 6,
+        "used": 6,
+        "remaining": 0,
+        "planned": 6,
+        "unplanned_capacity": 0
+      },
+      "plan_revisions": {
+        "allowed": 1,
+        "used": 1,
+        "remaining": 0
+      },
+      "followup_rounds": {
+        "allowed": 1,
+        "used": 0,
+        "remaining": 1
+      },
+      "answer_attempts": {
+        "allowed": 2,
+        "used": 0,
+        "remaining": 2
+      }
+    },
+    "time": {
+      "sources": {
+        "allowed_seconds": 600.0,
+        "used_seconds": 58.124000000039814,
+        "remaining_seconds": 541.8759999999602,
+        "scope": "shared across all collection tasks"
+      },
+      "answer": {
+        "allowed_seconds": 900.0,
+        "used_seconds": 0.0,
+        "remaining_seconds": 900.0,
+        "scope": "shared across all answer attempts"
+      },
+      "work_total": {
+        "allowed_seconds": 1500.0,
+        "used_seconds": 58.124000000039814,
+        "remaining_seconds": 1441.8759999999602
+      },
+      "coordinator": {
+        "allowed_seconds": 3000.0,
+        "scope": "wall active excluding subscription wait, includes planning/review/verification"
+      }
+    },
+    "subscription_wait_seconds": 0.0
+  },
+  "goals": {
+    "global": "Ответить на задание в контексте проекта",
+    "stage": "request",
+    "stage_deadline": "not_assigned_by_owner",
+    "stage_closed": false,
+    "targets": [
+      {
+        "id": "MT-2026-11-13-literature-review-v3",
+        "kind": "local",
+        "text": "Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей теме до Вас.\n\nТогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.",
+        "status": "open",
+        "evidence": [],
+        "nights_without_progress": 1,
+        "blocked_reason": null
+      }
+    ]
+  }
+}

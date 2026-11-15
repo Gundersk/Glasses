@@ -1,0 +1,49 @@
+{
+  "task_id": "monthly-report-preparation",
+  "pass": false,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "docs/report-2026-11.md"
+      },
+      "ok": false,
+      "detail": "exists=False"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "docs/report-2026-11.md",
+          "WER"
+        ]
+      },
+      "ok": false,
+      "detail": "error: [Errno 2] No such file or directory: 'C:\\\\Users\\\\Yurgirus\\\\Desktop\\\\urfu\\\\Поддержка талантов\\\\OpenCodeGlasses\\\\docs\\\\report-2026-11.md'"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "docs/report-2026-11.md",
+          "p50"
+        ]
+      },
+      "ok": false,
+      "detail": "error: [Errno 2] No such file or directory: 'C:\\\\Users\\\\Yurgirus\\\\Desktop\\\\urfu\\\\Поддержка талантов\\\\OpenCodeGlasses\\\\docs\\\\report-2026-11.md'"
+    }
+  ],
+  "ts": "2026-11-09 05:55:51",
+  "diff": {
+    "added": [
+      "experiments/2026-11-monthly-report/results/metrics.json",
+      "reports/report-2026-11.md"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

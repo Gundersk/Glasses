@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ASR Stream Output</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 24px; background: #111; color: #eee; }
+.line { padding: 8px; margin: 6px 0; border-left: 4px solid #444; background: #1c1c1c; }
+.partial { border-left-color: #4ea1ff; }
+.final { border-left-color: #44cc88; }
+.metrics { margin-top: 16px; padding: 10px; background: #222; color: #ffd166; }
+</style>
+</head>
+<body>
+<h2>ASR Stream Output Visualization</h2>
+<div class="line partial">partial 1: ASR</div>
+<div class="line partial">partial 2: ASR stream</div>
+<div class="line partial">partial 3: ASR stream output</div>
+<div class="line partial">partial 4: ASR stream output visualization</div>
+<div class="line partial">partial 5: ASR stream output visualization test</div>
+<div class="line partial">partial 6: ASR stream output visualization test partial</div>
+<div class="line partial">partial 7: ASR stream output visualization test partial final</div>
+<div class="line partial">partial 8: ASR stream output visualization test partial final chunk</div>
+<div class="line partial">partial 9: ASR stream output visualization test partial final chunk latency</div>
+<div class="line partial">partial 10: ASR stream output visualization test partial final chunk latency metrics</div>
+<div class="line final">final 1: ASR stream output</div>
+<div class="line final">final 2: ASR stream output visualization test partial</div>
+<div class="line final">final 3: ASR stream output visualization test partial final chunk latency</div>
+<div class="line final">final 4: ASR stream output visualization test partial final chunk latency metrics</div>
+<div class="metrics">p50_latency_ms=46.06 p95_latency_ms=71.616 chunk_count=11</div>
+</body>
+</html>

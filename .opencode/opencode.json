@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "watcher": {
+    "ignore": ["data/**", "models/**", ".venv/**", "__pycache__/**", ".cache/**", "*.wav", "*.mp3", "*.flac", "*.mp4", "*.mkv", "*.onnx", "*.bin", "*.pt", "*.ckpt", "*.gguf"]
+  }
+}

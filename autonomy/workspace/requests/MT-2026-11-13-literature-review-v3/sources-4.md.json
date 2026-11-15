@@ -1,0 +1,133 @@
+{
+  "query": "Russian streaming speech recognition models datasets benchmarks primary publication",
+  "accessed": "2026-11-14T14:06:18Z",
+  "fresh_requested": true,
+  "sources": [
+    {
+      "url": "https://arcxiv.org/abs/2601.20992",
+      "content": "# asreval: Algorithms and tools for multi-reference and streaming speech recognition evaluation\n\nOleg Sedukhin, Andrey Kostin\n\n## Abstract\n\nWe propose several improvements to the speech recognition evaluation. First, we propose a string alignment algorithm that supports both multi-reference labeling, arbitrary-length insertions and better word alignment. This is especially useful for non-Latin languages, those with rich word formation, to label cluttered or longform speech. Secondly, we collect a novel test set DiverseSpeech-Ru of longform in-the-wild Russian speech with careful multi-reference labeling. We also perform multi-reference relabeling of popular Russian tests set and study fine-tuning dynamics on its corresponding train set. We demonstrate that the model often adopts to dataset-specific labeling, causing an illusion of metric improvement. Based on the improved word alignment, we develop tools to evaluate streaming speech recognition and to align multiple transcriptions to compare them visually. Additionally, we provide uniform wrappers for many offline and streaming speech recognition models. Our code will be made publicly available.\n\n## Create a lesson\n\n## Related papers\n\n* ArchSpace: Recording, Reviewing, and Referencing LLM Architecture Research\n\n  Jie Wang, Tong Zhu, JiaHao Kuang et al.\n* Learning When Diffusion Language Models Should Regenerate\n\n  Minhae Oh, Jeonghye Kim, Jinwoo Koo et al.\n* Goal Encoding in LLMs\n\n  Arnab Sen Sharma, Eric Todd, Sheridan Feucht et al.\n* Synthesis Smuggling: Maliciously Hiding Inferred Personal Attributes in LLM Outputs\n\n  Gautam Galada, Supreeth Shastri, Sagnik Ray Choudhury\n* Parsed, Plausible, Wrong: Output Format Controls Silent Errors in Small-Model Semantic Parsing\n\n  Umar Ahmed, Maxim Dunaev, Mohammad Nour Al Awad et al.\n* Parameter-Efficient Conciseness Adaptation: Differentiable Length Control for Concise Clinical Reasoning in Smaller Language Models\n\n  Tanzeel Abbas, Ahmad Kamran Malik, Nafees Qamar et al."
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/unidpro/russian-speech-recognition-dataset/data",
+      "content": "Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic.\n\nLearn more\n\nOK, Got it.\n\n###### Something went wrong and this page crashed!\n\nIf the issue persists, it's likely a problem on our side.\n\n```\nLoading CSS chunk 7815 failed.\\n(https://www.kaggle.com/static/assets/7815.e94de944d22d175f.css)\n\nError: Loading CSS chunk 7815 failed.\\n(https://www.kaggle.com/static/assets/7815.e94de944d22d175f.css)\n    at n.onerror.n.onload (https://www.kaggle.com/static/assets/runtime.js?v=826e134bc4dfe45c:1:13161)\n```"
+    }
+  ],
+  "selection_manifest": {
+    "candidates": [
+      {
+        "index": 0,
+        "url": "https://huggingface.co/nur-dev/realtime-streaming-asr-kk-ru-en",
+        "canonical_url": "https://huggingface.co/nur-dev/realtime-streaming-asr-kk-ru-en",
+        "status": "rejected",
+        "reason": "page_limit",
+        "score": 1,
+        "domain": "huggingface.co",
+        "primary_source_hints": []
+      },
+      {
+        "index": 1,
+        "url": "https://huggingface.co/t-tech/T-one",
+        "canonical_url": "https://huggingface.co/t-tech/T-one",
+        "status": "rejected",
+        "reason": "page_limit",
+        "score": 0,
+        "domain": "huggingface.co",
+        "primary_source_hints": []
+      },
+      {
+        "index": 2,
+        "url": "https://huggingface.co/t-tech/T-one/raw/main/README.md",
+        "canonical_url": "https://huggingface.co/t-tech/T-one/raw/main/README.md",
+        "status": "rejected",
+        "reason": "page_limit",
+        "score": 2,
+        "domain": "huggingface.co",
+        "primary_source_hints": []
+      },
+      {
+        "index": 3,
+        "url": "https://arxiv.org/html/2601.20992v1",
+        "canonical_url": "https://arxiv.org/html/2601.20992v1",
+        "status": "rejected",
+        "reason": "page_limit",
+        "score": 1,
+        "domain": "arxiv.org",
+        "primary_source_hints": [
+          "arxiv_or_doi"
+        ]
+      },
+      {
+        "index": 4,
+        "url": "https://arxiv.org/pdf/2507.13563",
+        "canonical_url": "https://arxiv.org/pdf/2507.13563",
+        "status": "rejected",
+        "reason": "page_limit",
+        "score": 3,
+        "domain": "arxiv.org",
+        "primary_source_hints": [
+          "arxiv_or_doi"
+        ]
+      },
+      {
+        "index": 5,
+        "url": "https://huggingface.co/t-tech/T-one/blob/main/README.md",
+        "canonical_url": "https://huggingface.co/t-tech/T-one/blob/main/README.md",
+        "status": "rejected",
+        "reason": "page_limit",
+        "score": 2,
+        "domain": "huggingface.co",
+        "primary_source_hints": []
+      },
+      {
+        "index": 6,
+        "url": "https://arxiv.org/html/2506.01192v1",
+        "canonical_url": "https://arxiv.org/html/2506.01192v1",
+        "status": "rejected",
+        "reason": "page_limit",
+        "score": 3,
+        "domain": "arxiv.org",
+        "primary_source_hints": [
+          "arxiv_or_doi"
+        ]
+      },
+      {
+        "index": 7,
+        "url": "https://arcxiv.org/abs/2601.20992",
+        "canonical_url": "https://arcxiv.org/abs/2601.20992",
+        "status": "selected",
+        "reason": "relevance_and_domain_diversity",
+        "score": 4,
+        "domain": "arcxiv.org",
+        "primary_source_hints": []
+      },
+      {
+        "index": 8,
+        "url": "https://www.kaggle.com/datasets/unidpro/russian-speech-recognition-dataset/data",
+        "canonical_url": "https://kaggle.com/datasets/unidpro/russian-speech-recognition-dataset/data",
+        "status": "selected",
+        "reason": "relevance_and_domain_diversity",
+        "score": 4,
+        "domain": "kaggle.com",
+        "primary_source_hints": []
+      },
+      {
+        "index": 9,
+        "url": "https://github.com/Picovoice/speech-to-text-benchmark",
+        "canonical_url": "https://github.com/Picovoice/speech-to-text-benchmark",
+        "status": "rejected",
+        "reason": "page_limit",
+        "score": 1,
+        "domain": "github.com",
+        "primary_source_hints": [
+          "repository"
+        ]
+      }
+    ],
+    "selected": [
+      "https://arcxiv.org/abs/2601.20992",
+      "https://www.kaggle.com/datasets/unidpro/russian-speech-recognition-dataset/data"
+    ],
+    "limitation": "Primary-source hints are heuristics, not verified primary status or scientific reliability; DNS and redirects are not checked."
+  },
+  "limitation": "Fetched content, not a verified scientific conclusion; primary-source hints are unverified heuristics"
+}

@@ -1,0 +1,47 @@
+01:28:09 [+   0.0s] STEP  PLAN
+01:28:09 [+   0.0s] OK    план загружен из night_plan.yaml: 4 задач
+01:28:09 [+   0.1s] STEP  EXECUTE задача=T1
+01:28:20 [+  11.7s] INFO  executor: gemini_free ok in=10804 out=0 cost=$0.0000 lat=11.6s
+01:28:20 [+  11.7s] WARN  T1: исчерпаны итерации (1)
+01:28:20 [+  11.8s] STEP  EXECUTE задача=T2
+01:29:44 [+  95.9s] INFO  executor: gemini_free ok in=11920 out=478 cost=$0.0000 lat=69.0s
+01:29:44 [+  95.9s] WARN  T2: исчерпаны итерации (1)
+01:29:45 [+  96.0s] STEP  EXECUTE задача=T3
+01:30:07 [+ 118.5s] INFO  executor: gemini_free ok in=5089 out=1862 cost=$0.0000 lat=16.0s
+01:30:07 [+ 118.5s] INFO  записан experiments/engine_choice.md (3281 симв.)
+01:30:07 [+ 118.5s] INFO  записан autonomy/workspace/outbox/T3_result.md (1248 симв.)
+01:30:07 [+ 118.5s] INFO  summary: Проверен документ experiments/engine_choice.md и подготовлен итоговый отчет autonomy/workspace/outbox/T3_result.md, фиксирующий sherpa-onnx в качестве основного ASR-движка.
+01:30:07 [+ 118.5s] INFO  $ python -c "from pathlib import Path; p=Path('experiments/engine_choice.md'); assert p.is_file() and p.stat().st_size > 0"
+01:30:07 [+ 118.5s] OK    rc=0: 
+01:30:07 [+ 118.5s] STEP  VERIFY задача=T3
+01:30:07 [+ 118.6s] WARN  stub-маркеры: ['autonomy/workspace/STATE.json: «не запуска»', 'autonomy/workspace/STATE.json: «не измер»']
+01:30:07 [+ 118.6s] INFO  verify: pass=False (verify.T3.json)
+01:30:07 [+ 118.6s] STEP  REVIEW задача=T3
+01:30:13 [+ 124.1s] INFO  verifier: gemini_free ok in=637 out=60 cost=$0.0000 lat=5.4s
+01:30:13 [+ 124.1s] INFO  вердикт контролёра: FAIL — Проверка verify_pass не пройдена: в файле STATE.json обнаружены маркеры незавершённости работы («не запуска», «не измер»).
+01:30:13 [+ 124.1s] WARN  T3: исчерпаны итерации (1)
+01:30:13 [+ 124.2s] STEP  EXECUTE задача=T4
+01:30:22 [+ 133.5s] INFO  executor: gemini_free ok in=9035 out=173 cost=$0.0000 lat=9.3s
+01:30:22 [+ 133.5s] INFO  summary: Инспекция содержимого 2026-11-draft.md и проверка наличия файлов T1/T2
+01:30:22 [+ 133.5s] INFO  $ python -c "from pathlib import Path; print('Draft exists:', Path('reports/monthly/2026-11-draft.md').exists()); print('Sherpa res:', Path('experiments/stage2_resources/sherpa_resources.json').exists())"
+01:30:22 [+ 133.5s] OK    rc=0: Draft exists: True
+Sherpa res: False
+
+01:30:22 [+ 133.5s] INFO  $ python -c "from pathlib import Path; print(Path('reports/monthly/2026-11-draft.md').read_text(encoding='utf-8'))"
+01:30:22 [+ 133.6s] OK    rc=0: e2e_latency}.json`
+- `experiments/web_demo/{asr_bridge_metrics.json,asr_ui.png}`
+- `experiments/diarization/diar_baseline_metrics.json`
+- `experiments/2026-11-06-smoke/` - smoke трёх движков (06.11)
+
+
+01:30:22 [+ 133.6s] STEP  VERIFY задача=T4
+01:30:22 [+ 133.7s] WARN  stub-маркеры: ['autonomy/workspace/STATE.json: «не запуска»', 'autonomy/workspace/STATE.json: «не измер»']
+01:30:22 [+ 133.7s] INFO  verify: pass=False (verify.T4.json)
+01:30:22 [+ 133.7s] STEP  REVIEW задача=T4
+01:30:26 [+ 137.9s] INFO  verifier: gemini_free ok in=1421 out=69 cost=$0.0000 lat=4.2s
+01:30:26 [+ 137.9s] INFO  вердикт контролёра: FAIL — Файл `reports/monthly/2026-11-draft.md` не содержит необходимых ключевых метрик и строк (regex_in_file ok=False), а также обнаружены маркеры незавершённости работы.
+01:30:26 [+ 137.9s] WARN  T4: исчерпаны итерации (1)
+01:30:26 [+ 137.9s] STEP  REPORT
+01:31:05 [+ 176.4s] INFO  reporter: gemini_free ok in=1776 out=1139 cost=$0.0000 lat=20.7s
+01:31:05 [+ 176.4s] OK    отчёт: autonomy\workspace\outbox\report.md
+01:31:05 [+ 176.4s] OK    ночь завершена: бюджет $0.000, задачи: T1=failed, T2=failed, T3=failed, T4=failed

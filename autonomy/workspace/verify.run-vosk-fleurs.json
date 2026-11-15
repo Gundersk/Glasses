@@ -1,0 +1,75 @@
+{
+  "task_id": "run-vosk-fleurs",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/fleurs_benchmark/vosk_metrics.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/fleurs_benchmark/vosk_metrics.json",
+          "num_clips",
+          50,
+          1000
+        ]
+      },
+      "ok": true,
+      "detail": "got=50 range=[50,1000]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/fleurs_benchmark/vosk_metrics.json",
+          "wer",
+          0.0,
+          1.0
+        ]
+      },
+      "ok": true,
+      "detail": "got=1.0 range=[0.0,1.0]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/fleurs_benchmark/vosk_metrics.json",
+          "latency_p50",
+          0.0001,
+          60.0
+        ]
+      },
+      "ok": true,
+      "detail": "got=0.003882500001054723 range=[0.0001,60.0]"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "experiments/fleurs_benchmark/vosk_metrics.json",
+          "\"error_examples\": \\[\\s*\\{"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    }
+  ],
+  "ts": "2026-11-09 06:19:35",
+  "diff": {
+    "added": [
+      "experiments/benchmark_fleurs_vosk.py",
+      "experiments/fleurs_benchmark/vosk_metrics.json"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

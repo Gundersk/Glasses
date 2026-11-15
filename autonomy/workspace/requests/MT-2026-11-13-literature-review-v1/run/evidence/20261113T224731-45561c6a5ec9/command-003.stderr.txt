@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\research.py", line 290, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\research.py", line 243, in main
+    refresh(a.query, a.purpose, max_pages=a.max_pages, dry_run=a.dry_run, out=a.out, fresh=a.fresh)
+  File "C:\Users\Yurgirus\Desktop\urfu\Поддержка талантов\OpenCodeGlasses\autonomy\research.py", line 202, in refresh
+    raise RuntimeError("нет прочитанных первичных страниц; поиск не считается выполненным")
+RuntimeError: нет прочитанных первичных страниц; поиск не считается выполненным

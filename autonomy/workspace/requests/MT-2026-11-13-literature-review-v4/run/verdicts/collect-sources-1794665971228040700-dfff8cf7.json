@@ -1,0 +1,225 @@
+{
+  "task_id": "collect-sources",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-0.md"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-0.md.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-1.md"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-1.md.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-2.md"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-2.md.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "execution_receipt": true
+      },
+      "ok": true,
+      "detail": "команды и свежие артефакты связаны протоколом; методика требует отдельного ревью"
+    }
+  ],
+  "ts": "2026-11-14 19:19:31",
+  "receipt": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/receipt.json",
+  "task_sha256": "b05bb57e9c5c18798e992648c2c0158925ac6c4a8ed77e70ca7c9aad8c550d47",
+  "mock": false,
+  "artifacts": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-0.md",
+      "status": "file",
+      "sha256": "a7cd24b02cc4a235636e33b6a635bce2ebf0c50ef6286de7ab5c900240f93a03",
+      "size": 6955,
+      "mtime_ns": 1794665959894007600
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-0.md.json",
+      "status": "file",
+      "sha256": "944c8af9da32e82f81cf0fdd17524e3e93cc7a3938e93a8b994054ae86b2bf89",
+      "size": 14059,
+      "mtime_ns": 1794665959894588000
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-1.md",
+      "status": "file",
+      "sha256": "4cb297a1602fa310a5df6befc8d295c3cfe4866015392ae12555af0bef5a65e4",
+      "size": 6958,
+      "mtime_ns": 1794665964205727200
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-1.md.json",
+      "status": "file",
+      "sha256": "3980a4cf981e6cf579021f5ea15d495b223c0367a9430e70eedb80d9a48ae8b9",
+      "size": 20618,
+      "mtime_ns": 1794665964206250600
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-2.md",
+      "status": "file",
+      "sha256": "a5583b011bcfd7eef2f2e132a6b4ed68014bc7ea5f9e5f09526d049c15f31835",
+      "size": 7197,
+      "mtime_ns": 1794665970929466700
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-2.md.json",
+      "status": "file",
+      "sha256": "ebbd0e4289be3bb862d47ce7a0d3c8988f98abad2d40e2055af12b015813ff8b",
+      "size": 62505,
+      "mtime_ns": 1794665970930026700
+    }
+  ],
+  "input_artifacts": [
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/request.json",
+      "status": "file",
+      "sha256": "3acb81dea1374eabbd2e052e341e09bf819bc6fd215ed17290c9d9fa579706eb",
+      "size": 10695,
+      "mtime_ns": 1794665874419430800
+    },
+    {
+      "path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/context.md",
+      "status": "file",
+      "sha256": "a63a46ab11d3947e993e6e9f0b1b08b18702b711bf85fc58d17b560d561389ed",
+      "size": 11201,
+      "mtime_ns": 1794665874420430100
+    },
+    {
+      "path": "docs/agent-context.md",
+      "status": "file",
+      "sha256": "58c0261064bb704b48bdb656127bebcbb2d77af0378c3d5a0962ca34f07acf3b",
+      "size": 15123,
+      "mtime_ns": 1794652824134266900
+    },
+    {
+      "path": "docs/scope.md",
+      "status": "file",
+      "sha256": "59cbac7b085d460bdddc380e99d4b590b11266ef62269aeebba6ddb2eaaa946b",
+      "size": 19825,
+      "mtime_ns": 1794498249201621100
+    },
+    {
+      "path": "docs/benchmarks.md",
+      "status": "file",
+      "sha256": "5f30b943d0675df7c6f2102ff16f8fe9cf62980306bdfc8e913e827c244340f8",
+      "size": 11268,
+      "mtime_ns": 1794652876841874700
+    },
+    {
+      "path": "docs/roadmap-changes.md",
+      "status": "file",
+      "sha256": "7680005c559882050a8b188e8958842efcb698602592528af5cdcb62141e3190",
+      "size": 11459,
+      "mtime_ns": 1793956454705395900
+    },
+    {
+      "path": "docs/environment.md",
+      "status": "file",
+      "sha256": "feb6c4e0091177c1c931b2da13c295f585085238460953dcdf6d92a47f6a58c7",
+      "size": 10370,
+      "mtime_ns": 1794568589096297600
+    },
+    {
+      "path": "STATUS.md",
+      "status": "file",
+      "sha256": "52cffae35ffd8aef16cef82c4978426eea9d4709406f2dea393d08b36012f041",
+      "size": 69460,
+      "mtime_ns": 1794665845530388600
+    },
+    {
+      "path": "docs/local-goals.md",
+      "status": "file",
+      "sha256": "5918853d80bd3a54c3528f9769c4dc811247f9c2acc6b469336a739a59f0358b",
+      "size": 33785,
+      "mtime_ns": 1794652824135683800
+    },
+    {
+      "path": "docs/literature-review-2026-11.md",
+      "status": "file",
+      "sha256": "c18c61aebf21eb7bdf204f6e253591b0649e4ee1c0824b53aedae4cf92b84022",
+      "size": 29544,
+      "mtime_ns": 1794568380777391100
+    },
+    {
+      "path": "docs/sources.md",
+      "status": "file",
+      "sha256": "c62a30d0b83e26a440bd5f509476c02742cdf3a776af74239a2414cf2da5e341",
+      "size": 33254,
+      "mtime_ns": 1794652876840875100
+    },
+    {
+      "path": "experiments/engine_choice.md",
+      "status": "file",
+      "sha256": "f29186fdfaf92e970838b76c0d4630b295298a6af19ed927d39aa941c3e6d755",
+      "size": 5256,
+      "mtime_ns": 1794342607536728400
+    },
+    {
+      "path": "reports/analytics-note-2026-11.md",
+      "status": "file",
+      "sha256": "28ff44a27ff975ef923c58d95dce37b0f3b233c84e93e3605512dee7b92641b5",
+      "size": 16101,
+      "mtime_ns": 1794227546667681100
+    }
+  ],
+  "diff": {
+    "added": [
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-000.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-000.stderr.txt",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-000.stdout.txt",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-001.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-001.stderr.txt",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-001.stdout.txt",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-002.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-002.stderr.txt",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/command-002.stdout.txt",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/receipt.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/evidence/20261114T191905-373b99a32843/start.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/snapshot_before.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-0.md",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-0.md.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-1.md",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-1.md.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-2.md",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/sources-2.md.json"
+    ],
+    "modified": [
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/NIGHT_LOG.md",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/STATE.json",
+      "autonomy/workspace/requests/MT-2026-11-13-literature-review-v4/run/events.jsonl"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

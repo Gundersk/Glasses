@@ -1,0 +1,9 @@
+{
+  "screenshot_exists": true,
+  "screenshot_path": "experiments/web_demo/screenshots/ui.png",
+  "server_url": "http://127.0.0.1:56373/",
+  "duration": 3.8160126209259033,
+  "seed": 0,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "time": "2026-11-09T04:31:33+0500"
+}

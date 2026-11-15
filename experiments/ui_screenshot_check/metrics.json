@@ -1,0 +1,11 @@
+{
+  "task_id": "ui_screenshot_check",
+  "status": "fail",
+  "screenshot_path": "experiments/ui_screenshot_check/results/screenshots/ui.png",
+  "screenshot_exists": false,
+  "screenshot_size_bytes": 0,
+  "url": "http://localhost:8000",
+  "return_code": 1,
+  "duration_sec": 2.3,
+  "notes": "screenshot command failed: Command '['C:\\\\Users\\\\Yurgirus\\\\Desktop\\\\urfu\\\\\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0442\u0430\u043b\u0430\u043d\u0442\u043e\u0432\\\\OpenCodeGlasses\\\\.venv\\\\Scripts\\\\python.exe', '-m', 'autonomy.screenshot', 'http://localhost:8000', 'experiments/ui_screenshot_check/results/screenshots/ui.png']' returned non-zero exit status 1."
+}

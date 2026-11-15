@@ -1,0 +1,12 @@
+{
+  "closes": "LG-2026-11-14-01",
+  "created": "2026-11-14T15:37:08.548494+05:00",
+  "mode": "digest",
+  "browser_only": true,
+  "paid_fallback": false,
+  "input_kind": "fictional non-project text",
+  "earlier_unmapped_attempt": "blocked; no raw backend error retained",
+  "status": "blocked",
+  "error_kind": "ladder",
+  "elapsed_seconds": 48.063
+}

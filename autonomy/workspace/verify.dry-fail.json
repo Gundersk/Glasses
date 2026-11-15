@@ -1,0 +1,26 @@
+{
+  "task_id": "dry-fail",
+  "pass": false,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "autonomy/workspace/outbox/__dry_run_missing_20261109__.json"
+      },
+      "ok": false,
+      "detail": "exists=False"
+    }
+  ],
+  "ts": "2026-11-09 20:15:52",
+  "diff": {
+    "added": [],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

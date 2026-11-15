@@ -1,0 +1,7 @@
+22:06:49 [+   0.0s] STEP  PLAN
+22:06:49 [+   0.0s] ERROR фаза PLAN: задача mock-wer: отсутствует обязательное поле closes; ожидается roadmap:этапN-шагM или LG-YYYY-MM-DD-NN
+22:06:49 [+   0.0s] STEP  REPAIR задача=None
+22:06:49 [+   0.0s] INFO  ментор: action=halt notes=mock halt
+22:06:49 [+   0.0s] STEP  REPORT
+22:06:49 [+   0.1s] OK    отчёт: autonomy\workspace\outbox\report.md
+22:06:49 [+   0.1s] OK    ночь завершена: бюджет $0.000, задачи: 

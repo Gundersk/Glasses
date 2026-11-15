@@ -1,0 +1,20 @@
+global:
+  statement: Ответить на задание в контексте проекта
+  deadline: not_assigned_by_owner
+stage:
+  id: request
+  title: MT-2026-11-13-literature-review-v3
+  deadline: not_assigned_by_owner
+  status: active
+  exit_criteria: []
+local_goals:
+- id: MT-2026-11-13-literature-review-v3
+  text: 'Здравствуйте, прошу сделать литературный обзор, что было сделано по Вашей
+    теме до Вас.
+
+
+    Тогда далее будет проще сравнивать Ваши результаты с аналогами, если они есть.'
+  status: open
+  benchmark: docs/benchmarks.md
+  evidence: []
+  nights_without_progress: 1

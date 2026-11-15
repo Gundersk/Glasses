@@ -1,0 +1,4 @@
+04:37:02 [+   0.0s] STEP  REPORT
+04:37:08 [+   5.8s] WARN  reporter: gemini_free -> gemini_free: 429 rate limit (после 3 попыток)
+04:37:10 [+   7.9s] INFO  reporter: gemini_lite_free ok in=1260 out=560 cost=$0.0000 lat=2.1s
+04:37:10 [+   7.9s] OK    отчёт: autonomy\workspace\outbox\report.md

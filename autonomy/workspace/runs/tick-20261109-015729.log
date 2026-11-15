@@ -1,0 +1,15 @@
+01:57:29 [+   0.0s] STEP  PLAN
+01:57:29 [+   0.0s] OK    план построен: 1 задач: mock-wer
+01:57:29 [+   0.2s] STEP  EXECUTE задача=mock-wer
+01:57:29 [+   0.2s] INFO  записан autonomy/workspace/outbox/mock_result.json (24 симв.)
+01:57:29 [+   0.2s] INFO  summary: mock: записываю результат
+01:57:29 [+   0.2s] INFO  $ python -c "print('mock ok')"
+01:57:29 [+   0.3s] ERROR rc=9009: Python 
+01:57:29 [+   0.3s] INFO  записан autonomy/workspace/outbox/mock_result.json (24 симв.)
+01:57:29 [+   0.3s] INFO  summary: mock: записываю результат
+01:57:29 [+   0.3s] INFO  $ python -c "print('mock ok')"
+01:57:29 [+   0.4s] ERROR rc=9009: Python 
+01:57:29 [+   0.4s] WARN  mock-wer: исчерпаны итерации (2)
+01:57:29 [+   0.4s] STEP  REPORT
+01:57:29 [+   0.5s] OK    отчёт: autonomy\workspace\outbox\report.md
+01:57:29 [+   0.5s] OK    ночь завершена: бюджет $0.000, задачи: mock-wer=failed

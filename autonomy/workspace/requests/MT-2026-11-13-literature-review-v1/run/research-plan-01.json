@@ -1,0 +1,16 @@
+{
+  "request_sha256": "6d6c49a699e451c317f9bfeab46cb9752063dc42418f0873ddb8496d94b055f4",
+  "previous_sha256": null,
+  "queries": [
+    "streaming captions smart glasses hearing impaired speaker attribution diarization research",
+    "Russian streaming speech recognition speaker diarization WER DER latency",
+    "streaming speaker attributed ASR end to end online diarization latency",
+    "audiovisual active speaker detection speech captions accessibility dataset evaluation research paper",
+    "streaming ASR diarization speaker attributed WER DER latency benchmark datasets reproducibility Russian dialogue",
+    "smart glasses live captions speaker identification research prototype commercial product accessibility"
+  ],
+  "reason": "Сохранены исходные запросы и добавлены направления для аудиовизуального определения говорящего, сопоставимости и воспроизводимости измерений, а также исследований и продуктовых аналогов. Поиск первичных публикаций и документации следует отличать от маркетинговых материалов; результаты ограниченного поиска не докажут полноту обзора.",
+  "kind": "plan",
+  "author_model": "gpt-6.1-terra",
+  "sha256": "97076cc4729bc8bbdeb88eb77213feceaf1a2612f37cd13b8fe50c1b7d2ddadf"
+}

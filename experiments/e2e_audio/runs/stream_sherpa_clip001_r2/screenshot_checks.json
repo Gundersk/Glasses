@@ -1,0 +1,71 @@
+{
+  "layer": 2,
+  "kind": "screenshot",
+  "pass": true,
+  "values": {
+    "path": "experiments\\e2e_audio\\runs\\stream_sherpa_clip001_r2\\artifacts\\screenshot.png",
+    "size_bytes": 39466,
+    "width": 1280,
+    "height": 720,
+    "pixel_std": 34.19171391126528,
+    "background_gray": 19.0,
+    "fg_pixel_fraction": 0.029319661458333333,
+    "text_like_bands": 2,
+    "text_like_band_rows": [
+      {
+        "start": 31,
+        "height": 11
+      },
+      {
+        "start": 578,
+        "height": 12
+      }
+    ],
+    "bottom_third_fg_fraction": 0.07580729166666667
+  },
+  "checks": [
+    {
+      "name": "file_exists",
+      "ok": true,
+      "expected": "file",
+      "actual": "present",
+      "detail": ""
+    },
+    {
+      "name": "size_gt_5kb",
+      "ok": true,
+      "expected": ">5120",
+      "actual": 39466,
+      "detail": ""
+    },
+    {
+      "name": "image_readable",
+      "ok": true,
+      "expected": "readable png",
+      "actual": "1280x720",
+      "detail": ""
+    },
+    {
+      "name": "not_monochrome",
+      "ok": true,
+      "expected": "std>2.0",
+      "actual": 34.192,
+      "detail": ""
+    },
+    {
+      "name": "text_bands",
+      "ok": true,
+      "expected": ">=2",
+      "actual": 2,
+      "detail": "полосы строк с долей переднего плана 3%-40%, высота >= 3 px, фон=19, порог отличия=64"
+    },
+    {
+      "name": "bottom_third_nonempty",
+      "ok": true,
+      "expected": ">=0.002",
+      "actual": 0.07581,
+      "detail": ""
+    }
+  ],
+  "created": "2026-11-09T19:32:54.772812+05:00"
+}

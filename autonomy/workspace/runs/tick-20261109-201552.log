@@ -1,0 +1,27 @@
+20:15:52 [+   0.0s] STEP  PLAN
+20:15:52 [+   0.0s] OK    план загружен из night_plan.yaml: 2 задач
+20:15:52 [+   0.1s] STEP  EXECUTE задача=dry-pass
+20:15:52 [+   0.1s] INFO  записан autonomy/workspace/outbox/mock_result.json (24 симв.)
+20:15:52 [+   0.1s] INFO  summary: mock: записываю результат
+20:15:52 [+   0.1s] INFO  $ python -c "print('mock ok')"
+20:15:52 [+   0.1s] OK    rc=0: mock ok
+
+20:15:52 [+   0.1s] STEP  VERIFY задача=dry-pass
+20:15:52 [+   0.2s] INFO  verify: pass=True (verify.dry-pass.json)
+20:15:52 [+   0.2s] STEP  REVIEW задача=dry-pass
+20:15:52 [+   0.2s] INFO  вердикт контролёра: PASS — mock
+20:15:52 [+   0.3s] STEP  EXECUTE задача=dry-fail
+20:15:52 [+   0.3s] INFO  записан autonomy/workspace/outbox/mock_result.json (24 симв.)
+20:15:52 [+   0.3s] INFO  summary: mock: записываю результат
+20:15:52 [+   0.3s] INFO  $ python -c "print('mock ok')"
+20:15:52 [+   0.3s] OK    rc=0: mock ok
+
+20:15:52 [+   0.3s] STEP  VERIFY задача=dry-fail
+20:15:52 [+   0.4s] INFO  verify: pass=False (verify.dry-fail.json)
+20:15:52 [+   0.4s] STEP  REVIEW задача=dry-fail
+20:15:52 [+   0.4s] INFO  вердикт контролёра: PASS — mock
+20:15:52 [+   0.4s] WARN  PASS контролёра при verify fail — возврат на исправление
+20:15:52 [+   0.4s] WARN  dry-fail: исчерпаны итерации (1)
+20:15:52 [+   0.4s] STEP  REPORT
+20:15:52 [+   0.4s] OK    отчёт: autonomy\workspace\outbox\report.md
+20:15:52 [+   0.4s] OK    ночь завершена: бюджет $0.000, задачи: dry-pass=done, dry-fail=failed

@@ -1,0 +1,102 @@
+{
+  "args": {
+    "clips": 1,
+    "engine": "sherpa",
+    "target_dbfs": -20.0,
+    "run_dir": "experiments\\e2e_audio\\runs\\e2e_duplex_sherpa_1clip_r1",
+    "gap_s": 1.2,
+    "port": 0,
+    "clips_dir": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\data\\fleurs_ru_test",
+    "chunk_ms": 100,
+    "blocksize": 1024,
+    "tail_s": 2.5,
+    "countdown_s": 2.0,
+    "min_snr": 10.0,
+    "post_checks": true
+  },
+  "seed": null,
+  "seed_note": "случайности нет: источник и ASR детерминированы; запись по воздуху недетерминирована",
+  "asr": {
+    "ok": true,
+    "engine": "sherpa",
+    "message": "",
+    "version": "sherpa-onnx 2.0.1",
+    "config": {
+      "model_dir": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\models\\sherpa-onnx-streaming-zipformer-small-ru-vosk-int8-2025-08-16",
+      "num_threads": 2,
+      "decoding": "greedy_search",
+      "provider": "cpu",
+      "sample_rate": 16000,
+      "feature_dim": 80,
+      "rule1_min_trailing_silence": 2.4,
+      "rule2_min_trailing_silence": 0.8,
+      "rule3_min_utterance_length": 20.0,
+      "flush_tail_s": 0.3
+    }
+  },
+  "command": "experiments\\e2e_audio\\duplex_e2e.py --clips 1 --engine sherpa --target-dbfs -20 --gap-s 1.2 --post-checks --run-dir experiments\\e2e_audio\\runs\\e2e_duplex_sherpa_1clip_r1",
+  "clips": [
+    {
+      "file": "clip_000.wav",
+      "start_ms": 0.0,
+      "end_ms": 16920.0,
+      "speech_start_ms": 200.0,
+      "speech_end_ms": 16360.0,
+      "orig_sr": 16000,
+      "duration_s": 16.92
+    }
+  ],
+  "normalization": {
+    "rms_before_dbfs": -38.27917997909266,
+    "gain_db": 17.62660314458918,
+    "rms_after_dbfs": -20.652577432791915,
+    "target_rms_dbfs": -20.0,
+    "limited_by_peak": true,
+    "peak_cap_dbfs": -1.0,
+    "peak_dbfs": -1.0000002900227403,
+    "n_samples": 812160,
+    "duration_s": 16.92,
+    "gap_s": 1.2,
+    "fade_ms": 20.0
+  },
+  "devices": {
+    "input": {
+      "index": 1,
+      "name": "Microphone (fifine Microphone)",
+      "hostapi": "MME"
+    },
+    "output": {
+      "index": 4,
+      "name": "Динамики (Realtek(R) Audio)",
+      "hostapi": "MME"
+    }
+  },
+  "sample_rate": 48000,
+  "blocksize": 1024,
+  "windows": {
+    "speech_s": [
+      [
+        0.549,
+        16.609
+      ]
+    ],
+    "pause_s": [
+      [
+        0.05,
+        0.249
+      ],
+      [
+        16.909,
+        19.37
+      ]
+    ]
+  },
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "sounddevice": "0.5.6",
+    "soundfile": "0.14.0"
+  }
+}

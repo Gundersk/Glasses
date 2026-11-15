@@ -1,0 +1,61 @@
+02:15:21 [+   0.0s] STEP  PLAN
+02:15:21 [+   0.0s] OK    план загружен из night_plan.yaml: 4 задач
+02:15:21 [+   0.4s] STEP  EXECUTE задача=T1
+02:15:40 [+  18.9s] INFO  executor: deepseek1017 ok in=10447 out=3121 cost=$0.0013 lat=18.5s
+02:15:40 [+  18.9s] INFO  записан experiments/file_stream_eval.py (7296 симв.)
+02:15:40 [+  18.9s] INFO  summary: Создаю experiments/file_stream_eval.py с режимом resources: единый потоковый цикл (чанки 100 мс, speed=1.0, tail 1.0 с тишины) для sherpa и vosk через streaming_asr.create_asr, замер процесса через psutil (cpu_percent_avg/max, rss_mb_max, wall_s, n_frames). Запускаю оба движка на data/fleurs_ru_test
+02:15:40 [+  18.9s] INFO  $ python experiments\file_stream_eval.py resources --engine sherpa --wav data\fleurs_ru_test\clip_001.wav --metrics experiments\stage2_resources\sherpa_resources.json --result experiments\stage2_resources\sherpa_result.json
+02:15:40 [+  19.0s] ERROR rc=2: C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\experimentsfile_strea
+02:15:40 [+  19.0s] INFO  $ python experiments\file_stream_eval.py resources --engine vosk --wav data\fleurs_ru_test\clip_001.wav --metrics experiments\stage2_resources\vosk_resources.json --result experiments\stage2_resources\vosk_result.json
+02:15:40 [+  19.0s] ERROR rc=2: C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\experimentsfile_strea
+02:15:40 [+  19.0s] INFO  $ python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_resources'); ms=[json.loads((p/f'{e}_resources.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; rs=[json.loads((p/f'{e}_result.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; keys=('cpu_percent_avg','cpu_percent_max','rss_mb_max','wall_s','n_frames'); assert all(all(k in m for k in keys) for m in ms); assert all(math.isfinite(float(m[k])) for m in ms for k in keys); assert all(m['cpu_percent_max'] >= m['cpu_percent_avg'] and m['n_frames'] == m['sample_count'] for m in ms); assert all(r['partials'] and r['finals'] and all(x['text'].strip() for x in r['finals']) for r in rs)"
+02:15:40 [+  19.1s] ERROR rc=1: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1027, in read_text
+
+02:15:40 [+  19.1s] WARN  T1: исчерпаны итерации (1)
+02:15:40 [+  19.2s] STEP  EXECUTE задача=T2
+02:16:02 [+  41.7s] INFO  executor: deepseek1017 ok in=12543 out=7741 cost=$0.0029 lat=22.5s
+02:16:02 [+  41.7s] INFO  записан experiments/file_stream_eval.py (20801 симв.)
+02:16:02 [+  41.7s] INFO  summary: Создам streaming file-eval утилиту с режимом conditions: 5 клипов (clip_000..clip_004), seed 20261109, чанки 100 мс, speed=1.0, tail_s=1.0; условия clean/snr20/snr10/snr5 с цифровым белым гауссовым шумом по SNR, одинаковые WAV для sherpa и vosk; корпусной WER (S/D/I) по манифесту и latency событий (
+02:16:02 [+  41.7s] INFO  $ python experiments\file_stream_eval.py conditions --engine sherpa --manifest data\fleurs_ru_test\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004 --snr 20,10,5 --seed 20261109 --noise-dir experiments\stage2_conditions\audio --out experiments\stage2_conditions\sherpa_conditions.json
+02:16:02 [+  41.8s] ERROR rc=2: C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\experimentsfile_strea
+02:16:02 [+  41.8s] INFO  $ python experiments\file_stream_eval.py conditions --engine vosk --manifest data\fleurs_ru_test\manifest.jsonl --clips clip_000,clip_001,clip_002,clip_003,clip_004 --snr 20,10,5 --seed 20261109 --noise-dir experiments\stage2_conditions\audio --out experiments\stage2_conditions\vosk_conditions.json
+02:16:02 [+  41.8s] ERROR rc=2: C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\experimentsfile_strea
+02:16:02 [+  41.8s] INFO  $ python -c "import json,math; from pathlib import Path; p=Path('experiments/stage2_conditions'); ds=[json.loads((p/f'{e}_conditions.json').read_text(encoding='utf-8')) for e in ('sherpa','vosk')]; names=['clean','snr20','snr10','snr5']; snrs=[None,20,10,5]; keys=('wer','final_latency_p50_ms','final_latency_p95_ms','final_latency_n','partial_latency_p50_ms','partial_latency_p95_ms','partial_latency_n'); assert all([c['name'] for c in d['conditions']]==names and [c['snr_db'] for c in d['conditions']]==snrs for d in ds); assert all(all(k in c for k in keys) for d in ds for c in d['conditions']); assert all(0<=c['wer']<=1 and c['final_latency_n']>=1 and c['partial_latency_n']>=1 and len(c['results'])==5 for d in ds for c in d['conditions']); assert all(math.isfinite(float(c[k])) for d in ds for c in d['conditions'] for k in keys if not k.endswith('_n')); nm=json.loads((p/'noise_manifest.json').read_text(encoding='utf-8')); assert nm['seed']==20261109 and len(nm['files'])==15; assert all(Path(f['path']).is_file() and abs(f['measured_snr_db']-f['target_snr_db'])<=0.1 for f in nm['files'])"
+02:16:03 [+  41.9s] ERROR rc=1: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\Yurgirus\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1027, in read_text
+
+02:16:03 [+  41.9s] WARN  T2: исчерпаны итерации (1)
+02:16:03 [+  42.0s] STEP  EXECUTE задача=T3
+02:16:10 [+  49.1s] INFO  executor: deepseek1017 ok in=4995 out=1320 cost=$0.0006 lat=7.0s
+02:16:10 [+  49.1s] INFO  записан autonomy/workspace/outbox/T3_result.md (1773 симв.)
+02:16:10 [+  49.1s] INFO  summary: Документная задача T3: сверяю experiments/engine_choice.md с sherpa_metrics.json (WER 0.113529 → 11.35%) и vosk_metrics.json (WER 0.1892148 → 18.92%), оба num_clips=50, total_ref_words=1057. Документ уже содержит все требуемые разделы и ограничения (самописный WER, 50 клипов, чтение без шума, разная
+02:16:10 [+  49.1s] INFO  $ python -c "from pathlib import Path; p=Path('experiments/engine_choice.md'); assert p.is_file() and p.stat().st_size > 0"
+02:16:10 [+  49.1s] OK    rc=0: 
+02:16:10 [+  49.1s] INFO  $ python -c "import json,re; s=json.load(open('experiments/fleurs_benchmark/sherpa_metrics.json',encoding='utf-8')); v=json.load(open('experiments/fleurs_benchmark/vosk_metrics.json',encoding='utf-8')); d=open('experiments/engine_choice.md',encoding='utf-8').read(); assert s['num_clips']==50 and v['num_clips']==50; assert s['total_ref_words']==1057 and v['total_ref_words']==1057; assert abs(s['wer']-0.113529)<1e-9 and abs(v['wer']-0.1892148)<1e-9; assert '11.35%' in d and '18.92%' in d; assert 'самописн' in d and '150 клип' in d and re.search(r'разн\w* семантик', d); print('OK: numbers and constraints verified')"
+02:16:10 [+  49.2s] ERROR rc=1: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+
+02:16:10 [+  49.2s] INFO  $ python -c "from pathlib import Path; p=Path('autonomy/workspace/outbox/T3_result.md'); assert p.is_file() and p.stat().st_size > 0; print('OK: outbox written', p.stat().st_size, 'bytes')"
+02:16:10 [+  49.3s] OK    rc=0: OK: outbox written 2769 bytes
+
+02:16:10 [+  49.3s] WARN  T3: исчерпаны итерации (1)
+02:16:10 [+  49.4s] STEP  EXECUTE задача=T4
+02:16:26 [+  65.0s] INFO  executor: deepseek1017 ok in=8009 out=3616 cost=$0.0014 lat=15.6s
+02:16:26 [+  65.0s] INFO  записан reports/monthly/2026-11-draft.md (7332 симв.)
+02:16:26 [+  65.0s] INFO  summary: Обновляю только reports/monthly/2026-11-draft.md: добавляю подтверждённые числа потокового вывода в браузере (stream_sherpa_clip001_r3: 11 partial/1 final; stream_vosk_clip001_r3: 17 partial/1 final; gate PASS, скриншоты в тех же каталогах), валидный дуплексный E2E e2e_duplex_sherpa_3clips_r3 (40 pa
+02:16:26 [+  65.0s] INFO  $ python -c "from pathlib import Path; p=Path('reports/monthly/2026-11-draft.md'); assert p.is_file() and p.stat().st_size > 0; t=p.read_text(encoding='utf-8'); [t.index(s) for s in ['stream_sherpa_clip001_r3','stream_vosk_clip001_r3','e2e_duplex_sherpa_3clips_r3','739 мс','n=1','298.1 мс','-54.7 ppm','независимые такты ADC и DAC','e2e_duplex_sherpa_1clip_r1']]; print('OK')"
+02:16:26 [+  65.1s] OK    rc=0: OK
+
+02:16:26 [+  65.1s] STEP  VERIFY задача=T4
+02:16:26 [+  65.2s] INFO  verify: pass=True (verify.T4.json)
+02:16:26 [+  65.2s] STEP  REVIEW задача=T4
+02:16:28 [+  67.2s] INFO  verifier: deepseek1017 ok in=776 out=99 cost=$0.0001 lat=2.0s
+02:16:28 [+  67.2s] INFO  вердикт контролёра: PASS — Все 10 acceptance-проверок прошли (verify_pass=true), файл отчёта существует и содержит требуемые идентификаторы прогонов и числовые метрики (739 мс, 298.1 мс, -54.7 ppm, n=1); артефакт на месте, заяв
+02:16:28 [+  67.2s] STEP  REPORT
+02:16:52 [+  91.5s] INFO  reporter: glm53_flash ok in=1489 out=1295 cost=$0.0002 lat=24.2s
+02:16:52 [+  91.5s] OK    отчёт: autonomy\workspace\outbox\report.md
+02:16:52 [+  91.5s] OK    ночь завершена: бюджет $0.006, задачи: T1=failed, T2=failed, T3=failed, T4=done

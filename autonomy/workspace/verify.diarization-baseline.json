@@ -1,0 +1,75 @@
+{
+  "task_id": "diarization-baseline",
+  "pass": true,
+  "checks": [
+    {
+      "check": {
+        "file_exists": "experiments/diarization/diar_baseline_metrics.json"
+      },
+      "ok": true,
+      "detail": "exists=True"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/diarization/diar_baseline_metrics.json",
+          "num_detected_speakers",
+          1,
+          4
+        ]
+      },
+      "ok": true,
+      "detail": "got=2 range=[1,4]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/diarization/diar_baseline_metrics.json",
+          "frame_accuracy",
+          0.0,
+          1.0
+        ]
+      },
+      "ok": true,
+      "detail": "got=0.515970515970516 range=[0.0,1.0]"
+    },
+    {
+      "check": {
+        "number_range": [
+          "experiments/diarization/diar_baseline_metrics.json",
+          "num_windows",
+          10,
+          100000
+        ]
+      },
+      "ok": true,
+      "detail": "got=814 range=[10,100000]"
+    },
+    {
+      "check": {
+        "regex_in_file": [
+          "experiments/diarization/diar_baseline_metrics.json",
+          "\"synthetic\": true"
+        ]
+      },
+      "ok": true,
+      "detail": "matched=True"
+    }
+  ],
+  "ts": "2026-11-09 05:05:22",
+  "diff": {
+    "added": [
+      "experiments/diarization/diar_baseline_metrics.json",
+      "experiments/diarization_baseline.py"
+    ],
+    "modified": [
+      "autonomy/workspace/.lock",
+      "autonomy/workspace/NIGHT_LOG.md",
+      "autonomy/workspace/STATE.json",
+      "autonomy/workspace/events.jsonl",
+      "autonomy/workspace/snapshot_before.json"
+    ],
+    "deleted": []
+  },
+  "changed_anything": true
+}

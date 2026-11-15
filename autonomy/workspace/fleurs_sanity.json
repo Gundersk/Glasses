@@ -1,0 +1,19 @@
+{
+  "audio": "data/fleurs_ru_test/clip_000.wav",
+  "ref": "data/fleurs_ru_test/clip_000.txt",
+  "hyp": "      ",
+  "wer": 1.0,
+  "latency_p50": 0.004382099999929778,
+  "latency_p95": 0.022808339999755838,
+  "latency_count": 137,
+  "seed": 0,
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "vosk": "unknown",
+  "time": "2026-11-09T06:33:49+0500",
+  "meta": {
+    "sample_rate": 16000,
+    "model": "models/vosk-model-small-ru-0.22",
+    "total_time": 1.1532365000020945,
+    "vosk": "unknown"
+  }
+}

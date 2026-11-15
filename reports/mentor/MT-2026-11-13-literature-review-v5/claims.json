@@ -1,0 +1,66 @@
+[
+  {
+    "id": "C01",
+    "claim": "WDER (Word Diarization Error Rate) измеряет долю слов, неверно отнесённых к говорящему, среди совпавших слов (correct+substitution), после оптимального выравнивания меток говорящих.",
+    "status": "supported",
+    "source_url": "https://arxiv.org/pdf/2604.11269",
+    "quote": "We evaluate SAA accuracy using the Word Diarization Error Rate (WDER), which measures the proportion of words incorrectly attributed to speakers, relative to the ground truth.",
+    "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md.json"
+  },
+  {
+    "id": "C02",
+    "claim": "В сравнительном исследовании модульного и joint-подходов SA-ASR на одноканальном длинном аудио cpWER (concatenated minimum-permutation WER) используется как основная метрика.",
+    "status": "supported",
+    "source_url": "https://doi.org/10.48550/arxiv.2107.02852",
+    "quote": "In the evaluation, we used the concatenated minimum-permutation word error rate (cpWER) [5] as a primary metric.",
+    "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-4.md.json"
+  },
+  {
+    "id": "C03",
+    "claim": "VibeVoice-ASR-Streaming заявляет ожидаемую алгоритмическую задержку C/2 + T_lookahead, что даёт 2.00 с при 22 кадрах и 1.53 с при 15.",
+    "status": "supported",
+    "source_url": "https://arxiv.org/html/2609.02812v1",
+    "quote": "an *expected algorithmic* delay C/2+T_(lookahead) for VibeVoice-ASR-Streaming, with C the chunk duration, giving 2.00 s at 22 frames",
+    "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md.json"
+  },
+  {
+    "id": "C04",
+    "claim": "Потоковая диаризация на основе EEND с FLEX-STB достигает на CALLHOME и DIHARD II производительности, сопоставимой с офлайн EEND, при задержке 1 секунда.",
+    "status": "supported",
+    "source_url": "https://arxiv.org/html/2101.08473v2",
+    "quote": "Experiments on CALLHOME and DIHARD II datasets show that the proposed method achieves comparable performance to the offline EEND method with 1-second latency.",
+    "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-2.md.json"
+  },
+  {
+    "id": "C05",
+    "claim": "TalkNet — модель аудиовизуального определения активного говорящего (ASD); предобученная модель показывает mAP 92.3 на валидации AVA и 90.8 на тесте.",
+    "status": "supported",
+    "source_url": "https://github.com/TaoRuijie/TalkNet-ASD",
+    "quote": "Our pretrained model performs `mAP: 92.3` in validation set",
+    "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md.json"
+  },
+  {
+    "id": "C06",
+    "claim": "TS-TalkNet использует предобученный speaker embedding как дополнение к аудиовизуальному признаку синхронизации и превосходит TalkNet на AVA-ActiveSpeaker и ASW.",
+    "status": "supported",
+    "source_url": "https://arxiv.org/html/2305.12831v3",
+    "quote": "we propose the Target Speaker TalkNet (TS-TalkNet), which leverages a pre-enrolled speaker embedding to complement the audio-visual synchronization cue in detecting whether the target speaker is speaking.",
+    "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-3.md.json"
+  },
+  {
+    "id": "C07",
+    "claim": "XRAI Glass заявляет функцию Speaker ID: «See who's talking, on your phone or in your smart glasses».",
+    "status": "supported",
+    "source_url": "https://xrai.glass/",
+    "quote": "Speaker ID\n\nSee who's talking, on your phone or in your smart glasses",
+    "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-0.md.json"
+  },
+  {
+    "id": "C08",
+    "claim": "WhisperLive — nearly-live реализация Whisper с опциональной диаризацией через pyannote.audio; репозиторий под MIT-лицензией; поддерживает бэкенды faster_whisper, tensorrt, openvino и CPU-вариант в Docker.",
+    "status": "supported",
+    "source_url": "https://github.com/collabora/WhisperLive",
+    "quote": "Real-time speaker identification using pyannote.audio embeddings (optional dependency)",
+    "evidence_file": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v5/sources-5.md.json"
+  }
+]
