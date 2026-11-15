@@ -138,20 +138,27 @@ def author_bundle(card, input_paths, claims=None, max_chars=60000):
                 related = [c for c in claims if c.get("evidence_file") == name and c.get("source_url") == page["url"]]
                 quotes = [" ".join(c["quote"].split()) for c in related
                           if isinstance(c.get("quote"), str) and c["quote"].strip() and len(c["quote"]) <= 4000]
-                pages.append((name, sha, page["url"], text, quotes, _tokens([c.get("claim") for c in related])))
+                trace = page.get('retrieval', {})
+                if not isinstance(trace, dict):
+                    raise ValueError('invalid source provenance')
+                provenance = {key: value[:500] for key, value in trace.items()
+                              if key in {'method', 'provider', 'source_path', 'source_sha256', 'receipt_path',
+                                         'receipt_sha256', 'original_accessed', 'verified_at', 'attempt_id', 'limitation'}
+                              and isinstance(value, str)}
+                pages.append((name, sha, page["url"], text, quotes, _tokens([c.get("claim") for c in related]), provenance))
         if not pages or len(pages) > (18 if policy else 6):
             raise ValueError("no selected source pages or page limit exceeded")
 
         def render(per_page):
             result = []
-            for name, sha, url, text, quotes, claim_tokens in pages:
+            for name, sha, url, text, quotes, claim_tokens, provenance in pages:
                 spans = _excerpts(text, per_page, tokens, quotes, claim_tokens)
                 excerpts = [{"start": a, "end": b, "text": text[a:b]} for a, b in spans]
                 visible = sum(b - a for a, b in spans)
                 result.append({"evidence_file": name, "source_sha256": sha, "url": url,
                                "source_characters": len(text), "visible_characters": visible,
                                "omitted_characters": len(text) - visible, "full_source": visible == len(text),
-                               "excerpts": excerpts})
+                               "excerpts": excerpts, "retrieval": provenance})
             packet = {"schema_version": 1, "untrusted_source_data": True,
                       "limitation": "Visible excerpts of saved pages only (not necessarily full publications); exact quote from a single excerpt is not proof of an entire claim.",
                       "sources": result, "unavailable_sources": unavailable,

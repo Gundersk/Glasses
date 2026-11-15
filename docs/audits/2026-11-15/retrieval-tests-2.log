@@ -1,0 +1,8 @@
+ok: второй прогон сохраняет записи первого — case_merge_keeps_old
+ok: повтор не дублирует запись — case_same_key_updates
+ok: другой seed не смешивается со старым — case_other_seed_resets
+ok: битый манифест перезаписывается, ночь не падает — case_corrupt_manifest_recovers
+ok: частичный JSON помечается partial, финальный — нет — case_partial_flag
+итог: 5 проверок пройдено
+
+STDERR

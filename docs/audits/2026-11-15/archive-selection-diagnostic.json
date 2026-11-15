@@ -1,0 +1,224 @@
+{
+  "closes": "LG-2026-11-15-01",
+  "created": "2026-11-15T18:59:55.591116+05:00",
+  "network_calls": 0,
+  "old_run_files_checked": 99,
+  "old_run_files_unchanged": true,
+  "archive_eligible_urls": 27,
+  "ava_reusable": true,
+  "new_selected": [
+    "https://arxiv.org/html/1901.01342v2",
+    "https://ieeexplore.ieee.org/document/9021951"
+  ],
+  "selection_manifest": {
+    "candidates": [
+      {
+        "index": 0,
+        "url": "https://github.com/okankop/ASDNet",
+        "canonical_url": "https://github.com/okankop/ASDNet",
+        "status": "rejected",
+        "reason": "page_limit",
+        "publication_key": "url:https://github.com/okankop/ASDNet#group-0",
+        "dedup_basis": "url",
+        "mirror_of": null,
+        "selected_group": "https://github.com/okankop/ASDNet",
+        "versions": [],
+        "identity_conflicts": [],
+        "score": 7,
+        "domain": "github.com",
+        "primary_source_hints": [
+          "repository"
+        ]
+      },
+      {
+        "index": 1,
+        "url": "https://ieeexplore.ieee.org/document/9053900",
+        "canonical_url": "https://ieeexplore.ieee.org/document/9053900",
+        "status": "rejected",
+        "reason": "publication_duplicate",
+        "publication_key": "arxiv:1901.01342#group-1",
+        "dedup_basis": "title_candidate",
+        "mirror_of": "https://arxiv.org/html/1901.01342v2",
+        "selected_group": "https://arxiv.org/html/1901.01342v2",
+        "versions": [],
+        "identity_conflicts": [],
+        "score": 9,
+        "domain": "ieeexplore.ieee.org",
+        "primary_source_hints": []
+      },
+      {
+        "index": 2,
+        "url": "https://ui.adsabs.harvard.edu/abs/2020spsi.conf..906R/abstract",
+        "canonical_url": "https://ui.adsabs.harvard.edu/abs/2020spsi.conf..906R/abstract",
+        "status": "rejected",
+        "reason": "publication_duplicate",
+        "publication_key": "arxiv:1901.01342#group-1",
+        "dedup_basis": "title_candidate",
+        "mirror_of": "https://arxiv.org/html/1901.01342v2",
+        "selected_group": "https://arxiv.org/html/1901.01342v2",
+        "versions": [],
+        "identity_conflicts": [],
+        "score": 8,
+        "domain": "ui.adsabs.harvard.edu",
+        "primary_source_hints": []
+      },
+      {
+        "index": 3,
+        "url": "https://www.semanticscholar.org/paper/Ava-Active-Speaker%3A-An-Audio-Visual-Dataset-for-Roth-Chaudhuri/0b076af3a5ddf892cef75df8342a5b8a93820f3d",
+        "canonical_url": "https://semanticscholar.org/paper/Ava-Active-Speaker%3A-An-Audio-Visual-Dataset-for-Roth-Chaudhuri/0b076af3a5ddf892cef75df8342a5b8a93820f3d",
+        "status": "rejected",
+        "reason": "publication_duplicate",
+        "publication_key": "arxiv:1901.01342#group-1",
+        "dedup_basis": "title_candidate",
+        "mirror_of": "https://arxiv.org/html/1901.01342v2",
+        "selected_group": "https://arxiv.org/html/1901.01342v2",
+        "versions": [],
+        "identity_conflicts": [],
+        "score": 8,
+        "domain": "semanticscholar.org",
+        "primary_source_hints": []
+      },
+      {
+        "index": 4,
+        "url": "https://export.arxiv.org/abs/1901.01342",
+        "canonical_url": "https://export.arxiv.org/abs/1901.01342",
+        "status": "rejected",
+        "reason": "page_limit",
+        "publication_key": "arxiv:1901.01342#group-4",
+        "dedup_basis": "explicit",
+        "mirror_of": null,
+        "selected_group": "https://export.arxiv.org/abs/1901.01342",
+        "versions": [],
+        "identity_conflicts": [
+          "arxiv_version"
+        ],
+        "score": 7,
+        "domain": "export.arxiv.org",
+        "primary_source_hints": []
+      },
+      {
+        "index": 5,
+        "url": "http://arxiv.org/pdf/1901.01342v1",
+        "canonical_url": "http://arxiv.org/pdf/1901.01342v1",
+        "status": "rejected",
+        "reason": "page_limit",
+        "publication_key": "arxiv:1901.01342#group-5",
+        "dedup_basis": "explicit",
+        "mirror_of": null,
+        "selected_group": "http://arxiv.org/pdf/1901.01342v1",
+        "versions": [
+          "v1"
+        ],
+        "identity_conflicts": [
+          "arxiv_version"
+        ],
+        "score": 5,
+        "domain": "arxiv.org",
+        "primary_source_hints": [
+          "arxiv_or_doi"
+        ]
+      },
+      {
+        "index": 6,
+        "url": "https://ieeexplore.ieee.org/document/9021951",
+        "canonical_url": "https://ieeexplore.ieee.org/document/9021951",
+        "status": "selected",
+        "reason": "relevance_and_domain_diversity",
+        "publication_key": "supplement:url:https://ieeexplore.ieee.org/document/9021951#group-6",
+        "dedup_basis": "url",
+        "mirror_of": null,
+        "selected_group": "https://ieeexplore.ieee.org/document/9021951",
+        "versions": [],
+        "identity_conflicts": [],
+        "score": 8,
+        "domain": "ieeexplore.ieee.org",
+        "primary_source_hints": []
+      },
+      {
+        "index": 7,
+        "url": "https://arxiv.org/html/1901.01342v2",
+        "canonical_url": "https://arxiv.org/html/1901.01342v2",
+        "status": "selected",
+        "reason": "relevance_and_domain_diversity",
+        "publication_key": "arxiv:1901.01342#group-1",
+        "dedup_basis": "title_candidate",
+        "mirror_of": null,
+        "selected_group": "https://arxiv.org/html/1901.01342v2",
+        "versions": [
+          "v2"
+        ],
+        "identity_conflicts": [
+          "arxiv_version"
+        ],
+        "score": 8,
+        "domain": "arxiv.org",
+        "primary_source_hints": [
+          "arxiv_or_doi"
+        ]
+      },
+      {
+        "index": 8,
+        "url": "https://www.researchgate.net/publication/341084660_Ava_Active_Speaker_An_Audio-Visual_Dataset_for_Active_Speaker_Detection",
+        "canonical_url": "https://researchgate.net/publication/341084660_Ava_Active_Speaker_An_Audio-Visual_Dataset_for_Active_Speaker_Detection",
+        "status": "rejected",
+        "reason": "publication_duplicate",
+        "publication_key": "arxiv:1901.01342#group-1",
+        "dedup_basis": "title_candidate",
+        "mirror_of": "https://arxiv.org/html/1901.01342v2",
+        "selected_group": "https://arxiv.org/html/1901.01342v2",
+        "versions": [],
+        "identity_conflicts": [],
+        "score": 7,
+        "domain": "researchgate.net",
+        "primary_source_hints": []
+      },
+      {
+        "index": 9,
+        "url": "https://arxiv.org/pdf/1901.01342v2.pdf",
+        "canonical_url": "https://arxiv.org/pdf/1901.01342v2.pdf",
+        "status": "rejected",
+        "reason": "publication_duplicate",
+        "publication_key": "arxiv:1901.01342#group-1",
+        "dedup_basis": "title_candidate",
+        "mirror_of": "https://arxiv.org/html/1901.01342v2",
+        "selected_group": "https://arxiv.org/html/1901.01342v2",
+        "versions": [
+          "v2"
+        ],
+        "identity_conflicts": [
+          "arxiv_version"
+        ],
+        "score": 4,
+        "domain": "arxiv.org",
+        "primary_source_hints": [
+          "arxiv_or_doi"
+        ]
+      }
+    ],
+    "selected": [
+      "https://arxiv.org/html/1901.01342v2",
+      "https://ieeexplore.ieee.org/document/9021951"
+    ],
+    "limitation": "Publication grouping and representation preferences are heuristics, not verified identity, version equivalence, access, primary status or scientific reliability; title candidates may attach to the newest explicit arXiv version. DNS and redirects are not checked."
+  },
+  "ava_provenance": {
+    "method": "archive",
+    "source_path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/sources-3.md.json",
+    "source_sha256": "d89b04a11132c36ce054b849632fdf98b8eff3f9a3e51f6b3635964af84a4f36",
+    "receipt_path": "autonomy/workspace/requests/MT-2026-11-13-literature-review-v3/run/evidence/20261114T190525-c19db36126fb/receipt.json",
+    "receipt_sha256": "9d30a1472d2aeabe7ebb026fde683c350e65b07671a7c855226c26a36f1d2e9a",
+    "original_accessed": "2026-11-14T14:05:55Z",
+    "captured_accessed": "2026-11-14T14:05:55Z",
+    "max_age_days": 30,
+    "verified_at": "2026-11-15T13:59:55.349775Z",
+    "age_days": 0.9958373816550925,
+    "limitation": "Archived fetched text; no scientific acceptance inherited"
+  },
+  "ava_characters": 30000,
+  "scientific_acceptance_inherited": false,
+  "cached_numeric_excerpts": [
+    "speaking or not, and whether the speech is audible. This dataset contains about 3.65 million human labeled frames or about 38.5 hours of face tracks, and the corresponding audio. We al",
+    "audible. This dataset contains about 3.65 million human labeled frames or about 38.5 hours of face tracks, and the corresponding audio. We also present a new audio-visual approach for ",
+    "of the highlighted face shown on the waveform above. The dataset contains about 3.65 million labeled frames, about 38 hours of face tracks, and the corresponding audio. We describe the"
+  ]
+}

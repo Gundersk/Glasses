@@ -33,6 +33,9 @@ night:
   # Срез на файл не равен окну модели. Общий подписочный вход проверяется
   # отдельно; превышение блокируется без молчаливой обрезки.
   input_chars_per_file: 8000
+  # No LLM summarization here: deterministic STATE handoff + hashed input manifest.
+  context_audit_enabled: true
+  context_max_chars: 220000
   # Сколько ночей подряд цель может не получать новых доказательств, прежде чем
   # система остановится и вынесет решение владельцу вместо бесконечных прогонов.
   max_nights_without_progress: 3

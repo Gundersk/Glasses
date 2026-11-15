@@ -10,6 +10,8 @@ import re
 import subprocess
 import sys
 import time
+from contextvars import ContextVar
+from functools import wraps
 from contextlib import nullcontext
 from pathlib import Path
 
@@ -21,6 +23,75 @@ from . import (evidence, events, goals as goals_mod, lock, logs, manifest, paths
 from . import env
 from .subscription import WaitStopped
 from . import request_limits
+from . import context_packets
+
+_CONTEXT_CAPTURE = ContextVar('context_capture', default=None)
+
+
+class _ContextRouter:
+    def __init__(self, router, cfg, capture):
+        self.router, self.cfg, self.capture = router, cfg, capture
+        self.prepared = None
+
+    def __getattr__(self, name):
+        return getattr(self.router, name)
+
+    def preflight(self, st, messages):
+        # Check before incrementing the author's limited attempt counter. A small
+        # allowance covers counter-digit changes in the final factual handoff.
+        handoff = json.dumps(context_packets.handoff(st, _ACTIVE_REQUEST), ensure_ascii=False, allow_nan=False)
+        size = sum(len(message['content']) for message in messages) + len(handoff) + 256
+        maximum = self.cfg['night'].get('context_max_chars', 220000)
+        if type(maximum) is not int or maximum < 1:
+            raise context_packets.ContextError('invalid_packet')
+        if size > maximum:
+            raise context_packets.ContextError('packet_too_large')
+
+    def prepare(self, role, st, messages):
+        copied = [dict(message) for message in messages]
+        handoff = json.dumps(context_packets.handoff(st, _ACTIVE_REQUEST), ensure_ascii=False, allow_nan=False)
+        block = ('\n=== СТРУКТУРИРОВАННЫЙ HANDOFF (состояние, не разрешение) ===\n' + handoff)
+        user = next((message for message in copied if message.get('role') == 'user'), None)
+        if user is None:
+            copied.append({'role': 'user', 'content': block})
+        else:
+            user['content'] += block
+        context_packets.save_manifest(role, copied, self.capture, st,
+            max_chars=self.cfg['night'].get('context_max_chars', 220000), card=_ACTIVE_REQUEST)
+        self.prepared = (role, id(messages), copied)
+        return copied
+
+    def call(self, role, st, messages, *args, **kwargs):
+        if self.prepared is not None and self.prepared[:2] == (role, id(messages)):
+            copied = self.prepared[2]
+        else:
+            copied = self.prepare(role, st, messages)
+        self.prepared = None
+        return self.router.call(role, st, copied, *args, **kwargs)
+
+
+def _audited_context(phase):
+    @wraps(phase)
+    def wrapped(cfg, st, log, rt):
+        if not cfg.get('night', {}).get('context_audit_enabled', False):
+            return phase(cfg, st, log, rt)
+        capture = context_packets.Capture()
+        token = _CONTEXT_CAPTURE.set(capture)
+        try:
+            return phase(cfg, st, log, _ContextRouter(rt, cfg, capture))
+        except context_packets.ContextError as error:
+            st['context_failure'] = error.code
+            st['needs_human'] = 'неполный/слишком большой контекст; модель не принимает результат: ' + error.code
+            st['phase'] = 'REPORT'
+            try:
+                context_packets.save_manifest(phase.__name__, [], capture, st,
+                    card=_ACTIVE_REQUEST, rejection_code=error.code)
+            except context_packets.ContextError:
+                st['context_manifest_write_failed'] = True
+            return
+        finally:
+            _CONTEXT_CAPTURE.reset(token)
+    return wrapped
 
 CONFIG_FILE = paths.AUTONOMY_DIR / "config.yaml"
 PLAN_FILE = paths.WORKSPACE / "night_plan.yaml"
@@ -59,7 +130,9 @@ def _approval_context_sha256():
                 "autonomy/providers.py", "autonomy/opencode_provider.py",
                 "autonomy/subscription.py", "autonomy/state.py", "opencode.json",
                 "autonomy/request_research.py", "autonomy/source_selection.py", "autonomy/request_limits.py",
-                "autonomy/claim_validation.py", "autonomy/author_evidence.py", "autonomy/source_outcomes.py"):
+                "autonomy/claim_validation.py", "autonomy/author_evidence.py", "autonomy/source_outcomes.py",
+                "autonomy/source_archive.py", "autonomy/publication_identity.py", "autonomy/retrieval.py",
+                "autonomy/valyu_reader.py", "autonomy/manifest.py", "autonomy/context_packets.py"):
         fp = paths.PROJECT_ROOT / rel
         h.update(rel.encode("utf-8"))
         h.update(fp.read_bytes() if fp.exists() else b"MISSING")
@@ -112,6 +185,7 @@ def load_config():
         from . import intake
         spec = _ACTIVE_REQUEST["spec"]
         cfg["request_id"] = spec["id"]
+        cfg["night"]["retrieval_budget_usd"] = spec.get("research_policy", {}).get("retrieval_budget_usd", 0)
         cfg["night"]["budget_usd_per_night"] = min(cfg["night"]["budget_usd_per_night"], spec["budget_usd"])
         cfg["night"]["input_chars_per_file"] = 24000
         cfg["roles"]["verifier"] = list(cfg["roles"]["critic"])
@@ -140,7 +214,16 @@ def extract_json(text):
     return obj
 
 
-def _read_ctx(path, limit=8000):
+def _read_ctx(path, limit=8000, *, required=False, mode='prefix'):
+    capture = _CONTEXT_CAPTURE.get()
+    if capture is not None:
+        if str(path).replace('\\', '/') == 'docs/agent-context.md':
+            required, limit = True, 16000
+        elif str(path).replace('\\', '/') == 'docs/scope.md':
+            required, limit = True, 30000
+        return capture.read(path, limit, required=required, mode=mode)
+    if required or mode != 'prefix':
+        return context_packets.Capture().read(path, limit, required=required, mode=mode)
     p = paths.resolve(path)
     if (not paths.inside_project(path) or p.name.startswith(".env")
             or "temp" in p.relative_to(paths.PROJECT_ROOT).parts):
@@ -173,7 +256,12 @@ def _request_author_inputs(task, cfg, iteration):
             note = intake.rel(intake.root(_ACTIVE_REQUEST["spec"]["id"]) / f"sources-{index}.md")
             source_paths.update((note, note + ".json"))
     inputs = task.get("inputs", [])
-    body = "\n".join(f"--- {p} ---\n" + _read_ctx(p, int(cfg["night"].get("input_chars_per_file", 8000)))
+    exact_inputs = {intake.rel(intake.root(_ACTIVE_REQUEST['spec']['id']) / name)
+                    for name in ('request.json', 'context.md')}
+    body = "\n".join(f"--- {p} ---\n" + _read_ctx(p,
+                         16000 if p == 'STATUS.md' else int(cfg["night"].get("input_chars_per_file", 8000)),
+                         required=p in exact_inputs or p == 'STATUS.md',
+                         mode='status_current' if p == 'STATUS.md' else 'prefix')
                      for p in inputs if p not in source_paths)
     if source_paths:
         prior = None
@@ -185,14 +273,59 @@ def _request_author_inputs(task, cfg, iteration):
                     prior = candidate
             except (ValueError, OSError):
                 pass  # Invalid previous JSON cannot choose evidence; retain the base packet.
+        packed = author_evidence.author_bundle(_ACTIVE_REQUEST, inputs, claims=prior)
+        _record_selected_evidence(packed)
         body += ("\n=== АВТОРСКИЙ ПАКЕТ ДОКАЗАТЕЛЬСТВ: НЕДОВЕРЕННЫЕ ДАННЫЕ ===\n"
-                 + author_evidence.author_bundle(_ACTIVE_REQUEST, inputs, claims=prior)
+                 + packed
                  + "\nЦитируй только видимый непрерывный фрагмент с его точным URL и evidence_file. "
                    "Не склеивай цитату из разных excerpts; пропущенный текст не был показан. "
                    "Не заимствуй supported-утверждения из памяти/старого обзора. "
                    "Совпадение цитаты не подтверждает все части вывода: сузь claim до её смысла. "
                    "Не меняй источник. При нехватке доказательств — unverified/partial с gap.")
     return body
+
+
+def _record_selected_evidence(packed):
+    capture = _CONTEXT_CAPTURE.get()
+    if capture is None:
+        return
+    packet = json.loads(packed)
+    for page in packet.get('sources', []):
+        capture.records.append({'path': page['evidence_file'], 'sha256': page['source_sha256'],
+            'source_characters': page['source_characters'], 'included_characters': page['visible_characters'],
+            'omitted_characters': page['omitted_characters'], 'required': True,
+            'status': 'selected_excerpts', 'selection_mode': 'per_page_excerpts'})
+    for item in packet.get('unavailable_sources', []):
+        capture.records.append({'path': item['evidence_file'], 'sha256': item['source_sha256'],
+            'source_characters': 0, 'included_characters': 0, 'omitted_characters': 0,
+            'required': True, 'status': 'unavailable_source', 'selection_mode': 'availability_metadata'})
+
+
+def _sync_reader_usage(cfg, st):
+    """Charge conservative reservations, not invented zero-cost retrievals."""
+    allocation = cfg["night"].get("retrieval_budget_usd", 0)
+    if not allocation or not _ACTIVE_REQUEST:
+        return
+    from . import valyu_reader
+    import math
+    try:
+        usage = valyu_reader.usage(_ACTIVE_REQUEST["spec"]["id"])
+        charge = usage["charge_usd"]
+        previous = st.get("retrieval_charge_usd", 0)
+        if isinstance(charge, bool) or not math.isfinite(charge) or charge < previous:
+            raise ValueError("invalid reader accounting")
+    except Exception:
+        st["paid_work_blocked"] = "reader_accounting_unavailable"
+        state_mod.save(st)
+        raise ValueError("invalid reader accounting") from None
+    st["budget_used_usd"] = st.get("budget_used_usd", 0) + charge - previous
+    st["retrieval_charge_usd"] = charge
+    st["retrieval_usage"] = usage
+    if charge > allocation + 1e-9:
+        st["paid_work_blocked"] = "retrieval_allocation_exceeded"
+        state_mod.save(st)
+        raise ValueError("reported retrieval cost exceeds allocation; further paid work forbidden")
+    state_mod.save(st)
 
 
 STUB_MARKERS = [
@@ -286,6 +419,7 @@ def _request_limits_context(cfg, st):
               "разрешённого резерва, не требуй отдельного запроса с дословными словами для каждой темы.")
 
 
+@_audited_context
 def phase_plan(cfg, st, log, rt):
     log.step("PLAN")
     st.setdefault("night_started_ts", time.time())  # не сбрасывать начало при bounded replan
@@ -339,10 +473,10 @@ def phase_plan(cfg, st, log, rt):
 
     materials = (
         "=== АКТУАЛЬНЫЕ ОГРАНИЧЕНИЯ И ПРИОРИТЕТ ДОКУМЕНТОВ ===\n"
-        + _read_ctx("docs/agent-context.md", 12000)
+        + _read_ctx("docs/agent-context.md", 16000, required=True)
         + "\n=== РЕЕСТР ЦЕЛЕЙ ===\n" + goals_mod.summary(g, 2800)
         + "\n=== PROJECT.md (фрагмент) ===\n" + _read_ctx("PROJECT.md", 2000)
-        + "\n=== STATUS.md ===\n" + _read_ctx("STATUS.md", 4000)
+        + "\n=== STATUS.md: АКТУАЛЬНЫЕ РАЗДЕЛЫ ===\n" + _read_ctx("STATUS.md", 16000, required=True, mode='status_current')
         + "\n=== ФАКТЫ ПРОШЛОЙ НОЧИ (digest) ===\n"
         + _read_ctx("autonomy/workspace/digest.md", 2500)
         + "\n=== ПОСЛЕДНИЕ СОГЛАСОВАННЫЕ ИЗМЕНЕНИЯ ПЛАНА (RC) ===\n" + _rc_tail(1500)
@@ -662,7 +796,12 @@ def _verified_result(task, current):
         return None
 
 
+@_audited_context
 def phase_execute(cfg, st, log, rt):
+    if st.get("paid_work_blocked"):
+        st["needs_human"] = "платная работа заблокирована ошибкой учёта; требуется ручная проверка"
+        st["phase"] = "REPORT"
+        return
     if not _require_approval(st, log, return_to_plan=True):
         st["task"] = None
         return
@@ -717,11 +856,13 @@ def phase_execute(cfg, st, log, rt):
                          else "\n".join(f"--- {p} ---\n" + _read_ctx(p, int(cfg["night"].get("input_chars_per_file", 8000)))
                                         for p in task.get("inputs", [])))
     except (ValueError, OSError, TypeError, KeyError) as error:
+        if isinstance(error, context_packets.ContextError):
+            raise
         st["needs_human"] = f"авторский пакет доказательств отклонён: {type(error).__name__}; модель не вызвана"
         st["phase"] = "REPORT"
         return
     context = (
-        "=== АКТУАЛЬНЫЕ ОГРАНИЧЕНИЯ ===\n" + _read_ctx("docs/agent-context.md", 12000)
+        "=== АКТУАЛЬНЫЕ ОГРАНИЧЕНИЯ ===\n" + _read_ctx("docs/agent-context.md", 16000, required=True)
         + "\n=== ЗАДАЧА ===\n" + yaml.safe_dump(task, allow_unicode=True, sort_keys=False)
         + "\n=== РАЗРЕШЁННЫЕ ПУТИ ДЛЯ ЗАПИСИ ===\n"
         + "\n".join(cfg["sandbox"]["allowed_write_paths"])
@@ -759,6 +900,8 @@ def phase_execute(cfg, st, log, rt):
                     "summary": "утверждённый протокол без LLM"}
             res = None
         else:
+            if isinstance(rt, _ContextRouter):
+                rt.preflight(st, messages)
             if _ACTIVE_REQUEST and task.get("execution") == "document_only":
                 from . import request_research
                 policy = request_research.policy(_ACTIVE_REQUEST)
@@ -769,6 +912,15 @@ def phase_execute(cfg, st, log, rt):
                         st["phase"] = "REPORT"
                         return
                     st["request_answer_attempts"] = used + 1
+                    if isinstance(rt, _ContextRouter):
+                        try:
+                            rt.prepare('executor', st, messages)
+                        except context_packets.ContextError:
+                            if used:
+                                st['request_answer_attempts'] = used
+                            else:
+                                st.pop('request_answer_attempts', None)
+                            raise
                     state_mod.save(st)
             try:
                 scope = request_limits.account(_ACTIVE_REQUEST, st, "answer", save=state_mod.save) if adaptive else nullcontext()
@@ -925,7 +1077,10 @@ def phase_execute(cfg, st, log, rt):
                     timeout = min(float(timeout), shared_seconds)
                     st["request_sources_attempted"] = st.get("request_sources_attempted", 0) + 1
                     state_mod.save(st)
-                r = shellutil.run_command(cmd, str(paths.PROJECT_ROOT), timeout=timeout)
+                try:
+                    r = shellutil.run_command(cmd, str(paths.PROJECT_ROOT), timeout=timeout)
+                finally:
+                    _sync_reader_usage(cfg, st)
             evidence.record_command(receipt_dir, receipt, cmd, r, command_started_ns)
             tail_out = (r.stdout or "")[-2000:]
             tail_err = (r.stderr or "")[-2000:]
@@ -952,6 +1107,13 @@ def phase_execute(cfg, st, log, rt):
                                     command_started_ns, status="timeout")
             failed.append(f"команда `{cmd}`: таймаут {timeout}s")
             last_output = "TIMEOUT"
+            break
+        except ValueError:
+            evidence.record_command(receipt_dir, receipt, cmd,
+                                    subprocess.CompletedProcess(cmd, -1, "", "reader accounting rejected"),
+                                    command_started_ns, status="budget_error")
+            failed.append("учёт reader-бюджета отклонён; дальнейшие команды запрещены")
+            last_output = "READER_BUDGET_ERROR"
             break
         except OSError as exc:
             evidence.record_command(receipt_dir, receipt, cmd,
@@ -1101,6 +1263,7 @@ def _request_followup(st, full_task, out, model, log):
     return True
 
 
+@_audited_context
 def phase_review(cfg, st, log, rt):
     if not _require_approval(st, log):
         return
@@ -1135,7 +1298,7 @@ def phase_review(cfg, st, log, rt):
         "diff": v.get("diff"),
         "last_output_tail": (task.get("last_output") or "")[-1500:],
         "errors": task.get("errors", [])[-2:],
-    }, ensure_ascii=False)[:12000]
+    }, ensure_ascii=False, allow_nan=False)
     if _ACTIVE_REQUEST:
         from . import request_research
         context += "\n=== ПЕРЕДАННОЕ ЗАДАНИЕ ===\n" + json.dumps(_ACTIVE_REQUEST, ensure_ascii=False)
@@ -1143,7 +1306,8 @@ def phase_review(cfg, st, log, rt):
             from . import intake
             for name in ("response.md", "claims.json", "decision.json"):
                 fp = intake.output_dir(_ACTIVE_REQUEST) / name
-                context += f"\n=== {name} ===\n" + _read_ctx(str(fp), 24000)
+                limit = 24000 if name == 'response.md' else 160000 if name == 'claims.json' else 60000
+                context += f"\n=== {name} (ПОЛНОСТЬ ОБЯЗАТЕЛЬНА) ===\n" + _read_ctx(str(fp), limit, required=True)
             if request_research.policy(_ACTIVE_REQUEST):
                 try:
                     context += "\n=== КОНТЕКСТ ВСЕХ ИСПОЛЬЗОВАННЫХ ЦИТАТ ===\n" + request_research.evidence_bundle(_ACTIVE_REQUEST)
@@ -1157,10 +1321,16 @@ def phase_review(cfg, st, log, rt):
                     return  # bounded author repair; never PASS unseen quote context
         # REVIEW collection must see the pages, not merely successful stdout.
         names = list(full_task.get("inputs", [])) + evidence.outputs(full_task)
-        for name in dict.fromkeys(names):
-            if (name.endswith(".md.json") and "/sources-" in name
-                    and not (full_task["id"] == "answer-mentor" and request_research.policy(_ACTIVE_REQUEST))):
-                context += f"\n=== ПРОЧИТАННЫЕ СТРАНИЦЫ {name} ===\n" + _read_ctx(name, 24000)
+        if (any(name.endswith('.md.json') and '/sources-' in name for name in names)
+                and not (full_task['id'] == 'answer-mentor' and request_research.policy(_ACTIVE_REQUEST))):
+            from . import author_evidence
+            try:
+                packed = author_evidence.author_bundle(_ACTIVE_REQUEST, list(dict.fromkeys(names)))
+            except (ValueError, OSError, TypeError, KeyError):
+                raise context_packets.ContextError('collection_review_evidence_unavailable') from None
+            _record_selected_evidence(packed)
+            context += ('\n=== ПРОЧИТАННЫЕ СТРАНИЦЫ: ЯВНЫЕ ВЫДЕРЖКИ И ПРОПУСКИ ===\n' + packed
+                        + '\nЭто обзор доступности/покрытия, не научная приёмка непоказанных частей источника.')
         if full_task["id"] == "answer-mentor":
             context += ("\nПроверь все requirements, контекст русского CPU-проекта, смысл цитат, "
                         "переносимость измерений, отсутствие безусловных первых/единственных. "
@@ -1476,6 +1646,9 @@ def phase_report(cfg, st, log, rt):
             "complete" if answer.get("status") == "done" else "blocked")
         facts["request_gaps"] = st.get("request_gaps", [])
         facts["request_limitations"] = st.get("request_limitations", [])
+        if st.get("retrieval_usage") is not None:
+            facts["retrieval_usage"] = st["retrieval_usage"]
+            facts["retrieval_charge_usd"] = st.get("retrieval_charge_usd", 0)
         if _ACTIVE_REQUEST["spec"].get("research_policy"):
             try:
                 facts["request_limits"] = request_limits.snapshot(_ACTIVE_REQUEST, st,

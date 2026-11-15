@@ -198,6 +198,10 @@ class EvidenceRepairIntegrationTests(unittest.TestCase):
     def test_review_packet_failure_replaces_stale_feedback(self):
         intake.submit(self.spec)
         with intake.runtime(self.spec['id']) as card:
+            folder = intake.output_dir(card)
+            folder.mkdir(parents=True)
+            for name, content in [('response.md', 'Fixture answer.'), ('claims.json', '[]'), ('decision.json', '{}')]:
+                (folder / name).write_text(content, encoding='utf-8')
             task = intake.build_plan(card)[-1]
             verdict = {'pass': True, 'checks': []}
             st = state.default_state()

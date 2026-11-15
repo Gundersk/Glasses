@@ -98,6 +98,8 @@ def validate(spec):
         value = spec.setdefault(field, default)
         if isinstance(value, bool) or not isinstance(value, (int, float)) or not low <= value <= high:
             raise ValueError(f"{field}: допустимо {low}…{high}")
+    if spec.get("research_policy", {}).get("retrieval_budget_usd", 0) > spec["budget_usd"]:
+        raise ValueError("retrieval budget exceeds whole request budget")
     extra = spec.setdefault("context_files", [])
     if not isinstance(extra, list) or len(extra) > 5:
         raise ValueError("context_files: максимум 5 файлов")
@@ -173,6 +175,12 @@ def build_plan(card):
                     for i, q in enumerate(effective["queries"])]
         if policy:
             commands = [command + " --allow-unavailable" for command in commands]
+            if policy.get("reuse_sources", False):
+                commands = [command + " --reuse-archive" for command in commands]
+            if policy.get("retrieval_budget_usd", 0):
+                commands = [command + f' --reader-budget-usd {policy["retrieval_budget_usd"]}'
+                            f' --reader-max-calls {policy["max_reader_calls"]} --reader-scope {spec["id"]}'
+                            for command in commands]
         tasks.append(dict(common, id="collect-sources", goal="Проверить актуальные внешние источники по заданию",
                           kind="research", execution="approved_commands", commands=commands, inputs=inputs,
                           time_limit_minutes=10, acceptance=[{"file_exists": n} for n in notes]

@@ -4,6 +4,19 @@
 
 ## Шаблон
 
+### Valyu и локальный аудит, 15.11.2026
+
+| ID | Источник | Что подтверждает | Дата | Версия/лицензия | Статус |
+|---|---|---|---|---|---|
+| S085 | https://opencode.ai/docs/compaction ; https://opencode.ai/docs/config ; https://opencode.ai/docs/build/plugins | buffer/keep, summary/native, merge, background/warming; prompt customization не подтверждён | 2026-11-15 | V2; лицензия документации не проверена | по брифу researcher, snapshot не сохранён; локальные настройки отдельно в compaction-settings.json, качество не измерено |
+
+| ID | Источник | Что подтверждает | Дата | Версия/лицензия | Статус |
+|---|---|---|---|---|---|
+| S081 | https://docs.valyu.ai/search/quickstart.md ; https://docs.valyu.ai/api-reference/endpoint/search.md ; https://docs.valyu.ai/search/tips-and-tricks.md | Search contract, max_price request-level; единицы не установлены, Search не включён | 2026-11-15 | /v1; лицензия документации не проверена | по брифу researcher, snapshot не сохранён; `valyu-api-brief.md` |
+| S082 | https://docs.valyu.ai/guides/content-extraction.md ; https://docs.valyu.ai/pricing.md | Contents normal/no-summary, тариф источника, не измеренный счёт | 2026-11-15 | /v1; лицензия документации не проверена | по брифу; live схема отдельно наблюдалась, включая total_cost_dollars |
+| S083 | локальные v3 sources-3/receipt и cached выдача v6 | наличие сохранённого AVA arXivv2, даты и provenance; не научный PASS | 2026-11-15 | SHA в archive-selection-diagnostic.json; права внешнего текста отдельно | read-only проверено, 99 файлов без изменения |
+| S084 | Valyu Contents для https://arxiv.org/html/1901.01342v2 и https://ieeexplore.ieee.org/document/9053900 | два HTTP200; транспорт/извлечение, не полнота статьи | 2026-11-15 | API /v1, лицензия/права хранения внешнего текста не проверены | малый live smoke; metadata/head/SHA в valyu-smoke-20261115T190309.json; не принятые claims |
+
 ### Chat2API, 14.11.2026 (частичный бриф researcher)
 
 | ID | Источник | Что подтверждает / проверяем | Дата обращения | Версия | Лицензия | Статус |
