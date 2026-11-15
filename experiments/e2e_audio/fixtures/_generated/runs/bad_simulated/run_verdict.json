@@ -1,0 +1,37 @@
+{
+  "pass": false,
+  "run_id": "bad_simulated",
+  "kind": "streaming",
+  "layers": {
+    "layer1_validate": {
+      "status": "fail",
+      "pass": false,
+      "required": true,
+      "failed_checks": [
+        "simulated_is_false"
+      ]
+    },
+    "layer2_dom": {
+      "status": "missing",
+      "pass": null,
+      "required": false,
+      "reason": "dom_checks.json не передан"
+    },
+    "layer2_screenshot": {
+      "status": "pass",
+      "pass": true,
+      "required": true,
+      "failed_checks": []
+    },
+    "layer3_vision": {
+      "status": "missing",
+      "pass": null,
+      "required": false,
+      "reason": "vision_review.json не передан"
+    }
+  },
+  "failed_layers": [
+    "layer1_validate"
+  ],
+  "created": "2026-11-09T19:53:39.828662+05:00"
+}

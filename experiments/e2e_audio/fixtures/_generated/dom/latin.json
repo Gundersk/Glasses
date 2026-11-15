@@ -1,0 +1,75 @@
+{
+  "layer": 2,
+  "url": "http://127.0.0.1:50175/latin",
+  "pass": false,
+  "mode": "html",
+  "selector": "class*=subtitle",
+  "samples": [
+    {
+      "t": 0.016,
+      "text": "hello"
+    },
+    {
+      "t": 0.328,
+      "text": "hello world"
+    },
+    {
+      "t": 0.641,
+      "text": "good day"
+    },
+    {
+      "t": 0.953,
+      "text": "bye now"
+    },
+    {
+      "t": 1.266,
+      "text": "hello"
+    },
+    {
+      "t": 1.578,
+      "text": "hello"
+    }
+  ],
+  "distinct_texts": 4,
+  "checks": [
+    {
+      "name": "http_200",
+      "ok": true,
+      "expected": 200,
+      "actual": [
+        200
+      ],
+      "detail": ""
+    },
+    {
+      "name": "text_changes_at_least_once",
+      "ok": true,
+      "expected": ">=1 change",
+      "actual": 4,
+      "detail": "селектор: class*=subtitle; режим: html"
+    },
+    {
+      "name": "lines_ge_1",
+      "ok": true,
+      "expected": ">=1 line",
+      "actual": 1,
+      "detail": "селектор: class*=subtitle"
+    },
+    {
+      "name": "cyrillic_present",
+      "ok": false,
+      "expected": ">=1 sample with cyrillic",
+      "actual": 0,
+      "detail": ""
+    },
+    {
+      "name": "distinct_texts_ge_2",
+      "ok": true,
+      "expected": ">=2 distinct non-empty texts",
+      "actual": 4,
+      "detail": "защита от одной и той же копии текста"
+    }
+  ],
+  "reason": null,
+  "created": "2026-11-09T19:53:31.578598+05:00"
+}

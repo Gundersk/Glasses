@@ -1,0 +1,22 @@
+{
+  "kind": "streaming",
+  "run_id": "bad_float32",
+  "created": "2026-11-09T19:53:11.227511+05:00",
+  "simulated": false,
+  "engine": "sherpa",
+  "fixture_note": "СИНТЕТИЧЕСКАЯ фикстура selftest_validator.py, не результат эксперимента",
+  "source": {
+    "type": "file",
+    "path": "fixtures/source.wav",
+    "duration_s": 20.0
+  },
+  "partial_count": 0,
+  "final_count": 0,
+  "first_partial_ms": 0.0,
+  "finals": [],
+  "partials": [],
+  "timing": {
+    "p50_ms": 0.0,
+    "p95_ms": 0.0
+  }
+}

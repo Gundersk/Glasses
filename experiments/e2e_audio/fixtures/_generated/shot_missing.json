@@ -1,0 +1,18 @@
+{
+  "layer": 2,
+  "kind": "screenshot",
+  "pass": false,
+  "values": {
+    "path": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\experiments\\e2e_audio\\fixtures\\_generated\\nope.png"
+  },
+  "checks": [
+    {
+      "name": "file_exists",
+      "ok": false,
+      "expected": "file",
+      "actual": "missing",
+      "detail": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\experiments\\e2e_audio\\fixtures\\_generated\\nope.png"
+    }
+  ],
+  "created": "2026-11-09T19:53:36.502844+05:00"
+}

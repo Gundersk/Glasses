@@ -1,0 +1,33 @@
+{
+  "layer": 2,
+  "kind": "screenshot",
+  "pass": false,
+  "values": {
+    "path": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\experiments\\e2e_audio\\fixtures\\_generated\\corrupt.png",
+    "size_bytes": 9000
+  },
+  "checks": [
+    {
+      "name": "file_exists",
+      "ok": true,
+      "expected": "file",
+      "actual": "present",
+      "detail": ""
+    },
+    {
+      "name": "size_gt_5kb",
+      "ok": true,
+      "expected": ">5120",
+      "actual": 9000,
+      "detail": ""
+    },
+    {
+      "name": "image_readable",
+      "ok": false,
+      "expected": "readable png",
+      "actual": "UnidentifiedImageError",
+      "detail": "cannot identify image file 'C:\\\\Users\\\\Yurgirus\\\\Desktop\\\\urfu\\\\Поддержка талантов\\\\OpenCodeGlasses\\\\experiments\\\\e2e_audio\\\\fixtures\\\\_generated\\\\corrupt.png'"
+    }
+  ],
+  "created": "2026-11-09T19:53:36.811898+05:00"
+}

@@ -1,0 +1,27 @@
+{
+  "layer": 2,
+  "url": "http://127.0.0.1:50175/nothing",
+  "pass": false,
+  "mode": null,
+  "selector": null,
+  "samples": [],
+  "distinct_texts": 0,
+  "checks": [
+    {
+      "name": "http_404",
+      "ok": false,
+      "expected": "server responds",
+      "actual": "http_404",
+      "detail": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "http_200",
+      "ok": false,
+      "expected": 200,
+      "actual": "http_404",
+      "detail": ""
+    }
+  ],
+  "reason": "http_404",
+  "created": "2026-11-09T19:53:33.311842+05:00"
+}

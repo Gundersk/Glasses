@@ -1,0 +1,378 @@
+{
+  "layer": 1,
+  "run_id": "bad_high_drift",
+  "run_dir_name": "bad_high_drift",
+  "kind": "e2e",
+  "pass": false,
+  "allow_missing_vision": true,
+  "min_snr": 10.0,
+  "snr_db_claimed": 26.0,
+  "snr_db_recomputed": 25.127,
+  "corr_peak_recomputed": 0.35701,
+  "corr_global_recomputed": 0.18687,
+  "drift_ppm_recomputed": 1265.625,
+  "valid_window_fraction_recomputed": 1.0,
+  "lag_ms_recomputed": 308.562,
+  "corr_windows": {
+    "n_windows": 3,
+    "n_valid": 3,
+    "n_fit": 3,
+    "win_s": 4.0,
+    "step_s": 2.0,
+    "min_win_corr": 0.3,
+    "dropped_as_outliers": []
+  },
+  "checks": [
+    {
+      "name": "metrics_readable",
+      "ok": true,
+      "expected": "valid json object",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "kind_valid",
+      "ok": true,
+      "expected": "streaming|e2e",
+      "actual": "e2e",
+      "detail": ""
+    },
+    {
+      "name": "structure",
+      "ok": true,
+      "expected": "no missing/bad fields",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "simulated_is_false",
+      "ok": true,
+      "expected": false,
+      "actual": false,
+      "detail": "строго bool false; true = симуляция, не результат"
+    },
+    {
+      "name": "run_id_matches_dir",
+      "ok": true,
+      "expected": "bad_high_drift",
+      "actual": "bad_high_drift",
+      "detail": "защита от копии metrics.json из чужого прогона"
+    },
+    {
+      "name": "created_iso8601",
+      "ok": true,
+      "expected": "ISO8601",
+      "actual": "2026-11-09T19:53:11.611377+05:00",
+      "detail": ""
+    },
+    {
+      "name": "engine_nonempty",
+      "ok": true,
+      "expected": "non-empty",
+      "actual": "sherpa",
+      "detail": ""
+    },
+    {
+      "name": "source_duration_positive",
+      "ok": true,
+      "expected": ">0",
+      "actual": 8.0,
+      "detail": ""
+    },
+    {
+      "name": "partial_count_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 8,
+      "detail": ""
+    },
+    {
+      "name": "final_count_ge_1",
+      "ok": true,
+      "expected": ">=1",
+      "actual": 4,
+      "detail": ""
+    },
+    {
+      "name": "partial_count_matches_list",
+      "ok": true,
+      "expected": 8,
+      "actual": 8,
+      "detail": "счётчик должен совпадать с длиной списка"
+    },
+    {
+      "name": "final_count_matches_list",
+      "ok": true,
+      "expected": 4,
+      "actual": 4,
+      "detail": "счётчик должен совпадать с длиной списка"
+    },
+    {
+      "name": "finals_nonempty",
+      "ok": true,
+      "expected": "all non-empty",
+      "actual": "4/4 non-empty",
+      "detail": ""
+    },
+    {
+      "name": "finals_cyrillic",
+      "ok": true,
+      "expected": "all contain cyrillic",
+      "actual": "4/4",
+      "detail": ""
+    },
+    {
+      "name": "finals_distinct",
+      "ok": true,
+      "expected": ">=3 unique",
+      "actual": 4,
+      "detail": "уникальных >= max(2, final_count-1)"
+    },
+    {
+      "name": "finals_total_len",
+      "ok": true,
+      "expected": ">=10 chars",
+      "actual": 106,
+      "detail": ""
+    },
+    {
+      "name": "partials_distinct",
+      "ok": true,
+      "expected": ">=2 unique non-empty partials",
+      "actual": 8,
+      "detail": "поток partial с одним текстом не доказывает инкрементальность"
+    },
+    {
+      "name": "no_placeholder_text",
+      "ok": true,
+      "expected": "no lorem/test/example/.../TODO/placeholder",
+      "actual": "none",
+      "detail": ""
+    },
+    {
+      "name": "not_all_finals_identical",
+      "ok": true,
+      "expected": "not identical",
+      "actual": "varied",
+      "detail": ""
+    },
+    {
+      "name": "first_partial_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 420.0,
+      "detail": ""
+    },
+    {
+      "name": "p50_gt_0",
+      "ok": true,
+      "expected": ">0",
+      "actual": 350.0,
+      "detail": ""
+    },
+    {
+      "name": "p95_ge_p50",
+      "ok": true,
+      "expected": ">=p50",
+      "actual": "p50=350.0 p95=800.0",
+      "detail": ""
+    },
+    {
+      "name": "finals_t_ms_nondecreasing",
+      "ok": true,
+      "expected": "non-decreasing",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "finals_t_ms_range",
+      "ok": true,
+      "expected": "0..38000 ms (duration+30s)",
+      "actual": "min=1500.0 max=6000.0",
+      "detail": "защита от выдуманных чисел"
+    },
+    {
+      "name": "partials_t_ms_nondecreasing",
+      "ok": true,
+      "expected": "non-decreasing",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "partials_t_ms_range",
+      "ok": true,
+      "expected": "0..38000 ms (duration+30s)",
+      "actual": "min=420.0 max=4620.0",
+      "detail": "защита от выдуманных чисел"
+    },
+    {
+      "name": "first_partial_matches_list",
+      "ok": true,
+      "expected": "first_partial_ms ~ min(partials.t_ms) +-5.0 ms",
+      "actual": "field=420.0 list_min=420.0",
+      "detail": ""
+    },
+    {
+      "name": "finals_source_end_range",
+      "ok": true,
+      "expected": "non-decreasing, 0..9000 ms",
+      "actual": "min=1000.0 max=5500.0",
+      "detail": ""
+    },
+    {
+      "name": "snr_db_min",
+      "ok": true,
+      "expected": ">=10.0",
+      "actual": 26.0,
+      "detail": "заявленное значение из metrics.json; честность проверяет snr_recomputed_consistent"
+    },
+    {
+      "name": "corr_peak_min",
+      "ok": true,
+      "expected": ">=0.6",
+      "actual": 0.99,
+      "detail": "медиана корреляции по валидным окнам 4 с; глобальный пик критерием не является"
+    },
+    {
+      "name": "drift_ppm_limit",
+      "ok": false,
+      "expected": "|drift| < 500.0 ppm",
+      "actual": 900.0,
+      "detail": "наклон лага по окнам: независимые такты ADC/DAC"
+    },
+    {
+      "name": "valid_window_fraction_min",
+      "ok": true,
+      "expected": ">=0.6",
+      "actual": 1.0,
+      "detail": "доля окон с corr>=0.3 от всех окон 4 с / шаг 2 с"
+    },
+    {
+      "name": "lag_ms_range",
+      "ok": true,
+      "expected": "0..2000",
+      "actual": 300.0,
+      "detail": ""
+    },
+    {
+      "name": "recording_exists",
+      "ok": true,
+      "expected": "file exists",
+      "actual": "C:\\Users\\Yurgirus\\Desktop\\urfu\\Поддержка талантов\\OpenCodeGlasses\\experiments\\e2e_audio\\fixtures\\_generated\\runs\\bad_high_drift\\artifacts\\recording.wav",
+      "detail": "artifacts/recording.wav"
+    },
+    {
+      "name": "recording_size_gt_1kb",
+      "ok": true,
+      "expected": ">1024",
+      "actual": 288044,
+      "detail": ""
+    },
+    {
+      "name": "recording_readable",
+      "ok": true,
+      "expected": "readable wav",
+      "actual": "sr=16000 n=144000",
+      "detail": ""
+    },
+    {
+      "name": "snr_recomputed_consistent",
+      "ok": true,
+      "expected": "claimed<=recomputed+10 and recomputed>=10",
+      "actual": "claimed=26.00 recomputed=25.13",
+      "detail": "p10=-53.7 dB, p90=-28.6 dB, frames=300 x 30 ms; claimed-recomputed=+0.87 дБ"
+    },
+    {
+      "name": "recording_duration_gt_5s",
+      "ok": true,
+      "expected": ">5.0 s",
+      "actual": 9.0,
+      "detail": ""
+    },
+    {
+      "name": "recording_peak_dbfs",
+      "ok": true,
+      "expected": ">-50.0 dBFS",
+      "actual": -23.83,
+      "detail": "пересчитано из файла, а не из metrics.json"
+    },
+    {
+      "name": "recording_covers_source",
+      "ok": true,
+      "expected": ">=0.8*source (6.4 s)",
+      "actual": 9.0,
+      "detail": ""
+    },
+    {
+      "name": "corr_windows_enough",
+      "ok": true,
+      "expected": "n_windows>=2 and n_valid>=2",
+      "actual": "n_windows=3 n_valid=3",
+      "detail": "на короткой записи медиана и дрейф не определены"
+    },
+    {
+      "name": "corr_recomputed_min",
+      "ok": false,
+      "expected": ">=0.6",
+      "actual": 0.35701,
+      "detail": "пересчитано из source.path и записи оконной методикой"
+    },
+    {
+      "name": "corr_claim_consistent",
+      "ok": false,
+      "expected": "|claim-recomputed|<=0.15",
+      "actual": "claim=0.99 recomputed=0.3570",
+      "detail": ""
+    },
+    {
+      "name": "corr_global_claim_consistent",
+      "ok": false,
+      "expected": "|claim-recomputed|<=0.15",
+      "actual": "claim=0.99 recomputed=0.1869",
+      "detail": "справочное поле: критерием не является, но заявленное обязано совпадать с пересчётом"
+    },
+    {
+      "name": "lag_claim_consistent",
+      "ok": true,
+      "expected": "|claim-recomputed|<=50.0 ms",
+      "actual": "claim=300.0 recomputed=308.6",
+      "detail": ""
+    },
+    {
+      "name": "drift_claim_consistent",
+      "ok": false,
+      "expected": "|claim-recomputed|<=150.0 ppm",
+      "actual": "claim=900.0 recomputed=1265.6",
+      "detail": ""
+    },
+    {
+      "name": "valid_fraction_claim_consistent",
+      "ok": true,
+      "expected": "|claim-recomputed|<=0.1",
+      "actual": "claim=1.0 recomputed=1.000",
+      "detail": ""
+    },
+    {
+      "name": "artifacts_dir_exists",
+      "ok": true,
+      "expected": "dir",
+      "actual": "present",
+      "detail": ""
+    },
+    {
+      "name": "log_exists_nonempty",
+      "ok": true,
+      "expected": "non-empty file",
+      "actual": "32 chars",
+      "detail": ""
+    },
+    {
+      "name": "log_no_traceback",
+      "ok": true,
+      "expected": "no traceback",
+      "actual": "none",
+      "detail": ""
+    }
+  ],
+  "created": "2026-11-09T19:53:24.812163+05:00"
+}

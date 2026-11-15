@@ -1,0 +1,103 @@
+{
+  "layer": 1,
+  "run_id": "bad_missing_field",
+  "run_dir_name": "bad_missing_field",
+  "kind": "streaming",
+  "pass": false,
+  "allow_missing_vision": true,
+  "min_snr": 10.0,
+  "checks": [
+    {
+      "name": "metrics_readable",
+      "ok": true,
+      "expected": "valid json object",
+      "actual": "ok",
+      "detail": ""
+    },
+    {
+      "name": "kind_valid",
+      "ok": true,
+      "expected": "streaming|e2e",
+      "actual": "streaming",
+      "detail": ""
+    },
+    {
+      "name": "missing_field:timing",
+      "ok": false,
+      "expected": "present",
+      "actual": "absent",
+      "detail": ""
+    },
+    {
+      "name": "missing_field:timing.p50_ms",
+      "ok": false,
+      "expected": "present",
+      "actual": "absent",
+      "detail": ""
+    },
+    {
+      "name": "missing_field:timing.p95_ms",
+      "ok": false,
+      "expected": "present",
+      "actual": "absent",
+      "detail": ""
+    },
+    {
+      "name": "structure",
+      "ok": false,
+      "expected": "no missing/bad fields",
+      "actual": "3 problems",
+      "detail": "missing_field:timing; missing_field:timing.p50_ms; missing_field:timing.p95_ms"
+    },
+    {
+      "name": "artifacts_dir_exists",
+      "ok": true,
+      "expected": "dir",
+      "actual": "present",
+      "detail": ""
+    },
+    {
+      "name": "artifact:screenshot.png",
+      "ok": true,
+      "expected": "exists, >1024 B",
+      "actual": 1568208,
+      "detail": ""
+    },
+    {
+      "name": "artifact:page.html",
+      "ok": true,
+      "expected": "exists, >1024 B",
+      "actual": 2695,
+      "detail": ""
+    },
+    {
+      "name": "page_html_cyrillic",
+      "ok": true,
+      "expected": "contains cyrillic",
+      "actual": "yes",
+      "detail": ""
+    },
+    {
+      "name": "screenshot_not_blank",
+      "ok": true,
+      "expected": "check_screenshot pass",
+      "actual": "pass",
+      "detail": "bands=4 std=29.300048393558345"
+    },
+    {
+      "name": "log_exists_nonempty",
+      "ok": true,
+      "expected": "non-empty file",
+      "actual": "32 chars",
+      "detail": ""
+    },
+    {
+      "name": "log_no_traceback",
+      "ok": true,
+      "expected": "no traceback",
+      "actual": "none",
+      "detail": ""
+    }
+  ],
+  "created": "2026-11-09T19:53:20.399837+05:00"
+}
